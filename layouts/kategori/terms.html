@@ -1,0 +1,32 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 lg:max-w-7xl mt-16">
+
+  <div class="uppercase text-teal-600 dark:text-teal-400 text-sm font-bold mb-2">Semua Kategori</div>
+  <h2 class="text-3xl font-extrabold text-slate-800 dark:text-white mb-2">
+    Kategori apa nih yang menarik perhatianmu?
+  </h2>
+  <p class="text-slate-500 dark:text-slate-300 mb-8">
+    Jika kamu tidak menemukan kategori yang dicari, kamu bisa minta kami untuk menambahkannya.
+  </p>
+
+  <div class="flex flex-wrap gap-4 mb-16">
+    {{ range .Data.Terms }}
+    <a href="{{ .Page.RelPermalink }}"
+       class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 px-4 py-2 rounded-md text-sm shadow hover:shadow-md transition inline-flex items-center">
+      {{ .Page.Title }} <span class="ml-3 px-2 py-0.5 text-xs bg-teal-500 text-white rounded-full">{{ .Count }}</span>
+    </a>
+    {{ end }}
+  </div>
+
+  <div class="bg-slate-800 text-white p-6 rounded-xl mb-8">
+    <h3 class="font-bold uppercase text-teal-400 text-sm">Request</h3>
+    <p class="text-xl font-bold mt-2">Tidak menemukan Kategori yang kamu cari?</p>
+    <p class="mt-1 mb-4 text-slate-300">Silakan buat request agar kami bisa menambahkan.</p>
+    <a href="#"
+       class="inline-block bg-teal-500 hover:bg-teal-600 text-white font-semibold px-4 py-2 rounded">
+      Request Kategori Baru
+    </a>
+  </div>
+
+</div>
+{{ end }}

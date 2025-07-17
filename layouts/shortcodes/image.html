@@ -1,0 +1,48 @@
+<figure class="my-8 text-center">
+  <img 
+    src="{{ .Get "src" | absURL }}" 
+    alt="{{ .Get "alt" | default "Image" }}" 
+    class="lazyload cursor-zoom-in max-w-full h-auto {{ with .Get "class" }}{{ . }}{{ end }}"
+    loading="lazy"
+    data-zoom-src="{{ .Get "src" | absURL }}"
+    onclick="zoomImage(this)"
+  >
+  {{ with .Get "caption" }}
+  <figcaption class="text-sm text-slate-500 dark:text-slate-400 mt-2">
+    {{ . | markdownify }}
+  </figcaption>
+  {{ end }}
+</figure>
+
+{{ if not (.Page.Scratch.Get "image-zoom-script") }}
+<script>
+// Fungsi zoom sederhana
+function zoomImage(img) {
+  if (img.classList.contains('zoomed')) {
+    img.classList.remove('zoomed');
+    img.style.transform = '';
+    img.style.cursor = 'zoom-in';
+    img.style.zIndex = '';
+    document.body.style.overflow = '';
+  } else {
+    img.classList.add('zoomed');
+    img.style.transform = 'scale(1.8)';
+    img.style.cursor = 'zoom-out';
+    img.style.zIndex = '100';
+    document.body.style.overflow = 'hidden';
+    img.scrollIntoView({behavior: 'smooth', block: 'center'});
+  }
+}
+</script>
+{{ .Page.Scratch.Set "image-zoom-script" true }}
+{{ end }}
+
+<style>
+img.zoomed {
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+}
+</style>

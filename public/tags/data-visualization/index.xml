@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Visualization on v0.146.0</title>
+    <link>http://localhost:1313/tags/data-visualization/</link>
+    <description>Recent content in Data Visualization on v0.146.0</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/data-visualization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Laravel Datatables</title>
+      <link>http://localhost:1313/buku/laravel-datables/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/buku/laravel-datables/</guid>
+      <description>&lt;p&gt;Studi kasus mendalam bagaimana mempersiapkan perintah SQL dari database sampai menampilkan dalam 25+ macam visualisasi.&lt;/p&gt;&#xA;&lt;p&gt;Di ebook ini kita akan diajak bersimulasi menjadi seorang fullstack developer yang memiliki client yaitu Hana Hotel.&lt;/p&gt;&#xA;&lt;p&gt;Hana Hotel sudah beroperasi sejak tahun 2016 sampai sekarang. Kamu mendapatkan sebuah permintaan yaitu membuat dashboard berbasis web yang akan menampilkan beberapa ukuran penting yang menunjukan performa hotel.&lt;/p&gt;&#xA;&lt;p&gt;Hotel ini sudah memiliki sistem informasi tersendiri, tugasmu berfokus mengembangkan fitur dashboard.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Laravel Dataviz</title>
+      <link>http://localhost:1313/buku/laravel-dataviz/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/buku/laravel-dataviz/</guid>
+      <description>&lt;p&gt;Studi kasus mendalam bagaimana mempersiapkan perintah SQL dari database sampai menampilkan dalam 25+ macam visualisasi.&lt;/p&gt;&#xA;&lt;p&gt;Di ebook ini kita akan diajak bersimulasi menjadi seorang fullstack developer yang memiliki client yaitu Hana Hotel.&lt;/p&gt;&#xA;&lt;p&gt;Hana Hotel sudah beroperasi sejak tahun 2016 sampai sekarang. Kamu mendapatkan sebuah permintaan yaitu membuat dashboard berbasis web yang akan menampilkan beberapa ukuran penting yang menunjukan performa hotel.&lt;/p&gt;&#xA;&lt;p&gt;Hotel ini sudah memiliki sistem informasi tersendiri, tugasmu berfokus mengembangkan fitur dashboard.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Laravel: Fullstack Web Series</title>
+      <link>http://localhost:1313/buku/laravel/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/buku/laravel/</guid>
+      <description>&lt;p&gt;Buku ini berisi panduan membuat aplikasi realtime dengan Laravel dan Websockets. Setelah membaca ebook ini pembaca akan memperoleh pengetahuan bagaimana membuat fitur realtime dengan Laravel dan Vue tanpa memanfaatkan package laravel-websockets. Selain itu pembaca akan bisa membuat komponen vue yang bereaksi terhadap event di laravel serta bisa menggunakan chartjs dengan vue.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Membangun Aplikasi Full-Stack Serverless dengan AWS dan React</title>
+      <link>http://localhost:1313/buku/react-aws/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/buku/react-aws/</guid>
+      <description>&lt;p&gt;Sebuah E-Book dalam Bahasa Indonesia yang akan menjadikan anda seorang pengembang aplikasi web modern yang handal. Disajikan secara sederhana, namun tetap up-to-date dengan standar dan perkembangan terbaru baik itu di ekosistem AWS maupun React.&lt;/p&gt;&#xA;&lt;h1 id=&#34;studi-kasus&#34;&gt;Studi Kasus&lt;/h1&gt;&#xA;&lt;p&gt;Dalam e-book ini kita akan membahas mengenai konsep dasar dan juga studi kasus aplikasi web untuk daftar lowongan kerja React di Indonesia yang akan kita sebut dengan JagoReact Job Board. Aplikasi ini akan kita bangun sepenuhnya dengan menggunakan layanan-layanan serverless.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Modern React: Be Frontend Javascript Developer</title>
+      <link>http://localhost:1313/buku/modern-react/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/buku/modern-react/</guid>
+      <description>&lt;p&gt;Apakah kamu ingin menguasai ReactJS tapi bingung mulai dari mana?&lt;/p&gt;&#xA;&lt;p&gt;Atau kamu sudah beli course React tapi tetep belum paham?&lt;/p&gt;&#xA;&lt;p&gt;Sering bertanya di forum tapi malah diminta baca dokumentasi?&lt;/p&gt;&#xA;&lt;p&gt;Baca dokumentasi tapi masih bingung?&lt;/p&gt;&#xA;&lt;p&gt;Atau kamu sudah bisa ReactJS tetapi ingin mempelajari React Modern &amp;amp; Ekosistemnya?&lt;/p&gt;&#xA;&lt;p&gt;Sudah belajar ReactJS tapi bingung di bagian Javascript Modern nya?&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Note: Buku ini satu paket dengan buku React &amp;amp; Express&lt;/p&gt;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>Panduan Praktis Membuat Realtime App dengan Laravel Websockets</title>
+      <link>http://localhost:1313/buku/laravel-realtime/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/buku/laravel-realtime/</guid>
+      <description>&lt;p&gt;Buku ini berisi panduan membuat aplikasi realtime dengan Laravel dan Websockets. Setelah membaca ebook ini pembaca akan memperoleh pengetahuan bagaimana membuat fitur realtime dengan Laravel dan Vue tanpa memanfaatkan package laravel-websockets. Selain itu pembaca akan bisa membuat komponen vue yang bereaksi terhadap event di laravel serta bisa menggunakan chartjs dengan vue.&lt;/p&gt;&#xA;&lt;p&gt;Note:&lt;/p&gt;&#xA;&lt;p&gt;Buku ini adalah buku bonus yang akan kamu dapatkan setelah membeli bundle buku Laravel dan Vuejs&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>React &amp; Express: Be Fullstack Javascript Developer</title>
+      <link>http://localhost:1313/buku/react-express/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/buku/react-express/</guid>
+      <description>&lt;p&gt;Apakah kamu ingin menguasai ReactJS tapi bingung mulai dari mana?&lt;/p&gt;&#xA;&lt;p&gt;Atau kamu sudah beli course React tapi tetep belum paham?&lt;/p&gt;&#xA;&lt;p&gt;Sering bertanya di forum tapi malah diminta baca dokumentasi?&lt;/p&gt;&#xA;&lt;p&gt;Baca dokumentasi tapi masih bingung?&lt;/p&gt;&#xA;&lt;p&gt;Atau kamu sudah bisa ReactJS tetapi ingin mempelajari React Modern &amp;amp; Ekosistemnya?&lt;/p&gt;&#xA;&lt;p&gt;Sudah belajar ReactJS tapi bingung di bagian Javascript Modern nya?&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Note: Buku ini satu paket dengan buku Modern React&lt;/p&gt;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>Vuejs: Frontend Web Series</title>
+      <link>http://localhost:1313/buku/vuejs/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/buku/vuejs/</guid>
+      <description>&lt;p&gt;Vue (dibaca: view) merupakan salah satu dari sekian banyak pustaka (library) pada bahasa pemrograman Javascript yang digunakan untuk membangun tampilan antarmuka pengguna (user interface) dari suatu aplikasi berbasis web khususnya untuk aplikasi berbasis halaman tunggal atau single page application (SPA).&lt;/p&gt;&#xA;&lt;p&gt;Vue sebagaimana Javascript (JS) memang awalnya didesain untuk kebutuhan web, namun seiring perkembangan teknologi yang mendukung JS, maka saat ini Vue juga mulai dapat digunakan untuk mengembangkan aplikasi berbasis desktop dan mobile.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

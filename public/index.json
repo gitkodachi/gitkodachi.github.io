@@ -1,0 +1,191 @@
+[
+  {
+    "title": "Belajar HTML #01: Pengenalan Dasar HTML",
+    "content": "",
+    "permalink": "http://localhost:1313/tutorial/html/pengenalan/"
+  },
+  {
+    "title": "Belajar HTML #02: Memahami Tag, Element, dan Atribut dalam HTML",
+    "content": "Perbedaan Tag, Element, dan Atribut Tag: Penanda awalan dan akhiran \u0026lt;p\u0026gt;Ini paragraf\u0026lt;/p\u0026gt; ",
+    "permalink": "http://localhost:1313/tutorial/html/tag-element-atribut/"
+  },
+  {
+    "title": "Belajar HTML #03: Membuat Paragraf di HTML",
+    "content": "Tag Paragraf Dasar \u0026lt;p\u0026gt;Ini adalah paragraf pertama.\u0026lt;/p\u0026gt; \u0026lt;p\u0026gt;Ini paragraf kedua dengan \u0026lt;br\u0026gt; baris baru\u0026lt;/p\u0026gt; ",
+    "permalink": "http://localhost:1313/tutorial/html/paragraf/"
+  },
+  {
+    "title": "Tutorial HTML \u0026 CSS Dasar",
+    "content": "",
+    "permalink": "http://localhost:1313/tutorial/html/html-css/"
+  },
+  {
+    "title": "Membuat CRUD Produk",
+    "content": "Menambahkan Produk Tambahkan kode berikut ke dalam controller:\nProdukController.php\rCopy\rpublic function store(Request $request)\r{\r$request-\u003evalidate([\r'nama' =\u003e 'required|max:45',\r'jenis' =\u003e 'required|max:45',\r// ...\r]);\r}\rRouting Tambahkan routing ke dalam file routes/web.php:\nweb.php\rCopy\rRoute::get('/produk/edit/{id}', [ProdukController::class, 'edit']);\rRoute::put('/produk/update/{id}', [ProdukController::class, 'update']);\rMenghapus Produk Berikut controller untuk menghapus:\ndestroy method\rCopy\rpublic function destroy(Produk $id)\r{\r$id-\u003edelete();\rreturn redirect()-\u003eroute('index.index')-\u003ewith('success', 'Data berhasil dihapus');\r}\rDownload SPSS 27\r",
+    "permalink": "http://localhost:1313/post/produk-crud/"
+  },
+  {
+    "title": "Apa itu Git dan Kenapa Penting bagi Programmer?",
+    "content": "Git adalah salah satu tool yang sering digunakan dalam proyek pengembangan software.\nGit bahkan menjadi tool yang wajib dipahami oleh programmer, karena banyak digunakan di mana-mana.\nPada kesempatan ini kita akan belajar Git dari dasar.\nArtikel ini hanya akan membahas pengenalan Git saja. Untuk mempelajari Git lebih lanjut, saya sudah menyediakan link di bagian akhir.\nMengenal Git Git adalah salah satu sistem pengontrol versi (Version Control System) pada proyek perangkat lunak yang diciptakan oleh Linus Torvalds.\nPengontrol versi bertugas mencatat setiap perubahan pada file proyek yang dikerjakan oleh banyak orang maupun sendiri.\nGit dikenal juga dengan distributed revision control (VCS terdistribusi), artinya penyimpanan database Git tidak hanya berada dalam satu tempat saja.\nKeterangan gambar opsional\rSemua orang yang terlibat dalam pengkodean proyek akan menyimpan database Git, sehingga akan memudahkan dalam mengelola proyek baik online maupun offline.\nDalam Git terdapat Merge untuk menyebut aktifitas penggabungan kode.\nSedangkan pada VCS (Version Control System) yang terpusat… database disimpan dalam satu tempat dan setiap perubahan disimpan ke sana.\nKeterangan gambar opsional\rVCS terpusat memiliki beberapa kekurangan:\nSemua tim harus terkoneksi ke jaringan untuk mengakses source-code; Tersimpan di satu tempat, nanti kalau server bermasalah bagaimana? Karena itu, Git hadir untuk menutupi kekurangan yang dimiliki oleh VCS terpusat.\nApa yang dilakukan oleh Git? Git sebenarnya akan memantau semua perubahan yang terjadi pada file proyek. Lalu menyimpannya ke dalam database.\nSebelum menggunakan Git:\nKeterangan gambar opsional\rSetelah menggunakan Git:\nKeterangan gambar opsional\rApa perbedaannya?\nSaat kita ingin menyimpan semua perubahan pada file, biasanya kita membuat file baru dengan “save as”. Lalu, file akan menumpuk dalam direktori proyek seperti pada ilustrasi di atas.\nTapi setelah menggunakan Git…\nHanya akan ada satu file dalam proyek dan perubahannya disimpan dalam database.\nGit hanya akan menyimpan delta perubahannya saja, dia tidak akan menyimpan seluruh isi file yang akan memakan banyak memori.\nGit memungkinkan kita kembali ke versi revisi yang kita inginkan.\nKenapa Git Penting Bagi Programmer? Keterangan gambar opsional\rJadi selain untuk mengontrol versi, git juga digunakan untuk kolaborasi.\nSaat ini Git menjadi salah satu tool terpopuler yang digunakan pada pengembangan software open source maupun closed source.\nGoogle, Microsoft, Facebook dan berbagai perusahaan raksasa lainnya menggunakan Git.\nJadi, buat kamu yang punya impian ingin bekerja di sana, maka kamu harus bisa Git.\nSelain itu, berikut ini ada beberapa menfaat yang akan kamu rasakan setelah bisa menggunakan Git.\nBisa menyimpan seluruh versi source code; Bisa paham cara kolaborasi dalam proyek; Bisa ikut berkontribusi ke proyek open-source; Lebih aman digunakan untuk kolaborasi, karena kita bisa tahu apa yang diubah dan siapa yang mengubahnya. Bisa memahami cara deploy aplikasi modern; Bisa membuat blog dengan SSG. dan sebagainya… Apa Selanjutnya? Jadi, apakah kamu sudah mengenal git?\nBagus, selanjutnya silakan ikuti tutorial git berikut ini.\nTutorial Git #01: Cara Install Git dan Konfigurasi Awal yang harus dilakukan Tutorial Git #02: Membuat Repositori Baru dalam Proyek ",
+    "permalink": "http://localhost:1313/tutorial/git/git-untuk-pemula/"
+  },
+  {
+    "title": "Belajar Git #1: Cara Install Git dan Konfigurasi Awal Yang Harus dilakukan",
+    "content": "\rSuber Gambar Petani Kode\rKita sudah mengenal Git pada tulisan sebelumnya. Selanjutnya Kita akan melakukan instalasi dan persiapan untuk mulai belajar Git.\nTulisan ini terbagi menjadi tiga bagian:\nCara Instalasi Git di Linux. Cara Instalasi Git di Windows. Konfigurasi Awal yang Harus dilkaukan Setelah Menginstal Git. Mari kita mulai\u0026hellip;\n1. Cara Install Git di Linux sudo apt install git atau\nsudo apt-install git Pada Fedora:\nyum install git Setelah itu , coba periksa versi yang terinstal dengan perintah:\ngit --version Suber Gambar Petani Kode\r",
+    "permalink": "http://localhost:1313/tutorial/git/git-install/"
+  },
+  {
+    "title": "Belajar Git #03: Cara Membuat Repositoru Git Pada Proyek",
+    "content": "\rKeterangan gambar opsional\r",
+    "permalink": "http://localhost:1313/tutorial/git/git-commit/"
+  },
+  {
+    "title": "Belajar Git #04: Melihat Catatan Log Revisi",
+    "content": "\rKeterangan gambar opsional\r",
+    "permalink": "http://localhost:1313/tutorial/git/git.log/"
+  },
+  {
+    "title": "Belajar Git #05: Melihat Perbandingan Revisi dengan Git Diff",
+    "content": "\rKeterangan gambar opsional\r",
+    "permalink": "http://localhost:1313/tutorial/git/git-diff/"
+  },
+  {
+    "title": "Belajar Git #06: Perintah Untuk Membatalkan Revisi",
+    "content": "\rKeterangan gambar opsional\r",
+    "permalink": "http://localhost:1313/tutorial/git/git-revert/"
+  },
+  {
+    "title": "Belajar Git #07: Menggunakan Cabang untuk mencegah Konflik",
+    "content": "\rKeterangan gambar opsional\r",
+    "permalink": "http://localhost:1313/tutorial/git/git-branch/"
+  },
+  {
+    "title": "Belajar Git #08: Perbedaan Git checkout, Git Reset, dan Git Revert",
+    "content": "\rKeterangan gambar opsional\r",
+    "permalink": "http://localhost:1313/tutorial/git/git-checkout-reset-revert/"
+  },
+  {
+    "title": "Belajar Git #09: Berkerja Dengan Remote Repository",
+    "content": "\rKeterangan gambar opsional\r",
+    "permalink": "http://localhost:1313/tutorial/git/git-remote/"
+  },
+  {
+    "title": "Belajar Git #10: Menggunakan Git Pull Git Fetch",
+    "content": "\rKeterangan gambar opsional\r",
+    "permalink": "http://localhost:1313/tutorial/git/git-full-fetch/"
+  },
+  {
+    "title": "Belajar Git #11: Cara Berkontribusi di Proyek Open Source dengan Git",
+    "content": "\rKeterangan gambar opsional\r",
+    "permalink": "http://localhost:1313/tutorial/git/github-workflow/"
+  },
+  {
+    "title": "Belajar Git #12: Cara Menggunakan Git Pada Visual Studio Code",
+    "content": "\rKeterangan gambar opsional\r",
+    "permalink": "http://localhost:1313/tutorial/git/git-vscode/"
+  },
+  {
+    "title": "Belajar Git #13: Melihat Perbandingan Revisi dengan Git Diff",
+    "content": "",
+    "permalink": "http://localhost:1313/tutorial/git/git-init/"
+  },
+  {
+    "title": "Kontak Kami",
+    "content": "Hubungi Kami Informasi Kontak Email: info@example.com\nTelepon: +62 21 1234 5678\nAlamat: Jl. Teknologi No. 99, Jakarta\nSilakan kirimkan pertanyaan atau pesan Anda melalui formulir berikut. Kami akan segera merespons:\nNama Lengkap\rEmail\rPesan\rKirim Pesan\r",
+    "permalink": "http://localhost:1313/contact/"
+  },
+  {
+    "title": "Pertanyaan Umum",
+    "content": "Pertanyaan yang Sering Diajukan Bagaimana cara memulai belajar? Mulailah dengan tutorial untuk pemula yang sesuai dengan minat Anda. Semua tutorial tersedia di halaman utama.\nApakah ada biaya untuk mengakses konten? Tidak, semua konten di situs ini sepenuhnya gratis.\nBagaimana cara berkontribusi? Anda dapat berkontribusi melalui GitHub repository kami. Silakan kunjungi halaman kontak untuk informasi lebih lanjut.\n",
+    "permalink": "http://localhost:1313/faqs/"
+  },
+  {
+    "title": "Tentang Kami",
+    "content": "Tentang Situs Ini Situs ini dibuat untuk membantu pemula mempelajari berbagai teknologi pemrograman melalui tutorial yang mudah dipahami.\nVisi Menyediakan materi pembelajaran yang berkualitas dan terjangkau untuk semua kalangan.\nMisi Membuat konten tutorial yang terstruktur Menyajikan contoh kode yang relevan Membantu pemecahan masalah praktis ",
+    "permalink": "http://localhost:1313/about/"
+  },
+  {
+    "title": "Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!",
+    "content": "Pendahuluan Laravel 11 hadir dengan berbagai fitur baru yang membuat pengembangan web lebih efisien\u0026hellip;\nInstalasi Laravel 11 composer create-project laravel/laravel:^11.0 my-project Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \u0026ldquo;de Finibus Bonorum et Malorum\u0026rdquo; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \u0026ldquo;Lorem ipsum dolor sit amet..\u0026rdquo;, comes from a line in section 1.10.32.\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \u0026ldquo;de Finibus Bonorum et Malorum\u0026rdquo; by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.\n",
+    "permalink": "http://localhost:1313/kategori/basic-programming/tutorial-laravel/"
+  },
+  {
+    "title": "Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!",
+    "content": "Pendahuluan Laravel 11 hadir dengan berbagai fitur baru yang membuat pengembangan web lebih efisien\u0026hellip;\nInstalasi Laravel 11 composer create-project laravel/laravel:^11.0 my-project Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \u0026ldquo;de Finibus Bonorum et Malorum\u0026rdquo; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \u0026ldquo;Lorem ipsum dolor sit amet..\u0026rdquo;, comes from a line in section 1.10.32.\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \u0026ldquo;de Finibus Bonorum et Malorum\u0026rdquo; by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.\n",
+    "permalink": "http://localhost:1313/post/tutorial-laravel/"
+  },
+  {
+    "title": "Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!",
+    "content": "Pendahuluan Laravel 11 hadir dengan berbagai fitur baru yang membuat pengembangan web lebih efisien\u0026hellip;\nInstalasi Laravel 11 Contoh Kode\rCopy\rcomposer create-project laravel/laravel:^11.0 my-project\rContoh Kode\rCopy\rcomposer create-project laravel/laravel:^11.0 my-project\rContoh Kode\rCopy\recho \"Hello World\"\r",
+    "permalink": "http://localhost:1313/post/tutorial/"
+  },
+  {
+    "title": "Laravel",
+    "content": "#Laravel #PHP #MySQL Pemula bisa langsung bikin CRUD!\nTutorial Laravel untuk Pemula Sabardi\nPengenalan Laravel Laravel adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web\u0026hellip;\n",
+    "permalink": "http://localhost:1313/post/laravel/"
+  },
+  {
+    "title": "Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!",
+    "content": "#Laravel #PHP #MySQL Pemula bisa langsung bikin CRUD!\nTutorial Laravel untuk Pemula Sabardi\nPengenalan Laravel Laravel adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web\u0026hellip;\n",
+    "permalink": "http://localhost:1313/kategori/web-programming/laravel/"
+  },
+  {
+    "title": "Laravel Datatables",
+    "content": "Studi kasus mendalam bagaimana mempersiapkan perintah SQL dari database sampai menampilkan dalam 25+ macam visualisasi.\nDi ebook ini kita akan diajak bersimulasi menjadi seorang fullstack developer yang memiliki client yaitu Hana Hotel.\nHana Hotel sudah beroperasi sejak tahun 2016 sampai sekarang. Kamu mendapatkan sebuah permintaan yaitu membuat dashboard berbasis web yang akan menampilkan beberapa ukuran penting yang menunjukan performa hotel.\nHotel ini sudah memiliki sistem informasi tersendiri, tugasmu berfokus mengembangkan fitur dashboard.\nKamu akan diberikan struktur database dan data dari sistem tersebut yang memuat data bookings dari tahun 2016 sampai tahun 2020, data tamu, kepuasan tamu, layanan yang tersedia, dan kamar hotel.\n",
+    "permalink": "http://localhost:1313/buku/laravel-datables/"
+  },
+  {
+    "title": "Laravel Dataviz",
+    "content": "Studi kasus mendalam bagaimana mempersiapkan perintah SQL dari database sampai menampilkan dalam 25+ macam visualisasi.\nDi ebook ini kita akan diajak bersimulasi menjadi seorang fullstack developer yang memiliki client yaitu Hana Hotel.\nHana Hotel sudah beroperasi sejak tahun 2016 sampai sekarang. Kamu mendapatkan sebuah permintaan yaitu membuat dashboard berbasis web yang akan menampilkan beberapa ukuran penting yang menunjukan performa hotel.\nHotel ini sudah memiliki sistem informasi tersendiri, tugasmu berfokus mengembangkan fitur dashboard.\nKamu akan diberikan struktur database dan data dari sistem tersebut yang memuat data bookings dari tahun 2016 sampai tahun 2020, data tamu, kepuasan tamu, layanan yang tersedia, dan kamar hotel.\n",
+    "permalink": "http://localhost:1313/buku/laravel-dataviz/"
+  },
+  {
+    "title": "Laravel: Fullstack Web Series",
+    "content": "Buku ini berisi panduan membuat aplikasi realtime dengan Laravel dan Websockets. Setelah membaca ebook ini pembaca akan memperoleh pengetahuan bagaimana membuat fitur realtime dengan Laravel dan Vue tanpa memanfaatkan package laravel-websockets. Selain itu pembaca akan bisa membuat komponen vue yang bereaksi terhadap event di laravel serta bisa menggunakan chartjs dengan vue.\n",
+    "permalink": "http://localhost:1313/buku/laravel/"
+  },
+  {
+    "title": "Membangun Aplikasi Full-Stack Serverless dengan AWS dan React",
+    "content": "Sebuah E-Book dalam Bahasa Indonesia yang akan menjadikan anda seorang pengembang aplikasi web modern yang handal. Disajikan secara sederhana, namun tetap up-to-date dengan standar dan perkembangan terbaru baik itu di ekosistem AWS maupun React.\nStudi Kasus Dalam e-book ini kita akan membahas mengenai konsep dasar dan juga studi kasus aplikasi web untuk daftar lowongan kerja React di Indonesia yang akan kita sebut dengan JagoReact Job Board. Aplikasi ini akan kita bangun sepenuhnya dengan menggunakan layanan-layanan serverless.\n",
+    "permalink": "http://localhost:1313/buku/react-aws/"
+  },
+  {
+    "title": "Modern React: Be Frontend Javascript Developer",
+    "content": "Apakah kamu ingin menguasai ReactJS tapi bingung mulai dari mana?\nAtau kamu sudah beli course React tapi tetep belum paham?\nSering bertanya di forum tapi malah diminta baca dokumentasi?\nBaca dokumentasi tapi masih bingung?\nAtau kamu sudah bisa ReactJS tetapi ingin mempelajari React Modern \u0026amp; Ekosistemnya?\nSudah belajar ReactJS tapi bingung di bagian Javascript Modern nya?\nNote: Buku ini satu paket dengan buku React \u0026amp; Express\n",
+    "permalink": "http://localhost:1313/buku/modern-react/"
+  },
+  {
+    "title": "Panduan Praktis Membuat Realtime App dengan Laravel Websockets",
+    "content": "Buku ini berisi panduan membuat aplikasi realtime dengan Laravel dan Websockets. Setelah membaca ebook ini pembaca akan memperoleh pengetahuan bagaimana membuat fitur realtime dengan Laravel dan Vue tanpa memanfaatkan package laravel-websockets. Selain itu pembaca akan bisa membuat komponen vue yang bereaksi terhadap event di laravel serta bisa menggunakan chartjs dengan vue.\nNote:\nBuku ini adalah buku bonus yang akan kamu dapatkan setelah membeli bundle buku Laravel dan Vuejs\n",
+    "permalink": "http://localhost:1313/buku/laravel-realtime/"
+  },
+  {
+    "title": "React \u0026 Express: Be Fullstack Javascript Developer",
+    "content": "Apakah kamu ingin menguasai ReactJS tapi bingung mulai dari mana?\nAtau kamu sudah beli course React tapi tetep belum paham?\nSering bertanya di forum tapi malah diminta baca dokumentasi?\nBaca dokumentasi tapi masih bingung?\nAtau kamu sudah bisa ReactJS tetapi ingin mempelajari React Modern \u0026amp; Ekosistemnya?\nSudah belajar ReactJS tapi bingung di bagian Javascript Modern nya?\nNote: Buku ini satu paket dengan buku Modern React\n",
+    "permalink": "http://localhost:1313/buku/react-express/"
+  },
+  {
+    "title": "Vuejs: Frontend Web Series",
+    "content": "Vue (dibaca: view) merupakan salah satu dari sekian banyak pustaka (library) pada bahasa pemrograman Javascript yang digunakan untuk membangun tampilan antarmuka pengguna (user interface) dari suatu aplikasi berbasis web khususnya untuk aplikasi berbasis halaman tunggal atau single page application (SPA).\nVue sebagaimana Javascript (JS) memang awalnya didesain untuk kebutuhan web, namun seiring perkembangan teknologi yang mendukung JS, maka saat ini Vue juga mulai dapat digunakan untuk mengembangkan aplikasi berbasis desktop dan mobile.\n",
+    "permalink": "http://localhost:1313/buku/vuejs/"
+  },
+  {
+    "title": "GeoGebra",
+    "content": "",
+    "permalink": "http://localhost:1313/software/edukasi/geofebra/"
+  },
+  {
+    "title": "Notion",
+    "content": "",
+    "permalink": "http://localhost:1313/software/produktivitas/nation/"
+  },
+  {
+    "title": "Photomath",
+    "content": "ini halaman photomath\n",
+    "permalink": "http://localhost:1313/software/edukasi/photomath/"
+  },
+  {
+    "title": "VLC Media Player",
+    "content": "",
+    "permalink": "http://localhost:1313/software/multimedia/vlc/"
+  }]

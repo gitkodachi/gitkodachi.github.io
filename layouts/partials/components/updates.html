@@ -1,0 +1,53 @@
+<div class="container mx-auto px-4 lg:max-w-7xl mt-16">
+  <div class="font-bold uppercase text-teal-600 dark:text-teal-400 text-sm mb-2">
+    Update
+  </div>
+  <h2 class="text-3xl text-slate-600 dark:text-slate-300 font-bold tracking-tight mb-2">
+    Apa yang baru di Petani Kode? 🔥
+  </h2>
+  <p class="text-lg mb-8 text-slate-500 dark:text-slate-300">
+    Baca artikel terbaru yang masih fresh dan hangat.
+  </p>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 mb-8">
+    {{ $pages := where site.RegularPages "Section" "post" }} {{ $paginator :=
+    .Paginate $pages }} {{ range $paginator.Pages }}
+
+    <div class="shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600 dark:hover:outline-1">
+      <a href="{{ .RelPermalink }}" class="flex gap-4 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg p-4 hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+        <picture>
+          {{/* Menggunakan gambar cover dari parameter */}} {{ if
+          .Params.thumbnail }}
+          <img
+            class="lazyload rounded-xl object-cover h-48 w-96 dark:brightness-75 lazyloaded"
+            src="{{ .Params.thumbnail | absURL }}"
+            alt="{{ .Title }}"/>
+          {{ else }} {{/* Fallback ke placeholder */}}
+          <img
+            class="w-full h-48 object-cover bg-gray-200"
+            src="/images/thumbnail/placeholder.svg"
+            alt="Placeholder"/>
+          {{ end }}
+        </picture>
+      </a>
+
+      <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">
+        <a href="{{ .RelPermalink }}"
+          class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+          {{ .Title }}
+        </a>
+      </h3>
+
+      <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-3">
+        {{ .Description | default .Summary | plainify | truncate 120 }}
+      </p>
+    </div>
+    {{ end }}
+  </div>
+  <!-- Pagination Section -->
+  {{ if gt .Paginator.TotalPages 1 }}
+  <ul class="flex flex-row justify-center md:justify-start gap-2 md:gap-4 my-8">
+    {{ partial "components/pagination.html" . }}
+  </ul>
+  {{ end }}
+</div>

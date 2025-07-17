@@ -1,0 +1,50 @@
+<div class="container mx-auto px-4 lg:max-w-7xl mt-16">
+  <div class="font-bold uppercase text-teal-600 dark:text-teal-400 text-sm mb-2">Kategori Baru</div>
+  <h2 class="text-3xl text-slate-300 dark:text-slate-500 font-bold tracking-tight mb-2">Apa yang baru di Petani Kode? 🔥</h2>
+  <p class="text-lg mb-8 text-slate-500 dark:text-slate-300">Baca artikel terbaru yang masih fresh dan hangat.</p>
+  
+  <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 mb-8">
+    {{ range first 6 (where .Site.RegularPages "Type" "categories") }}
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-all transform hover:-translate-y-1">
+      <a href="{{ .RelPermalink }}" class="block">
+        {{/* Menggunakan gambar cover dari parameter */}}
+        {{ if .Params.image }}
+          <img class="w-full h-48 object-cover" 
+               src="{{ .Params.image | absURL }}" 
+               alt="{{ .Title }}">
+        {{ else }}
+          {{/* Fallback ke placeholder */}}
+          <img class="w-full h-48 object-cover bg-gray-200" 
+               src="/images/thumbnail/placeholder.svg" 
+               alt="Placeholder">
+        {{ end }}
+      </a>
+      <div class="p-6">
+        <div class="flex items-center text-xs text-slate-500 dark:text-slate-400 mb-3">
+          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+        </div>
+        
+        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">
+          <a href="{{ .RelPermalink }}" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+            {{ .Title }}
+          </a>
+        </h3>
+        
+        <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-3">
+          {{ .Description | default .Summary | plainify | truncate 120 }}
+        </p>
+        
+        <a href="{{ .RelPermalink }}" class="inline-flex items-center text-teal-600 dark:text-teal-400 font-medium hover:underline">
+          Baca selengkapnya
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>

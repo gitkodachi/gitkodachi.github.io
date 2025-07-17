@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 lg:max-w-4xl py-10">
+  <!-- Header Section -->
+  <header class="mb-12">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4 text-slate-800 dark:text-white">{{ .Title }}</h1>
+    {{ if .Description }}
+    <p class="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
+      {{ .Description }}
+    </p>
+    {{ end }}
+  </header>
+  
+  <!-- Main Content Grid -->
+  <div class="mb-16">
+    {{ partial "components/updates.html" . }}
+  </div>
+
+</div>
+{{ end }}

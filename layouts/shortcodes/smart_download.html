@@ -1,0 +1,15 @@
+<div class="my-6 text-center">
+  <a
+    href="{{ .Get "url" }}"
+    target="_blank"
+    rel="noopener"
+    class="inline-flex items-center gap-3 bg-teal-600 text-white font-semibold px-6 py-3 rounded-xl shadow hover:bg-teal-700 transition-all duration-200"
+  >
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
+      viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+    </svg>
+    <span class="text-base">{{ .Get "name" }}</span>
+  </a>
+</div>

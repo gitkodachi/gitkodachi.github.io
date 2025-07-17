@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article class="shadow-md mx-auto mt-4 mb-4 -4 p-4 md:px-8 lg:p-12 max-w-4xl bg-white dark:bg-slate-800 rounded-xl prose lg:prose-xl prose-slate dark:prose-invert prose-headings:font-sans prose-headings:tracking-tight">
+
+  <!-- Header: Judul halaman -->
+  <header class="border-b border-slate-200 dark:border-slate-400 mb-4">
+    <h1 class="font-extrabold text-gray-900 dark:text-white">
+      {{ .Title }}
+    </h1>
+  </header>
+
+  <!-- Konten Markdown -->
+  <div class="content">
+    {{ .Content }}
+  </div>
+
+</article>
+{{ end }}

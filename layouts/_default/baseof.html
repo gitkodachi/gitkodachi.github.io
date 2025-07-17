@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html class="scroll-smooth dark" lang="id" x-data="" :class="{ 'dark': $store.theme.dark }">
+  
+<head>
+  {{ partial "common/head.html" . }}
+</head>
+<body class="font-sans bg-slate-100 dark:bg-slate-900 text-gray-900 dark:text-gray-100">
+  {{ partial "common/search-modal.html" . }}
+  {{ partial "common/navbar.html" . }} <!-- Ini navbar baru -->
+  {{ partial "common/scrollToTopBtn"}}
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  
+  {{ partial "common/scripts.html" . }}
+  {{ partial "common/footer.html" . }}
+</body>
+</html>

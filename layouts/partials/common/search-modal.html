@@ -1,0 +1,15 @@
+<div id="searchModal" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
+  <div class="bg-white dark:bg-slate-700 p-6 rounded-xl w-full max-w-md shadow-lg space-y-4">
+    <div class="flex justify-between items-center">
+      <h2 class="text-lg font-semibold text-gray-800 dark:text-white">Cari Sesuatu</h2>
+      <button id="searchClose" class="text-slate-300 dark:text-gray-800 hover:text-emerald-500">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <input id="searchInput" type="text" placeholder="Cari tutorial..."
+      class="w-full p-2 border border-gray-300 rounded-md dark:bg-slate-700 dark:border-slate-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-slate-500">
+
+    <ul id="searchResults" class="space-y-2 max-h-64 overflow-y-auto"></ul>
+  </div>
+</div>

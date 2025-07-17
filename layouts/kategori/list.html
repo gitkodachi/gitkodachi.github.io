@@ -1,0 +1,75 @@
+{{ define "main" }}
+<div class="container lg:max-w-7xl my-16 mx-auto px-4">
+
+  {{/* Slug dari judul halaman kategori */}}
+  {{ $slug := .Title | urlize }}
+
+  {{/* Slice kategori lengkap dengan slug, icon, dan warna */}}
+  {{ $categories := slice
+    (dict "title" "Basic Programming" "slug" "basic-programming" "icon" "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" "color" "indigo")
+    (dict "title" "Web Programming" "slug" "web-programming" "icon" "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" "color" "orange")
+    (dict "title" "Tutorial Lainnya" "slug" "tutorial-lainnya" "icon" "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" "color" "cyan")
+  }}
+
+  {{/* Ambil data kategori yang sesuai berdasarkan slug */}}
+  {{ $meta := dict }}
+  {{ range $categories }}
+    {{ if eq .slug $slug }}
+      {{ $meta = . }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Breadcrumb */}}
+  <div class="font-bold uppercase text-teal-600 dark:text-teal-400 text-sm mb-2">
+    <a class="underline" href="/kategori">Kategori</a>
+    <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+    {{ .Title }}
+  </div>
+
+  <h2 class="text-3xl font-bold tracking-tight mb-2 text-slate-800 dark:text-white">
+    Ini dia yang kamu cari
+  </h2>
+
+  {{ $kategoriSlug := .Title | urlize }}
+  {{ $filtered := where .Site.RegularPages "Params.kategori" "intersect" (slice $kategoriSlug) }}
+
+  <p class="text-lg mb-8 text-slate-500 dark:text-slate-300">
+    Ada {{ len $filtered }} artikel dalam kategori {{ .Title }}.
+  </p>
+
+  {{ if eq (len $filtered) 0 }}
+    <p class="text-slate-500 dark:text-slate-400">Belum ada artikel untuk kategori ini.</p>
+  {{ else }}
+    <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 mb-8">
+      {{ range $filtered }}
+      <div class="shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600">
+        <a href="{{ .RelPermalink }}" class="mb-3 inline-block">
+      <picture>
+        <img class="lazyload w-full h-48 object-cover rounded-2xl dark:brightness-75"
+          style="aspect-ratio: 16/9;"
+          src="{{ .Params.thumbnail | default "/images/thumbnail/placeholder.svg" | absURL }}"
+          alt="{{ .Title }}">
+      </picture>
+        </a>
+        <h3 class="text-lg text-slate-800 dark:text-white font-bold mb-2 tracking-tight line-clamp-2">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h3>
+        <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+          {{ .Params.description | default .Summary | plainify | truncate 120 }}
+        </p>
+      </div>
+      {{ end }}
+    </div>
+  {{ end }}
+
+  <!-- Pagination (opsional, kalau kamu implementasi Paginator di future update) -->
+  {{ if gt .Paginator.TotalPages 1 }}
+    <ul class="flex flex-row justify-center gap-2 my-8">
+      {{ partial "components/pagination.html" . }}
+    </ul>
+  {{ end }}
+
+</div>
+{{ end }}

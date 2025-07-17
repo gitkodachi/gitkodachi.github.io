@@ -1,0 +1,145 @@
+<!-- highlight.js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<!-- Alpine.js -->
+<script src="//unpkg.com/alpinejs" defer></script>
+<style>
+  [x-cloak] { display: none !important; }
+</style>
+
+<script>
+document.addEventListener('alpine:init', () => {
+
+  Alpine.store('theme', {
+    dark: false,
+    switcherOpen: false,
+    system: false,
+    init() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark') {
+        this.dark = true;
+      } else if (savedTheme === 'light') {
+        this.dark = false;
+      } else if (savedTheme === 'system') {
+        this.system = true;
+        this.dark = systemPrefersDark;
+      } else {
+        this.system = true;
+        this.dark = systemPrefersDark;
+      }
+      this.applyTheme();
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (this.system) {
+          this.dark = e.matches;
+          this.applyTheme();
+        }
+      });
+    },
+    setTheme(theme) {
+      if (theme === 'dark') {
+        this.dark = true;
+        this.system = false;
+        localStorage.setItem('theme', 'dark');
+      } else if (theme === 'light') {
+        this.dark = false;
+        this.system = false;
+        localStorage.setItem('theme', 'light');
+      } else {
+        this.system = true;
+        this.dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        localStorage.setItem('theme', 'system');
+      }
+      this.applyTheme();
+    },
+    applyTheme() {
+      if (this.dark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+  });
+
+  // ✅ Panggil init di sini
+  Alpine.store('search').init();
+});
+</script>
+
+<script src="{{ "js/fuse.min.js" | relURL }}"></script>
+<script src="{{ "js/lucide.min.js" | relURL }}"></script>
+<script>
+  const searchToggle = document.getElementById('searchToggle');
+  const searchModal = document.getElementById('searchModal');
+  const searchClose = document.getElementById('searchClose');
+  const searchCloseBtn = document.getElementById('searchCloseBtn');
+  const searchInput = document.getElementById("searchInput");
+  const searchResults = document.getElementById("searchResults");
+  let fuse, fuseIndex = [];
+
+  fetch("/index.json")
+    .then(res => res.json())
+    .then(data => {
+      fuseIndex = data;
+      fuse = new Fuse(fuseIndex, { keys: ["title", "content"], threshold: 0.3 });
+    });
+
+  searchToggle?.addEventListener('click', () => {
+    searchModal.classList.remove('hidden');
+    setTimeout(() => {
+      searchInput.focus();
+      lucide.createIcons();
+    }, 100);
+  });
+
+  [searchClose, searchCloseBtn].forEach(el => el?.addEventListener('click', () => {
+    searchModal.classList.add('hidden');
+    searchInput.value = '';
+    searchResults.innerHTML = '';
+  }));
+
+  searchInput?.addEventListener('input', () => {
+    const query = searchInput.value.trim();
+    if (!query || !fuse) return searchResults.innerHTML = '';
+    const results = fuse.search(query).slice(0, 8);
+    searchResults.innerHTML = results.length
+      ? results.map(r => `
+          <li>
+            <a href="${r.item.permalink}" class="block p-2 rounded-md text-white-100 hover:bg-teal-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-500">
+              <strong>${r.item.title}</strong><br>
+              <small>${r.item.content.slice(0, 80)}...</small>
+            </a>
+          </li>`).join('')
+      : '<li class="text-gray-500 dark:text-gray-400">Tidak ada hasil ditemukan.</li>';
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === "Escape") searchModal.classList.add('hidden');
+  });
+</script>
+
+<script>
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      scrollToTopBtn.classList.remove('hidden');
+    } else {
+      scrollToTopBtn.classList.add('hidden');
+    }
+  });
+
+  scrollToTopBtn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    lucide.createIcons();
+  });
+</script>
+
+
+
