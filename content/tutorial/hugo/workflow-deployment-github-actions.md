@@ -75,23 +75,21 @@ jobs:
 ```
 
 ### File yang Perlu Ada
-    - package.json ➔ Tailwind + PostCSS setup
 
-    - config.toml ➔ BaseURL sesuai GitHub Pages
-
-    - public/ ➔ Hasil build Hugo
-
-    -.github/workflows/deploy.yml ➔ Workflow CI/CD
+  - package.json ➔ Tailwind + PostCSS setup
+  - config.toml ➔ BaseURL sesuai GitHub Pages
+  - public/ ➔ Hasil build Hugo
+  - .github/workflows/deploy.yml ➔ Workflow CI/CD
 
 ### Best Practice
-✅ Simpan workflow di branch main
-✅ Cek hasil build di tab Actions
-✅ Gunakan hugo --minify untuk versi production
-✅ Pastikan URL di config.toml sudah benar
+  - ✅ Simpan workflow di branch main
+  - ✅ Cek hasil build di tab Actions
+  - ✅ Gunakan hugo --minify untuk versi production
+  - ✅ Pastikan URL di config.toml sudah benar
 
 ### Deployment Otomatis:
-✅ Push ke main ➔ GitHub Actions jalan otomatis
-✅ Website langsung live di GitHub Pages
+  - ✅ Push ke main ➔ GitHub Actions jalan otomatis
+  - ✅ Website langsung live di GitHub Pages
 
 > Info: 🚀 Dengan workflow ini, kamu tidak perlu deploy manual lagi.
 Cukup commit dan push — Hugo + Tailwind langsung build & deploy otomatis!
