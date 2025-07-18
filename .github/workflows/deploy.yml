@@ -1,4 +1,4 @@
-name: Deploy Hugo Site with TailwindCSS
+name: Deploy Hugo Static Site
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
     env:
       HUGO_VERSION: 0.146.0
     steps:
-      - name: Checkout Repo
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Setup Hugo
@@ -25,28 +25,10 @@ jobs:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Cache npm dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: npm-
-
-      - name: Install Node.js dependencies
-        run: npm ci
-
-      - name: Build TailwindCSS
-        run: npm run build
-
-      - name: Build Hugo site
+      - name: Build Hugo Site
         run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
-      - name: Upload Pages Artifact
+      - name: Upload Artifact for Deployment
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
