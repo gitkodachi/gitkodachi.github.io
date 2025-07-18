@@ -1,16 +1,16 @@
-<div class="rounded-md overflow-hidden border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 relative group">
+<div class="rounded overflow-hidden border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 relative group text-xs">
   {{ with .Get "title" }}
-    <div class="px-4 py-2 text-sm font-semibold bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-600">
+    <div class="px-3 py-1.5 font-semibold bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-600">
       {{ . }}
     </div>
   {{ end }}
 
   <button onclick="copyCode(this)" 
-          class="absolute top-2 right-2 text-xs px-2 py-1 bg-emerald-500 hover:bg-emerald-600 text-white rounded shadow hidden group-hover:block transition">
+          class="absolute top-1.5 right-1.5 text-[10px] px-1.5 py-0.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded shadow hidden group-hover:block transition">
     Copy
   </button>
 
-  <pre class="bg-white dark:bg-slate-900 px-4 py-2 text-sm text-slate-800 dark:text-slate-100 overflow-auto rounded-b-md">
+  <pre class="bg-white dark:bg-slate-900 px-3 py-2 text-[13px] text-slate-800 dark:text-slate-100 overflow-auto">
     <code class="language-{{ .Get "lang" | default "plaintext" }}">{{ .Inner | safeHTML }}</code>
   </pre>
 </div>

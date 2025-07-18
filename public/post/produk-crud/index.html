@@ -24,6 +24,7 @@
 
 
  <link rel="stylesheet" href="/css/scrollToTopBtn.css">
+ <link rel="stylesheet" href="/css/precode.css">
 
 
 <meta property="og:type" content="website">
@@ -451,19 +452,19 @@
       <div class="content">
         <h2 id="menambahkan-produk">Menambahkan Produk</h2>
 <p>Tambahkan kode berikut ke dalam controller:</p>
-<div class="rounded-md overflow-hidden border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 relative group">
+<div class="rounded overflow-hidden border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 relative group text-xs">
   
-    <div class="px-4 py-2 text-sm font-semibold bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-600">
+    <div class="px-3 py-1.5 font-semibold bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-600">
       ProdukController.php
     </div>
   
 
   <button onclick="copyCode(this)" 
-          class="absolute top-2 right-2 text-xs px-2 py-1 bg-emerald-500 hover:bg-emerald-600 text-white rounded shadow hidden group-hover:block transition">
+          class="absolute top-1.5 right-1.5 text-[10px] px-1.5 py-0.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded shadow hidden group-hover:block transition">
     Copy
   </button>
 
-  <pre class="bg-white dark:bg-slate-900 px-4 py-2 text-sm text-slate-800 dark:text-slate-100 overflow-auto rounded-b-md">
+  <pre class="bg-white dark:bg-slate-900 px-3 py-2 text-[13px] text-slate-800 dark:text-slate-100 overflow-auto">
     <code class="language-php">
 public function store(Request $request)
 {
@@ -480,19 +481,19 @@ public function store(Request $request)
 <hr>
 <h2 id="routing">Routing</h2>
 <p>Tambahkan routing ke dalam file <code>routes/web.php</code>:</p>
-<div class="rounded-md overflow-hidden border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 relative group">
+<div class="rounded overflow-hidden border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 relative group text-xs">
   
-    <div class="px-4 py-2 text-sm font-semibold bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-600">
+    <div class="px-3 py-1.5 font-semibold bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-600">
       web.php
     </div>
   
 
   <button onclick="copyCode(this)" 
-          class="absolute top-2 right-2 text-xs px-2 py-1 bg-emerald-500 hover:bg-emerald-600 text-white rounded shadow hidden group-hover:block transition">
+          class="absolute top-1.5 right-1.5 text-[10px] px-1.5 py-0.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded shadow hidden group-hover:block transition">
     Copy
   </button>
 
-  <pre class="bg-white dark:bg-slate-900 px-4 py-2 text-sm text-slate-800 dark:text-slate-100 overflow-auto rounded-b-md">
+  <pre class="bg-white dark:bg-slate-900 px-3 py-2 text-[13px] text-slate-800 dark:text-slate-100 overflow-auto">
     <code class="language-php">
 Route::get('/produk/edit/{id}', [ProdukController::class, 'edit']);
 Route::put('/produk/update/{id}', [ProdukController::class, 'update']);
@@ -503,19 +504,19 @@ Route::put('/produk/update/{id}', [ProdukController::class, 'update']);
 <hr>
 <h2 id="menghapus-produk">Menghapus Produk</h2>
 <p>Berikut controller untuk menghapus:</p>
-<div class="rounded-md overflow-hidden border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 relative group">
+<div class="rounded overflow-hidden border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 relative group text-xs">
   
-    <div class="px-4 py-2 text-sm font-semibold bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-600">
+    <div class="px-3 py-1.5 font-semibold bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-600">
       destroy method
     </div>
   
 
   <button onclick="copyCode(this)" 
-          class="absolute top-2 right-2 text-xs px-2 py-1 bg-emerald-500 hover:bg-emerald-600 text-white rounded shadow hidden group-hover:block transition">
+          class="absolute top-1.5 right-1.5 text-[10px] px-1.5 py-0.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded shadow hidden group-hover:block transition">
     Copy
   </button>
 
-  <pre class="bg-white dark:bg-slate-900 px-4 py-2 text-sm text-slate-800 dark:text-slate-100 overflow-auto rounded-b-md">
+  <pre class="bg-white dark:bg-slate-900 px-3 py-2 text-[13px] text-slate-800 dark:text-slate-100 overflow-auto">
     <code class="language-php">
 public function destroy(Produk $id)
 {
@@ -574,7 +575,7 @@ public function destroy(Produk $id)
   <h2 class="text-2xl font-bold p-4 tracking-tight border-b dark:border-slate-700">🔥 Artikel Terbaru</h2>
   
   
-  <a href="/post/tutorial/" title="Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!">
+  <a href="/post/tutorial-laravel/" title="Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!">
     <div class="flex justify-between items-center gap-2 p-6 hover:bg-slate-100 dark:hover:bg-slate-700 active:scale-95 active:rounded-xl transition-all">
       <div class="flex-1 min-w-0">
         <h3 class="text-lg font-semibold tracking-tight line-clamp-2 leading-tight mb-1">
@@ -598,7 +599,7 @@ public function destroy(Produk $id)
     </div>
   </a>
   
-  <a href="/post/tutorial-laravel/" title="Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!">
+  <a href="/post/tutorial/" title="Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!">
     <div class="flex justify-between items-center gap-2 p-6 hover:bg-slate-100 dark:hover:bg-slate-700 active:scale-95 active:rounded-xl transition-all">
       <div class="flex-1 min-w-0">
         <h3 class="text-lg font-semibold tracking-tight line-clamp-2 leading-tight mb-1">

@@ -9,8 +9,7 @@ image: "/images/cover/laravel-11.png"
 ---
 
 ## #Laravel
-## #PHP
-## #MySQL
+
 
 Pemula bisa langsung bikin CRUD!
 

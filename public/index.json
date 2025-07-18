@@ -30,9 +30,19 @@
     "permalink": "http://localhost:1313/tutorial/git/git-untuk-pemula/"
   },
   {
+    "title": "Belajar Hugo #1: Instalasi Hugo di Windows, Mac, dan Linux",
+    "content": "Mengunduh Hgo Silahkan download versi terbaru dari [Hugo Release]((https://github.com/gohugoio/hugo/releases).\nInstalasi di Windows Unduh file zip Window (Extended Edition) Extrack ke folder \u0026lsquo;C:\\Hugo' Tambahkan path \u0026lsquo;C:\\Hugo' ke environment variables Instalasi di macOS (Menggunakan Homebrew) brew install hugo Instalasi di Linux (menggunakan Snap) sudo snap install hugo --channel=extended ✅ Setelah instalasi, cek versi Hugo:\n",
+    "permalink": "http://localhost:1313/tutorial/hugo/01-installasi-hugo/"
+  },
+  {
     "title": "Belajar Git #1: Cara Install Git dan Konfigurasi Awal Yang Harus dilakukan",
     "content": "\rSuber Gambar Petani Kode\rKita sudah mengenal Git pada tulisan sebelumnya. Selanjutnya Kita akan melakukan instalasi dan persiapan untuk mulai belajar Git.\nTulisan ini terbagi menjadi tiga bagian:\nCara Instalasi Git di Linux. Cara Instalasi Git di Windows. Konfigurasi Awal yang Harus dilkaukan Setelah Menginstal Git. Mari kita mulai\u0026hellip;\n1. Cara Install Git di Linux sudo apt install git atau\nsudo apt-install git Pada Fedora:\nyum install git Setelah itu , coba periksa versi yang terinstal dengan perintah:\ngit --version Suber Gambar Petani Kode\r",
     "permalink": "http://localhost:1313/tutorial/git/git-install/"
+  },
+  {
+    "title": "Belajar Hugo #2: Setup Proyek Hugo dari Awal",
+    "content": "Mebuat Proyek Baru Setup Proyek Hugo\nMembuat Proyek Baru\rCopy\rhugo new site my-hugo-project\rMasuk ke folder proyek cd my-hugo-proyek Inisialisai git repository git init Menambahkan \u0026lsquo;.gitignore\u0026rsquo; /public/ /resources/ /node_modules/ /.DS_Store hugo_stats.json Struktur folder dasar hugo my-hugo-project/ ├── archetypes/ ├── assets/ ├── content/ ├── data/ ├── layouts/ ├── static/ ├── themes/ ├── config.toml ✅ Proyek Hugo siap digunakan dan sudah terhubung dengan Git!\n",
+    "permalink": "http://localhost:1313/tutorial/hugo/02-setup-proyek-hugo/"
   },
   {
     "title": "Belajar Git #03: Cara Membuat Repositoru Git Pada Proyek",
@@ -40,9 +50,19 @@
     "permalink": "http://localhost:1313/tutorial/git/git-commit/"
   },
   {
+    "title": "Belajar Hugo #3: Menambahkan Tema \u0026 Integrasi Tailwind CSS",
+    "content": "Clone Tema Hugo Contoh menggunakan tema ananke:\ngit submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke atur config.toml:\ntheme = \u0026#34;anake\u0026#34; Install Tailwind CSS via NPM npm init -y npm install -D tailwindcss postcss autoprefixer npx tailwindcss init Buat postcss.config.js diroo: postcss.config.js\rCopy\rmodule.exports = {\rplugins: {\rtailwindcss: {},\rautoprefixer: {},\r}\r}\rInstall Tailwind CSS via NPM postcss.config.js\rCopy\rmodule.exports = {\rcontent: [\r\"./layouts/**/*.{html,js}\",\r\"./content/**/*.{md,html}\",\r],\rdarkMode: \"class\",\rtheme: {\rextend: {},\r},\rplugins: [],\r}\rJalankan Build CSS (Development) npm run dev Jalankan Build CSS (Production) npm run build ✅ Tailwind CSS sekarang terintegrasi dengan Hugo kamu!\n",
+    "permalink": "http://localhost:1313/tutorial/hugo/03-setup-tema-tailwind/"
+  },
+  {
     "title": "Belajar Git #04: Melihat Catatan Log Revisi",
     "content": "\rKeterangan gambar opsional\r",
     "permalink": "http://localhost:1313/tutorial/git/git.log/"
+  },
+  {
+    "title": "Belajar Hugo #4: Membuat Layout \u0026 Partial di hugo",
+    "content": "Struktur Layout Hugo Hugo menggunakan folder layouts/ dengan struktur seperti ini:\nlayouts/ ├── _default/ │ ├── baseof.html │ ├── list.html │ └── single.html ├── partials/ │ ├── head.html │ ├── header.html │ ├── footer.html │ └── navbar.html Membuat file \u0026lsquo;baseof.html\u0026rsquo; Contoh Dasar:\nBaseof.html\rCopy\r\u003c!DOCTYPE html\u003e\r{{ partial \"head.html\" . }}\r{{ partial \"navbar.html\" . }}\r{{ block \"main\" . }}{{ end }}\r{{ partial \"footer.html\" . }}\rPartial: Head (partials/head.html) Contoh Dasar:\nBaseof.html\rCopy\r{{ .Title }} — {{ .Site.Title }}\r",
+    "permalink": "http://localhost:1313/tutorial/hugo/04-membuat-layout-partial/"
   },
   {
     "title": "Belajar Git #05: Melihat Perbandingan Revisi dengan Git Diff",
@@ -121,7 +141,7 @@
   },
   {
     "title": "Laravel",
-    "content": "#Laravel #PHP #MySQL Pemula bisa langsung bikin CRUD!\nTutorial Laravel untuk Pemula Sabardi\nPengenalan Laravel Laravel adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web\u0026hellip;\n",
+    "content": "#Laravel Pemula bisa langsung bikin CRUD!\nTutorial Laravel untuk Pemula Sabardi\nPengenalan Laravel Laravel adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web\u0026hellip;\n",
     "permalink": "http://localhost:1313/post/laravel/"
   },
   {

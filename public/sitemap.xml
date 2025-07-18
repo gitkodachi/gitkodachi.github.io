@@ -47,13 +47,25 @@
     <loc>http://localhost:1313/tutorial/git/git-untuk-pemula/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tutorial/hugo/01-installasi-hugo/</loc>
+    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tutorial/git/git-install/</loc>
+    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tutorial/hugo/02-setup-proyek-hugo/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tutorial/git/git-commit/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tutorial/hugo/03-setup-tema-tailwind/</loc>
+    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tutorial/git/git.log/</loc>
+    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tutorial/hugo/04-membuat-layout-partial/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tutorial/git/git-diff/</loc>
@@ -84,6 +96,9 @@
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/git/</loc>
+    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/hugo/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/contact/</loc>
@@ -132,6 +147,9 @@
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tutorial/html/</loc>
+    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tutorial/hugo/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/kategori/web-programming/</loc>
