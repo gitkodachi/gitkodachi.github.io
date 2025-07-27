@@ -1,6 +1,6 @@
 baseURL = 'https://gitkodachi.github.io/'
 languageCode = 'en-us'
-title = 'v0.146.0'
+title = 'Octocat Code'
 
 [pagination]
   paperSize = 6

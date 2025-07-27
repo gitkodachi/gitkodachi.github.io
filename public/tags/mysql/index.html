@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MySQL - v0.146.0</title>
+<title>MySQL - Octocat Code</title>
 <meta name="description" content="">
 
 
@@ -15,14 +15,16 @@
 <link rel="apple-touch-icon" href="/icons/app-icons/apple-touch-icon.png" sizes="180x180">
 <link rel="manifest" href="/site.webmanifest">
 
- 
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+
 
 
 
 <link rel="stylesheet" href="/css/styles.css">
 
 
+ <link rel="stylesheet" href="/css/custome.css">
  <link rel="stylesheet" href="/css/scrollToTopBtn.css">
  <link rel="stylesheet" href="/css/precode.css">
 
@@ -42,7 +44,7 @@
 
 </head>
 <body class="font-sans bg-slate-100 dark:bg-slate-900 text-gray-900 dark:text-gray-100">
-  <div id="searchModal" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
+  <div id="searchModal" class="overlay transform-gpu fixed z-50 backdrop-blur bg-black/30 inset-0 p-4 flex hidden justify-center items-start pt-24">
   <div class="bg-white dark:bg-slate-700 p-6 rounded-xl w-full max-w-md shadow-lg space-y-4">
     <div class="flex justify-between items-center">
       <h2 class="text-lg font-semibold text-gray-800 dark:text-white">Cari Sesuatu</h2>
@@ -60,27 +62,11 @@
 
   <nav class="bg-teal-600 dark:bg-teal-900 text-white sticky top-0 z-40 shadow-md">
   <div class="container mx-auto px-4 lg:max-w-7xl flex justify-between">
-    <div class="flex flex-row gap-1 items-center py-3 md:py-2"><a class="inline-block mr-2"
-        href="https://gitkodachi.github.io/" aria-label="Go to home">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="w-8 h-8 active:scale-95">
-          
-          <circle cx="32" cy="32" r="28" fill="#0f766e" stroke="white" stroke-width="4"/>
-
-          
-          <path d="M20 24h10v16H20c-1.1 0-2-.9-2-2V26c0-1.1.9-2 2-2z" fill="white"/>
-          <path d="M34 24h10c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H34V24z" fill="white"/>
-
-          
-          <circle cx="32" cy="18" r="3" fill="white"/>
-          <line x1="32" y1="21" x2="32" y2="23" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="30" y1="17" x2="28" y2="15" stroke="white" stroke-width="1" stroke-linecap="round"/>
-          <line x1="34" y1="17" x2="36" y2="15" stroke="white" stroke-width="1" stroke-linecap="round"/>
-
-          
-          <text x="32" y="50" text-anchor="middle" font-size="10" fill="white" font-family="monospace">
-            &lt;/&gt;
-          </text>
-        </svg>
+    <div class="flex flex-row gap-1 items-center py-3 md:py-2">
+      <a class="inline-block mr-2"
+          href="https://peaplesmart.github.io/" aria-label="Go to home">
+          <img src="/images/global/logo.png" alt="Logo" class="w-8 h-8 active:scale-95">
+        </a>
         <a href="https://gitkodachi.github.io/"
           class="hidden md:inline-flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-gray-100 hover:bg-teal-700 focus:ring-2 focus:ring-teal-500"><svg
             class="w-5 h-5" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2">
@@ -608,7 +594,7 @@ document.addEventListener('alpine:init', () => {
     
     <div class="col-span-2 md:col-span-4 lg:col-span-2 mb-4 md:mb-6 lg:mb-0">
       <a href="https://gitkodachi.github.io/">
-        <img src="/images/global/Code-footer.png" alt="Logo" class="w-48 h-auto hover:opacity-80 transition" />
+        <img src="/images/global/octocat-footer.png" alt="Logo" class="w-48 h-auto hover:opacity-80 transition" />
       </a>
       <p class="mt-6">Mulai petualanganmu di dunia kode <i>(coding)</i> dengan tutorial yang ramah pemula.</p>
     </div>

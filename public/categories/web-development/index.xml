@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Web Development on v0.146.0</title>
+    <title>Web Development on Octocat Code</title>
     <link>http://localhost:1313/categories/web-development/</link>
-    <description>Recent content in Web Development on v0.146.0</description>
+    <description>Recent content in Web Development on Octocat Code</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 15 Jan 2023 00:00:00 +0000</lastBuildDate>
