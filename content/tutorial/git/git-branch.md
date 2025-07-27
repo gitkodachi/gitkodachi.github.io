@@ -3,7 +3,7 @@ title: "Belajar Git #07: Menggunakan Cabang untuk mencegah Konflik"
 date: 2025-06-27
 image: "/images/cover/git-petanikode.png"
 series: "git"
-tags: ["Git"]
+tutorial: ["Git"]
 description: "Pelajari dasar-dasar version control dengan Git untuk pemula."
 ---
 

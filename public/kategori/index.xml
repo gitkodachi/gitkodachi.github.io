@@ -6,7 +6,35 @@
     <description>Recent content on Octocat Code</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/kategori/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/kategori/tutorial-lainnya/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/tutorial-lainnya/</guid>
+      <description>&lt;p&gt;Temukan tutorial yang ingin kamu pelajari.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Basic Programming</title>
+      <link>http://localhost:1313/kategori/basic-programming/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/basic-programming/</guid>
+      <description>&lt;p&gt;Temukan tutorial yang ingin kamu pelajari.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tutorial-Lainya</title>
+      <link>http://localhost:1313/kategori/tutorial-lainya/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/tutorial-lainya/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Programming</title>
+      <link>http://localhost:1313/kategori/web-programming/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/web-programming/</guid>
+      <description>&lt;p&gt;Temukan tutorial yang ingin kamu pelajari.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

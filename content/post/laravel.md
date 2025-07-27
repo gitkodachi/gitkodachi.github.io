@@ -2,7 +2,7 @@
 title: "Laravel"
 date: 2023-06-25
 author: "default"
-tags: ["Laravel", "PHP", "MySQL"]
+topik: ["Laravel", "PHP", "MySQL"]
 avatar: /images/global/avatar.png
 thumbnail: "/images/cover/laravel-11.png"
 image: "/images/cover/laravel-11.png"

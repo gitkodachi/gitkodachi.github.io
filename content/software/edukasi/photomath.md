@@ -2,7 +2,7 @@
 title: "Photomath"
 author: "default" # <-- harus ada dan sesuai dengan data/authors/default.yaml
 description: "Photomath merupakan salah satu aplikasi yang berhasil menggabungkan antara kamera dan kalkulator"
-kategori: "edukasi"
+software: ["edukasi"]
 os: ["Windows", "macOS", "Linux", "Android", "iOS"]
 hardware: "Minimal RAM 2GB, CPU 1GHz"
 install: |

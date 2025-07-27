@@ -6,8 +6,22 @@
     <description>Recent content in Web Programming on Octocat Code</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/kategori/web-programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tutorial HTML &amp; CSS Dasar</title>
+      <link>http://localhost:1313/tutorial/html/html-css/</link>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/html/html-css/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Programming</title>
+      <link>http://localhost:1313/kategori/web-programming/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/web-programming/</guid>
+      <description>&lt;p&gt;Temukan tutorial yang ingin kamu pelajari.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</title>
       <link>http://localhost:1313/kategori/web-programming/laravel/</link>

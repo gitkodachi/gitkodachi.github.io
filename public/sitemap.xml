@@ -17,19 +17,19 @@
     <loc>http://localhost:1313/tutorial/html/html-css/</loc>
     <lastmod>2025-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/laravel/</loc>
+    <loc>http://localhost:1313/topik/laravel/</loc>
     <lastmod>2025-07-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/produk-crud/</loc>
     <lastmod>2025-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/mysql/</loc>
+    <loc>http://localhost:1313/topik/mysql/</loc>
     <lastmod>2025-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/php/</loc>
+    <loc>http://localhost:1313/topik/php/</loc>
     <lastmod>2025-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://localhost:1313/topik/</loc>
     <lastmod>2025-07-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/kategori/</loc>
@@ -101,12 +101,6 @@
     <loc>http://localhost:1313/tutorial/hugo/workflow-deployment-github-actions/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/git/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/contact/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
@@ -158,6 +152,9 @@
     <loc>http://localhost:1313/tutorial/hugo/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/kategori/tutorial-lainya/</loc>
+    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/kategori/web-programming/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
@@ -176,19 +173,7 @@
     <loc>http://localhost:1313/kategori/web-programming/laravel/</loc>
     <lastmod>2023-06-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/buku/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/data-visualization/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/html/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/html/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/buku/laravel-datables/</loc>
@@ -209,19 +194,10 @@
     <loc>http://localhost:1313/buku/laravel-realtime/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pemula/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/buku/react-express/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/buku/vuejs/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/web/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/web-development/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/software/edukasi/geofebra/</loc>

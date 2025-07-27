@@ -2,6 +2,13 @@ baseURL = 'https://gitkodachi.github.io/'
 languageCode = 'en-us'
 title = 'Octocat Code'
 
+[taxonomies]
+  kategori = "kategori"
+  topik = "topik"
+  tutorial = "tutorial"
+  software = "software"
+  buku = "buku"
+
 [pagination]
   paperSize = 6
 

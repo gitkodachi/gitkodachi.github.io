@@ -4,7 +4,7 @@ linkTitle: "Belajar Git #02: Cara Install Git dan Konfigurasi Awal yang Harus Di
 date: 2025-06-27
 image: "/images/cover/git-petanikode.png"
 series: "git"
-tags: ["Git"]
+tutorial: ["Git"]
 description: "Pelajari dasar-dasar version control dengan Git untuk pemula."
 ---
 

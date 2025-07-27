@@ -54,7 +54,7 @@
     </div>
 
     <input id="searchInput" type="text" placeholder="Cari tutorial..."
-      class="w-full p-2 border border-gray-300 rounded-md dark:bg-slate-700 dark:border-slate-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-slate-500">
+      class="w-full mt-4 p-2 border border-gray-300 rounded-md dark:bg-slate-700 dark:border-slate-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-slate-500">
 
     <ul id="searchResults" class="space-y-2 max-h-64 overflow-y-auto"></ul>
   </div>
@@ -64,7 +64,7 @@
   <div class="container mx-auto px-4 lg:max-w-7xl flex justify-between">
     <div class="flex flex-row gap-1 items-center py-3 md:py-2">
       <a class="inline-block mr-2"
-          href="https://peaplesmart.github.io/" aria-label="Go to home">
+          href="https://gitkodachi.github.io/" aria-label="Go to home">
           <img src="/images/global/logo.png" alt="Logo" class="w-8 h-8 active:scale-95">
         </a>
         <a href="https://gitkodachi.github.io/"
@@ -304,50 +304,44 @@
 
   <main>
     
-<div class="container lg:max-w-7xl my-16 mx-auto px-4">
+<div class="container mx-auto px-4 lg:max-w-7xl mt-16">
 
-  
-  
+  <div class="uppercase text-teal-600 dark:text-teal-400 text-sm font-bold mb-2">Semua Kategori</div>
+  <h2 class="text-3xl font-extrabold text-slate-800 dark:text-white mb-2">
+    Kategori apa nih yang menarik perhatianmu?
+  </h2>
+  <p class="text-slate-500 dark:text-slate-300 mb-8">
+    Jika kamu tidak menemukan kategori yang dicari, kamu bisa minta kami untuk menambahkannya.
+  </p>
 
-  
-  
-
-  
-  
-  
+  <div class="flex flex-wrap gap-4 mb-16">
     
-  
+    <a href="/kategori/basic-programming/"
+       class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 px-4 py-2 rounded-md text-sm shadow hover:shadow-md transition inline-flex items-center">
+      Basic Programming <span class="ml-3 px-2 py-0.5 text-xs bg-teal-500 text-white rounded-full">2</span>
+    </a>
     
-  
+    <a href="/kategori/tutorial-lainya/"
+       class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 px-4 py-2 rounded-md text-sm shadow hover:shadow-md transition inline-flex items-center">
+      Tutorial-Lainya <span class="ml-3 px-2 py-0.5 text-xs bg-teal-500 text-white rounded-full">1</span>
+    </a>
     
-  
-
-  
-  <div class="font-bold uppercase text-teal-600 dark:text-teal-400 text-sm mb-2">
-    <a class="underline" href="/kategori">Kategori</a>
-    <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-    </svg>
+    <a href="/kategori/web-programming/"
+       class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 px-4 py-2 rounded-md text-sm shadow hover:shadow-md transition inline-flex items-center">
+      Web Programming <span class="ml-3 px-2 py-0.5 text-xs bg-teal-500 text-white rounded-full">3</span>
+    </a>
     
   </div>
 
-  <h2 class="text-3xl font-bold tracking-tight mb-2 text-slate-800 dark:text-white">
-    Ini dia yang kamu cari
-  </h2>
-
-  
-  
-
-  <p class="text-lg mb-8 text-slate-500 dark:text-slate-300">
-    Ada 0 artikel dalam kategori .
-  </p>
-
-  
-    <p class="text-slate-500 dark:text-slate-400">Belum ada artikel untuk kategori ini.</p>
-  
-
-  
-  
+  <div class="bg-slate-800 text-white p-6 rounded-xl mb-8">
+    <h3 class="font-bold uppercase text-teal-400 text-sm">Request</h3>
+    <p class="text-xl font-bold mt-2">Tidak menemukan Kategori yang kamu cari?</p>
+    <p class="mt-1 mb-4 text-slate-300">Silakan buat request agar kami bisa menambahkan.</p>
+    <a href="#"
+       class="inline-block bg-teal-500 hover:bg-teal-600 text-white font-semibold px-4 py-2 rounded">
+      Request Kategori Baru
+    </a>
+  </div>
 
 </div>
 
