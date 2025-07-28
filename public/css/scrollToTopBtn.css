@@ -3,6 +3,8 @@
   border: 2px solid white;
   box-shadow: 0 0 15px rgba(16, 185, 129, 0.7);
   transition: all 0.3s ease-in-out, transform 0.2s;
+  bottom: 2.5rem; /* atau 3rem jika ingin lebih ke atas */
+  right: 2rem;     /* geser ke kiri dari tepi */
   cursor: pointer;
 }
 
