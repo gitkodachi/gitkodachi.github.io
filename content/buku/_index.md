@@ -1,4 +1,5 @@
 ---
-title: "Daftar Buku"
-layout: list-buku
+title: "Buku"
+description: "Daftar buku bacaan favorit kami"
+layout: "list-buku"
 ---

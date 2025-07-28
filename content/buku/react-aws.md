@@ -1,7 +1,6 @@
 ---
-title: "Membangun Aplikasi Full-Stack Serverless dengan AWS dan React"
-author: "azam" # cocokkan dengan .Site.Data.authors
-tags: ["Laravel", "Data Visualization"]
+title: "Laravel Dataviz"
+author: "azam"
 penulis: "Muhammad Azamuddin"
 penerbit: "Literasikode"
 halaman: "250 Halaman"
@@ -9,13 +8,13 @@ rilis: "01 Aug 2021"
 format: "eBook (PDF, ePub)"
 harga: "Rp 450.000"
 link: "https://s.id/laravel-dataviz"
-cover: "/images/content/buku/react-aws.avif"
-#thumbnail: "/images/content/buku/react-aws.avif"
-image: "/images/content/buku/react-aws.avif"
+cover: "/images/content/buku/laravel-dataviz.avif"
+image: "/images/content/buku/laravel-dataviz.avif"
 date: 2023-01-15
-type: "buku"
 layout: "single-buku"
+draft: false
 ---
+
 
 Sebuah E-Book dalam Bahasa Indonesia yang akan menjadikan anda seorang pengembang aplikasi web modern yang handal. Disajikan secara sederhana, namun tetap up-to-date dengan standar dan perkembangan terbaru baik itu di ekosistem AWS maupun React.
 

@@ -1,7 +1,6 @@
 ---
 title: "Laravel Dataviz"
-author: "azam" # cocokkan dengan .Site.Data.authors
-tags: ["Laravel", "Data Visualization"]
+author: "azam"
 penulis: "Muhammad Azamuddin"
 penerbit: "Literasikode"
 halaman: "250 Halaman"
@@ -10,12 +9,12 @@ format: "eBook (PDF, ePub)"
 harga: "Rp 450.000"
 link: "https://s.id/laravel-dataviz"
 cover: "/images/content/buku/laravel-dataviz.avif"
-#thumbnail: "/images/content/buku/laravel-dataviz.avif"
 image: "/images/content/buku/laravel-dataviz.avif"
 date: 2023-01-15
-type: "buku"
 layout: "single-buku"
+draft: false
 ---
+
 
 Studi kasus mendalam bagaimana mempersiapkan perintah SQL dari database sampai menampilkan dalam 25+ macam visualisasi.
 
