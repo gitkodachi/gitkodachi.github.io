@@ -304,201 +304,139 @@
 
   <main>
     
-<div class="container mx-auto px-4 lg:max-w-7xl mt-16">
+<div class="container lg:max-w-7xl my-16 mx-auto px-4">
 
-  <div class="uppercase text-teal-600 dark:text-teal-400 text-sm font-bold mb-2">
+  
+  <div class="font-bold uppercase text-teal-600 dark:text-teal-400 text-sm mb-2">
+    <a class="underline" href="/topik">Topik</a>
+    <svg class="h-4 w-4 inline mx-1" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+    </svg>
     MySQL
   </div>
 
-  <h2 class="text-3xl font-extrabold text-slate-800 dark:text-white mb-2">
-    Topik apa nih yang menarik perhatianmu?
+  <h2 class="text-3xl font-bold tracking-tight mb-4 text-slate-800 dark:text-white">
+    Ini dia yang kamu cari
   </h2>
 
-  <p class="text-slate-500 dark:text-slate-300 mb-8">
-    Jika kamu tidak menemukan Topik yang dicari, kamu bisa minta kami untuk menambahkannya.
-  </p>
-
   
   
-  
-  
-
-  
-    <div class="flex flex-wrap gap-4 mb-16">
-              
-        <a href="/post/laravel/"
-           class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 px-4 py-2 rounded-md text-sm shadow hover:shadow-md transition inline-flex items-center">
-          <h2 class="text-md text-center font-semibold text-slate-800 dark:text-white mb-2">
-            Laravel
-          </h2>
-          <p class="ml-3 px-2 py-0.5 text-xs bg-teal-500 text-white rounded-full">
-            <h2 id="laravel">#Laravel</h2>
-<p>Pemula bisa langsung bikin CRUD!</p>
-<h1 id="tutorial-laravel-untuk-pemula">Tutorial Laravel untuk Pemula</h1>
-<p><strong>Sabardi</strong></p>
-<hr>
-<h2 id="pengenalan-laravel">Pengenalan Laravel</h2>
-<p><strong>Laravel</strong> adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web&hellip;</p>
-          </p>
-        </a>
-              
-        <a href="/post/produk-crud/"
-           class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 px-4 py-2 rounded-md text-sm shadow hover:shadow-md transition inline-flex items-center">
-          <h2 class="text-md text-center font-semibold text-slate-800 dark:text-white mb-2">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+      
+        <div class="shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600">
+          <a href="/post/produk-crud/" class="block mb-3">
+            <picture>
+              <img class="lazyload w-full h-48 object-cover rounded-2xl dark:brightness-75"
+                   style="aspect-ratio: 16/9;"
+                   src="http://localhost:1313/images/cover/laravel-11.png"
+                   alt="Membuat CRUD Produk">
+            </picture>
+          </a>
+          <span class="text-sm font-medium text-slate-800 dark:text-white">
             Membuat CRUD Produk
-          </h2>
-          <p class="ml-3 px-2 py-0.5 text-xs bg-teal-500 text-white rounded-full">
-            <h2 id="menambahkan-produk">Menambahkan Produk</h2>
-<p>Tambahkan kode berikut ke dalam controller:</p>
-<div class="rounded overflow-hidden border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 relative group text-xs">
-  
-    <div class="px-3 py-1.5 font-semibold bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-600">
-      ProdukController.php
-    </div>
-  
-
-  <button onclick="copyCode(this)" 
-          class="absolute top-1.5 right-1.5 text-[10px] px-1.5 py-0.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded shadow hidden group-hover:block transition">
-    Copy
-  </button>
-
-  <pre class="bg-white dark:bg-slate-900 px-3 py-2 text-[13px] text-slate-800 dark:text-slate-100 overflow-auto">
-    <code class="language-php">
-public function store(Request $request)
-{
-    $request->validate([
-        'nama' => 'required|max:45',
-        'jenis' => 'required|max:45',
-        // ...
-    ]);
-}
-</code>
-  </pre>
-</div>
-
-<hr>
-<h2 id="routing">Routing</h2>
-<p>Tambahkan routing ke dalam file <code>routes/web.php</code>:</p>
+          </span>
+          <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-2 mb-1 line-clamp-2">
+            <a href="/post/produk-crud/">Membuat CRUD Produk</a>
+          </h3>
+          <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+            Menambahkan Produk Tambahkan kode berikut ke dalam controller:
+ProdukController.phpCopypublic function store(Request …
           </p>
-        </a>
-              
-        <a href="/post/tutorial-laravel/"
-           class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 px-4 py-2 rounded-md text-sm shadow hover:shadow-md transition inline-flex items-center">
-          <h2 class="text-md text-center font-semibold text-slate-800 dark:text-white mb-2">
+        </div>
+      
+        <div class="shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600">
+          <a href="/post/tutorial-laravel/" class="block mb-3">
+            <picture>
+              <img class="lazyload w-full h-48 object-cover rounded-2xl dark:brightness-75"
+                   style="aspect-ratio: 16/9;"
+                   src="http://localhost:1313/images/cover/laravel-11.png"
+                   alt="Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!">
+            </picture>
+          </a>
+          <span class="text-sm font-medium text-slate-800 dark:text-white">
             Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!
-          </h2>
-          <p class="ml-3 px-2 py-0.5 text-xs bg-teal-500 text-white rounded-full">
-            <h2 id="pendahuluan">Pendahuluan</h2>
-<p>Laravel 11 hadir dengan berbagai fitur baru yang membuat pengembangan web lebih efisien&hellip;</p>
-<h3 id="instalasi-laravel-11">Instalasi Laravel 11</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">composer create-project laravel/laravel:^11.0 my-project
-</span></span></code></pre></div><p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &ldquo;de Finibus Bonorum et Malorum&rdquo; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &ldquo;Lorem ipsum dolor sit amet..&rdquo;, comes from a line in section 1.10.32.</p>
+          </span>
+          <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-2 mb-1 line-clamp-2">
+            <a href="/post/tutorial-laravel/">Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</a>
+          </h3>
+          <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+            Pendahuluan Laravel 11 hadir dengan berbagai fitur baru yang membuat pengembangan web lebih efisien&hellip;
+Instalasi …
           </p>
-        </a>
-              
-        <a href="/post/tutorial/"
-           class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 px-4 py-2 rounded-md text-sm shadow hover:shadow-md transition inline-flex items-center">
-          <h2 class="text-md text-center font-semibold text-slate-800 dark:text-white mb-2">
+        </div>
+      
+        <div class="shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600">
+          <a href="/post/tutorial/" class="block mb-3">
+            <picture>
+              <img class="lazyload w-full h-48 object-cover rounded-2xl dark:brightness-75"
+                   style="aspect-ratio: 16/9;"
+                   src="http://localhost:1313/images/cover/laravel-11.png"
+                   alt="Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!">
+            </picture>
+          </a>
+          <span class="text-sm font-medium text-slate-800 dark:text-white">
             Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!
-          </h2>
-          <p class="ml-3 px-2 py-0.5 text-xs bg-teal-500 text-white rounded-full">
-            <h2 id="pendahuluan">Pendahuluan</h2>
-<p>Laravel 11 hadir dengan berbagai fitur baru yang membuat pengembangan web lebih efisien&hellip;</p>
-<h3 id="instalasi-laravel-11">Instalasi Laravel 11</h3>
-<div class="rounded overflow-hidden border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 relative group text-xs">
-  
-    <div class="px-3 py-1.5 font-semibold bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-600">
-      Contoh Kode
-    </div>
-  
-
-  <button onclick="copyCode(this)" 
-          class="absolute top-1.5 right-1.5 text-[10px] px-1.5 py-0.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded shadow hidden group-hover:block transition">
-    Copy
-  </button>
-
-  <pre class="bg-white dark:bg-slate-900 px-3 py-2 text-[13px] text-slate-800 dark:text-slate-100 overflow-auto">
-    <code class="language-php">
-composer create-project laravel/laravel:^11.0 my-project
-</code>
-  </pre>
-</div>
-
-<div class="rounded overflow-hidden border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 relative group text-xs">
-  
-    <div class="px-3 py-1.5 font-semibold bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-600">
-      Contoh Kode
-    </div>
-  
-
-  <button onclick="copyCode(this)" 
-          class="absolute top-1.5 right-1.5 text-[10px] px-1.5 py-0.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded shadow hidden group-hover:block transition">
-    Copy
-  </button>
-
-  <pre class="bg-white dark:bg-slate-900 px-3 py-2 text-[13px] text-slate-800 dark:text-slate-100 overflow-auto">
-    <code class="language-php">
-composer create-project laravel/laravel:^11.0 my-project
-</code>
-  </pre>
-</div>
-
-<div class="rounded overflow-hidden border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 relative group text-xs">
-  
-    <div class="px-3 py-1.5 font-semibold bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-600">
-      Contoh Kode
-    </div>
-  
-
-  <button onclick="copyCode(this)" 
-          class="absolute top-1.5 right-1.5 text-[10px] px-1.5 py-0.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded shadow hidden group-hover:block transition">
-    Copy
-  </button>
-
-  <pre class="bg-white dark:bg-slate-900 px-3 py-2 text-[13px] text-slate-800 dark:text-slate-100 overflow-auto">
-    <code class="language-bash">
-echo "Hello World"
-</code>
-  </pre>
-</div>
+          </span>
+          <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-2 mb-1 line-clamp-2">
+            <a href="/post/tutorial/">Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</a>
+          </h3>
+          <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+            Pendahuluan Laravel 11 hadir dengan berbagai fitur baru yang membuat pengembangan web lebih efisien&hellip;
+Instalasi …
           </p>
-        </a>
-              
-        <a href="/kategori/web-programming/laravel/"
-           class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 px-4 py-2 rounded-md text-sm shadow hover:shadow-md transition inline-flex items-center">
-          <h2 class="text-md text-center font-semibold text-slate-800 dark:text-white mb-2">
+        </div>
+      
+        <div class="shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600">
+          <a href="/post/laravel/" class="block mb-3">
+            <picture>
+              <img class="lazyload w-full h-48 object-cover rounded-2xl dark:brightness-75"
+                   style="aspect-ratio: 16/9;"
+                   src="http://localhost:1313/images/cover/laravel-11.png"
+                   alt="Laravel">
+            </picture>
+          </a>
+          <span class="text-sm font-medium text-slate-800 dark:text-white">
+            Laravel
+          </span>
+          <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-2 mb-1 line-clamp-2">
+            <a href="/post/laravel/">Laravel</a>
+          </h3>
+          <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+            #Laravel Pemula bisa langsung bikin CRUD!
+Tutorial Laravel untuk Pemula Sabardi
+Pengenalan Laravel Laravel adalah sebuah …
+          </p>
+        </div>
+      
+        <div class="shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600">
+          <a href="/kategori/web-programming/laravel/" class="block mb-3">
+            <picture>
+              <img class="lazyload w-full h-48 object-cover rounded-2xl dark:brightness-75"
+                   style="aspect-ratio: 16/9;"
+                   src="http://localhost:1313/images/cover/laravel-11.png"
+                   alt="Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!">
+            </picture>
+          </a>
+          <span class="text-sm font-medium text-slate-800 dark:text-white">
             Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!
-          </h2>
-          <p class="ml-3 px-2 py-0.5 text-xs bg-teal-500 text-white rounded-full">
-            <h2 id="laravel">#Laravel</h2>
-<h2 id="php">#PHP</h2>
-<h2 id="mysql">#MySQL</h2>
-<p>Pemula bisa langsung bikin CRUD!</p>
-<h1 id="tutorial-laravel-untuk-pemula">Tutorial Laravel untuk Pemula</h1>
-<p><strong>Sabardi</strong></p>
-<hr>
-<h2 id="pengenalan-laravel">Pengenalan Laravel</h2>
-<p><strong>Laravel</strong> adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web&hellip;</p>
+          </span>
+          <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-2 mb-1 line-clamp-2">
+            <a href="/kategori/web-programming/laravel/">Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</a>
+          </h3>
+          <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+            #Laravel #PHP #MySQL Pemula bisa langsung bikin CRUD!
+Tutorial Laravel untuk Pemula Sabardi
+Pengenalan Laravel Laravel …
           </p>
-        </a>
+        </div>
       
     </div>
 
     
+    <div class="flex justify-center mt-8">
+      
+    </div>
   
-
-  <div class="bg-slate-800 text-white p-6 rounded-xl mb-8">
-    <h3 class="font-bold uppercase text-teal-400 text-sm">Request</h3>
-    <p class="text-xl font-bold mt-2">Tidak menemukan Topik yang kamu cari?</p>
-    <p class="mt-1 mb-4 text-slate-300">
-      Silakan buat request agar kami bisa menambahkan.
-    </p>
-    <a href="#"
-       class="inline-block bg-teal-500 hover:bg-teal-600 text-white font-semibold px-4 py-2 rounded">
-      Request Topik Baru
-    </a>
-  </div>
-
 </div>
 
   </main>

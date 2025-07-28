@@ -29,5 +29,12 @@
       <guid>http://localhost:1313/topik/php/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Git</title>
+      <link>http://localhost:1313/topik/git/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/topik/git/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

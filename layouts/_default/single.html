@@ -36,6 +36,27 @@
         
         {{ partial "components/taxonomies.html" (dict "page" .) }}
 
+        {{ $kategori := .Params.kategori }}
+        {{ if $kategori }}
+          <section class="flex gap-1 flex-wrap">
+            {{ if reflect.IsSlice $kategori }}
+              {{ range $kategori }}
+                <a rel="tag"
+                  class="p-1 px-2 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-700 dark:hover:text-white dark:hover:bg-slate-600 hover:text-teal-600 hover:bg-teal-100/25"
+                  href="{{ "/kategori/" | relLangURL }}{{ . | urlize }}/">
+                  #{{ . }}
+                </a>
+              {{ end }}
+            {{ else }}
+              <a rel="tag"
+                class="p-1 px-2 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-700 dark:hover:text-white dark:hover:bg-slate-600 hover:text-teal-600 hover:bg-teal-100/25"
+                href="{{ "/kategori/" | relLangURL }}{{ $kategori | urlize }}/">
+                #{{ $kategori }}
+              </a>
+            {{ end }}
+          </section>
+        {{ end }}
+
       </header>
 
       <!-- TAMBAHKAN FEATURED IMAGE DI SINI -->

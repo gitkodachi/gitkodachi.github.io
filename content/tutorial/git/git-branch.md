@@ -4,6 +4,7 @@ date: 2025-06-27
 image: "/images/cover/git-petanikode.png"
 series: "git"
 tutorial: ["Git"]
+topik: ["Git"]
 description: "Pelajari dasar-dasar version control dengan Git untuk pemula."
 ---
 

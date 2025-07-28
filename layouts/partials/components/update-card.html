@@ -1,0 +1,28 @@
+<article class="shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:outline dark:hover:outline-slate-600 dark:hover:outline-1">
+  <a href="{{ .RelPermalink }}" class="flex gap-4 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg p-4 hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+    <picture>
+      {{ if .Params.thumbnail }}
+        <img
+          class="lazyload rounded-xl object-cover h-48 w-96 dark:brightness-75 lazyloaded"
+          src="{{ .Params.thumbnail | absURL }}"
+          alt="{{ .Title }}" />
+      {{ else }}
+        <img
+          class="w-full h-48 object-cover bg-gray-200"
+          src="/images/thumbnail/placeholder.svg"
+          alt="Placeholder" />
+      {{ end }}
+    </picture>
+  </a>
+
+  <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">
+    <a href="{{ .RelPermalink }}"
+       class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+      {{ .Title }}
+    </a>
+  </h3>
+
+  <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 line-clamp-3">
+    {{ .Description | default .Summary | plainify | truncate 120 }}
+  </p>
+</article>
