@@ -1,0 +1,10 @@
+{{/* Shortcode: note.html, tip.html, etc. */}}
+{{ $type := .Get "type" | default "caution" }}
+{{ $title := .Get "title" | default (title $type) }}
+
+<div class="alert-box alert-{{ $type }}">
+  <div class="alert-title">{{ $title }}</div>
+  <div class="alert-body">
+    {{ .Inner | markdownify }}
+  </div>
+</div>

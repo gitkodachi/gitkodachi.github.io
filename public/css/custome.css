@@ -1,7 +1,62 @@
+/* Global font settings */
 body {
-  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
 }
 
 h1, h2, h3 {
-  font-family: 'Rubik', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: 'Rubik', sans-serif;
+}
+
+/* Code block and inline code */
+pre code,
+code {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.8125rem; /* 13px */
+  line-height: 1.5;
+}
+
+/* Block code style */
+pre {
+  display: block;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  background-color: #f8fafc; /* slate-50 */
+  color: #1e293b; /* slate-800 */
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0; /* slate-200 */
+}
+
+/* Inline code */
+code {
+  background-color: #f1f5f9; /* slate-100 */
+  color: #1e293b;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+}
+
+/* Dark mode support */
+.dark pre {
+  background-color: #0f172a; /* slate-900 */
+  color: #f1f5f9; /* slate-100 */
+  border: 1px solid #334155; /* slate-700 */
+}
+
+.dark code {
+  background-color: #1e293b; /* slate-800 */
+  color: #e2e8f0; /* slate-200 */
+}
+
+/* Optional details styling */
+details {
+  border: 1px solid #cbd5e1; /* slate-300 */
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #f8fafc;
+}
+
+.dark details {
+  border-color: #475569; /* slate-600 */
+  background-color: #1e293b;
 }
