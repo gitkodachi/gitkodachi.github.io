@@ -12,89 +12,88 @@ topik: ["windows", "office"]
 
 ## Microsoft Activation Scripts (MAS)
 
-Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.
+Aktivator Windows dan Office open-source dengan berbagai metode aktivasi termasuk HWID, Ohook, TSforge, KMS38, dan Online KMS, dilengkapi fitur troubleshooting lanjutan.
 
-### How to Activate Windows / Office?
+---
 
-#### Method 1 - PowerShell (Windows 8 and later) ❤️
+### Cara Mengaktivasi Windows/Office
+
+#### Metode 1 - PowerShell (Windows 8 dan yang lebih baru) ❤️
 ---
 
 {{< details summary="Metode 1" >}}
 
-1.  **Open PowerShell**  
-	To do that, press the Windows key + X, then select PowerShell or Terminal.
+1.  **Buka Powershell**  
+	Untuk melakukannya, tekan tombol Windows + X, lalu pilih PowerShell atau Terminal.
 
-2.  **Copy and paste the code below, then press enter.**  
+2.  **Salin dan tempel kode di bawah ini, lalu tekan enter.**  
     ```
     irm https://get.activated.win | iex
     ```
-    Alternatively, you can use the following (this will be deprecated in the future):  
+    Alternatifnya, Anda dapat menggunakan yang berikut ini (ini akan ditinggalkan di masa mendatang):  
     ```
     irm https://massgrave.dev/get | iex
     ```
 
-3.   You will see the activation options. Choose the activation options highlighted in green. 
+3.   Anda akan melihat opsi aktivasi. Pilih opsi aktivasi yang disorot dengan warna hijau. 
 
-4.   That's all
+4.   Selesai Itu saja
 
 {{< /details >}}
 
-#### Method 2 - Traditional (Windows Vista and later)
+#### Metode 2 - Tradisional (Windows Vista dan yang lebih baru)
 
 {{< details summary="Metode 1" >}}
 1. Download dari salah satu link:
    - **Github**: [https://github.com/...](https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip)
    - **Mirror**: [https://git.activated.win/...](https://git.activated.win/massgrave/Microsoft-Activation-Scripts/archive/master.zip)
-    
-2.  Right-click on the downloaded zip file and extract it.
-3.  In the extracted folder, find the folder named `All-In-One-Version`.
-4.  Run the file named `MAS_AIO.cmd`.
-5.  You will see the activation options. Follow the on-screen instructions.
-6.  That's all.
+
+2.  Matikan sementara windows defender  atau antivirus lainya jika ada.    
+2.  Klik kanan pada file zip yang diunduh dan ekstrak.
+3.  Pada folder hasil ekstraksi, cari folder yang bernama `All-In-One-Version`.
+4.  Jalankan file bernama `MAS_AIO.cmd`.
+5.  Anda akan melihat opsi aktivasi. Ikuti petunjuk di layar.
+6.  Selesai Itu saja.
 {{< /details >}}
 
 
-- To activate additional products such as **Office for macOS, Visual Studio, RDS CALs, and Windows XP**, check [here](unsupported_products_activation.md).
-- To run the scripts in unattended mode, check [here](command_line_switches.md).
+- Untuk mengaktifkan produk tambahan seperti **Office untuk macOS, Visual Studio, RDS CAL, dan Windows XP**, check [disini](unsupported_products_activation.md).
+- Untuk menjalankan skrip dalam mode tanpa pengawasan, centang [disini](command_line_switches.md).
 
-### Not working ❓
+### Tidak bekerja ❓
 
 {{< note title="Catatan" >}}
-
-- If you are unable to launch MAS using the PowerShell method, please refer to Method 2 above.
-- If MAS launches but displays errors, check for troubleshooting steps highlighted in blue and follow them.
-- If issues persist, feel free to reach out to us [here](troubleshoot.md).
-
+- Jika Anda tidak dapat meluncurkan MAS menggunakan metode PowerShell, lihat Metode 2 di atas.
+- Jika MAS diluncurkan tetapi menampilkan kesalahan, periksa langkah pemecahan masalah yang disorot dengan warna biru dan ikuti.
+- Jika masalah masih berlanjut, jangan ragu untuk menghubungi kami [disini](troubleshoot.md).
 {{< /note >}}
 
 {{< info title="Informasi" >}}
-
-- The IRM command in PowerShell downloads a script from a specified URL, and the IEX command executes it.
-- Always double-check the URL before executing the command and verify the source is trustworthy when manually downloading files.
-- Be cautious, as some spread malware disguised as MAS by changing the URL in the IRM command.
-
+- Perintah IRM di PowerShell mengunduh skrip dari URL tertentu, dan perintah IEX mengeksekusinya.
+- Selalu periksa ulang URL sebelum menjalankan perintah dan verifikasi sumbernya dapat dipercaya saat mengunduh file secara manual.
+- Berhati-hatilah, karena beberapa orang menyebarkan malware yang menyamar sebagai MAS dengan mengubah URL dalam perintah IRM.
 {{< /info >}}
 
-## MAS Latest Release
+## MAS Rilis Terakhir
 
-Last Release - v3.4 (3-June-2025)  
+Rilis Terakhir - v3.4 (3-June-2025)  
 [GitHub](https://github.com/massgravel/Microsoft-Activation-Scripts) / [Azure DevOps](https://dev.azure.com/massgrave/_git/Microsoft-Activation-Scripts) / [Self-hosted Git](https://git.activated.win/massgrave/Microsoft-Activation-Scripts)
 
-## Features
+## Fitur
 
-- **HWID (Digital License)** Method to Permanently Activate Windows
-- **Ohook** Method to Permanently Activate Office
-- **TSforge** Method to Permanently Activate Windows/ESU/Office
-- **KMS38** Method to Activate Windows Till the Year 2038
-- **Online KMS** Method to Activate Windows/Office For 180 Days (Lifetime With Renewal Task)
--   Advanced Activation Troubleshooting
--   $OEM$ Folders For Preactivation
--   Change Windows Edition
--   Change Office Edition
--   Check Windows/Office Activation Status
--   Available in All In One and Separate Files Versions
--   Fully Open Source and Based on Batch Scripts
--   Fewer Antivirus Detections
+- **HWID (Lisensi Digital)** Metode Aktivasi Windows Permanen
+- **Ohook** Metode Aktivasi Office Permanen
+- **TSforge** Metode Aktivasi Windows/ESU/Office Permanen
+- **KMS38** Metode Aktivasi Windows Hingga Tahun 2038
+- **KMS Online** Metode Aktivasi Windows/Office Selama 180 Hari (Seumur Hidup dengan Tugas Perpanjangan)
+- Pemecahan Masalah Aktivasi Lanjutan
+- Folder $OEM$ untuk Pra-aktivasi
+- Ubah Edisi Windows
+- Ubah Edisi Office
+- Periksa Status Aktivasi Windows/Office
+- Tersedia dalam Versi All-in-One dan File Terpisah
+- Sepenuhnya Open Source dan Berbasis Skrip Batch
+- Lebih Sedikit Deteksi Antivirus
 
 ## Activations Summary
 
@@ -106,8 +105,8 @@ Last Release - v3.4 (3-June-2025)
 | KMS38           | Windows 10-11-Server   | Till the Year 2038                   | No                  |
 | Online KMS      | Windows / Office       | 180 Days. Lifetime With Renewal Task | Yes                 |
 
-For more details, use the respective activation details in Docs and [comparison chart](chart.md).  
-To activate unsupported products such as **Office on Mac**, check [here](unsupported_products_activation.md).
+Untuk detail lebih lanjut, gunakan detail aktivasi masing-masing di Dokumen dan [grafik perbandingan](chart.md).  
+Untuk mengaktifkan produk yang tidak didukung seperti **Office di Mac**, centang [disini](unsupported_products_activation.md).
 
 ## Screenshots
 
@@ -129,4 +128,4 @@ To activate unsupported products such as **Office on Mac**, check [here](unsuppo
 
 ![MAS_change_office_edition_3](/images/content/tutorial/MAS_change_office_edition_3.png)
 
-Made with Love ❤️
+Dibuat dengan Cinta ❤️
