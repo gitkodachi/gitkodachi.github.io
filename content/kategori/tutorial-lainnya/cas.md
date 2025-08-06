@@ -14,7 +14,7 @@ Sebuah skrip Windows Powershell yang kuat untuk menampilkan status lisensi Micro
 **Pembuat:** [abbodi1406](https://github.com/abbodi1406)  
 **Repositori Github:** https://github.com/paintnokio/CAS
 
-# Cara Menggunakan
+## Cara Menggunakan
 ---
 
 1. Kunjungi [Repositori Github](https://devcomp.fun/CAS)
@@ -22,7 +22,7 @@ Sebuah skrip Windows Powershell yang kuat untuk menampilkan status lisensi Micro
 3. Ekstrak file ZIP ke lokasi yang diinginkan di komputer Anda
 4. Jalankan file cmd_launcher.cmd yang ada di folder hasil ekstraksi
 
-# Produk yang Didukung
+## Produk yang Didukung
 ---
 
 - Windows Vista dan versi lebih baru / Windows Server 2008 dan versi lebih baru
@@ -30,7 +30,7 @@ Sebuah skrip Windows Powershell yang kuat untuk menampilkan status lisensi Micro
 - Aplikasi Office UWP di Windows 10/11
 - Host KMS Windows dan Office (CSVLK), terinstal di Windows Server 2003 dan versi lebih baru
 
-# Fitur Utama
+## Fitur Utama
 ---
 
 - Memerlukan Windows Powershell 2.0 minimal
@@ -44,28 +44,28 @@ Sebuah skrip Windows Powershell yang kuat untuk menampilkan status lisensi Micro
 - Mengimplementasikan fungsi **vNextDiag.ps1** untuk mendeteksi lisensi Office vNext
 - Mengimplementasikan tool [Client Licensing Check](https://github.com/asdcorp/clic) untuk Windows 8+
 
-# Keunggulan Check-Activation-Status.ps1
+## Keunggulan Check-Activation-Status.ps1
 ---
 
 - Lebih cepat dengan metode PInvoke native dari Software Licensing Client Dll
 - Menampilkan lebih banyak info untuk semua versi Windows dan Office yang didukung
 - Mendukung "Client Licensing Check" untuk Windows 7 dan Vista
 
-# Parameter
+## Parameter
 ---
 
-|Switch |Fungsi|
-|-------|------|
-| -IID  | Tampilkan Offline Installation ID |
-| -Dlv  | Tampilkan IID, hitungan Rearm, Trusted time, Product ID (jika tersedia) |
-| -All  | Tampilkan status untuk semua ID |
-| -Pass | Lewati prompt akhir atau pembersihan buffer window |
+| Switch | Fungsi |
+|--------|--------|
+| `-IID` | Tampilkan Offline Installation ID |
+| `-Dlv` | Tampilkan IID, hitungan Rearm, Trusted time, Product ID (jika tersedia) |
+| `-All` | Tampilkan status untuk semua ID |
+| `-Pass` | Lewati prompt akhir atau pembersihan buffer window |
 
-# Tidak didukung
+## Tidak didukung
 ---
 
 Status Volume Licensing berbasis Token.
 
-# Lisensi
+## Lisensi
 ---
 Projek ini dilisensikan di bawah MIT License.

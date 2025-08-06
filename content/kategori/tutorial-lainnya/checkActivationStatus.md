@@ -1,5 +1,5 @@
 ---
-title: "Check Activation Status"
+title: "Status Aktivasi"
 date: 2025-06-25
 author: "default"
 avatar: /images/global/avatar.png

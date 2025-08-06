@@ -66,3 +66,34 @@ a:hover {
   color: #48ff00; /* Warna oranye saat hover, bisa disesuaikan */
   text-decoration: underline; /* Tambahkan underline saat hover */
 }
+
+/* Style untuk tabel */
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-family: monospace; /* Gaya font seperti terminal */
+}
+
+.markdown th, .markdown td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.markdown th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.markdown tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Style untuk kode dalam tabel */
+.markdown table code {
+  background-color: #f0f0f0;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+}
