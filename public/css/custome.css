@@ -7,15 +7,7 @@ h1, h2, h3 {
   font-family: 'Rubik', sans-serif;
 }
 
-/* Code block and inline code */
-pre code,
-code {
-  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 0.8125rem; /* 13px */
-  line-height: 1.5;
-}
-
-/* Block code style */
+/* Code blocks */
 pre {
   display: block;
   padding: 0.75rem 1rem;
@@ -27,19 +19,29 @@ pre {
   border: 1px solid #e2e8f0; /* slate-200 */
 }
 
+pre code {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  background: transparent !important;
+  padding: 0;
+}
+
 /* Inline code */
 code {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
   background-color: #f1f5f9; /* slate-100 */
   color: #1e293b;
   padding: 0.2em 0.4em;
   border-radius: 0.25rem;
+  font-size: 0.8125rem;
 }
 
-/* Dark mode support */
+/* Dark mode */
 .dark pre {
   background-color: #0f172a; /* slate-900 */
   color: #f1f5f9; /* slate-100 */
-  border: 1px solid #334155; /* slate-700 */
+  border-color: #334155; /* slate-700 */
 }
 
 .dark code {
@@ -47,32 +49,12 @@ code {
   color: #e2e8f0; /* slate-200 */
 }
 
-/* Optional details styling */
-details {
-  border: 1px solid #cbd5e1; /* slate-300 */
-  border-radius: 0.5rem;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  background-color: #f8fafc;
-}
-
-.dark details {
-  border-color: #475569; /* slate-600 */
-  background-color: #1e293b;
-}
-
-/* Efek hover */
-a:hover {
-  color: #48ff00; /* Warna oranye saat hover, bisa disesuaikan */
-  text-decoration: underline; /* Tambahkan underline saat hover */
-}
-
-/* Style untuk tabel */
+/* Tables */
 .markdown table {
   width: 100%;
   border-collapse: collapse;
   margin: 1rem 0;
-  font-family: monospace; /* Gaya font seperti terminal */
+  font-family: monospace;
 }
 
 .markdown th, .markdown td {
@@ -90,43 +72,74 @@ a:hover {
   background-color: #f9f9f9;
 }
 
-/* Style untuk kode dalam tabel */
 .markdown table code {
   background-color: #f0f0f0;
   padding: 2px 4px;
   border-radius: 3px;
-  font-family: monospace;
 }
 
-/* Tabs Utama */
-  .simple-tabs {
+/* Tabs */
+.simple-tabs {
   margin: 1rem 0;
   border: 1px solid #e5e7eb;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   overflow: hidden;
 }
+
 .tab-buttons {
   display: flex;
-  background: #e5e6e7;
+  background: #f3f4f6; /* slate-100 */
   border-bottom: 1px solid #e5e7eb;
 }
+
 .tab-button {
-  padding: 8px 16px;
+  padding: 0.75rem 1.25rem;
   background: none;
   border: none;
   cursor: pointer;
   font-weight: 600;
-  color: #4b5563;
+  color: #4b5563; /* slate-600 */
+  transition: all 0.2s ease;
 }
+
 .tab-button.active {
-  background: 4b5563;
-  color: #02440b;
-  border-bottom: 2px solid #02440b;
+  background: #ffffff;
+  color: #111827; /* slate-900 */
+  border-bottom: 2px solid #3bf683; /* green-500 */
 }
+
 .tab-content {
   display: none;
-  padding: 16px;
+  padding: 1.25rem;
+  background: #ffffff;
 }
+
 .tab-content.active {
   display: block;
+}
+
+/* Links */
+a:hover {
+  color: #3bf683; /* green-500 */
+  text-decoration: underline;
+}
+
+/* Dark mode tabs */
+.dark .tab-buttons {
+  background: #1f2937; /* slate-800 */
+  border-color: #374151; /* slate-700 */
+}
+
+.dark .tab-button {
+  color: #d1d5db; /* slate-300 */
+}
+
+.dark .tab-button.active {
+  background: #111827; /* slate-900 */
+  color: #ffffff;
+  border-color: #60fabf; /* gree-400 */
+}
+
+.dark .tab-content {
+  background: #111827;
 }

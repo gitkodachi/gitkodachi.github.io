@@ -20,7 +20,7 @@ topik: ["windows", "office"]
 - [Android](#) **Coming Soon** (Custom ROM)
 
 #### 🏢 Perkantoran
-- [Microsoft Office](https://www.microsoft.com/microsoft-365) (Word, Excel, PPT)
+- [Microsoft Office](office_c2r_links.md) (Word, Excel, PPT)
 - [LibreOffice](https://www.libreoffice.org/) 🆓 Open-source
 - [WPS Office](https://www.wps.com/) (Alternatif Ringan)
 - [Google Workspace](https://workspace.google.com/) ☁️ Cloud-based
