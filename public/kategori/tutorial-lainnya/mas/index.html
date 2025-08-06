@@ -518,10 +518,10 @@ Untuk melakukannya, tekan tombol Windows + X, lalu pilih PowerShell atau Termina
 </li>
 <li>
 <p><strong>Salin dan tempel kode di bawah ini, lalu tekan enter.</strong></p>
-<pre tabindex="0"><code>irm https://get.activated.win | iex
-</code></pre><p>Alternatifnya, Anda dapat menggunakan yang berikut ini (ini akan ditinggalkan di masa mendatang):</p>
-<pre tabindex="0"><code>irm https://massgrave.dev/get | iex
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">irm </span><span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">get</span><span class="p">.</span><span class="py">activated</span><span class="p">.</span><span class="py">win</span> <span class="p">|</span> <span class="nb">iex
+</span></span></span></code></pre></div><p>Alternatifnya, Anda dapat menggunakan yang berikut ini (ini akan ditinggalkan di masa mendatang):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ps1" data-lang="ps1"><span class="line"><span class="cl"><span class="nb">irm </span><span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">massgrave</span><span class="p">.</span><span class="n">dev</span><span class="p">/</span><span class="n">get</span> <span class="p">|</span> <span class="nb">iex
+</span></span></span></code></pre></div></li>
 <li>
 <p>Anda akan melihat opsi aktivasi. Pilih opsi aktivasi yang disorot dengan warna hijau.</p>
 </li>
@@ -1068,6 +1068,69 @@ function switchTab(button, tabId) {
 }
 </script>
 
+<script>
+ 
+document.addEventListener('DOMContentLoaded', () => {
+  const createCopyButton = (pre) => {
+    if (pre.querySelector('.copy-btn') || !pre.querySelector('code')) return;
+
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'copy-btn absolute top-2 right-2 text-xs px-2 py-1 bg-slate-700 hover:bg-slate-600 text-white rounded opacity-0 transition-all duration-200';
+    copyBtn.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>';
+    copyBtn.setAttribute('aria-label', 'Copy code');
+    copyBtn.setAttribute('title', 'Copy to clipboard');
+
+    copyBtn.addEventListener('click', async () => {
+      try {
+        const code = pre.querySelector('code').textContent.trim();
+        await navigator.clipboard.writeText(code);
+        
+        copyBtn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>';
+        copyBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+        
+        setTimeout(() => {
+          copyBtn.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>';
+          copyBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
+        }, 2000);
+      } catch (err) {
+        copyBtn.innerHTML = '<i class="fas fa-times" aria-hidden="true"></i>';
+        copyBtn.classList.add('bg-red-500', 'hover:bg-red-600');
+        setTimeout(() => {
+          copyBtn.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>';
+          copyBtn.classList.remove('bg-red-500', 'hover:bg-red-600');
+        }, 2000);
+      }
+    });
+
+    pre.style.position = 'relative';
+    pre.appendChild(copyBtn);
+
+    pre.addEventListener('mouseenter', () => copyBtn.classList.remove('opacity-0'));
+    pre.addEventListener('mouseleave', () => {
+      if (!copyBtn.innerHTML.includes('check')) {
+        copyBtn.classList.add('opacity-0');
+      }
+    });
+  };
+
+  
+  document.querySelectorAll('pre').forEach(createCopyButton);
+
+  
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach((node) => {
+        if (node.nodeType === 1) { 
+          if (node.matches('pre')) createCopyButton(node);
+          node.querySelectorAll?.('pre').forEach(createCopyButton);
+        }
+      });
+    });
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+});
+</script>
   <footer class="pt-16 bg-slate-800 text-white">
   <div class="container mx-auto px-4 lg:max-w-7xl grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
     

@@ -553,6 +553,49 @@ function switchTab(button, tabId) {
 }
 </script>
 
+<script>
+ 
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('pre > code').forEach(codeBlock => {
+    const pre = codeBlock.parentElement;
+    
+    
+    if (pre.querySelector('.copy-btn')) return;
+    
+    
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'copy-btn absolute top-2 right-2 text-xs px-2 py-1 bg-slate-700 hover:bg-slate-600 text-white rounded opacity-0 transition';
+    copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+    
+    
+    copyBtn.onclick = () => {
+      navigator.clipboard.writeText(codeBlock.textContent.trim())
+        .then(() => {
+          copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+          setTimeout(() => {
+            copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+          }, 2000);
+        })
+        .catch(err => {
+          console.error('Copy failed:', err);
+          copyBtn.innerHTML = '<i class="fas fa-times"></i>';
+        });
+    };
+    
+    
+    pre.style.position = 'relative';
+    pre.appendChild(copyBtn);
+    
+    
+    pre.addEventListener('mouseenter', () => {
+      copyBtn.classList.remove('opacity-0');
+    });
+    pre.addEventListener('mouseleave', () => {
+      copyBtn.classList.add('opacity-0');
+    });
+  });
+});
+</script>
   <footer class="pt-16 bg-slate-800 text-white">
   <div class="container mx-auto px-4 lg:max-w-7xl grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
     

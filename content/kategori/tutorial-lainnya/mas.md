@@ -26,7 +26,7 @@ Aktivator Windows dan Office open-source dengan berbagai metode aktivasi termasu
 	Untuk melakukannya, tekan tombol Windows + X, lalu pilih PowerShell atau Terminal.
 2.  **Salin dan tempel kode di bawah ini, lalu tekan enter.**
 
-    ```ps1
+    ```powershell
     irm https://get.activated.win | iex
     ```
     Alternatifnya, Anda dapat menggunakan yang berikut ini (ini akan ditinggalkan di masa mendatang):
