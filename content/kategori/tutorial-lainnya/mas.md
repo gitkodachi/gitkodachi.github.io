@@ -60,7 +60,7 @@ Aktivator Windows dan Office open-source dengan berbagai metode aktivasi termasu
 {{< alert type="note" title="Perhatian" >}}
 - Jika Anda tidak dapat meluncurkan MAS menggunakan metode PowerShell, lihat Metode 2 di atas.
 - Jika MAS diluncurkan tetapi menampilkan kesalahan, periksa langkah pemecahan masalah yang disorot dengan warna biru dan ikuti.
-- Jika masalah masih berlanjut, jangan ragu untuk menghubungi kami [disini](troubleshoot.md).
+- Jika masalah masih berlanjut, jangan ragu untuk menghubungi kami [disini](../troubleshoot).
 {{< /alert >}}
 
 {{< alert type="info" title="Perhatian" >}}

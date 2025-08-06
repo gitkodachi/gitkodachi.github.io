@@ -16,7 +16,7 @@ Sebuah skrip Windows Powershell yang kuat untuk menampilkan status lisensi Micro
 
 #### Cara Menggunakan
 
-1. Kunjungi [Repositori Github](https://devcomp.fun/CAS)
+1. Kunjungi [Repositori Github](../cas)
 2. Unduh file ZIP dengan mengklik tombol "Code" lalu pilih "Download ZIP"
 3. Ekstrak file ZIP ke lokasi yang diinginkan di komputer Anda
 4. Jalankan file cmd_launcher.cmd yang ada di folder hasil ekstraksi

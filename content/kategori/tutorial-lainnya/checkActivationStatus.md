@@ -12,7 +12,7 @@ topik: ["windows", "office"]
 ### Check Activation Status
 
 Skrip Periksa Status Aktivasi di MAS merupakan pengembangan dari CAS oleh abbodi1406.
-Anda dapat membaca lebih lanjut tentang fitur-fiturnya [disni](https://gravesoft.dev/cas).
+Anda dapat membaca lebih lanjut tentang fitur-fiturnya [disni](../cas).
 
 
 {{< code lang="go" title="Contoh Golang" >}}

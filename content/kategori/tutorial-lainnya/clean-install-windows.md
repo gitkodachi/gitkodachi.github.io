@@ -16,7 +16,7 @@ Panduan tentang cara mencadangkan data dan menginstal ulang Windows.
 - File ISO Windows asli, Anda dapat mengunduhnya dari https://devcomp.fun/microsoft-download-list/
 - Versi terbaru Rufus dari https://rufus.ie/
 - Drive USB minimal 8GB 
-- Ikuti [panduan ini](remove_malware.md) sebelum membuat USB yang dapat di-boot jika Anda merasa sistem tersebut terkena malware.
+- Ikuti [panduan ini](../remove-malware) sebelum membuat USB yang dapat di-boot jika Anda merasa sistem tersebut terkena malware.
 
 {{< details summary="Sistem bersih lainnya jika sistem Anda saat ini terinfeksi dengan malware File infector." >}}
 **Mengapa?** 
@@ -132,5 +132,5 @@ folder pada drive USB dan buat file bernama `ei.cfg` (pastikan ekstensi file sud
 - Klik "Berikutnya" untuk memulai penginstalan. Windows akan secara otomatis membuat partisi yang diperlukan.
 
 {{< alert type="tip" title="Perhatian" >}}
-- Anda dapat [terhubung dengan kami](troubleshoot.md) untuk bantuan jika Anda membutuhkan.
+- Anda dapat [terhubung dengan kami](../troubleshoot) untuk bantuan jika Anda membutuhkan.
 {{< /alert >}}
