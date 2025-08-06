@@ -152,12 +152,6 @@
     <loc>http://localhost:1313/tutorial/hugo/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/kategori/tutorial-lainnya/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/kategori/tutorial-lainya/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/kategori/web-programming/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
@@ -170,7 +164,16 @@
     <loc>http://localhost:1313/kategori/tutorial-lainnya/clean-install-windows/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/kategori/tutorial-lainnya/remove-malware/</loc>
+    <lastmod>2025-06-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/topik/office/</loc>
+    <lastmod>2025-06-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/kategori/tutorial-lainnya/troubleshoot/</loc>
+    <lastmod>2025-06-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/kategori/tutorial-lainnya/download-software/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/kategori/tutorial-lainnya/checkactivationstatus/</loc>
@@ -183,6 +186,9 @@
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/tutorial/</loc>
+    <lastmod>2025-06-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/kategori/tutorial-lainya/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/topik/windows/</loc>
@@ -234,6 +240,8 @@
     <loc>http://localhost:1313/software/multimedia/</loc>
   </url><url>
     <loc>http://localhost:1313/software/produktivitas/</loc>
+  </url><url>
+    <loc>http://localhost:1313/kategori/tutorial-lainnya/</loc>
   </url><url>
     <loc>http://localhost:1313/software/multimedia/vlc/</loc>
   </url>

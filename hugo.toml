@@ -32,7 +32,7 @@ title = 'Octocat Code'
   buku = "buku"
 
 [pagination]
-  paperSize = 6
+  paperSize = 10
 
 [outputFormats]
   [outputFormats.SearchIndex]

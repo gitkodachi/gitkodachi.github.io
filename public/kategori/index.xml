@@ -16,24 +16,24 @@
       <description>&lt;p&gt;Temukan tutorial yang ingin kamu pelajari.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Tutorial Lainya</title>
-      <link>http://localhost:1313/kategori/tutorial-lainnya/</link>
+      <title>Web Programming</title>
+      <link>http://localhost:1313/kategori/web-programming/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/kategori/tutorial-lainnya/</guid>
+      <guid>http://localhost:1313/kategori/web-programming/</guid>
       <description>&lt;p&gt;Temukan tutorial yang ingin kamu pelajari.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tutorial-Lainya</title>
       <link>http://localhost:1313/kategori/tutorial-lainya/</link>
-      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/kategori/tutorial-lainya/</guid>
       <description></description>
     </item>
     <item>
-      <title>Web Programming</title>
-      <link>http://localhost:1313/kategori/web-programming/</link>
-      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/kategori/web-programming/</guid>
+      <title>Tutorial Lainya</title>
+      <link>http://localhost:1313/kategori/tutorial-lainnya/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/tutorial-lainnya/</guid>
       <description>&lt;p&gt;Temukan tutorial yang ingin kamu pelajari.&lt;/p&gt;</description>
     </item>
   </channel>

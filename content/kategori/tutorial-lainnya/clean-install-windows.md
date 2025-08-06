@@ -112,10 +112,8 @@ Atau, jika Anda tidak ingin melakukannya, Anda dapat menginstal Windows secara n
 - Setelah mem-flash ISO yang diperlukan menggunakan Rufus, navigasikan ke `\sources\` 
 folder pada drive USB dan buat file bernama `ei.cfg` (pastikan ekstensi file sudah benar). Buka file ini dengan Notepad dan masukkan teks di bawah ini.
 
-```
-[Channel]
-NoKeyChannel
-```
+
+[**Channel**](NoKeyChannel)
 
 - Sekarang Anda dapat melihat daftar edisi dan memilih edisi yang Anda inginkan dari Windows Vista hingga Windows 11. Ini juga membantu Anda menghindari penginstalan kunci dalam pengaturan Windows 8/8.1 di mana penginstalan kunci tidak dapat dilewati.
 
