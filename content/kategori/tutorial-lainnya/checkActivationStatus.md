@@ -11,8 +11,8 @@ topik: ["windows", "office"]
 
 ## Check Activation Status
 
-The Check Activation Status script in MAS is a wrapper around CAS by abbodi1406.  
-You can read more about its features [here](https://gravesoft.dev/cas).
+Skrip Periksa Status Aktivasi di MAS merupakan pengembangan dari CAS oleh abbodi1406.
+Anda dapat membaca lebih lanjut tentang fitur-fiturnya [disni](https://gravesoft.dev/cas).
 
 {{< note title="Catatan" >}}
 Ini adalah catatan penting.

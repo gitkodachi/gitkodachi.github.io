@@ -1,5 +1,5 @@
 ---
-title: "How to Activate Windows / Office?"
+title: "Bagaimana cara mengaktifkan Windows/Office?"
 date: 2025-06-25
 author: "default"
 avatar: /images/global/avatar.png
@@ -10,7 +10,7 @@ topik: ["windows", "office"]
 ---
 
 
-## Microsoft Activation Scripts (MAS)
+## Skrip Aktivasi Microsoft (MAS)
 
 Aktivator Windows dan Office open-source dengan berbagai metode aktivasi termasuk HWID, Ohook, TSforge, KMS38, dan Online KMS, dilengkapi fitur troubleshooting lanjutan.
 

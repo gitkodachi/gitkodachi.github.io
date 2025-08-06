@@ -91,19 +91,20 @@ func main() {
 &lt;/code>
  &lt;/pre>
 &lt;/div></description></item><item><title>How to Activate Windows / Office?</title><link>https://gitkodachi.github.io/kategori/tutorial-lainnya/mas/</link><pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/kategori/tutorial-lainnya/mas/</guid><description>&lt;h2 id="microsoft-activation-scripts-mas">Microsoft Activation Scripts (MAS)&lt;/h2>
-&lt;p>Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.&lt;/p>
-&lt;h3 id="how-to-activate-windows--office">How to Activate Windows / Office?&lt;/h3>
-&lt;h4 id="method-1---powershell-windows-8-and-later-">Method 1 - PowerShell (Windows 8 and later) ❤️&lt;/h4>
+&lt;p>Aktivator Windows dan Office open-source dengan berbagai metode aktivasi termasuk HWID, Ohook, TSforge, KMS38, dan Online KMS, dilengkapi fitur troubleshooting lanjutan.&lt;/p>
+&lt;hr>
+&lt;h3 id="cara-mengaktivasi-windowsoffice">Cara Mengaktivasi Windows/Office&lt;/h3>
+&lt;h4 id="metode-1---powershell-windows-8-dan-yang-lebih-baru-">Metode 1 - PowerShell (Windows 8 dan yang lebih baru) ❤️&lt;/h4>
 &lt;hr>
 &lt;details class="alert-details">
  &lt;summary>Metode 1&lt;/summary>
  &lt;div class="details-content">
  &lt;ol>
 &lt;li>
-&lt;p>&lt;strong>Open PowerShell&lt;/strong>&lt;br>
-To do that, press the Windows key + X, then select PowerShell or Terminal.&lt;/p>
+&lt;p>&lt;strong>Buka Powershell&lt;/strong>&lt;br>
+Untuk melakukannya, tekan tombol Windows + X, lalu pilih PowerShell atau Terminal.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;strong>Copy and paste the code below, then press enter.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Salin dan tempel kode di bawah ini, lalu tekan enter.&lt;/strong>&lt;/p>
 &lt;pre tabindex="0">&lt;code>irm https://get.activated.win | iex
-&lt;/code>&lt;/pre>&lt;p>Alternatively, you can use the following (this will be deprecated in the future):&lt;/p></description></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;p>Alternatifnya, Anda dapat menggunakan yang berikut ini (ini akan ditinggalkan di masa mendatang):&lt;/p></description></item></channel></rss>
