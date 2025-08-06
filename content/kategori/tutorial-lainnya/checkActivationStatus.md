@@ -36,11 +36,9 @@ contoh details
 
 
 {{< alert type="warning" title="Perhatian" >}}
-  **Penting!** Backup data Anda
-  type="tip" untuk saran praktis
-  type="note" untuk catatan teknis
-  type="warning" untuk peringatan risiko
-  type="danger" untuk konsekuensi kritis
-  type="info" untuk keterangan umum
-
+  - type="tip" untuk saran praktis
+  - type="note" untuk catatan teknis
+  - type="warning" untuk peringatan risiko
+  - type="danger" untuk konsekuensi kritis
+  - type="info" untuk keterangan umum
 {{< /alert >}}

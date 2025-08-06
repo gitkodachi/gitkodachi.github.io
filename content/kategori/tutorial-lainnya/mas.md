@@ -31,7 +31,7 @@ Aktivator Windows dan Office open-source dengan berbagai metode aktivasi termasu
     ```
     Alternatifnya, Anda dapat menggunakan yang berikut ini (ini akan ditinggalkan di masa mendatang):
 
-    ```ps1
+    ```powershell
     irm https://massgrave.dev/get | iex
     ```
 3.   Anda akan melihat opsi aktivasi. Pilih opsi aktivasi yang disorot dengan warna hijau. 
@@ -59,7 +59,7 @@ Aktivator Windows dan Office open-source dengan berbagai metode aktivasi termasu
 
 ### Tidak bekerja ❓
 
-{{< alert type="note" title="Perhatian" >}}
+{{< alert type="note" title="Catatan" >}}
 - Jika Anda tidak dapat meluncurkan MAS menggunakan metode PowerShell, lihat Metode 2 di atas.
 - Jika MAS diluncurkan tetapi menampilkan kesalahan, periksa langkah pemecahan masalah yang disorot dengan warna biru dan ikuti.
 - Jika masalah masih berlanjut, jangan ragu untuk menghubungi kami [disini](../troubleshoot).
