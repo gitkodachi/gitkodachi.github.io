@@ -1,7 +1,6 @@
-html
 <details class="alert-details">
   <summary>{{ .Get "summary" | markdownify }}</summary>
   <div class="details-content">
-    {{ .Inner | .Page.RenderString (dict "display" "block") }}
+    {{ .Inner | markdownify }}
   </div>
 </details>
