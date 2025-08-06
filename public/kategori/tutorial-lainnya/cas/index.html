@@ -18,7 +18,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Rubik:wght@500;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
 
@@ -970,44 +970,64 @@ function switchTab(button, tabId) {
 <script>
  
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('pre > code').forEach(codeBlock => {
-    const pre = codeBlock.parentElement;
-    
-    
-    if (pre.querySelector('.copy-btn')) return;
-    
-    
+  const createCopyButton = (pre) => {
+    if (pre.querySelector('.copy-btn') || !pre.querySelector('code')) return;
+
     const copyBtn = document.createElement('button');
-    copyBtn.className = 'copy-btn absolute top-2 right-2 text-xs px-2 py-1 bg-slate-700 hover:bg-slate-600 text-white rounded opacity-0 transition';
-    copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
-    
-    
-    copyBtn.onclick = () => {
-      navigator.clipboard.writeText(codeBlock.textContent.trim())
-        .then(() => {
-          copyBtn.innerHTML = '<i class="fas fa-check"></i>';
-          setTimeout(() => {
-            copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
-          }, 2000);
-        })
-        .catch(err => {
-          console.error('Copy failed:', err);
-          copyBtn.innerHTML = '<i class="fas fa-times"></i>';
-        });
-    };
-    
-    
+    copyBtn.className = 'copy-btn absolute top-2 right-2 text-xs px-2 py-1 bg-slate-700 hover:bg-slate-600 text-white rounded opacity-0 transition-all duration-200';
+    copyBtn.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>';
+    copyBtn.setAttribute('aria-label', 'Copy code');
+    copyBtn.setAttribute('title', 'Copy to clipboard');
+
+    copyBtn.addEventListener('click', async () => {
+      try {
+        const code = pre.querySelector('code').textContent.trim();
+        await navigator.clipboard.writeText(code);
+        
+        copyBtn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>';
+        copyBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+        
+        setTimeout(() => {
+          copyBtn.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>';
+          copyBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
+        }, 2000);
+      } catch (err) {
+        copyBtn.innerHTML = '<i class="fas fa-times" aria-hidden="true"></i>';
+        copyBtn.classList.add('bg-red-500', 'hover:bg-red-600');
+        setTimeout(() => {
+          copyBtn.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>';
+          copyBtn.classList.remove('bg-red-500', 'hover:bg-red-600');
+        }, 2000);
+      }
+    });
+
     pre.style.position = 'relative';
     pre.appendChild(copyBtn);
-    
-    
-    pre.addEventListener('mouseenter', () => {
-      copyBtn.classList.remove('opacity-0');
-    });
+
+    pre.addEventListener('mouseenter', () => copyBtn.classList.remove('opacity-0'));
     pre.addEventListener('mouseleave', () => {
-      copyBtn.classList.add('opacity-0');
+      if (!copyBtn.innerHTML.includes('check')) {
+        copyBtn.classList.add('opacity-0');
+      }
+    });
+  };
+
+  
+  document.querySelectorAll('pre').forEach(createCopyButton);
+
+  
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach((node) => {
+        if (node.nodeType === 1) { 
+          if (node.matches('pre')) createCopyButton(node);
+          node.querySelectorAll?.('pre').forEach(createCopyButton);
+        }
+      });
     });
   });
+
+  observer.observe(document.body, { childList: true, subtree: true });
 });
 </script>
   <footer class="pt-16 bg-slate-800 text-white">
