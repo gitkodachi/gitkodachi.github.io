@@ -1,0 +1,146 @@
+/* ==================== */
+/* ALERT SYSTEM - DUAL THEME */
+/* ==================== */
+
+:root {
+  /* Light Theme Defaults */
+  --alert-bg-light: #f8f9fa;
+  --alert-border-light: #6c757d;
+  --alert-text-light: #212529;
+  
+  /* Dark Theme Defaults */
+  --alert-bg-dark: #2d3748;
+  --alert-border-dark: #4a5568;
+  --alert-text-dark: #f7fafc;
+}
+
+/* Base Alert Structure */
+.custom-alert {
+  --alert-bg: var(--alert-bg-light);
+  --alert-border: var(--alert-border-light);
+  --alert-text: var(--alert-text-light);
+  
+  border-left: 4px solid var(--alert-border);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 0.375rem;
+  background: var(--alert-bg);
+  color: var(--alert-text);
+  page-break-inside: avoid;
+  transition: all 0.3s ease;
+}
+
+.dark .custom-alert {
+  --alert-bg: var(--alert-bg-dark);
+  --alert-border: var(--alert-border-dark);
+  --alert-text: var(--alert-text-dark);
+}
+
+/* Header Styles */
+.custom-alert-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  font-size: 1.05em;
+}
+
+/* Content Styles */
+.custom-alert-content {
+  line-height: 1.6;
+}
+.custom-alert-content > *:first-child {
+  margin-top: 0;
+}
+.custom-alert-content > *:last-child {
+  margin-bottom: 0;
+}
+
+/* ==================== */
+/* ALERT TYPE VARIANTS */
+/* ==================== */
+
+/* Tip */
+.custom-alert-tip {
+  --alert-bg-light: #f0fdf4;
+  --alert-border-light: #10b981;
+  --alert-text-light: #065f46;
+  
+  --alert-bg-dark: #1c4532;
+  --alert-border-dark: #047857;
+  --alert-text-dark: #d1fae5;
+}
+
+/* Note */
+.custom-alert-note {
+  --alert-bg-light: #eff6ff;
+  --alert-border-light: #3b82f6;
+  --alert-text-light: #1e40af;
+  
+  --alert-bg-dark: #1e3a8a;
+  --alert-border-dark: #1d4ed8;
+  --alert-text-dark: #dbeafe;
+}
+
+/* Caution/Warning */
+.custom-alert-caution {
+  --alert-bg-light: #fefce8;
+  --alert-border-light: #f59e0b;
+  --alert-text-light: #92400e;
+  
+  --alert-bg-dark: #78350f;
+  --alert-border-dark: #fbbf24;
+  --alert-text-dark: #fef3c7;
+}
+
+/* Danger/Important */
+.custom-alert-important {
+  --alert-bg-light: #fef2f2;
+  --alert-border-light: #ef4444;
+  --alert-text-light: #991b1b;
+  
+  --alert-bg-dark: #7f1d1d;
+  --alert-border-dark: #f87171;
+  --alert-text-dark: #fee2e2;
+}
+
+/* Info */
+.custom-alert-info {
+  --alert-bg-light: #ecfdf5;
+  --alert-border-light: #06b6d4;
+  --alert-text-light: #047857;
+  
+  --alert-bg-dark: #134e4a;
+  --alert-border-dark: #0d9488;
+  --alert-text-dark: #ccfbf1;
+}
+
+/* ==================== */
+/* ICON SYSTEM */
+/* ==================== */
+.custom-alert-header::before {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  content: var(--alert-icon);
+  width: 1.25em;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Type-Specific Icons */
+.custom-alert-tip .custom-alert-header::before {
+  content: "\f0eb"; /* lightbulb */
+}
+.custom-alert-note .custom-alert-header::before {
+  content: "\f15c"; /* note */
+}
+.custom-alert-caution .custom-alert-header::before {
+  content: "\f071"; /* exclamation-triangle */
+}
+.custom-alert-important .custom-alert-header::before {
+  content: "\f06a"; /* exclamation-circle */
+}
+.custom-alert-info .custom-alert-header::before {
+  content: "\f05a"; /* info-circle */
+}

@@ -39,13 +39,13 @@ Proses instalasi bersih akan memformat drive C tempat Windows diinstal; jika And
 
 
 {{< tabs >}}
-  {{< tab name="multiple partition" >}} 
+  {{< tab name="Multiple partition" >}} 
   Data Anda biasanya terletak di tempat berikut pada drive C.
   Buka folder ini `C:\Users` lalu pilih akun pengguna yang Anda gunakan.
   Data Anda disimpan di folder Desktop, Documents, Downloads, Music, Pictures, dan Videos.
   Simpan folder ini di partisi lain untuk dicadangkan.
   {{< /tab >}}
-  {{< tab name="one partition" >}} 
+  {{< tab name="One partition" >}} 
   Data Anda biasanya terletak di tempat berikut pada drive C, 
   Buka folder ini `C:\Users` lalu pilih akun pengguna yang Anda gunakan.
   Data Anda disimpan di folder Desktop, Documents, Downloads, Music, Pictures, dan Videos.
@@ -56,13 +56,13 @@ Proses instalasi bersih akan memformat drive C tempat Windows diinstal; jika And
   {{< /tab >}}
 {{< /tabs >}}
 
-{{< tip title="Tips" >}}
-Sangat disarankan untuk mencadangkan data penting Anda pada beberapa drive online juga, misalnya, 
-[GoogleDrive](https://drive.google.com/) - 15GB Free  
-[OneDrive](https://onedrive.live.com/) - 5GB Free  
-[Mega](https://mega.io/) - 20GB Free  
-[Filen](https://filen.io/) - 10GB Free  
-{{< /tip >}}
+{{< alert type="warning" title="Perhatian" >}}
+Mencadangkan data penting Anda pada beberapa drive online juga, misalnya:
+ - [GoogleDrive](https://drive.google.com/) - 15GB Free  
+ - [OneDrive](https://onedrive.live.com/) - 5GB Free  
+ - [Mega](https://mega.io/) - 20GB Free  
+ - [Filen](https://filen.io/) - 10GB Free  
+{{< /alert >}}
 
 ### Buat USB yang dapat di-boot dengan Rufus
 
@@ -133,6 +133,6 @@ NoKeyChannel
 - Hapus semua partisi pada drive boot, atau jika Anda ingin menyimpan partisi data, hapus hanya drive C dan partisi sistem kecil lainnya, dan pilih ruang yang tidak terisi yang dibuat.
 - Klik "Berikutnya" untuk memulai penginstalan. Windows akan secara otomatis membuat partisi yang diperlukan.
 
-{{< tip title="Tips" >}}
+{{< alert type="tip" title="Perhatian" >}}
 - Anda dapat [terhubung dengan kami](troubleshoot.md) untuk bantuan jika Anda membutuhkan.
-{{< /tip >}}
+{{< /alert >}}

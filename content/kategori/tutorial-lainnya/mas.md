@@ -57,17 +57,17 @@ Aktivator Windows dan Office open-source dengan berbagai metode aktivasi termasu
 
 ### Tidak bekerja ❓
 
-{{< note title="Catatan" >}}
+{{< alert type="note" title="Perhatian" >}}
 - Jika Anda tidak dapat meluncurkan MAS menggunakan metode PowerShell, lihat Metode 2 di atas.
 - Jika MAS diluncurkan tetapi menampilkan kesalahan, periksa langkah pemecahan masalah yang disorot dengan warna biru dan ikuti.
 - Jika masalah masih berlanjut, jangan ragu untuk menghubungi kami [disini](troubleshoot.md).
-{{< /note >}}
+{{< /alert >}}
 
-{{< info title="Informasi" >}}
+{{< alert type="info" title="Perhatian" >}}
 - Perintah IRM di PowerShell mengunduh skrip dari URL tertentu, dan perintah IEX mengeksekusinya.
 - Selalu periksa ulang URL sebelum menjalankan perintah dan verifikasi sumbernya dapat dipercaya saat mengunduh file secara manual.
 - Berhati-hatilah, karena beberapa orang menyebarkan malware yang menyamar sebagai MAS dengan mengubah URL dalam perintah IRM.
-{{< /info >}}
+{{< /alert >}}
 
 ## MAS Rilis Terakhir
 

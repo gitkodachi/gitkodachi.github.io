@@ -1,0 +1,26 @@
+{{/* layouts/shortcodes/tip.html */}}
+{{- $type := .Get "type" | default "tip" -}}
+{{- $title := .Get "title" | default (humanize $type) -}}
+{{- $icon := .Get "icon" -}}
+
+{{/* Default icons */}}
+{{- if not $icon -}}
+  {{- $icon = cond (eq $type "tip") "lightbulb"
+      (cond (eq $type "note") "pen-square"
+      (cond (eq $type "warning") "triangle-exclamation"
+      (cond (eq $type "danger") "skull"
+      (cond (eq $type "info") "circle-info"
+      "lightbulb")))) -}}
+{{- end -}}
+
+<div class="custom-alert custom-alert-{{ $type }}" role="alert">
+  <div class="custom-alert-header">
+    {{- if $icon -}}
+      <i class="custom-alert-icon fas fa-{{ $icon }}"></i>
+    {{- end -}}
+    <span class="custom-alert-title">{{ $title }}</span>
+  </div>
+  <div class="custom-alert-content">
+    {{ .Inner | markdownify }}
+  </div>
+</div>

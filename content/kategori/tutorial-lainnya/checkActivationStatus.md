@@ -14,30 +14,6 @@ topik: ["windows", "office"]
 Skrip Periksa Status Aktivasi di MAS merupakan pengembangan dari CAS oleh abbodi1406.
 Anda dapat membaca lebih lanjut tentang fitur-fiturnya [disni](https://gravesoft.dev/cas).
 
-{{< note title="Catatan" >}}
-Ini adalah catatan penting.
-{{< /note >}}
-
-{{< tip title="Tips" >}}
-Tips berguna untuk pengguna.
-{{< /tip >}}
-
-{{< info title="Informasi" >}}
-Informasi tambahan tentang konten.
-{{< /info >}}
-
-{{< coution title="Bahaya" >}}
-Informasi tambahan tentang konten.
-{{< /coution >}}
-
-{{< important title="Peting" >}}
-Informasi tambahan tentang konten.
-{{< /important >}}
-
-{{< warning title="Perhatian" >}}
-Informasi tambahan tentang konten.
-{{< /warning >}}
-
 
 {{< code lang="go" title="Contoh Golang" >}}
 package main
@@ -57,3 +33,8 @@ func main() {
 {{< details summary="Metode 1" >}}
 contoh details
 {{< /details >}}
+
+
+{{< alert type="warning" title="Perhatian" >}}
+  **Penting!** Backup data Anda
+{{< /alert >}}
