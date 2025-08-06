@@ -144,3 +144,78 @@
 .custom-alert-info .custom-alert-header::before {
   content: "\f05a"; /* info-circle */
 }
+
+/* ==================== */
+/* CONTENT TYPOGRAPHY */
+/* ==================== */
+.custom-alert-content {
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Paragraph Spacing */
+.custom-alert-content p {
+  margin: 0.75em 0;
+}
+
+/* Headings Inside Alert */
+.custom-alert-content h2,
+.custom-alert-content h3,
+.custom-alert-content h4 {
+  margin: 1.25em 0 0.75em 0;
+  color: inherit;
+  font-weight: 600;
+}
+
+.custom-alert-content h2 {
+  font-size: 1.25em;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 0.3em;
+}
+.dark .custom-alert-content h2 {
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* Lists */
+.custom-alert-content ul,
+.custom-alert-content ol {
+  margin: 0.75em 0;
+  padding-left: 1.5em;
+}
+
+.custom-alert-content li {
+  margin: 0.4em 0;
+  padding-left: 0.3em;
+}
+
+/* Code Blocks */
+.custom-alert-content pre,
+.custom-alert-content code {
+  background: rgba(0,0,0,0.05);
+  border-radius: 4px;
+}
+.dark .custom-alert-content pre,
+.dark .custom-alert-content code {
+  background: rgba(255,255,255,0.1);
+}
+
+.custom-alert-content pre {
+  padding: 1em;
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+.custom-alert-content code {
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+}
+
+/* Links */
+.custom-alert-content a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.custom-alert-content a:hover {
+  opacity: 0.8;
+}
