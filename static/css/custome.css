@@ -63,6 +63,6 @@ details {
 
 /* Efek hover */
 a:hover {
-  color: #ff6600; /* Warna oranye saat hover, bisa disesuaikan */
+  color: #48ff00; /* Warna oranye saat hover, bisa disesuaikan */
   text-decoration: underline; /* Tambahkan underline saat hover */
 }
