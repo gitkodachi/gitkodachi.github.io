@@ -33,7 +33,7 @@ Panduan tentang cara mencadangkan data dan menginstal ulang Windows.
 
 ---
 
-## Cadangkan data Anda
+### Cadangkan data Anda
 
 Proses instalasi bersih akan memformat drive C tempat Windows diinstal; jika Anda memiliki data apa pun di drive C, Anda perlu mencadangkannya.
 
