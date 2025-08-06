@@ -1,524 +1,103 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial Belajar Git untuk Pemula on Octocat Code</title><link>https://gitkodachi.github.io/tutorial/git/</link><description>Recent content in Tutorial Belajar Git untuk Pemula on Octocat Code</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://gitkodachi.github.io/tutorial/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Apa itu Git dan Kenapa Penting bagi Programmer?</title><link>https://gitkodachi.github.io/tutorial/git/git-untuk-pemula/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-untuk-pemula/</guid><description>&lt;p>Git adalah salah satu tool yang sering digunakan dalam proyek pengembangan software.&lt;/p>
-&lt;p>Git bahkan menjadi tool yang wajib dipahami oleh programmer, karena banyak digunakan di mana-mana.&lt;/p>
-&lt;p>Pada kesempatan ini kita akan belajar Git dari dasar.&lt;/p>
-&lt;p>Artikel ini hanya akan membahas pengenalan Git saja. Untuk mempelajari Git lebih lanjut, saya sudah menyediakan link di bagian akhir.&lt;/p>
-&lt;h2 id="mengenal-git">Mengenal Git&lt;/h2>
-&lt;p>Git adalah salah satu sistem pengontrol versi (Version Control System) pada proyek perangkat lunak yang diciptakan oleh Linus Torvalds.&lt;/p></description></item><item><title>Belajar Git #1: Cara Install Git dan Konfigurasi Awal Yang Harus dilakukan</title><link>https://gitkodachi.github.io/tutorial/git/git-install/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-install/</guid><description>&lt;figure class="my-8 text-center">
- &lt;img 
- src="https://gitkodachi.github.io/images/cover/git-petanikode.png" 
- alt="Deskripsi gambar" 
- class="lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md"
- loading="lazy"
- data-zoom-src="https://gitkodachi.github.io/images/cover/git-petanikode.png"
- onclick="zoomImage(this)"
- >
- 
- &lt;figcaption class="text-sm text-slate-500 dark:text-slate-400 mt-2">
- &lt;em>Suber Gambar Petani Kode&lt;/em>
- &lt;/figcaption>
- 
-&lt;/figure>
-
-
-&lt;script>
-
-function zoomImage(img) {
- if (img.classList.contains('zoomed')) {
- img.classList.remove('zoomed');
- img.style.transform = '';
- img.style.cursor = 'zoom-in';
- img.style.zIndex = '';
- document.body.style.overflow = '';
- } else {
- img.classList.add('zoomed');
- img.style.transform = 'scale(1.8)';
- img.style.cursor = 'zoom-out';
- img.style.zIndex = '100';
- document.body.style.overflow = 'hidden';
- img.scrollIntoView({behavior: 'smooth', block: 'center'});
- }
-}
-&lt;/script>
-
-
-
-&lt;style>
-img.zoomed {
- transition: transform 0.3s ease;
- position: relative;
- z-index: 100;
- box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
- border-radius: 0.5rem;
-}
-&lt;/style>
-&lt;p>Kita sudah mengenal Git pada &lt;a href="https://gitkodachi.github.io/tutorial/git/git-untuk-pemula/">tulisan sebelumnya&lt;/a>. Selanjutnya Kita akan melakukan instalasi dan persiapan untuk mulai belajar Git.&lt;/p></description></item><item><title>Belajar Git #03: Cara Membuat Repositoru Git Pada Proyek</title><link>https://gitkodachi.github.io/tutorial/git/git-commit/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-commit/</guid><description>&lt;figure class="my-8 text-center">
- &lt;img 
- src="https://gitkodachi.github.io/images/cover/git-petanikode.png" 
- alt="Deskripsi gambar" 
- class="lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md"
- loading="lazy"
- data-zoom-src="https://gitkodachi.github.io/images/cover/git-petanikode.png"
- onclick="zoomImage(this)"
- >
- 
- &lt;figcaption class="text-sm text-slate-500 dark:text-slate-400 mt-2">
- &lt;em>Keterangan gambar opsional&lt;/em>
- &lt;/figcaption>
- 
-&lt;/figure>
-
-
-&lt;script>
-
-function zoomImage(img) {
- if (img.classList.contains('zoomed')) {
- img.classList.remove('zoomed');
- img.style.transform = '';
- img.style.cursor = 'zoom-in';
- img.style.zIndex = '';
- document.body.style.overflow = '';
- } else {
- img.classList.add('zoomed');
- img.style.transform = 'scale(1.8)';
- img.style.cursor = 'zoom-out';
- img.style.zIndex = '100';
- document.body.style.overflow = 'hidden';
- img.scrollIntoView({behavior: 'smooth', block: 'center'});
- }
-}
-&lt;/script>
-
-
-
-&lt;style>
-img.zoomed {
- transition: transform 0.3s ease;
- position: relative;
- z-index: 100;
- box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
- border-radius: 0.5rem;
-}
-&lt;/style></description></item><item><title>Belajar Git #04: Melihat Catatan Log Revisi</title><link>https://gitkodachi.github.io/tutorial/git/git.log/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git.log/</guid><description>&lt;figure class="my-8 text-center">
- &lt;img 
- src="https://gitkodachi.github.io/images/cover/git-petanikode.png" 
- alt="Deskripsi gambar" 
- class="lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md"
- loading="lazy"
- data-zoom-src="https://gitkodachi.github.io/images/cover/git-petanikode.png"
- onclick="zoomImage(this)"
- >
- 
- &lt;figcaption class="text-sm text-slate-500 dark:text-slate-400 mt-2">
- &lt;em>Keterangan gambar opsional&lt;/em>
- &lt;/figcaption>
- 
-&lt;/figure>
-
-
-&lt;script>
-
-function zoomImage(img) {
- if (img.classList.contains('zoomed')) {
- img.classList.remove('zoomed');
- img.style.transform = '';
- img.style.cursor = 'zoom-in';
- img.style.zIndex = '';
- document.body.style.overflow = '';
- } else {
- img.classList.add('zoomed');
- img.style.transform = 'scale(1.8)';
- img.style.cursor = 'zoom-out';
- img.style.zIndex = '100';
- document.body.style.overflow = 'hidden';
- img.scrollIntoView({behavior: 'smooth', block: 'center'});
- }
-}
-&lt;/script>
-
-
-
-&lt;style>
-img.zoomed {
- transition: transform 0.3s ease;
- position: relative;
- z-index: 100;
- box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
- border-radius: 0.5rem;
-}
-&lt;/style></description></item><item><title>Belajar Git #05: Melihat Perbandingan Revisi dengan Git Diff</title><link>https://gitkodachi.github.io/tutorial/git/git-diff/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-diff/</guid><description>&lt;figure class="my-8 text-center">
- &lt;img 
- src="https://gitkodachi.github.io/images/cover/git-petanikode.png" 
- alt="Deskripsi gambar" 
- class="lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md"
- loading="lazy"
- data-zoom-src="https://gitkodachi.github.io/images/cover/git-petanikode.png"
- onclick="zoomImage(this)"
- >
- 
- &lt;figcaption class="text-sm text-slate-500 dark:text-slate-400 mt-2">
- &lt;em>Keterangan gambar opsional&lt;/em>
- &lt;/figcaption>
- 
-&lt;/figure>
-
-
-&lt;script>
-
-function zoomImage(img) {
- if (img.classList.contains('zoomed')) {
- img.classList.remove('zoomed');
- img.style.transform = '';
- img.style.cursor = 'zoom-in';
- img.style.zIndex = '';
- document.body.style.overflow = '';
- } else {
- img.classList.add('zoomed');
- img.style.transform = 'scale(1.8)';
- img.style.cursor = 'zoom-out';
- img.style.zIndex = '100';
- document.body.style.overflow = 'hidden';
- img.scrollIntoView({behavior: 'smooth', block: 'center'});
- }
-}
-&lt;/script>
-
-
-
-&lt;style>
-img.zoomed {
- transition: transform 0.3s ease;
- position: relative;
- z-index: 100;
- box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
- border-radius: 0.5rem;
-}
-&lt;/style></description></item><item><title>Belajar Git #06: Perintah Untuk Membatalkan Revisi</title><link>https://gitkodachi.github.io/tutorial/git/git-revert/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-revert/</guid><description>&lt;figure class="my-8 text-center">
- &lt;img 
- src="https://gitkodachi.github.io/images/cover/git-petanikode.png" 
- alt="Deskripsi gambar" 
- class="lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md"
- loading="lazy"
- data-zoom-src="https://gitkodachi.github.io/images/cover/git-petanikode.png"
- onclick="zoomImage(this)"
- >
- 
- &lt;figcaption class="text-sm text-slate-500 dark:text-slate-400 mt-2">
- &lt;em>Keterangan gambar opsional&lt;/em>
- &lt;/figcaption>
- 
-&lt;/figure>
-
-
-&lt;script>
-
-function zoomImage(img) {
- if (img.classList.contains('zoomed')) {
- img.classList.remove('zoomed');
- img.style.transform = '';
- img.style.cursor = 'zoom-in';
- img.style.zIndex = '';
- document.body.style.overflow = '';
- } else {
- img.classList.add('zoomed');
- img.style.transform = 'scale(1.8)';
- img.style.cursor = 'zoom-out';
- img.style.zIndex = '100';
- document.body.style.overflow = 'hidden';
- img.scrollIntoView({behavior: 'smooth', block: 'center'});
- }
-}
-&lt;/script>
-
-
-
-&lt;style>
-img.zoomed {
- transition: transform 0.3s ease;
- position: relative;
- z-index: 100;
- box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
- border-radius: 0.5rem;
-}
-&lt;/style></description></item><item><title>Belajar Git #07: Menggunakan Cabang untuk mencegah Konflik</title><link>https://gitkodachi.github.io/tutorial/git/git-branch/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-branch/</guid><description>&lt;figure class="my-8 text-center">
- &lt;img 
- src="https://gitkodachi.github.io/images/cover/git-petanikode.png" 
- alt="Deskripsi gambar" 
- class="lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md"
- loading="lazy"
- data-zoom-src="https://gitkodachi.github.io/images/cover/git-petanikode.png"
- onclick="zoomImage(this)"
- >
- 
- &lt;figcaption class="text-sm text-slate-500 dark:text-slate-400 mt-2">
- &lt;em>Keterangan gambar opsional&lt;/em>
- &lt;/figcaption>
- 
-&lt;/figure>
-
-
-&lt;script>
-
-function zoomImage(img) {
- if (img.classList.contains('zoomed')) {
- img.classList.remove('zoomed');
- img.style.transform = '';
- img.style.cursor = 'zoom-in';
- img.style.zIndex = '';
- document.body.style.overflow = '';
- } else {
- img.classList.add('zoomed');
- img.style.transform = 'scale(1.8)';
- img.style.cursor = 'zoom-out';
- img.style.zIndex = '100';
- document.body.style.overflow = 'hidden';
- img.scrollIntoView({behavior: 'smooth', block: 'center'});
- }
-}
-&lt;/script>
-
-
-
-&lt;style>
-img.zoomed {
- transition: transform 0.3s ease;
- position: relative;
- z-index: 100;
- box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
- border-radius: 0.5rem;
-}
-&lt;/style></description></item><item><title>Belajar Git #08: Perbedaan Git checkout, Git Reset, dan Git Revert</title><link>https://gitkodachi.github.io/tutorial/git/git-checkout-reset-revert/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-checkout-reset-revert/</guid><description>&lt;figure class="my-8 text-center">
- &lt;img 
- src="https://gitkodachi.github.io/images/cover/git-petanikode.png" 
- alt="Deskripsi gambar" 
- class="lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md"
- loading="lazy"
- data-zoom-src="https://gitkodachi.github.io/images/cover/git-petanikode.png"
- onclick="zoomImage(this)"
- >
- 
- &lt;figcaption class="text-sm text-slate-500 dark:text-slate-400 mt-2">
- &lt;em>Keterangan gambar opsional&lt;/em>
- &lt;/figcaption>
- 
-&lt;/figure>
-
-
-&lt;script>
-
-function zoomImage(img) {
- if (img.classList.contains('zoomed')) {
- img.classList.remove('zoomed');
- img.style.transform = '';
- img.style.cursor = 'zoom-in';
- img.style.zIndex = '';
- document.body.style.overflow = '';
- } else {
- img.classList.add('zoomed');
- img.style.transform = 'scale(1.8)';
- img.style.cursor = 'zoom-out';
- img.style.zIndex = '100';
- document.body.style.overflow = 'hidden';
- img.scrollIntoView({behavior: 'smooth', block: 'center'});
- }
-}
-&lt;/script>
-
-
-
-&lt;style>
-img.zoomed {
- transition: transform 0.3s ease;
- position: relative;
- z-index: 100;
- box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
- border-radius: 0.5rem;
-}
-&lt;/style></description></item><item><title>Belajar Git #09: Berkerja Dengan Remote Repository</title><link>https://gitkodachi.github.io/tutorial/git/git-remote/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-remote/</guid><description>&lt;figure class="my-8 text-center">
- &lt;img 
- src="https://gitkodachi.github.io/images/cover/git-petanikode.png" 
- alt="Deskripsi gambar" 
- class="lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md"
- loading="lazy"
- data-zoom-src="https://gitkodachi.github.io/images/cover/git-petanikode.png"
- onclick="zoomImage(this)"
- >
- 
- &lt;figcaption class="text-sm text-slate-500 dark:text-slate-400 mt-2">
- &lt;em>Keterangan gambar opsional&lt;/em>
- &lt;/figcaption>
- 
-&lt;/figure>
-
-
-&lt;script>
-
-function zoomImage(img) {
- if (img.classList.contains('zoomed')) {
- img.classList.remove('zoomed');
- img.style.transform = '';
- img.style.cursor = 'zoom-in';
- img.style.zIndex = '';
- document.body.style.overflow = '';
- } else {
- img.classList.add('zoomed');
- img.style.transform = 'scale(1.8)';
- img.style.cursor = 'zoom-out';
- img.style.zIndex = '100';
- document.body.style.overflow = 'hidden';
- img.scrollIntoView({behavior: 'smooth', block: 'center'});
- }
-}
-&lt;/script>
-
-
-
-&lt;style>
-img.zoomed {
- transition: transform 0.3s ease;
- position: relative;
- z-index: 100;
- box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
- border-radius: 0.5rem;
-}
-&lt;/style></description></item><item><title>Belajar Git #10: Menggunakan Git Pull Git Fetch</title><link>https://gitkodachi.github.io/tutorial/git/git-full-fetch/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-full-fetch/</guid><description>&lt;figure class="my-8 text-center">
- &lt;img 
- src="https://gitkodachi.github.io/images/cover/git-petanikode.png" 
- alt="Deskripsi gambar" 
- class="lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md"
- loading="lazy"
- data-zoom-src="https://gitkodachi.github.io/images/cover/git-petanikode.png"
- onclick="zoomImage(this)"
- >
- 
- &lt;figcaption class="text-sm text-slate-500 dark:text-slate-400 mt-2">
- &lt;em>Keterangan gambar opsional&lt;/em>
- &lt;/figcaption>
- 
-&lt;/figure>
-
-
-&lt;script>
-
-function zoomImage(img) {
- if (img.classList.contains('zoomed')) {
- img.classList.remove('zoomed');
- img.style.transform = '';
- img.style.cursor = 'zoom-in';
- img.style.zIndex = '';
- document.body.style.overflow = '';
- } else {
- img.classList.add('zoomed');
- img.style.transform = 'scale(1.8)';
- img.style.cursor = 'zoom-out';
- img.style.zIndex = '100';
- document.body.style.overflow = 'hidden';
- img.scrollIntoView({behavior: 'smooth', block: 'center'});
- }
-}
-&lt;/script>
-
-
-
-&lt;style>
-img.zoomed {
- transition: transform 0.3s ease;
- position: relative;
- z-index: 100;
- box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
- border-radius: 0.5rem;
-}
-&lt;/style></description></item><item><title>Belajar Git #11: Cara Berkontribusi di Proyek Open Source dengan Git</title><link>https://gitkodachi.github.io/tutorial/git/github-workflow/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/github-workflow/</guid><description>&lt;figure class="my-8 text-center">
- &lt;img 
- src="https://gitkodachi.github.io/images/cover/git-petanikode.png" 
- alt="Deskripsi gambar" 
- class="lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md"
- loading="lazy"
- data-zoom-src="https://gitkodachi.github.io/images/cover/git-petanikode.png"
- onclick="zoomImage(this)"
- >
- 
- &lt;figcaption class="text-sm text-slate-500 dark:text-slate-400 mt-2">
- &lt;em>Keterangan gambar opsional&lt;/em>
- &lt;/figcaption>
- 
-&lt;/figure>
-
-
-&lt;script>
-
-function zoomImage(img) {
- if (img.classList.contains('zoomed')) {
- img.classList.remove('zoomed');
- img.style.transform = '';
- img.style.cursor = 'zoom-in';
- img.style.zIndex = '';
- document.body.style.overflow = '';
- } else {
- img.classList.add('zoomed');
- img.style.transform = 'scale(1.8)';
- img.style.cursor = 'zoom-out';
- img.style.zIndex = '100';
- document.body.style.overflow = 'hidden';
- img.scrollIntoView({behavior: 'smooth', block: 'center'});
- }
-}
-&lt;/script>
-
-
-
-&lt;style>
-img.zoomed {
- transition: transform 0.3s ease;
- position: relative;
- z-index: 100;
- box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
- border-radius: 0.5rem;
-}
-&lt;/style></description></item><item><title>Belajar Git #12: Cara Menggunakan Git Pada Visual Studio Code</title><link>https://gitkodachi.github.io/tutorial/git/git-vscode/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-vscode/</guid><description>&lt;figure class="my-8 text-center">
- &lt;img 
- src="https://gitkodachi.github.io/images/cover/git-petanikode.png" 
- alt="Deskripsi gambar" 
- class="lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md"
- loading="lazy"
- data-zoom-src="https://gitkodachi.github.io/images/cover/git-petanikode.png"
- onclick="zoomImage(this)"
- >
- 
- &lt;figcaption class="text-sm text-slate-500 dark:text-slate-400 mt-2">
- &lt;em>Keterangan gambar opsional&lt;/em>
- &lt;/figcaption>
- 
-&lt;/figure>
-
-
-&lt;script>
-
-function zoomImage(img) {
- if (img.classList.contains('zoomed')) {
- img.classList.remove('zoomed');
- img.style.transform = '';
- img.style.cursor = 'zoom-in';
- img.style.zIndex = '';
- document.body.style.overflow = '';
- } else {
- img.classList.add('zoomed');
- img.style.transform = 'scale(1.8)';
- img.style.cursor = 'zoom-out';
- img.style.zIndex = '100';
- document.body.style.overflow = 'hidden';
- img.scrollIntoView({behavior: 'smooth', block: 'center'});
- }
-}
-&lt;/script>
-
-
-
-&lt;style>
-img.zoomed {
- transition: transform 0.3s ease;
- position: relative;
- z-index: 100;
- box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
- border-radius: 0.5rem;
-}
-&lt;/style></description></item><item><title>Belajar Git #13: Melihat Perbandingan Revisi dengan Git Diff</title><link>https://gitkodachi.github.io/tutorial/git/git-init/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-init/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorial Belajar Git untuk Pemula on Octocat Code</title>
+    <link>http://localhost:1313/tutorial/git/</link>
+    <description>Recent content in Tutorial Belajar Git untuk Pemula on Octocat Code</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tutorial/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apa itu Git dan Kenapa Penting bagi Programmer?</title>
+      <link>http://localhost:1313/tutorial/git/git-untuk-pemula/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-untuk-pemula/</guid>
+      <description>&lt;p&gt;Git adalah salah satu tool yang sering digunakan dalam proyek pengembangan software.&lt;/p&gt;&#xA;&lt;p&gt;Git bahkan menjadi tool yang wajib dipahami oleh programmer, karena banyak digunakan di mana-mana.&lt;/p&gt;&#xA;&lt;p&gt;Pada kesempatan ini kita akan belajar Git dari dasar.&lt;/p&gt;&#xA;&lt;p&gt;Artikel ini hanya akan membahas pengenalan Git saja. Untuk mempelajari Git lebih lanjut, saya sudah menyediakan link di bagian akhir.&lt;/p&gt;&#xA;&lt;h2 id=&#34;mengenal-git&#34;&gt;Mengenal Git&lt;/h2&gt;&#xA;&lt;p&gt;Git adalah salah satu sistem pengontrol versi (Version Control System) pada proyek perangkat lunak yang diciptakan oleh Linus Torvalds.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #1: Cara Install Git dan Konfigurasi Awal Yang Harus dilakukan</title>
+      <link>http://localhost:1313/tutorial/git/git-install/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-install/</guid>
+      <description>&lt;figure class=&#34;my-8 text-center&#34;&gt;&#xD;&#xA;  &lt;img &#xD;&#xA;    src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34; &#xD;&#xA;    alt=&#34;Deskripsi gambar&#34; &#xD;&#xA;    class=&#34;lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md&#34;&#xD;&#xA;    loading=&#34;lazy&#34;&#xD;&#xA;    data-zoom-src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34;&#xD;&#xA;    onclick=&#34;zoomImage(this)&#34;&#xD;&#xA;  &gt;&#xD;&#xA;  &#xD;&#xA;  &lt;figcaption class=&#34;text-sm text-slate-500 dark:text-slate-400 mt-2&#34;&gt;&#xD;&#xA;    &lt;em&gt;Suber Gambar Petani Kode&lt;/em&gt;&#xD;&#xA;  &lt;/figcaption&gt;&#xD;&#xA;  &#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;script&gt;&#xD;&#xA;&#xD;&#xA;function zoomImage(img) {&#xD;&#xA;  if (img.classList.contains(&#39;zoomed&#39;)) {&#xD;&#xA;    img.classList.remove(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-in&#39;;&#xD;&#xA;    img.style.zIndex = &#39;&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;&#39;;&#xD;&#xA;  } else {&#xD;&#xA;    img.classList.add(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;scale(1.8)&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-out&#39;;&#xD;&#xA;    img.style.zIndex = &#39;100&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;hidden&#39;;&#xD;&#xA;    img.scrollIntoView({behavior: &#39;smooth&#39;, block: &#39;center&#39;});&#xD;&#xA;  }&#xD;&#xA;}&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;style&gt;&#xD;&#xA;img.zoomed {&#xD;&#xA;  transition: transform 0.3s ease;&#xD;&#xA;  position: relative;&#xD;&#xA;  z-index: 100;&#xD;&#xA;  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);&#xD;&#xA;  border-radius: 0.5rem;&#xD;&#xA;}&#xD;&#xA;&lt;/style&gt;&#xA;&lt;p&gt;Kita sudah mengenal Git pada &lt;a href=&#34;http://localhost:1313/tutorial/git/git-untuk-pemula/&#34;&gt;tulisan sebelumnya&lt;/a&gt;. Selanjutnya Kita akan melakukan instalasi dan persiapan untuk mulai belajar Git.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #03: Cara Membuat Repositoru Git Pada Proyek</title>
+      <link>http://localhost:1313/tutorial/git/git-commit/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-commit/</guid>
+      <description>&lt;figure class=&#34;my-8 text-center&#34;&gt;&#xD;&#xA;  &lt;img &#xD;&#xA;    src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34; &#xD;&#xA;    alt=&#34;Deskripsi gambar&#34; &#xD;&#xA;    class=&#34;lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md&#34;&#xD;&#xA;    loading=&#34;lazy&#34;&#xD;&#xA;    data-zoom-src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34;&#xD;&#xA;    onclick=&#34;zoomImage(this)&#34;&#xD;&#xA;  &gt;&#xD;&#xA;  &#xD;&#xA;  &lt;figcaption class=&#34;text-sm text-slate-500 dark:text-slate-400 mt-2&#34;&gt;&#xD;&#xA;    &lt;em&gt;Keterangan gambar opsional&lt;/em&gt;&#xD;&#xA;  &lt;/figcaption&gt;&#xD;&#xA;  &#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;script&gt;&#xD;&#xA;&#xD;&#xA;function zoomImage(img) {&#xD;&#xA;  if (img.classList.contains(&#39;zoomed&#39;)) {&#xD;&#xA;    img.classList.remove(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-in&#39;;&#xD;&#xA;    img.style.zIndex = &#39;&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;&#39;;&#xD;&#xA;  } else {&#xD;&#xA;    img.classList.add(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;scale(1.8)&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-out&#39;;&#xD;&#xA;    img.style.zIndex = &#39;100&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;hidden&#39;;&#xD;&#xA;    img.scrollIntoView({behavior: &#39;smooth&#39;, block: &#39;center&#39;});&#xD;&#xA;  }&#xD;&#xA;}&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;style&gt;&#xD;&#xA;img.zoomed {&#xD;&#xA;  transition: transform 0.3s ease;&#xD;&#xA;  position: relative;&#xD;&#xA;  z-index: 100;&#xD;&#xA;  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);&#xD;&#xA;  border-radius: 0.5rem;&#xD;&#xA;}&#xD;&#xA;&lt;/style&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #04: Melihat Catatan Log Revisi</title>
+      <link>http://localhost:1313/tutorial/git/git.log/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git.log/</guid>
+      <description>&lt;figure class=&#34;my-8 text-center&#34;&gt;&#xD;&#xA;  &lt;img &#xD;&#xA;    src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34; &#xD;&#xA;    alt=&#34;Deskripsi gambar&#34; &#xD;&#xA;    class=&#34;lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md&#34;&#xD;&#xA;    loading=&#34;lazy&#34;&#xD;&#xA;    data-zoom-src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34;&#xD;&#xA;    onclick=&#34;zoomImage(this)&#34;&#xD;&#xA;  &gt;&#xD;&#xA;  &#xD;&#xA;  &lt;figcaption class=&#34;text-sm text-slate-500 dark:text-slate-400 mt-2&#34;&gt;&#xD;&#xA;    &lt;em&gt;Keterangan gambar opsional&lt;/em&gt;&#xD;&#xA;  &lt;/figcaption&gt;&#xD;&#xA;  &#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;script&gt;&#xD;&#xA;&#xD;&#xA;function zoomImage(img) {&#xD;&#xA;  if (img.classList.contains(&#39;zoomed&#39;)) {&#xD;&#xA;    img.classList.remove(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-in&#39;;&#xD;&#xA;    img.style.zIndex = &#39;&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;&#39;;&#xD;&#xA;  } else {&#xD;&#xA;    img.classList.add(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;scale(1.8)&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-out&#39;;&#xD;&#xA;    img.style.zIndex = &#39;100&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;hidden&#39;;&#xD;&#xA;    img.scrollIntoView({behavior: &#39;smooth&#39;, block: &#39;center&#39;});&#xD;&#xA;  }&#xD;&#xA;}&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;style&gt;&#xD;&#xA;img.zoomed {&#xD;&#xA;  transition: transform 0.3s ease;&#xD;&#xA;  position: relative;&#xD;&#xA;  z-index: 100;&#xD;&#xA;  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);&#xD;&#xA;  border-radius: 0.5rem;&#xD;&#xA;}&#xD;&#xA;&lt;/style&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #05: Melihat Perbandingan Revisi dengan Git Diff</title>
+      <link>http://localhost:1313/tutorial/git/git-diff/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-diff/</guid>
+      <description>&lt;figure class=&#34;my-8 text-center&#34;&gt;&#xD;&#xA;  &lt;img &#xD;&#xA;    src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34; &#xD;&#xA;    alt=&#34;Deskripsi gambar&#34; &#xD;&#xA;    class=&#34;lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md&#34;&#xD;&#xA;    loading=&#34;lazy&#34;&#xD;&#xA;    data-zoom-src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34;&#xD;&#xA;    onclick=&#34;zoomImage(this)&#34;&#xD;&#xA;  &gt;&#xD;&#xA;  &#xD;&#xA;  &lt;figcaption class=&#34;text-sm text-slate-500 dark:text-slate-400 mt-2&#34;&gt;&#xD;&#xA;    &lt;em&gt;Keterangan gambar opsional&lt;/em&gt;&#xD;&#xA;  &lt;/figcaption&gt;&#xD;&#xA;  &#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;script&gt;&#xD;&#xA;&#xD;&#xA;function zoomImage(img) {&#xD;&#xA;  if (img.classList.contains(&#39;zoomed&#39;)) {&#xD;&#xA;    img.classList.remove(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-in&#39;;&#xD;&#xA;    img.style.zIndex = &#39;&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;&#39;;&#xD;&#xA;  } else {&#xD;&#xA;    img.classList.add(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;scale(1.8)&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-out&#39;;&#xD;&#xA;    img.style.zIndex = &#39;100&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;hidden&#39;;&#xD;&#xA;    img.scrollIntoView({behavior: &#39;smooth&#39;, block: &#39;center&#39;});&#xD;&#xA;  }&#xD;&#xA;}&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;style&gt;&#xD;&#xA;img.zoomed {&#xD;&#xA;  transition: transform 0.3s ease;&#xD;&#xA;  position: relative;&#xD;&#xA;  z-index: 100;&#xD;&#xA;  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);&#xD;&#xA;  border-radius: 0.5rem;&#xD;&#xA;}&#xD;&#xA;&lt;/style&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #06: Perintah Untuk Membatalkan Revisi</title>
+      <link>http://localhost:1313/tutorial/git/git-revert/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-revert/</guid>
+      <description>&lt;figure class=&#34;my-8 text-center&#34;&gt;&#xD;&#xA;  &lt;img &#xD;&#xA;    src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34; &#xD;&#xA;    alt=&#34;Deskripsi gambar&#34; &#xD;&#xA;    class=&#34;lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md&#34;&#xD;&#xA;    loading=&#34;lazy&#34;&#xD;&#xA;    data-zoom-src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34;&#xD;&#xA;    onclick=&#34;zoomImage(this)&#34;&#xD;&#xA;  &gt;&#xD;&#xA;  &#xD;&#xA;  &lt;figcaption class=&#34;text-sm text-slate-500 dark:text-slate-400 mt-2&#34;&gt;&#xD;&#xA;    &lt;em&gt;Keterangan gambar opsional&lt;/em&gt;&#xD;&#xA;  &lt;/figcaption&gt;&#xD;&#xA;  &#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;script&gt;&#xD;&#xA;&#xD;&#xA;function zoomImage(img) {&#xD;&#xA;  if (img.classList.contains(&#39;zoomed&#39;)) {&#xD;&#xA;    img.classList.remove(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-in&#39;;&#xD;&#xA;    img.style.zIndex = &#39;&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;&#39;;&#xD;&#xA;  } else {&#xD;&#xA;    img.classList.add(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;scale(1.8)&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-out&#39;;&#xD;&#xA;    img.style.zIndex = &#39;100&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;hidden&#39;;&#xD;&#xA;    img.scrollIntoView({behavior: &#39;smooth&#39;, block: &#39;center&#39;});&#xD;&#xA;  }&#xD;&#xA;}&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;style&gt;&#xD;&#xA;img.zoomed {&#xD;&#xA;  transition: transform 0.3s ease;&#xD;&#xA;  position: relative;&#xD;&#xA;  z-index: 100;&#xD;&#xA;  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);&#xD;&#xA;  border-radius: 0.5rem;&#xD;&#xA;}&#xD;&#xA;&lt;/style&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #07: Menggunakan Cabang untuk mencegah Konflik</title>
+      <link>http://localhost:1313/tutorial/git/git-branch/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-branch/</guid>
+      <description>&lt;figure class=&#34;my-8 text-center&#34;&gt;&#xD;&#xA;  &lt;img &#xD;&#xA;    src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34; &#xD;&#xA;    alt=&#34;Deskripsi gambar&#34; &#xD;&#xA;    class=&#34;lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md&#34;&#xD;&#xA;    loading=&#34;lazy&#34;&#xD;&#xA;    data-zoom-src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34;&#xD;&#xA;    onclick=&#34;zoomImage(this)&#34;&#xD;&#xA;  &gt;&#xD;&#xA;  &#xD;&#xA;  &lt;figcaption class=&#34;text-sm text-slate-500 dark:text-slate-400 mt-2&#34;&gt;&#xD;&#xA;    &lt;em&gt;Keterangan gambar opsional&lt;/em&gt;&#xD;&#xA;  &lt;/figcaption&gt;&#xD;&#xA;  &#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;script&gt;&#xD;&#xA;&#xD;&#xA;function zoomImage(img) {&#xD;&#xA;  if (img.classList.contains(&#39;zoomed&#39;)) {&#xD;&#xA;    img.classList.remove(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-in&#39;;&#xD;&#xA;    img.style.zIndex = &#39;&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;&#39;;&#xD;&#xA;  } else {&#xD;&#xA;    img.classList.add(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;scale(1.8)&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-out&#39;;&#xD;&#xA;    img.style.zIndex = &#39;100&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;hidden&#39;;&#xD;&#xA;    img.scrollIntoView({behavior: &#39;smooth&#39;, block: &#39;center&#39;});&#xD;&#xA;  }&#xD;&#xA;}&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;style&gt;&#xD;&#xA;img.zoomed {&#xD;&#xA;  transition: transform 0.3s ease;&#xD;&#xA;  position: relative;&#xD;&#xA;  z-index: 100;&#xD;&#xA;  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);&#xD;&#xA;  border-radius: 0.5rem;&#xD;&#xA;}&#xD;&#xA;&lt;/style&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #08: Perbedaan Git checkout, Git Reset, dan Git Revert</title>
+      <link>http://localhost:1313/tutorial/git/git-checkout-reset-revert/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-checkout-reset-revert/</guid>
+      <description>&lt;figure class=&#34;my-8 text-center&#34;&gt;&#xD;&#xA;  &lt;img &#xD;&#xA;    src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34; &#xD;&#xA;    alt=&#34;Deskripsi gambar&#34; &#xD;&#xA;    class=&#34;lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md&#34;&#xD;&#xA;    loading=&#34;lazy&#34;&#xD;&#xA;    data-zoom-src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34;&#xD;&#xA;    onclick=&#34;zoomImage(this)&#34;&#xD;&#xA;  &gt;&#xD;&#xA;  &#xD;&#xA;  &lt;figcaption class=&#34;text-sm text-slate-500 dark:text-slate-400 mt-2&#34;&gt;&#xD;&#xA;    &lt;em&gt;Keterangan gambar opsional&lt;/em&gt;&#xD;&#xA;  &lt;/figcaption&gt;&#xD;&#xA;  &#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;script&gt;&#xD;&#xA;&#xD;&#xA;function zoomImage(img) {&#xD;&#xA;  if (img.classList.contains(&#39;zoomed&#39;)) {&#xD;&#xA;    img.classList.remove(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-in&#39;;&#xD;&#xA;    img.style.zIndex = &#39;&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;&#39;;&#xD;&#xA;  } else {&#xD;&#xA;    img.classList.add(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;scale(1.8)&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-out&#39;;&#xD;&#xA;    img.style.zIndex = &#39;100&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;hidden&#39;;&#xD;&#xA;    img.scrollIntoView({behavior: &#39;smooth&#39;, block: &#39;center&#39;});&#xD;&#xA;  }&#xD;&#xA;}&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;style&gt;&#xD;&#xA;img.zoomed {&#xD;&#xA;  transition: transform 0.3s ease;&#xD;&#xA;  position: relative;&#xD;&#xA;  z-index: 100;&#xD;&#xA;  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);&#xD;&#xA;  border-radius: 0.5rem;&#xD;&#xA;}&#xD;&#xA;&lt;/style&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #09: Berkerja Dengan Remote Repository</title>
+      <link>http://localhost:1313/tutorial/git/git-remote/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-remote/</guid>
+      <description>&lt;figure class=&#34;my-8 text-center&#34;&gt;&#xD;&#xA;  &lt;img &#xD;&#xA;    src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34; &#xD;&#xA;    alt=&#34;Deskripsi gambar&#34; &#xD;&#xA;    class=&#34;lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md&#34;&#xD;&#xA;    loading=&#34;lazy&#34;&#xD;&#xA;    data-zoom-src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34;&#xD;&#xA;    onclick=&#34;zoomImage(this)&#34;&#xD;&#xA;  &gt;&#xD;&#xA;  &#xD;&#xA;  &lt;figcaption class=&#34;text-sm text-slate-500 dark:text-slate-400 mt-2&#34;&gt;&#xD;&#xA;    &lt;em&gt;Keterangan gambar opsional&lt;/em&gt;&#xD;&#xA;  &lt;/figcaption&gt;&#xD;&#xA;  &#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;script&gt;&#xD;&#xA;&#xD;&#xA;function zoomImage(img) {&#xD;&#xA;  if (img.classList.contains(&#39;zoomed&#39;)) {&#xD;&#xA;    img.classList.remove(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-in&#39;;&#xD;&#xA;    img.style.zIndex = &#39;&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;&#39;;&#xD;&#xA;  } else {&#xD;&#xA;    img.classList.add(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;scale(1.8)&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-out&#39;;&#xD;&#xA;    img.style.zIndex = &#39;100&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;hidden&#39;;&#xD;&#xA;    img.scrollIntoView({behavior: &#39;smooth&#39;, block: &#39;center&#39;});&#xD;&#xA;  }&#xD;&#xA;}&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;style&gt;&#xD;&#xA;img.zoomed {&#xD;&#xA;  transition: transform 0.3s ease;&#xD;&#xA;  position: relative;&#xD;&#xA;  z-index: 100;&#xD;&#xA;  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);&#xD;&#xA;  border-radius: 0.5rem;&#xD;&#xA;}&#xD;&#xA;&lt;/style&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #10: Menggunakan Git Pull Git Fetch</title>
+      <link>http://localhost:1313/tutorial/git/git-full-fetch/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-full-fetch/</guid>
+      <description>&lt;figure class=&#34;my-8 text-center&#34;&gt;&#xD;&#xA;  &lt;img &#xD;&#xA;    src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34; &#xD;&#xA;    alt=&#34;Deskripsi gambar&#34; &#xD;&#xA;    class=&#34;lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md&#34;&#xD;&#xA;    loading=&#34;lazy&#34;&#xD;&#xA;    data-zoom-src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34;&#xD;&#xA;    onclick=&#34;zoomImage(this)&#34;&#xD;&#xA;  &gt;&#xD;&#xA;  &#xD;&#xA;  &lt;figcaption class=&#34;text-sm text-slate-500 dark:text-slate-400 mt-2&#34;&gt;&#xD;&#xA;    &lt;em&gt;Keterangan gambar opsional&lt;/em&gt;&#xD;&#xA;  &lt;/figcaption&gt;&#xD;&#xA;  &#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;script&gt;&#xD;&#xA;&#xD;&#xA;function zoomImage(img) {&#xD;&#xA;  if (img.classList.contains(&#39;zoomed&#39;)) {&#xD;&#xA;    img.classList.remove(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-in&#39;;&#xD;&#xA;    img.style.zIndex = &#39;&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;&#39;;&#xD;&#xA;  } else {&#xD;&#xA;    img.classList.add(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;scale(1.8)&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-out&#39;;&#xD;&#xA;    img.style.zIndex = &#39;100&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;hidden&#39;;&#xD;&#xA;    img.scrollIntoView({behavior: &#39;smooth&#39;, block: &#39;center&#39;});&#xD;&#xA;  }&#xD;&#xA;}&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;style&gt;&#xD;&#xA;img.zoomed {&#xD;&#xA;  transition: transform 0.3s ease;&#xD;&#xA;  position: relative;&#xD;&#xA;  z-index: 100;&#xD;&#xA;  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);&#xD;&#xA;  border-radius: 0.5rem;&#xD;&#xA;}&#xD;&#xA;&lt;/style&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #11: Cara Berkontribusi di Proyek Open Source dengan Git</title>
+      <link>http://localhost:1313/tutorial/git/github-workflow/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/github-workflow/</guid>
+      <description>&lt;figure class=&#34;my-8 text-center&#34;&gt;&#xD;&#xA;  &lt;img &#xD;&#xA;    src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34; &#xD;&#xA;    alt=&#34;Deskripsi gambar&#34; &#xD;&#xA;    class=&#34;lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md&#34;&#xD;&#xA;    loading=&#34;lazy&#34;&#xD;&#xA;    data-zoom-src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34;&#xD;&#xA;    onclick=&#34;zoomImage(this)&#34;&#xD;&#xA;  &gt;&#xD;&#xA;  &#xD;&#xA;  &lt;figcaption class=&#34;text-sm text-slate-500 dark:text-slate-400 mt-2&#34;&gt;&#xD;&#xA;    &lt;em&gt;Keterangan gambar opsional&lt;/em&gt;&#xD;&#xA;  &lt;/figcaption&gt;&#xD;&#xA;  &#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;script&gt;&#xD;&#xA;&#xD;&#xA;function zoomImage(img) {&#xD;&#xA;  if (img.classList.contains(&#39;zoomed&#39;)) {&#xD;&#xA;    img.classList.remove(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-in&#39;;&#xD;&#xA;    img.style.zIndex = &#39;&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;&#39;;&#xD;&#xA;  } else {&#xD;&#xA;    img.classList.add(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;scale(1.8)&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-out&#39;;&#xD;&#xA;    img.style.zIndex = &#39;100&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;hidden&#39;;&#xD;&#xA;    img.scrollIntoView({behavior: &#39;smooth&#39;, block: &#39;center&#39;});&#xD;&#xA;  }&#xD;&#xA;}&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;style&gt;&#xD;&#xA;img.zoomed {&#xD;&#xA;  transition: transform 0.3s ease;&#xD;&#xA;  position: relative;&#xD;&#xA;  z-index: 100;&#xD;&#xA;  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);&#xD;&#xA;  border-radius: 0.5rem;&#xD;&#xA;}&#xD;&#xA;&lt;/style&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #12: Cara Menggunakan Git Pada Visual Studio Code</title>
+      <link>http://localhost:1313/tutorial/git/git-vscode/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-vscode/</guid>
+      <description>&lt;figure class=&#34;my-8 text-center&#34;&gt;&#xD;&#xA;  &lt;img &#xD;&#xA;    src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34; &#xD;&#xA;    alt=&#34;Deskripsi gambar&#34; &#xD;&#xA;    class=&#34;lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md&#34;&#xD;&#xA;    loading=&#34;lazy&#34;&#xD;&#xA;    data-zoom-src=&#34;http://localhost:1313/images/cover/git-petanikode.png&#34;&#xD;&#xA;    onclick=&#34;zoomImage(this)&#34;&#xD;&#xA;  &gt;&#xD;&#xA;  &#xD;&#xA;  &lt;figcaption class=&#34;text-sm text-slate-500 dark:text-slate-400 mt-2&#34;&gt;&#xD;&#xA;    &lt;em&gt;Keterangan gambar opsional&lt;/em&gt;&#xD;&#xA;  &lt;/figcaption&gt;&#xD;&#xA;  &#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;script&gt;&#xD;&#xA;&#xD;&#xA;function zoomImage(img) {&#xD;&#xA;  if (img.classList.contains(&#39;zoomed&#39;)) {&#xD;&#xA;    img.classList.remove(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-in&#39;;&#xD;&#xA;    img.style.zIndex = &#39;&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;&#39;;&#xD;&#xA;  } else {&#xD;&#xA;    img.classList.add(&#39;zoomed&#39;);&#xD;&#xA;    img.style.transform = &#39;scale(1.8)&#39;;&#xD;&#xA;    img.style.cursor = &#39;zoom-out&#39;;&#xD;&#xA;    img.style.zIndex = &#39;100&#39;;&#xD;&#xA;    document.body.style.overflow = &#39;hidden&#39;;&#xD;&#xA;    img.scrollIntoView({behavior: &#39;smooth&#39;, block: &#39;center&#39;});&#xD;&#xA;  }&#xD;&#xA;}&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;style&gt;&#xD;&#xA;img.zoomed {&#xD;&#xA;  transition: transform 0.3s ease;&#xD;&#xA;  position: relative;&#xD;&#xA;  z-index: 100;&#xD;&#xA;  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);&#xD;&#xA;  border-radius: 0.5rem;&#xD;&#xA;}&#xD;&#xA;&lt;/style&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #13: Melihat Perbandingan Revisi dengan Git Diff</title>
+      <link>http://localhost:1313/tutorial/git/git-init/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-init/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

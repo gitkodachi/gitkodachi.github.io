@@ -1,21 +1,31 @@
-{{/* Partial untuk menampilkan semua taksonomi halaman ini */}}
+{{/* layouts/partials/taxonomies.html */}}
 {{ $p := .page }}
 {{ $taxonomies := slice "kategori" "topik" "tutorial" "software" "buku" }}
 
+{{/* Collect unique tags */}}
+{{ $uniqueTags := dict }}
 {{ range $taxonomyName := $taxonomies }}
-  {{ $terms := index $p.Params $taxonomyName }}
-  {{ if $terms }}
-    <section class="flex gap-1 flex-wrap mb-2">
-      {{ range $terms }}
-        {{ $term := . }}
+  {{ with (index $p.Params $taxonomyName) }}
+    {{ range . }}
+      {{ $term := . | lower }}
+      {{ if not (index $uniqueTags $term) }}
         {{ $taxonomyPage := site.GetPage (printf "%s/%s" $taxonomyName (urlize $term)) }}
         {{ $url := cond $taxonomyPage $taxonomyPage.RelPermalink (printf "/%s/%s/" $taxonomyName (urlize $term)) }}
-        <a rel="tag"
-           class="p-1 px-2 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-700 dark:hover:text-white dark:hover:bg-slate-600 hover:text-teal-600 hover:bg-teal-100/25 transition"
-           href="{{ $url }}">
-          #{{ $term }}
-        </a>
+        {{ $uniqueTags = merge $uniqueTags (dict $term $url) }}
       {{ end }}
-    </section>
+    {{ end }}
   {{ end }}
+{{ end }}
+
+{{/* Display using your existing classes */}}
+{{ if gt (len $uniqueTags) 0 }}
+<section class="flex gap-1 flex-wrap mb-2">
+  {{ range $term, $url := $uniqueTags }}
+    <a rel="tag"
+       class="p-1 px-2 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-700 dark:hover:text-white dark:hover:bg-slate-600 hover:text-teal-600 hover:bg-teal-100/25 transition"
+       href="{{ $url }}">
+      #{{ $term }}
+    </a>
+  {{ end }}
+</section>
 {{ end }}
