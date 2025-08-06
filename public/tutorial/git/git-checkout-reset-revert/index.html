@@ -449,17 +449,17 @@
 
       
       <div class="content">
-        <figure class="my-8 text-center">
+        
+<figure class="my-4 text-center">
   <img 
     src="http://localhost:1313/images/cover/git-petanikode.png" 
     alt="Deskripsi gambar" 
-    class="lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md"
+    class="lazyload cursor-zoom-in max-w-full h-auto rounded rounded-lg shadow-md"
     loading="lazy"
-    data-zoom-src="http://localhost:1313/images/cover/git-petanikode.png"
-    onclick="zoomImage(this)"
+    onclick="toggleZoom(this)"
   >
   
-  <figcaption class="text-sm text-slate-500 dark:text-slate-400 mt-2">
+  <figcaption class="text-sm text-gray-500 mt-2">
     <em>Keterangan gambar opsional</em>
   </figcaption>
   
@@ -467,36 +467,39 @@
 
 
 <script>
-
-function zoomImage(img) {
+function toggleZoom(img) {
   if (img.classList.contains('zoomed')) {
+    
     img.classList.remove('zoomed');
-    img.style.transform = '';
-    img.style.cursor = 'zoom-in';
-    img.style.zIndex = '';
     document.body.style.overflow = '';
   } else {
+    
     img.classList.add('zoomed');
-    img.style.transform = 'scale(1.8)';
-    img.style.cursor = 'zoom-out';
-    img.style.zIndex = '100';
     document.body.style.overflow = 'hidden';
-    img.scrollIntoView({behavior: 'smooth', block: 'center'});
   }
 }
 </script>
 
-
-
 <style>
 img.zoomed {
-  transition: transform 0.3s ease;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
   z-index: 100;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
-  border-radius: 0.5rem;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
 }
 </style>
+
+
+
 
       </div>
     </article>

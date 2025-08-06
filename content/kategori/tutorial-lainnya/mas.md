@@ -107,22 +107,58 @@ Untuk mengaktifkan produk yang tidak didukung seperti **Office di Mac**, centang
 
 ## Screenshots
 
-![MAS_AIO](/images/content/tutorial/MAS_AIO.png)
+{{< image 
+  src="/images/content/tutorial/MAS_AIO.png" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+>}}
 
-![MAS_HWID](/images/content/tutorial/MAS_HWID.png)
+{{< image 
+  src="/images/content/tutorial/MAS_AIO.png" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+>}}
 
-![MAS_Ohook](/images/content/tutorial/MAS_Ohook.png)
+{{< image 
+  src="/images/content/tutorial/MAS_Ohook.png" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+>}}
 
-![MAS_TSforge](/images/content/tutorial/MAS_TSforge.png)
+{{< image 
+  src="/images/content/tutorial/MAS_TSforge.png" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+>}}
 
-![MAS_Troubleshoot](/images/content/tutorial/MAS_Troubleshoot.png)
+{{< image 
+  src="/images/content/tutorial/MAS_Troubleshoot.png" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+>}}
 
-![MAS_change_windows_edition](/images/content/tutorial/MAS_change_windows_edition.png)
+{{< image 
+  src="/images/content/tutorial/MAS_change_windows_edition.png" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+>}}
 
-![MAS_change_office_edition_1](/images/content/tutorial/MAS_change_office_edition_1.png)
+{{< image 
+  src="/images/content/tutorial/MAS_change_office_edition_1.png" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+>}}
 
-![MAS_change_office_edition_2](/images/content/tutorial/MAS_change_office_edition_2.png)
+{{< image 
+  src="/images/content/tutorial/MAS_change_office_edition_2.png" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+>}}
 
-![MAS_change_office_edition_3](/images/content/tutorial/MAS_change_office_edition_3.png)
+{{< image 
+  src="/images/content/tutorial/MAS_change_office_edition_3.png" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+>}}
 
 Dibuat dengan Cinta ❤️

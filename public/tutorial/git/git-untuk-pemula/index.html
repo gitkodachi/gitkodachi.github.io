@@ -468,17 +468,17 @@
 <p>Git adalah salah satu sistem pengontrol versi (Version Control System) pada proyek perangkat lunak yang diciptakan oleh Linus Torvalds.</p>
 <p>Pengontrol versi bertugas mencatat setiap perubahan pada file proyek yang dikerjakan oleh banyak orang maupun sendiri.</p>
 <p>Git dikenal juga dengan distributed revision control (VCS terdistribusi), artinya penyimpanan database Git tidak hanya berada dalam satu tempat saja.</p>
-<figure class="my-8 text-center">
+
+<figure class="my-4 text-center">
   <img 
     src="http://localhost:1313/images/content/git/sistem-git.png" 
     alt="Deskripsi gambar" 
-    class="lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md"
+    class="lazyload cursor-zoom-in max-w-full h-auto rounded rounded-lg shadow-md"
     loading="lazy"
-    data-zoom-src="http://localhost:1313/images/content/git/sistem-git.png"
-    onclick="zoomImage(this)"
+    onclick="toggleZoom(this)"
   >
   
-  <figcaption class="text-sm text-slate-500 dark:text-slate-400 mt-2">
+  <figcaption class="text-sm text-gray-500 mt-2">
     <em>Keterangan gambar opsional</em>
   </figcaption>
   
@@ -486,66 +486,59 @@
 
 
 <script>
-
-function zoomImage(img) {
+function toggleZoom(img) {
   if (img.classList.contains('zoomed')) {
+    
     img.classList.remove('zoomed');
-    img.style.transform = '';
-    img.style.cursor = 'zoom-in';
-    img.style.zIndex = '';
     document.body.style.overflow = '';
   } else {
+    
     img.classList.add('zoomed');
-    img.style.transform = 'scale(1.8)';
-    img.style.cursor = 'zoom-out';
-    img.style.zIndex = '100';
     document.body.style.overflow = 'hidden';
-    img.scrollIntoView({behavior: 'smooth', block: 'center'});
   }
 }
 </script>
 
-
-
 <style>
 img.zoomed {
-  transition: transform 0.3s ease;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
   z-index: 100;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
-  border-radius: 0.5rem;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
 }
 </style>
+
+
+
 <p>Semua orang yang terlibat dalam pengkodean proyek akan menyimpan database Git, sehingga akan memudahkan dalam mengelola proyek baik online maupun offline.</p>
 <p>Dalam Git terdapat <a href="./git-branch.md">Merge</a> untuk menyebut aktifitas penggabungan kode.</p>
 <p>Sedangkan pada VCS (Version Control System) yang terpusat… database disimpan dalam satu tempat dan setiap perubahan disimpan ke sana.</p>
-<figure class="my-8 text-center">
+
+<figure class="my-4 text-center">
   <img 
     src="http://localhost:1313/images/content/git/vcs-terpusat.png" 
     alt="Deskripsi gambar" 
-    class="lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md"
+    class="lazyload cursor-zoom-in max-w-full h-auto rounded rounded-lg shadow-md"
     loading="lazy"
-    data-zoom-src="http://localhost:1313/images/content/git/vcs-terpusat.png"
-    onclick="zoomImage(this)"
+    onclick="toggleZoom(this)"
   >
   
-  <figcaption class="text-sm text-slate-500 dark:text-slate-400 mt-2">
+  <figcaption class="text-sm text-gray-500 mt-2">
     <em>Keterangan gambar opsional</em>
   </figcaption>
   
 </figure>
 
 
-
-<style>
-img.zoomed {
-  transition: transform 0.3s ease;
-  position: relative;
-  z-index: 100;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
-  border-radius: 0.5rem;
-}
-</style>
 <p>VCS terpusat memiliki beberapa kekurangan:</p>
 <ul>
 <li>Semua tim harus terkoneksi ke jaringan untuk mengakses source-code;</li>
@@ -555,61 +548,41 @@ img.zoomed {
 <h2 id="apa-yang-dilakukan-oleh-git">Apa yang dilakukan oleh Git?</h2>
 <p>Git sebenarnya akan memantau semua perubahan yang terjadi pada file proyek. Lalu menyimpannya ke dalam database.</p>
 <p>Sebelum menggunakan Git:</p>
-<figure class="my-8 text-center">
+
+<figure class="my-4 text-center">
   <img 
     src="http://localhost:1313/images/content/git/revisi-tanpa-git.png" 
     alt="Deskripsi gambar" 
-    class="lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md"
+    class="lazyload cursor-zoom-in max-w-full h-auto rounded rounded-lg shadow-md"
     loading="lazy"
-    data-zoom-src="http://localhost:1313/images/content/git/revisi-tanpa-git.png"
-    onclick="zoomImage(this)"
+    onclick="toggleZoom(this)"
   >
   
-  <figcaption class="text-sm text-slate-500 dark:text-slate-400 mt-2">
+  <figcaption class="text-sm text-gray-500 mt-2">
     <em>Keterangan gambar opsional</em>
   </figcaption>
   
 </figure>
 
 
-
-<style>
-img.zoomed {
-  transition: transform 0.3s ease;
-  position: relative;
-  z-index: 100;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
-  border-radius: 0.5rem;
-}
-</style>
 <p>Setelah menggunakan Git:</p>
-<figure class="my-8 text-center">
+
+<figure class="my-4 text-center">
   <img 
     src="http://localhost:1313/images/content/git/database-git.png" 
     alt="Deskripsi gambar" 
-    class="lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md"
+    class="lazyload cursor-zoom-in max-w-full h-auto rounded rounded-lg shadow-md"
     loading="lazy"
-    data-zoom-src="http://localhost:1313/images/content/git/database-git.png"
-    onclick="zoomImage(this)"
+    onclick="toggleZoom(this)"
   >
   
-  <figcaption class="text-sm text-slate-500 dark:text-slate-400 mt-2">
+  <figcaption class="text-sm text-gray-500 mt-2">
     <em>Keterangan gambar opsional</em>
   </figcaption>
   
 </figure>
 
 
-
-<style>
-img.zoomed {
-  transition: transform 0.3s ease;
-  position: relative;
-  z-index: 100;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
-  border-radius: 0.5rem;
-}
-</style>
 <p>Apa perbedaannya?</p>
 <p>Saat kita ingin menyimpan semua perubahan pada file, biasanya kita membuat file baru dengan “save as”. Lalu, file akan menumpuk dalam direktori proyek seperti pada ilustrasi di atas.</p>
 <p>Tapi setelah menggunakan Git…</p>
@@ -617,33 +590,23 @@ img.zoomed {
 <p>Git hanya akan menyimpan delta perubahannya saja, dia tidak akan menyimpan seluruh isi file yang akan memakan banyak memori.</p>
 <p>Git memungkinkan kita kembali ke versi revisi yang kita inginkan.</p>
 <h2 id="kenapa-git-penting-bagi-programmer">Kenapa Git Penting Bagi Programmer?</h2>
-<figure class="my-8 text-center">
+
+<figure class="my-4 text-center">
   <img 
     src="http://localhost:1313/images/content/git/jutsu-kolaborasi.jpg" 
     alt="Deskripsi gambar" 
-    class="lazyload cursor-zoom-in max-w-full h-auto rounded-lg shadow-md"
+    class="lazyload cursor-zoom-in max-w-full h-auto rounded rounded-lg shadow-md"
     loading="lazy"
-    data-zoom-src="http://localhost:1313/images/content/git/jutsu-kolaborasi.jpg"
-    onclick="zoomImage(this)"
+    onclick="toggleZoom(this)"
   >
   
-  <figcaption class="text-sm text-slate-500 dark:text-slate-400 mt-2">
+  <figcaption class="text-sm text-gray-500 mt-2">
     <em>Keterangan gambar opsional</em>
   </figcaption>
   
 </figure>
 
 
-
-<style>
-img.zoomed {
-  transition: transform 0.3s ease;
-  position: relative;
-  z-index: 100;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
-  border-radius: 0.5rem;
-}
-</style>
 <p>Jadi selain untuk mengontrol versi, git juga digunakan untuk kolaborasi.</p>
 <p>Saat ini Git menjadi salah satu tool terpopuler yang digunakan pada pengembangan software open source maupun closed source.</p>
 <p>Google, Microsoft, Facebook dan berbagai perusahaan raksasa lainnya menggunakan Git.</p>
