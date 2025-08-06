@@ -1,33 +1,109 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tutorial-Lainya on Octocat Code</title>
-    <link>http://localhost:1313/kategori/tutorial-lainya/</link>
-    <description>Recent content in Tutorial-Lainya on Octocat Code</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/kategori/tutorial-lainya/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Tutorial Lainya</title>
-      <link>http://localhost:1313/kategori/tutorial-lainnya/</link>
-      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/kategori/tutorial-lainnya/</guid>
-      <description>&lt;p&gt;Temukan tutorial yang ingin kamu pelajari.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Check Activation Status</title>
-      <link>http://localhost:1313/kategori/tutorial-lainnya/checkactivationstatus/</link>
-      <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/kategori/tutorial-lainnya/checkactivationstatus/</guid>
-      <description>&lt;h2 id=&#34;check-activation-status&#34;&gt;Check Activation Status&lt;/h2&gt;&#xA;&lt;p&gt;The Check Activation Status script in MAS is a wrapper around CAS by abbodi1406.&lt;br&gt;&#xA;You can read more about its features &lt;a href=&#34;https://gravesoft.dev/cas&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;div class=&#34;alert-box alert-note&#34;&gt;&#xD;&#xA;  &lt;div class=&#34;alert-title&#34;&gt;Catatan&lt;/div&gt;&#xD;&#xA;  &lt;div class=&#34;alert-body&#34;&gt;&#xD;&#xA;    Ini adalah catatan penting.&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;div class=&#34;alert-box alert-tip&#34;&gt;&#xD;&#xA;  &lt;div class=&#34;alert-title&#34;&gt;Tips&lt;/div&gt;&#xD;&#xA;  &lt;div class=&#34;alert-body&#34;&gt;&#xD;&#xA;    Tips berguna untuk pengguna.&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;div class=&#34;alert-box alert-info&#34;&gt;&#xD;&#xA;  &lt;div class=&#34;alert-title&#34;&gt;Informasi&lt;/div&gt;&#xD;&#xA;  &lt;div class=&#34;alert-body&#34;&gt;&#xD;&#xA;    Informasi tambahan tentang konten.&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;div class=&#34;alert-box alert-caution&#34;&gt;&#xD;&#xA;  &lt;div class=&#34;alert-title&#34;&gt;Bahaya&lt;/div&gt;&#xD;&#xA;  &lt;div class=&#34;alert-body&#34;&gt;&#xD;&#xA;    Informasi tambahan tentang konten.&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;div class=&#34;alert-box alert-important&#34;&gt;&#xD;&#xA;  &lt;div class=&#34;alert-title&#34;&gt;Peting&lt;/div&gt;&#xD;&#xA;  &lt;div class=&#34;alert-body&#34;&gt;&#xD;&#xA;    Informasi tambahan tentang konten.&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;div class=&#34;alert-box alert-warning&#34;&gt;&#xD;&#xA;  &lt;div class=&#34;alert-title&#34;&gt;Perhatian&lt;/div&gt;&#xD;&#xA;  &lt;div class=&#34;alert-body&#34;&gt;&#xD;&#xA;    Informasi tambahan tentang konten.&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xA;&lt;div class=&#34;rounded overflow-hidden border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 relative group text-xs&#34;&gt;&#xD;&#xA;  &#xD;&#xA;    &lt;div class=&#34;px-3 py-1.5 font-semibold bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-600&#34;&gt;&#xD;&#xA;      Contoh Golang&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;  &#xD;&#xA;&#xD;&#xA;  &lt;button onclick=&#34;copyCode(this)&#34; &#xD;&#xA;          class=&#34;absolute top-1.5 right-1.5 text-[10px] px-1.5 py-0.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded shadow hidden group-hover:block transition&#34;&gt;&#xD;&#xA;    Copy&#xD;&#xA;  &lt;/button&gt;&#xD;&#xA;&#xD;&#xA;  &lt;pre class=&#34;bg-white dark:bg-slate-900 px-3 py-2 text-[13px] text-slate-800 dark:text-slate-100 overflow-auto&#34;&gt;&#xD;&#xA;    &lt;code class=&#34;language-go&#34;&gt;&#xD;&#xA;package main&#xD;&#xA;&#xD;&#xA;import &#34;fmt&#34;&#xD;&#xA;&#xD;&#xA;func main() {&#xD;&#xA;    fmt.Println(&#34;Halo Dunia&#34;)&#xD;&#xA;}&#xD;&#xA;&lt;/code&gt;&#xD;&#xA;  &lt;/pre&gt;&#xD;&#xA;&lt;/div&gt;</description>
-    </item>
-    <item>
-      <title>How to Activate Windows / Office?</title>
-      <link>http://localhost:1313/kategori/tutorial-lainnya/mas/</link>
-      <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/kategori/tutorial-lainnya/mas/</guid>
-      <description>&lt;h2 id=&#34;microsoft-activation-scripts-mas&#34;&gt;Microsoft Activation Scripts (MAS)&lt;/h2&gt;&#xA;&lt;p&gt;Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.&lt;/p&gt;&#xA;&lt;h3 id=&#34;how-to-activate-windows--office&#34;&gt;How to Activate Windows / Office?&lt;/h3&gt;&#xA;&lt;h4 id=&#34;method-1---powershell-windows-8-and-later-&#34;&gt;Method 1 - PowerShell (Windows 8 and later) ❤️&lt;/h4&gt;&#xA;&lt;hr&gt;&#xA;&lt;details class=&#34;alert-details&#34;&gt;&#xD;&#xA;  &lt;summary&gt;Metode 1&lt;/summary&gt;&#xD;&#xA;  &lt;div class=&#34;details-content&#34;&gt;&#xD;&#xA;    &lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Open PowerShell&lt;/strong&gt;&lt;br&gt;&#xA;To do that, press the Windows key + X, then select PowerShell or Terminal.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Copy and paste the code below, then press enter.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;irm https://get.activated.win | iex&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Alternatively, you can use the following (this will be deprecated in the future):&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial-Lainya on Octocat Code</title><link>https://gitkodachi.github.io/kategori/tutorial-lainya/</link><description>Recent content in Tutorial-Lainya on Octocat Code</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://gitkodachi.github.io/kategori/tutorial-lainya/index.xml" rel="self" type="application/rss+xml"/><item><title>Tutorial Lainya</title><link>https://gitkodachi.github.io/kategori/tutorial-lainnya/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/kategori/tutorial-lainnya/</guid><description>&lt;p>Temukan tutorial yang ingin kamu pelajari.&lt;/p></description></item><item><title>Check Activation Status</title><link>https://gitkodachi.github.io/kategori/tutorial-lainnya/checkactivationstatus/</link><pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/kategori/tutorial-lainnya/checkactivationstatus/</guid><description>&lt;h2 id="check-activation-status">Check Activation Status&lt;/h2>
+&lt;p>The Check Activation Status script in MAS is a wrapper around CAS by abbodi1406.&lt;br>
+You can read more about its features &lt;a href="https://gravesoft.dev/cas">here&lt;/a>.&lt;/p>
+
+
+
+
+&lt;div class="alert-box alert-note">
+ &lt;div class="alert-title">Catatan&lt;/div>
+ &lt;div class="alert-body">
+ Ini adalah catatan penting.
+ &lt;/div>
+&lt;/div>
+
+
+
+
+
+&lt;div class="alert-box alert-tip">
+ &lt;div class="alert-title">Tips&lt;/div>
+ &lt;div class="alert-body">
+ Tips berguna untuk pengguna.
+ &lt;/div>
+&lt;/div>
+
+
+
+
+
+&lt;div class="alert-box alert-info">
+ &lt;div class="alert-title">Informasi&lt;/div>
+ &lt;div class="alert-body">
+ Informasi tambahan tentang konten.
+ &lt;/div>
+&lt;/div>
+
+
+
+
+
+&lt;div class="alert-box alert-caution">
+ &lt;div class="alert-title">Bahaya&lt;/div>
+ &lt;div class="alert-body">
+ Informasi tambahan tentang konten.
+ &lt;/div>
+&lt;/div>
+
+
+
+
+
+&lt;div class="alert-box alert-important">
+ &lt;div class="alert-title">Peting&lt;/div>
+ &lt;div class="alert-body">
+ Informasi tambahan tentang konten.
+ &lt;/div>
+&lt;/div>
+
+
+
+
+
+&lt;div class="alert-box alert-warning">
+ &lt;div class="alert-title">Perhatian&lt;/div>
+ &lt;div class="alert-body">
+ Informasi tambahan tentang konten.
+ &lt;/div>
+&lt;/div>
+
+&lt;div class="rounded overflow-hidden border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 relative group text-xs">
+ 
+ &lt;div class="px-3 py-1.5 font-semibold bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-600">
+ Contoh Golang
+ &lt;/div>
+ 
+
+ &lt;button onclick="copyCode(this)" 
+ class="absolute top-1.5 right-1.5 text-[10px] px-1.5 py-0.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded shadow hidden group-hover:block transition">
+ Copy
+ &lt;/button>
+
+ &lt;pre class="bg-white dark:bg-slate-900 px-3 py-2 text-[13px] text-slate-800 dark:text-slate-100 overflow-auto">
+ &lt;code class="language-go">
+package main
+
+import "fmt"
+
+func main() {
+ fmt.Println("Halo Dunia")
+}
+&lt;/code>
+ &lt;/pre>
+&lt;/div></description></item><item><title>How to Activate Windows / Office?</title><link>https://gitkodachi.github.io/kategori/tutorial-lainnya/mas/</link><pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/kategori/tutorial-lainnya/mas/</guid><description>&lt;h2 id="microsoft-activation-scripts-mas">Microsoft Activation Scripts (MAS)&lt;/h2>
+&lt;p>Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.&lt;/p>
+&lt;h3 id="how-to-activate-windows--office">How to Activate Windows / Office?&lt;/h3>
+&lt;h4 id="method-1---powershell-windows-8-and-later-">Method 1 - PowerShell (Windows 8 and later) ❤️&lt;/h4>
+&lt;hr>
+&lt;details class="alert-details">
+ &lt;summary>Metode 1&lt;/summary>
+ &lt;div class="details-content">
+ &lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Open PowerShell&lt;/strong>&lt;br>
+To do that, press the Windows key + X, then select PowerShell or Terminal.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Copy and paste the code below, then press enter.&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>irm https://get.activated.win | iex
+&lt;/code>&lt;/pre>&lt;p>Alternatively, you can use the following (this will be deprecated in the future):&lt;/p></description></item></channel></rss>

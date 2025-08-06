@@ -42,23 +42,17 @@ Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, 
 #### Method 2 - Traditional (Windows Vista and later)
 
 {{< details summary="Metode 1" >}}
-
-1.  Download the file using one of the links below:  
-    ```
-    https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip
-    ```  
-    or
-    ```
-    https://git.activated.win/massgrave/Microsoft-Activation-Scripts/archive/master.zip
-    ```
+1. Download dari salah satu link:
+   - **Github**: [https://github.com/...](https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip)
+   - **Mirror**: [https://git.activated.win/...](https://git.activated.win/massgrave/Microsoft-Activation-Scripts/archive/master.zip)
     
 2.  Right-click on the downloaded zip file and extract it.
 3.  In the extracted folder, find the folder named `All-In-One-Version`.
 4.  Run the file named `MAS_AIO.cmd`.
 5.  You will see the activation options. Follow the on-screen instructions.
 6.  That's all.
-
 {{< /details >}}
+
 
 - To activate additional products such as **Office for macOS, Visual Studio, RDS CALs, and Windows XP**, check [here](unsupported_products_activation.md).
 - To run the scripts in unattended mode, check [here](command_line_switches.md).
