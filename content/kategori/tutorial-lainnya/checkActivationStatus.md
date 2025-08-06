@@ -49,3 +49,11 @@ func main() {
 }
 {{< /code >}}
 
+{{< tabs >}}
+  {{< tab name="Test A" >}} Isi A {{< /tab >}}
+  {{< tab name="Test B" >}} Isi B {{< /tab >}}
+{{< /tabs >}}
+
+{{< details summary="Metode 1" >}}
+contoh details
+{{< /details >}}

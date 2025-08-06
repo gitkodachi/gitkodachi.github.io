@@ -15,7 +15,6 @@ Sebuah skrip Windows Powershell yang kuat untuk menampilkan status lisensi Micro
 **Repositori Github:** https://github.com/paintnokio/CAS
 
 #### Cara Menggunakan
----
 
 1. Kunjungi [Repositori Github](https://devcomp.fun/CAS)
 2. Unduh file ZIP dengan mengklik tombol "Code" lalu pilih "Download ZIP"
@@ -23,7 +22,6 @@ Sebuah skrip Windows Powershell yang kuat untuk menampilkan status lisensi Micro
 4. Jalankan file cmd_launcher.cmd yang ada di folder hasil ekstraksi
 
 #### Produk yang Didukung
----
 
 - Windows Vista dan versi lebih baru / Windows Server 2008 dan versi lebih baru
 - Office 2010 dan versi lebih baru (MSI atau C2R), terinstal di Windows XP dan versi lebih baru
@@ -31,7 +29,6 @@ Sebuah skrip Windows Powershell yang kuat untuk menampilkan status lisensi Micro
 - Host KMS Windows dan Office (CSVLK), terinstal di Windows Server 2003 dan versi lebih baru
 
 #### Fitur Utama
----
 
 - Memerlukan Windows Powershell 2.0 minimal
 - Pengganti praktis untuk fungsi **slmgr.vbs** `/dli` `/dlv` `xpr`
@@ -45,14 +42,12 @@ Sebuah skrip Windows Powershell yang kuat untuk menampilkan status lisensi Micro
 - Mengimplementasikan tool [Client Licensing Check](https://github.com/asdcorp/clic) untuk Windows 8+
 
 #### Keunggulan Check-Activation-Status.ps1
----
 
 - Lebih cepat dengan metode PInvoke native dari Software Licensing Client Dll
 - Menampilkan lebih banyak info untuk semua versi Windows dan Office yang didukung
 - Mendukung "Client Licensing Check" untuk Windows 7 dan Vista
 
 #### Parameter
----
 
 | Switch | Fungsi |
 |:-------|:-------|
@@ -62,10 +57,9 @@ Sebuah skrip Windows Powershell yang kuat untuk menampilkan status lisensi Micro
 | `-Pass` | Lewati prompt akhir atau pembersihan buffer window |
 
 #### Tidak didukung
----
 
 Status Volume Licensing berbasis Token.
 
 #### Lisensi
----
+
 Projek ini dilisensikan di bawah MIT License.

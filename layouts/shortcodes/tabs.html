@@ -1,0 +1,15 @@
+<div class="simple-tabs">
+  <div class="tab-buttons">
+    {{ range $index, $name := .Scratch.Get "tabNames" }}
+      <button 
+        class="tab-button {{ if eq $index 0 }}active{{ end }}" 
+        onclick="switchTab(this, 'tab-{{ $index }}')"
+      >
+        {{ $name }}
+      </button>
+    {{ end }}
+  </div>
+  <div class="tab-contents">
+    {{ .Inner }}
+  </div>
+</div>

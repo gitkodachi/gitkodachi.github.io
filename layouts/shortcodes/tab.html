@@ -1,0 +1,11 @@
+{{- /* Inisialisasi tabNames jika belum ada */ -}}
+{{- if not (.Parent.Scratch.Get "tabNames") -}}
+  {{- .Parent.Scratch.Set "tabNames" slice -}}
+{{- end -}}
+
+{{- $index := len (.Parent.Scratch.Get "tabNames") -}}
+{{- .Parent.Scratch.Add "tabNames" (slice (.Get "name")) -}}
+
+<div id="tab-{{ $index }}" class="tab-content {{ if eq $index 0 }}active{{ end }}">
+  {{ .Inner | markdownify }}
+</div>

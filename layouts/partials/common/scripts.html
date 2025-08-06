@@ -141,5 +141,23 @@ document.addEventListener('alpine:init', () => {
   });
 </script>
 
-
-
+<script>
+/**
+ * Tab System for Hugo Shortcodes
+ */
+function switchTab(button, tabId) {
+  const tabContainer = button.closest('.simple-tabs');
+  
+  // Nonaktifkan semua button dan content
+  tabContainer.querySelectorAll('.tab-button').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  tabContainer.querySelectorAll('.tab-content').forEach(content => {
+    content.classList.remove('active');
+  });
+  
+  // Aktifkan yang dipilih
+  button.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+}
+</script>

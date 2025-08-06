@@ -63,6 +63,70 @@ details {
 
 /* Efek hover */
 a:hover {
-  color: #ff6600; /* Warna oranye saat hover, bisa disesuaikan */
+  color: #48ff00; /* Warna oranye saat hover, bisa disesuaikan */
   text-decoration: underline; /* Tambahkan underline saat hover */
+}
+
+/* Style untuk tabel */
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-family: monospace; /* Gaya font seperti terminal */
+}
+
+.markdown th, .markdown td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.markdown th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.markdown tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Style untuk kode dalam tabel */
+.markdown table code {
+  background-color: #f0f0f0;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+/* Tabs Utama */
+  .simple-tabs {
+  margin: 1rem 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.tab-buttons {
+  display: flex;
+  background: #e5e6e7;
+  border-bottom: 1px solid #e5e7eb;
+}
+.tab-button {
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: #4b5563;
+}
+.tab-button.active {
+  background: 4b5563;
+  color: #02440b;
+  border-bottom: 2px solid #02440b;
+}
+.tab-content {
+  display: none;
+  padding: 16px;
+}
+.tab-content.active {
+  display: block;
 }
