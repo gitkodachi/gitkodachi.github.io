@@ -29,7 +29,7 @@ Semua tautan di bawah ini bersumber resmi dari Microsoft dengan lisensi Retail d
   - ⏳ *Offline*: Versi 5-6 bulan lebih tua (perlu update setelah instalasi)
 
 - **Untuk Pengguna Lanjut**:
-  - Kastum instalasi: [Metode ODT](office_c2r_custom.md)
+  - Kastum instalasi: [Metode ODT](../office_c2r_custom)
   - Paket bahasa: [Language Pack for Office](https://support.microsoft.com/en-us/office/language-accessory-pack-for-microsoft-365-82ee1236-0f9a-45ee-9c72-05b026ee809f)
   - Instalasi Volume murni (lihat panduan khusus)
 {{< /details >}}
@@ -79,7 +79,7 @@ Semua tautan di bawah ini bersumber resmi dari Microsoft dengan lisensi Retail d
 - O365 menyediakan fitur terlengkap dan terbaru. Jika Anda ingin lebih banyak aplikasi, pilih **O365ProPlusRetail**, dan jika ingin lebih sedikit aplikasi, gunakan **O365AppsBasicRetail**.
 {{< /alert >}}
 
-- **Butuh bantuan?** Periksa [di sini](troubleshoot.md).
+- **Butuh bantuan?** Periksa [di sini](../troubleshoot).
 
 {{< tabs >}}
   {{< tab name="Microsoft 365 / Sub" label="Microsoft 365 / Sub" >}}
