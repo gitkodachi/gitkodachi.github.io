@@ -46,6 +46,12 @@
   font-size: 1.05em;
 }
 
+/* Icon Styles */
+.custom-alert-icon {
+  width: 1.25em;
+  text-align: center;
+}
+
 /* Content Styles */
 .custom-alert-content {
   line-height: 1.6;
@@ -83,8 +89,8 @@
   --alert-text-dark: #dbeafe;
 }
 
-/* Caution/Warning */
-.custom-alert-caution {
+/* Warning */
+.custom-alert-warning {
   --alert-bg-light: #fefce8;
   --alert-border-light: #f59e0b;
   --alert-text-light: #92400e;
@@ -94,8 +100,8 @@
   --alert-text-dark: #fef3c7;
 }
 
-/* Danger/Important */
-.custom-alert-important {
+/* Danger */
+.custom-alert-danger {
   --alert-bg-light: #fef2f2;
   --alert-border-light: #ef4444;
   --alert-text-light: #991b1b;
@@ -114,35 +120,6 @@
   --alert-bg-dark: #134e4a;
   --alert-border-dark: #0d9488;
   --alert-text-dark: #ccfbf1;
-}
-
-/* ==================== */
-/* ICON SYSTEM */
-/* ==================== */
-.custom-alert-header::before {
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
-  content: var(--alert-icon);
-  width: 1.25em;
-  display: inline-block;
-  text-align: center;
-}
-
-/* Type-Specific Icons */
-.custom-alert-tip .custom-alert-header::before {
-  content: "\f0eb"; /* lightbulb */
-}
-.custom-alert-note .custom-alert-header::before {
-  content: "\f15c"; /* note */
-}
-.custom-alert-caution .custom-alert-header::before {
-  content: "\f071"; /* exclamation-triangle */
-}
-.custom-alert-important .custom-alert-header::before {
-  content: "\f06a"; /* exclamation-circle */
-}
-.custom-alert-info .custom-alert-header::before {
-  content: "\f05a"; /* info-circle */
 }
 
 /* ==================== */

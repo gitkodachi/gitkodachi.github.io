@@ -42,3 +42,7 @@ contoh details
   - type="danger" untuk konsekuensi kritis
   - type="info" untuk keterangan umum
 {{< /alert >}}
+
+{{< referensi 
+  name="Nama Website/Sumber" 
+  url="https://example.com/sumber-artikel" >}}

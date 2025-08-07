@@ -158,6 +158,9 @@
     <loc>http://localhost:1313/kategori/tutorial-lainnya/mas/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/kategori/tutorial-lainnya/windows/bsod/</loc>
+    <lastmod>2025-06-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/kategori/tutorial-lainnya/cas/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
@@ -168,6 +171,9 @@
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/kategori/tutorial-lainnya/office_c2r_custom/</loc>
+    <lastmod>2025-06-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/topik/microsoft/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/topik/office/</loc>
@@ -250,5 +256,7 @@
     <loc>http://localhost:1313/kategori/tutorial-lainnya/</loc>
   </url><url>
     <loc>http://localhost:1313/software/multimedia/vlc/</loc>
+  </url><url>
+    <loc>http://localhost:1313/kategori/tutorial-lainnya/windows/</loc>
   </url>
 </urlset>
