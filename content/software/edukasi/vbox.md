@@ -48,3 +48,5 @@ Dapatkan filenya disini 🕵️‍♀️ [disini](https://download.virtualbox.or
 ### For Linux ( Sudah Support Ubuntu 24.04 (Noble))
 #### 📦 Apple Silicon hosts
 Dapatkan filenya disini 🕵️‍♀️ [disini](https://download.virtualbox.org/virtualbox/7.1.10/virtualbox-7.1_7.1.10-169112~Ubuntu~noble_amd64.deb?source=:ow:o:p:nav:mmddyyVirtualBoxHero)
+
+### [Cara menggunakan VirtualBox](../../produktivitas/instal-vbox)
