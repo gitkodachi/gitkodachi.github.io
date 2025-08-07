@@ -46,3 +46,9 @@ contoh details
 {{< referensi 
   name="Nama Website/Sumber" 
   url="https://example.com/sumber-artikel" >}}
+
+  {{< image 
+  src="path image" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+  >}}

@@ -1,25 +1,103 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Software Edukasi on Octocat Code</title>
-    <link>http://localhost:1313/software/edukasi/</link>
-    <description>Recent content in Software Edukasi on Octocat Code</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:1313/software/edukasi/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>GeoGebra</title>
-      <link>http://localhost:1313/software/edukasi/geofebra/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/software/edukasi/geofebra/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Photomath</title>
-      <link>http://localhost:1313/software/edukasi/photomath/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/software/edukasi/photomath/</guid>
-      <description>&lt;p&gt;ini halaman photomath&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Software Edukasi on Octocat Code</title><link>https://gitkodachi.github.io/software/edukasi/</link><description>Recent content in Software Edukasi on Octocat Code</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://gitkodachi.github.io/software/edukasi/index.xml" rel="self" type="application/rss+xml"/><item><title>IBM SPSS Static</title><link>https://gitkodachi.github.io/software/edukasi/spss/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/software/edukasi/spss/</guid><description>&lt;h3 id="ibm-spss-statistics-2701-if026-full">IBM SPSS Statistics 27.0.1 IF026 Full&lt;/h3>
+&lt;p>IBM SPSS Statistics 27.0.1 IF026 Full merupakan software yang sangat populer untuk digunakan sebagai analisis statistik di segala bidang ilmiah, baik itu ekonomi, kedokteran, biologi, kimia, fisika, matematika, manajemen, ilmu sosial, pemerintah, dan bidang lainnya. Selain analisis statistik, SPSS juga dilengkapi manajemen data, dan dokumentasi data.&lt;/p>
+&lt;p>bagi anda yang mencari software SPSS Statistics 27 Full, silahkan download filenya di bawah ini dan ikuti intruksinya agar full version&lt;/p></description></item><item><title>Vitual Box</title><link>https://gitkodachi.github.io/software/edukasi/vbox/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/software/edukasi/vbox/</guid><description>&lt;p>VirtualBox 7.1.6.167084 Terbaru Plus Extension Pack merupakan salah satu sosftware yang berguna sebagai virtual machine installasi sistem operasi di atas windows baik itu windows linux dll.&lt;/p>
+&lt;p>Untuk kita yang selalu atau hobi mendownload Operating System, alangkah baiknya di Coba dahulu menggunakan software ini, Telah lama saya jelaskan bahkan tutorial nya pun ane buatkan sudah lama. Lalu apa sih sebenarnya Fungsi utama dari software ini, apalagi sobat mungkin masih ingin terus belajar. Yups. Belajar memang tak akan ada habisnya. Ketika kita sudah menguasainya. menjadi suatu kebanggaan diri sendiri. OK. kembali ke Topik Vrtual box,&lt;/p></description></item><item><title>Winrar</title><link>https://gitkodachi.github.io/software/edukasi/winrar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/software/edukasi/winrar/</guid><description>&lt;p>WinRAR 7.13 dan 6.24 Full Version Terbaru merupakan software archive sebagai compress file dalam beberapa file atau folder menjadi 1 file archive yang mudah. Siapa coba yang gak kenal namanya WINRAR , software compress dan extract file yang sangat populer, yang memudahkan kita membuat Kumpulan Folder dan file menjadi 1 PACKING .&lt;/p>
+
+&lt;figure class="my-4 text-center">
+ &lt;img 
+ src="https://gitkodachi.github.io/images/content/software/winrar/winrar-1.png" 
+ alt="Deskripsi gambar" 
+ class="cursor-zoom-in max-w-full rounded"
+ onclick="zoom(this)"
+ >
+ 
+ &lt;figcaption class="text-sm text-gray-500 mt-2">
+ &lt;em>Gambar zoom&lt;/em>
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;script>
+function zoom(img) {
+ img.classList.toggle('zoomed');
+ document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+ 
+ 
+ if (img.classList.contains('zoomed')) {
+ const handleKey = (e) => e.key === 'Escape' &amp;&amp; zoom(img);
+ document.addEventListener('keydown', handleKey);
+ img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+ } else if (img.onzoomout) {
+ img.onzoomout();
+ }
+}
+&lt;/script>
+
+&lt;style>
+img.zoomed {
+ position: fixed;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ max-height: 90vh;
+ z-index: 100;
+ cursor: zoom-out;
+ box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+}
+&lt;/style>
+
+&lt;figure class="my-4 text-center">
+ &lt;img 
+ src="https://gitkodachi.github.io/images/content/software/winrar/winrar-2.png" 
+ alt="Deskripsi gambar" 
+ class="cursor-zoom-in max-w-full rounded"
+ onclick="zoom(this)"
+ >
+ 
+ &lt;figcaption class="text-sm text-gray-500 mt-2">
+ &lt;em>Gambar zoom&lt;/em>
+ &lt;/figcaption>
+ 
+&lt;/figure>
+
+&lt;script>
+function zoom(img) {
+ img.classList.toggle('zoomed');
+ document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+ 
+ 
+ if (img.classList.contains('zoomed')) {
+ const handleKey = (e) => e.key === 'Escape' &amp;&amp; zoom(img);
+ document.addEventListener('keydown', handleKey);
+ img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+ } else if (img.onzoomout) {
+ img.onzoomout();
+ }
+}
+&lt;/script>
+
+&lt;style>
+img.zoomed {
+ position: fixed;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ max-height: 90vh;
+ z-index: 100;
+ cursor: zoom-out;
+ box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+}
+&lt;/style>
+&lt;h4 id="software-terkait-lainya">Software Terkait Lainya&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="#">VSO ConvertXtoVideo Ultimate 2.0.0.26 Terbaru&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#">BurnAware 13.2 Professional Full Terbaru&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#">Kaspersky Tweak Assistant v23.11.19&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#">Microsoft NET Framework 4.7.2.3081.0 Terbaru&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#">DVD-Cloner Gold 14.20 Build 1422 Full Version&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="langkah-install">&lt;em>Langkah Install&lt;/em>&lt;/h4>
+&lt;ul>
+&lt;li>Setelah terdownload, Silahkan extract file, Wajib !!&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>ini format nya Zip, dan Windows Explorer bisa Extract Zip File&lt;/em>&lt;/p></description></item></channel></rss>
