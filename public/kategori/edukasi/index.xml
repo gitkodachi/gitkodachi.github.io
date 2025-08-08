@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Archive on Octocat Code</title>
-    <link>http://localhost:1313/software/archive/</link>
-    <description>Recent content in Archive on Octocat Code</description>
+    <title>Edukasi on Octocat Code</title>
+    <link>http://localhost:1313/kategori/edukasi/</link>
+    <description>Recent content in Edukasi on Octocat Code</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/software/archive/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/kategori/edukasi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Winrar</title>
       <link>http://localhost:1313/software/edukasi/winrar/</link>
