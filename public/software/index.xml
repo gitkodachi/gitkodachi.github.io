@@ -1,1 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kategori Software on Octocat Code</title><link>https://gitkodachi.github.io/software/</link><description>Recent content in Kategori Software on Octocat Code</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://gitkodachi.github.io/software/index.xml" rel="self" type="application/rss+xml"/><item><title>Software Edukasi</title><link>https://gitkodachi.github.io/software/edukasi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/software/edukasi/</guid><description/></item><item><title>Software Multimedia</title><link>https://gitkodachi.github.io/software/multimedia/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/software/multimedia/</guid><description/></item><item><title>Software Produktivitas</title><link>https://gitkodachi.github.io/software/produktivitas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/software/produktivitas/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kategori Software on Octocat Code</title>
+    <link>https://gitkodachi.github.io/software/</link>
+    <description>Recent content in Kategori Software on Octocat Code</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://gitkodachi.github.io/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Software Edukasi</title>
+      <link>https://gitkodachi.github.io/software/edukasi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://gitkodachi.github.io/software/edukasi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software Multimedia</title>
+      <link>https://gitkodachi.github.io/software/multimedia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://gitkodachi.github.io/software/multimedia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software Produktivitas</title>
+      <link>https://gitkodachi.github.io/software/produktivitas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://gitkodachi.github.io/software/produktivitas/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,9 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web Programming on Octocat Code</title><link>https://gitkodachi.github.io/kategori/web-programming/</link><description>Recent content in Web Programming on Octocat Code</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 10 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://gitkodachi.github.io/kategori/web-programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Tutorial HTML &amp; CSS Dasar</title><link>https://gitkodachi.github.io/tutorial/html/html-css/</link><pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/html/html-css/</guid><description/></item><item><title>Web Programming</title><link>https://gitkodachi.github.io/kategori/web-programming/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/kategori/web-programming/</guid><description>&lt;p>Temukan tutorial yang ingin kamu pelajari.&lt;/p></description></item><item><title>Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</title><link>https://gitkodachi.github.io/kategori/web-programming/laravel/</link><pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/kategori/web-programming/laravel/</guid><description>&lt;h2 id="laravel">#Laravel&lt;/h2>
-&lt;h2 id="php">#PHP&lt;/h2>
-&lt;h2 id="mysql">#MySQL&lt;/h2>
-&lt;p>Pemula bisa langsung bikin CRUD!&lt;/p>
-&lt;h1 id="tutorial-laravel-untuk-pemula">Tutorial Laravel untuk Pemula&lt;/h1>
-&lt;p>&lt;strong>Sabardi&lt;/strong>&lt;/p>
-&lt;hr>
-&lt;h2 id="pengenalan-laravel">Pengenalan Laravel&lt;/h2>
-&lt;p>&lt;strong>Laravel&lt;/strong> adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web&amp;hellip;&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web Programming on Octocat Code</title>
+    <link>https://gitkodachi.github.io/kategori/web-programming/</link>
+    <description>Recent content in Web Programming on Octocat Code</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://gitkodachi.github.io/kategori/web-programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tutorial HTML &amp; CSS Dasar</title>
+      <link>https://gitkodachi.github.io/tutorial/html/html-css/</link>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://gitkodachi.github.io/tutorial/html/html-css/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Programming</title>
+      <link>https://gitkodachi.github.io/kategori/web-programming/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://gitkodachi.github.io/kategori/web-programming/</guid>
+      <description>&lt;p&gt;Temukan tutorial yang ingin kamu pelajari.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</title>
+      <link>https://gitkodachi.github.io/kategori/web-programming/laravel/</link>
+      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://gitkodachi.github.io/kategori/web-programming/laravel/</guid>
+      <description>&lt;h2 id=&#34;laravel&#34;&gt;#Laravel&lt;/h2&gt;&#xA;&lt;h2 id=&#34;php&#34;&gt;#PHP&lt;/h2&gt;&#xA;&lt;h2 id=&#34;mysql&#34;&gt;#MySQL&lt;/h2&gt;&#xA;&lt;p&gt;Pemula bisa langsung bikin CRUD!&lt;/p&gt;&#xA;&lt;h1 id=&#34;tutorial-laravel-untuk-pemula&#34;&gt;Tutorial Laravel untuk Pemula&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Sabardi&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;pengenalan-laravel&#34;&gt;Pengenalan Laravel&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Laravel&lt;/strong&gt; adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
