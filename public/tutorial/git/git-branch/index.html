@@ -465,7 +465,368 @@
 
       
       <div class="content">
-        
+        <p>Bayangkan anda sedang bekerja dengan tim pada suatu repositori Git. Repositori ini dikerjakan secara bersama-sama.</p>
+<p>Kadang… akan terjadi konflik, karena kode yang kita tulis berbeda dengan yang lain.</p>
+<p>Misalnya, Si A menulis kode untuk fitur X dengan algoritma yang ia ketahui. Sedangkan si B menulis dengan algoritma yang berbeda.</p>
+<p>Lalu mereka melakukan commit, dan kode sumber jadi berantakan. Anggota tim yang lain menjadi pusing.</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/git/konflik-branch-repositori-git.png" 
+      alt="Deskripsi gambar" 
+      class="cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    img.classList.toggle('zoomed');
+    document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+    
+    
+    if (img.classList.contains('zoomed')) {
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+    } else if (img.onzoomout) {
+      img.onzoomout();
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    z-index: 100;
+    cursor: zoom-out;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+  }
+  </style>
+<p>Agar tidak terjadi hal yang seperti ini, kita harus membuat cabang (branch) tersendiri.</p>
+<p>Misalnya, si A akan mengerjakan fitur X, maka dia harus membuat cabang sendiri. Si A akan bebas melakukan apapun di cabangnya tanpa mengganggu cabang utama <em>(master)</em>.</p>
+<h3 id="cara-membuat-cabang-baru">Cara Membuat Cabang Baru</h3>
+<p>Perintah untuk membuat cabang adalah <strong>git branch</strong>, kemudian diikuti dengan nama cabangnya.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git branch fitur_register
+</span></span></code></pre></div><p>Maka Git akanmembuat cabang bernama <strong>fitur_register</strong>.</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/git/percabganan-di-repositori-git.png" 
+      alt="Deskripsi gambar" 
+      class="cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    img.classList.toggle('zoomed');
+    document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+    
+    
+    if (img.classList.contains('zoomed')) {
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+    } else if (img.onzoomout) {
+      img.onzoomout();
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    z-index: 100;
+    cursor: zoom-out;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+  }
+  </style>
+<p>Sekarang setiap orang memiliki cabangnya masing-masing. Mereka bebas bereksperimen.</p>
+<p>Untuk melihat cabang apa saja yang ada di repositori, gunakan perintah git branch.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git branch
+</span></span><span class="line"><span class="cl">  halaman_login
+</span></span><span class="line"><span class="cl">* master
+</span></span></code></pre></div><p>Tanda bintang <strong>(*)</strong> artinya cabang yang sedang aktif atau Kita sedang berada di sana.</p>
+<h3 id="latihan">Latihan</h3>
+<p>Untuk memantapkan pemahaman tentang percabangan Git, mari kita coba praktik.</p>
+<p>Pada repositori, buatlah sebuah cabang baru.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git branch halama_login
+</span></span></code></pre></div><p>Setelah itu, pindah ke cabang yang baru saja kita buat dengan perintah:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout halaman_login
+</span></span></code></pre></div><p>Lalu tambahkan file <strong>login.html</strong>, isinya terserah anda.</p>
+
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/git/pembuatan-branch-dan-eksperimen-di-branch.png" 
+    alt="Deskripsi gambar" 
+    class="cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  img.classList.toggle('zoomed');
+  document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+  
+  
+  if (img.classList.contains('zoomed')) {
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+  } else if (img.onzoomout) {
+    img.onzoomout();
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 90vh;
+  z-index: 100;
+  cursor: zoom-out;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+}
+</style>
+<div class="custom-alert custom-alert-tip" role="alert">
+  <div class="custom-alert-header"><i class="custom-alert-icon fas fa-lightbulb"></i><span class="custom-alert-title">Catatan</span>
+  </div>
+  <div class="custom-alert-content">
+    <em>&ldquo;Jangan lupa untuk menggunakan perintah <strong>git status</strong> untuk melihat status repositori.&rdquo;</em>
+  </div>
+</div>
+<p>Kita sudah menambahkan file <strong>login.html</strong>. Selanjutnya kita lakukan commit.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add login.html
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;membuat file login.html&#34;</span>
+</span></span></code></pre></div><p>Bagus! revisi kita pada cabang <strong>halaman_login</strong> sudah disimpan. Sekarang coba kembali ke cabang <strong>master</strong>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout master
+</span></span></code></pre></div><p>Apakah anda menemukan file <strong>login.html</strong>?</p>
+<p>Pasti tidak!</p>
+<p>Sekarang kembali lagi ke cabang <strong>halaman_login</strong>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout halaman_login
+</span></span></code></pre></div><p>Cek lagi, apakah sekarang file <strong>login.html</strong> sudah ada?</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">project-01/
+</span></span><span class="line"><span class="cl">├── index.html
+</span></span><span class="line"><span class="cl">└── login.html
+</span></span></code></pre></div><p>Ternyata ada. Yep! kita bisa mengambil kesimpulan, kalau perubahan pada cabang <strong>halaman_login</strong> tidak akan berpengaruh di cabang <strong>master</strong>.</p>
+<h3 id="menggunakan-cabang">Menggunakan Cabang</h3>
+<p>Anggaplah kita sudah selesai membuat fitur login di cabang <strong>halaman_login</strong>. Sekarang kita ingin Menggabungkannya dengan cabang <strong>master</strong> (utama).</p>
+<p>Pertama, kita harus pindah dulu ke cabang <strong>master</strong>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout master
+</span></span></code></pre></div><p>Setelah itu, barulah kita bisa menggabungkan dengan perintah <strong>git merge</strong>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git merge halaman_login
+</span></span></code></pre></div><p>Sekarang lihat, file <strong>login.html</strong> sudah ada di cabang <strong>master</strong>.</p>
+
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/git/penggabungan-cabang-git.png" 
+    alt="Deskripsi gambar" 
+    class="cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  img.classList.toggle('zoomed');
+  document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+  
+  
+  if (img.classList.contains('zoomed')) {
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+  } else if (img.onzoomout) {
+    img.onzoomout();
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 90vh;
+  z-index: 100;
+  cursor: zoom-out;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+}
+</style>
+<h3 id="mengenai-bentrok">Mengenai Bentrok</h3>
+<p>Bentrok biasanya terjadi jika ada dua orang yang mengedit file yang sama.</p>
+<p>Kenapa bisa begitu, ‘kan mereka sudah punya cabang masing-masing?</p>
+<p>Bisa jadi, di cabang yang mereka kerjakan ada file yang sama dengan cabang lain. Kemudian, saat digabungkan terjadi bentrok.</p>
+<p>Mengatasi bentrok adalah tugas dari pemilik atau pengelola repositori. Dia harus bertindak adil, kode mana yang harus diambil.</p>
+<p>Biasanya akan ada proses diskusi dulu dalam mengambil keputusan.</p>
+<p>Baiklah, sekarang kita akan coba membuat bentrokan 😄.</p>
+<p>Pindah dulu ke branch <strong>halaman_login</strong>…</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout halaman_login
+</span></span></code></pre></div><p>Setela itu, edit file <strong>login.html</strong> atau <strong>index.html</strong>, karena kedua file tersebut ada di kedua cabang yang akan kita gabungkan.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git diff
+</span></span><span class="line"><span class="cl">diff --git a/login.html b/login.html
+</span></span><span class="line"><span class="cl">index 23a3f5c..eea5658 <span class="m">100644</span>
+</span></span><span class="line"><span class="cl">--- a/login.html
+</span></span><span class="line"><span class="cl">+++ b/login.html
+</span></span><span class="line"><span class="cl">@@ -1 +1 @@
+</span></span><span class="line"><span class="cl">-di sini berisi kode untuk halaman login
+</span></span><span class="line"><span class="cl">+&lt;p&gt;di sini berisi kode untuk halaman login&lt;p&gt;
+</span></span></code></pre></div><p>Setelah itu, lakukan commit lagi:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add login.html
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;ubah isi login.html&#34;</span>
+</span></span></code></pre></div><p>Selanjutnya pindah ke cabang <strong>master</strong> dan lakukan perubahan juga di cabang ini. Ubah file yang sama seperti di cabang <strong>halaman_login</strong>.</p>
+<p>Setelah itu, lakukan commit di cabang <strong>master</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add login.html
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;ubah isi login.html di cabang master&#34;</span>
+</span></span></code></pre></div><p>Terakhir, coba gabungkan cabang <strong>halaman_login</strong> dengan cabang <strong>master</strong>, maka akan terjadi bentrok.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git merge halaman_login
+</span></span><span class="line"><span class="cl">Auto-merging login.html
+</span></span><span class="line"><span class="cl">CONFLICT <span class="o">(</span>content<span class="o">)</span>: Merge conflict in login.html
+</span></span><span class="line"><span class="cl">Automatic merge failed<span class="p">;</span> fix conflicts and <span class="k">then</span> commit the result.
+</span></span></code></pre></div><p>Nah, kita disuruh perbaiki kode yang bentrok. Sekarang buka login.html dengan teks editor.</p>
+
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/git/kode-yang-bentrok.png" 
+    alt="Deskripsi gambar" 
+    class="cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  img.classList.toggle('zoomed');
+  document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+  
+  
+  if (img.classList.contains('zoomed')) {
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+  } else if (img.onzoomout) {
+    img.onzoomout();
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 90vh;
+  z-index: 100;
+  cursor: zoom-out;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+}
+</style>
+<p>Kedua kode cabang dipisahkan dengan tanda ======. Sekarang.. tugas kita adalah memperbaikinya.</p>
+<p>Silakan eliminasi salah satu dari kode tersebut.</p>
+
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/git/Eliminasi-kode-yang-bentrok.png" 
+    alt="Deskripsi gambar" 
+    class="cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  img.classList.toggle('zoomed');
+  document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+  
+  
+  if (img.classList.contains('zoomed')) {
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+  } else if (img.onzoomout) {
+    img.onzoomout();
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 90vh;
+  z-index: 100;
+  cursor: zoom-out;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+}
+</style>
+<p>Setelah itu lakukan commit untuk menyimpan perubahan ini.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add login.html
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;perbaiki konflik&#34;</span>
+</span></span></code></pre></div><p>Bagus! bentrokan antar ormas programmer sudah beres 😄.</p>
+<h3 id="menghapus-cabang">Menghapus Cabang</h3>
+<p>Cabang yang sudah mati atau tidak ada pengembangan lagi, sebaiknya dihapus.</p>
+<p>Agar repositori kita bersih dan rapi.</p>
+<p>Cara menghapus cabang, gunakan perintah <strong>git branch</strong> dengan argumen <strong>-d</strong> dan diikuti dengan nama cabangnya.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git branch -d halaman_login
+</span></span></code></pre></div><h3 id="akhir-kata">Akhir Kata…</h3>
+<p>Sekian tutorial ini. Semoga ada manfaatnya.</p>
+<div class="content-source">
+  <a href="https://www.petanikode.com/git-branch/" target="_blank" rel="noopener noreferrer" class="source-link">
+    Sumber: PetaniKode
+  </a>
+</div>
+
       </div>
     </article>
   </div>
