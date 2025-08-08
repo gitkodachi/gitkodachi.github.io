@@ -30,10 +30,45 @@
       <description></description>
     </item>
     <item>
+      <title>Archive</title>
+      <link>http://localhost:1313/kategori/archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/archive/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Edukasi</title>
       <link>http://localhost:1313/kategori/edukasi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/kategori/edukasi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Multimedia</title>
+      <link>http://localhost:1313/kategori/multimedia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/multimedia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Produktivitas</title>
+      <link>http://localhost:1313/kategori/produktivitas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/produktivitas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Statistik</title>
+      <link>http://localhost:1313/kategori/statistik/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/statistik/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorial</title>
+      <link>http://localhost:1313/kategori/tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/tutorial/</guid>
       <description></description>
     </item>
     <item>
@@ -42,6 +77,20 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/kategori/tutorial-lainnya/</guid>
       <description>&lt;p&gt;Temukan tutorial yang ingin kamu pelajari.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Video</title>
+      <link>http://localhost:1313/kategori/video/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/video/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Virtualisasi</title>
+      <link>http://localhost:1313/kategori/virtualisasi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/virtualisasi/</guid>
+      <description></description>
     </item>
     <item>
       <title>Windows</title>

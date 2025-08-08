@@ -2,8 +2,8 @@
 title: "IBM SPSS Static"
 author: "default"
 description: "SPSS software yang sangat populer untuk di gunakan analisis statistik segala bidang ilmiah"
-software: ["edukasi"]
 os: ["Windows", "macOS"]
+kategori: ["edukasi", "statistik"]
 thumbnail: "/images/content/software/spss.png"
 image: "/images/content/software/spss.png"
 ---

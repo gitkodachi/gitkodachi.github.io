@@ -1,9 +1,9 @@
 ---
-title: "Vitual Box"
+title: "Virtual Box"
 author: "default"
 description: "Virtualbox Terbaru plus extension pack merupakan salah satu software berguna sebagai virtual mechine installasi sistem operasi diatas windows, linux dll"
-software: ["edukasi"]
 os: ["Windows", "macOS"]
+kategori: ["edukasi", "virtualisasi", "tutorial"]
 thumbnail: "/images/content/software/vbox/vbox.png"
 image: "/images/content/software/vbox/vbox.png"
 ---

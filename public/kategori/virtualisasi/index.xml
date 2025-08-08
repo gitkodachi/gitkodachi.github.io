@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtualisasi on Octocat Code</title>
+    <link>http://localhost:1313/kategori/virtualisasi/</link>
+    <description>Recent content in Virtualisasi on Octocat Code</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/kategori/virtualisasi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cara Menginstall Virtualbox di Windows</title>
+      <link>http://localhost:1313/software/produktivitas/instal-vbox/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/software/produktivitas/instal-vbox/</guid>
+      <description>&lt;p&gt;VirtualBox perangkat lunak virtualisasi sumber terbuka dan gratis oleh Oracle digunakan untuk menjalankan berbagai sistem operasi dalam lingkungan Windows Anda yang ada. Hal ini memungkinkan Anda menguji perangkat lunak baru, menjelajahi sistem operasi yang berbeda, atau bahkan menjalankan aplikasi lama yang mungkin tidak kompatibel dengan sistem Anda saat ini.&lt;/p&gt;&#xA;&lt;p&gt;Panduan ini akan memandu Anda melalui prosedur untuk menginstal VirtualBox Windows memastikan pengaturan yang lancar dan sukses serta ikhtisar tentang cara menggunakan VirtualBox di Windows.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vitual Box</title>
+      <link>http://localhost:1313/software/edukasi/vbox/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/software/edukasi/vbox/</guid>
+      <description>&lt;p&gt;VirtualBox 7.1.6.167084 Terbaru Plus Extension Pack merupakan salah satu sosftware yang berguna sebagai virtual machine installasi sistem operasi di atas windows baik itu windows linux  dll.&lt;/p&gt;&#xA;&lt;p&gt;Untuk kita yang selalu atau hobi mendownload Operating System, alangkah baiknya di Coba dahulu menggunakan software ini, Telah lama saya jelaskan bahkan tutorial nya pun ane buatkan sudah lama.  Lalu apa sih sebenarnya Fungsi utama dari software ini, apalagi sobat mungkin masih ingin terus belajar. Yups. Belajar memang tak akan ada habisnya. Ketika kita sudah menguasainya. menjadi suatu kebanggaan diri sendiri. OK. kembali ke Topik Vrtual box,&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

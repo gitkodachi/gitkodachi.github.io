@@ -2,9 +2,8 @@
 title: "Winrar"
 author: "default"
 description: "Winrar Merupakan Archive sebagai compress file dalam beberapa file atau folder menjadi satu file archive."
-kategori: ["edukasi"]
-software: ["edukasi"]
 os: ["Windows", "macOS"]
+kategori: ["edukasi", "archive"]
 thumbnail: "/images/content/software/winrar/winrar.png"
 image: "/images/content/software/winrar/winrar.png"
 ---

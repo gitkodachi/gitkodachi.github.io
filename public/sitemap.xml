@@ -239,6 +239,8 @@
     <loc>http://localhost:1313/buku/vuejs/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/kategori/archive/</loc>
+  </url><url>
     <loc>http://localhost:1313/software/produktivitas/instal-vbox/</loc>
   </url><url>
     <loc>http://localhost:1313/kategori/edukasi/</loc>
@@ -247,13 +249,25 @@
   </url><url>
     <loc>http://localhost:1313/software/</loc>
   </url><url>
+    <loc>http://localhost:1313/kategori/multimedia/</loc>
+  </url><url>
+    <loc>http://localhost:1313/kategori/produktivitas/</loc>
+  </url><url>
     <loc>http://localhost:1313/software/edukasi/</loc>
   </url><url>
     <loc>http://localhost:1313/software/multimedia/</loc>
   </url><url>
     <loc>http://localhost:1313/software/produktivitas/</loc>
   </url><url>
+    <loc>http://localhost:1313/kategori/statistik/</loc>
+  </url><url>
+    <loc>http://localhost:1313/kategori/tutorial/</loc>
+  </url><url>
     <loc>http://localhost:1313/kategori/tutorial-lainnya/</loc>
+  </url><url>
+    <loc>http://localhost:1313/kategori/video/</loc>
+  </url><url>
+    <loc>http://localhost:1313/kategori/virtualisasi/</loc>
   </url><url>
     <loc>http://localhost:1313/software/edukasi/vbox/</loc>
   </url><url>

@@ -2,9 +2,10 @@
 title: "Cara Menginstall Virtualbox di Windows"
 author: "default"
 description: "VirtualBox perangkat lunak virtualisasi sumber terbuka dan gratis oleh Oracle digunakan untuk menjalankan berbagai sistem operasi dalam lingkungan Windows"
-software: ["produktivitas"]
 os: ["Windows", "macOS", "Linux", "Android", "iOS"]
-thumbnail: "/images/content/software/vbox/vbox-1.png"
+kategori: ["produktivitas", "virtualisasi", "tutorial"]
+thumbnail: "/images/content/software/vbox/vbox-2.png"
+image: "/images/content/software/vbox/vbox-2.png"
 ---
 
 VirtualBox perangkat lunak virtualisasi sumber terbuka dan gratis oleh Oracle digunakan untuk menjalankan berbagai sistem operasi dalam lingkungan Windows Anda yang ada. Hal ini memungkinkan Anda menguji perangkat lunak baru, menjelajahi sistem operasi yang berbeda, atau bahkan menjalankan aplikasi lama yang mungkin tidak kompatibel dengan sistem Anda saat ini.
