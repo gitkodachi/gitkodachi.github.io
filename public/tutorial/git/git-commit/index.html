@@ -446,53 +446,21 @@
 
       
       
+      <figure class="not-prose mt-4">
+        <picture class="flex justify-center">
+          <img 
+            class="lazyload cursor-zoom-in max-w-full h-auto lazyloaded"
+            src="http://localhost:1313/images/cover/git-petanikode.png"
+            data-src="http://localhost:1313/images/cover/git-petanikode.png"
+            alt="Belajar Git #03: Cara Membuat Repositoru Git Pada Proyek"
+            loading="lazy">
+        </picture>
+      </figure>
+      
 
       
       <div class="content">
         
-<figure class="my-4 text-center">
-  <img 
-    src="http://localhost:1313/images/cover/git-petanikode.png" 
-    alt="Deskripsi gambar" 
-    class="cursor-zoom-in max-w-full rounded"
-    onclick="zoom(this)"
-  >
-  
-  <figcaption class="text-sm text-gray-500 mt-2">
-    <em>Keterangan gambar opsional</em>
-  </figcaption>
-  
-</figure>
-
-<script>
-function zoom(img) {
-  img.classList.toggle('zoomed');
-  document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
-  
-  
-  if (img.classList.contains('zoomed')) {
-    const handleKey = (e) => e.key === 'Escape' && zoom(img);
-    document.addEventListener('keydown', handleKey);
-    img.onzoomout = () => document.removeEventListener('keydown', handleKey);
-  } else if (img.onzoomout) {
-    img.onzoomout();
-  }
-}
-</script>
-
-<style>
-img.zoomed {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-height: 90vh;
-  z-index: 100;
-  cursor: zoom-out;
-  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
-}
-</style>
-
       </div>
     </article>
   </div>
@@ -541,8 +509,8 @@ img.zoomed {
       
       
         <img class="w-16 h-16 lazyload rounded-lg object-cover" 
-             src="http://localhost:1313/images/thumbnail/git-sqr.png" 
-             data-src="http://localhost:1313/images/thumbnail/git-sqr.png" 
+             src="http://localhost:1313/images/cover/git-petanikode.png" 
+             data-src="http://localhost:1313/images/cover/git-petanikode.png" 
              alt="Apa itu Git dan Kenapa Penting bagi Programmer?" 
              height="64" 
              width="64"

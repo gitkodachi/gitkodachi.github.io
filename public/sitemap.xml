@@ -267,9 +267,9 @@
   </url><url>
     <loc>http://localhost:1313/kategori/video/</loc>
   </url><url>
-    <loc>http://localhost:1313/kategori/virtualisasi/</loc>
-  </url><url>
     <loc>http://localhost:1313/software/edukasi/vbox/</loc>
+  </url><url>
+    <loc>http://localhost:1313/kategori/virtualisasi/</loc>
   </url><url>
     <loc>http://localhost:1313/software/multimedia/vlc/</loc>
   </url><url>

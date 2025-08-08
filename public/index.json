@@ -36,7 +36,7 @@
   },
   {
     "title": "Belajar Git #1: Cara Install Git dan Konfigurasi Awal Yang Harus dilakukan",
-    "content": "\rSuber Gambar Petani Kode\rKita sudah mengenal Git pada tulisan sebelumnya. Selanjutnya Kita akan melakukan instalasi dan persiapan untuk mulai belajar Git.\nTulisan ini terbagi menjadi tiga bagian:\nCara Instalasi Git di Linux. Cara Instalasi Git di Windows. Konfigurasi Awal yang Harus dilkaukan Setelah Menginstal Git. Mari kita mulai\u0026hellip;\n1. Cara Install Git di Linux sudo apt install git atau\nsudo apt-install git Pada Fedora:\nyum install git Setelah itu , coba periksa versi yang terinstal dengan perintah:\ngit --version Suber Gambar Petani Kode\r",
+    "content": "Kita sudah mengenal Git pada tulisan sebelumnya. Selanjutnya Kita akan melakukan instalasi dan persiapan untuk mulai belajar Git.\nTulisan ini terbagi menjadi tiga bagian:\nCara Instalasi Git di Linux. Cara Instalasi Git di Windows. Konfigurasi Awal yang Harus dilkaukan Setelah Menginstal Git. Mari kita mulai\u0026hellip;\n1. Cara Install Git di Linux sudo apt install git atau\nsudo apt-install git Pada Fedora:\nyum install git Setelah itu , coba periksa versi yang terinstal dengan perintah:\ngit --version Suber Gambar Petani Kode\r",
     "permalink": "http://localhost:1313/tutorial/git/git-install/"
   },
   {
@@ -46,7 +46,7 @@
   },
   {
     "title": "Belajar Git #03: Cara Membuat Repositoru Git Pada Proyek",
-    "content": "\rKeterangan gambar opsional\r",
+    "content": "",
     "permalink": "http://localhost:1313/tutorial/git/git-commit/"
   },
   {
@@ -56,7 +56,7 @@
   },
   {
     "title": "Belajar Git #04: Melihat Catatan Log Revisi",
-    "content": "\rKeterangan gambar opsional\r",
+    "content": "",
     "permalink": "http://localhost:1313/tutorial/git/git.log/"
   },
   {
@@ -66,7 +66,7 @@
   },
   {
     "title": "Belajar Git #05: Melihat Perbandingan Revisi dengan Git Diff",
-    "content": "\rKeterangan gambar opsional\r",
+    "content": "",
     "permalink": "http://localhost:1313/tutorial/git/git-diff/"
   },
   {
@@ -76,37 +76,37 @@
   },
   {
     "title": "Belajar Git #06: Perintah Untuk Membatalkan Revisi",
-    "content": "\rKeterangan gambar opsional\r",
+    "content": "",
     "permalink": "http://localhost:1313/tutorial/git/git-revert/"
   },
   {
     "title": "Belajar Git #07: Menggunakan Cabang untuk mencegah Konflik",
-    "content": "\rKeterangan gambar opsional\r",
+    "content": "",
     "permalink": "http://localhost:1313/tutorial/git/git-branch/"
   },
   {
     "title": "Belajar Git #08: Perbedaan Git checkout, Git Reset, dan Git Revert",
-    "content": "\rKeterangan gambar opsional\r",
+    "content": "",
     "permalink": "http://localhost:1313/tutorial/git/git-checkout-reset-revert/"
   },
   {
     "title": "Belajar Git #09: Berkerja Dengan Remote Repository",
-    "content": "\rKeterangan gambar opsional\r",
+    "content": "",
     "permalink": "http://localhost:1313/tutorial/git/git-remote/"
   },
   {
     "title": "Belajar Git #10: Menggunakan Git Pull Git Fetch",
-    "content": "\rKeterangan gambar opsional\r",
+    "content": "",
     "permalink": "http://localhost:1313/tutorial/git/git-full-fetch/"
   },
   {
     "title": "Belajar Git #11: Cara Berkontribusi di Proyek Open Source dengan Git",
-    "content": "\rKeterangan gambar opsional\r",
+    "content": "",
     "permalink": "http://localhost:1313/tutorial/git/github-workflow/"
   },
   {
     "title": "Belajar Git #12: Cara Menggunakan Git Pada Visual Studio Code",
-    "content": "\rKeterangan gambar opsional\r",
+    "content": "",
     "permalink": "http://localhost:1313/tutorial/git/git-vscode/"
   },
   {
@@ -260,7 +260,7 @@
     "permalink": "http://localhost:1313/software/edukasi/spss/"
   },
   {
-    "title": "Vitual Box",
+    "title": "Virtual Box",
     "content": "VirtualBox 7.1.6.167084 Terbaru Plus Extension Pack merupakan salah satu sosftware yang berguna sebagai virtual machine installasi sistem operasi di atas windows baik itu windows linux dll.\nUntuk kita yang selalu atau hobi mendownload Operating System, alangkah baiknya di Coba dahulu menggunakan software ini, Telah lama saya jelaskan bahkan tutorial nya pun ane buatkan sudah lama. Lalu apa sih sebenarnya Fungsi utama dari software ini, apalagi sobat mungkin masih ingin terus belajar. Yups. Belajar memang tak akan ada habisnya. Ketika kita sudah menguasainya. menjadi suatu kebanggaan diri sendiri. OK. kembali ke Topik Vrtual box,\nYa.. VirtualBox 7.1.6 Merupakan software yang di rancang sebagaimana menyerupai software VMware, yang mana fungsinya untuk menguji coba Operating System atau yang berhubungan dengan Bootable\nGambar zoom\rkita ketahui meungkin anda sering mendownload Operating system, lalu anda menghabiskan berapa puluh keping saja CD atau DVD untuk menguji coba Operating tersebut, karena kegagalan Booting. Nah.. langkah baiknya.. anda perlu melakukan PEngujian dahulu. Apakah sebenarnya Operating system tersebut Mau Booting atau tidak , dan Uji cobanya kita gunakan Perangkat VIRTUAL, yakni Virtual BOX. di situ anda juga sobat dapat menginstall sampai Puluhan Sistem operasi dalam 1 Komputer, dengan Operating system komputer anda sebagai OS UTAMA nya.\nKonsep kerja nya , agar lebih mudah di pahami seperti ini\nPc/LAptop ==\u0026gt; Desktop=\u0026gt; Jalankan Software VIRTUAL BOX, =\u0026gt; Pilih Operating System yang akan Di uji ==\u0026gt; SIlahkan Tinggal Install. =\u0026gt; Selesai, dan anda akan mempunyai berbagai jenis operating system Tentunya.\nMemang kalo namanya menginstall Sisitem operasi di Perangkat Software Virtual, jalannya Terasa lambat, ya. karena Tergantung RAM yang sobat akan Alokasikan Ke Operating system Virtual tersebut.. Ingin mencoba nya.. download dulu software nya..\nTapi sobat.. kalo kita menginstall windows Xp, akan terasa ringan , apalagi sobat Install Ghost Windows Xp yang Super Ringan yang ada di Blog ini. ane nyoba pake software sejenis ini , namanya Vmware, Terasa sistem Operasi yang Di dualBooting kan.\nuntuk VirtualBox Extension Pack itu semacam add-on ataupun plug in untuk VirtualBox. Fungsinya tentu saja memberikan kemampuan dan fitur tambahan yang tidak dibawa di paket instalasi standar. Dengan menginstall VirtualBox extension pack, kita akan mendapatkan fitur tambahan untuk 1) peralatan USB 2.0, 2) VirtualBox RDP, dan 3) boot lewat PXE untuk kartu ethernet Intel ( tingkat Advanced )\nFor Windows ( Sudah Support windows 10-11) 📦 System 64bit Dapatkan filenya disini 🕵️‍♀️ disini\nFor MacoS ( Sudah Support macOS / Intel hosts) 📦 Intel hosts Dapatkan filenya disini 🕵️‍♀️ disini\nFor MacoS ( Sudah Support macOS / Apple Silicon hosts) 📦 Apple Silicon hosts Dapatkan filenya disini 🕵️‍♀️ disini\nFor Linux ( Sudah Support Ubuntu 24.04 (Noble)) 📦 Apple Silicon hosts Dapatkan filenya disini 🕵️‍♀️ disini\nCara menggunakan VirtualBox ",
     "permalink": "http://localhost:1313/software/edukasi/vbox/"
   },

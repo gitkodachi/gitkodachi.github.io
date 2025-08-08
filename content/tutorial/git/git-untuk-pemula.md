@@ -2,8 +2,8 @@
 title: "Apa itu Git dan Kenapa Penting bagi Programmer?"
 linkTitle: "Belajar Git #01: Apa itu Git dan Kenapa Penting Bagi Programmer?"
 date: 2025-06-27
-image: "/images/thumbnail/git-sqr.png"
 thumbnail: "/images/cover/git-petanikode.png"
+image: "/images/cover/git-petanikode.png"
 series: "git"
 tutorial: ["Git"]
 description: "Pelajari dasar-dasar version control dengan Git untuk pemula."

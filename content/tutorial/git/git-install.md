@@ -2,18 +2,12 @@
 title: "Belajar Git #1: Cara Install Git dan Konfigurasi Awal Yang Harus dilakukan"
 linkTitle: "Belajar Git #02: Cara Install Git dan Konfigurasi Awal yang Harus Dilakukan"
 date: 2025-06-27
+thumbnail: "/images/cover/git-petanikode.png"
 image: "/images/cover/git-petanikode.png"
 series: "git"
 tutorial: ["Git"]
 description: "Pelajari dasar-dasar version control dengan Git untuk pemula."
 ---
-
-{{< image 
-    src="/images/cover/git-petanikode.png" 
-    alt="Deskripsi gambar" 
-    caption="*Suber Gambar Petani Kode*" 
-    class="rounded-lg shadow-md"
->}}
 
 Kita sudah mengenal Git pada [tulisan sebelumnya]({{< ref "tutorial/git/git-untuk-pemula" >}}). Selanjutnya Kita akan melakukan instalasi dan persiapan untuk mulai belajar Git.
 
