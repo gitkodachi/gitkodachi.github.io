@@ -137,7 +137,7 @@ Bagus, selanjutnya silakan ikuti tutorial git berikut ini.
 
 - [Tutorial Git #09: Bekerja dengan Remote Repository]({{< ref "tutorial/git/git-untuk-pemula" >}})
 
-- [Tutorial Git #10: Berkontribusi di Proyek Open Source]({{< ref "tutorial/git/github-workflow" >}})
+- [Tutorial Git #10: Berkontribusi di Proyek Open Source]({{< ref "post/github-workflow" >}})
 
 **P.S**: Kalau link di atas masih mati, berarti masih dalam draf. Sering-sering dicek agar tidak ketinggalan. 😄
 
