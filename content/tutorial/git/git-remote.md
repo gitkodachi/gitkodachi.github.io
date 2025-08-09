@@ -10,13 +10,12 @@ description: "Pelajari dasar-dasar version control dengan Git untuk pemula."
 ---
 
 
-%% Git Remote Setup Diagram
+{{< mermaid >}}
 flowchart TD
-    A[Local Repository] -->|Add Remote| B{Remote Repositories}
-    B --> C["`**github**`\nURL: https://github.com/petanikode/belajar-git.git"]
-    B --> D["`**petanikode**`\nURL: www.petanikode.com"]
+    A[Local] -->|git push| B(Remote)
+    B --> C{GitHub}
+    C -->|PR| D[Merge]
     
-    style A fill:#f9f,stroke:#333
-    style B fill:#bbf,stroke:#333
-    style C fill:#e6ffed,stroke:#22863a
-    style D fill:#e6ffed,stroke:#22863a
+    style A fill:#f0abfc,stroke:#333
+    style B fill:#a5b4fc,stroke:#333
+{{< /mermaid >}}

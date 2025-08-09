@@ -30,6 +30,15 @@ title = 'Octocat Code'
   software = "software"
   buku = "buku"
 
+[params.mermaid]
+  enable = true
+  theme = "forest"
+  align = "center"
+  securityLevel = "loose"
+  fontFamily = "'JetBrains Mono', monospace"
+  darkMode = true
+  flowchart = "{ useMaxWidth: false }"
+
 [pagination]
   paperSize = 10
 
@@ -52,3 +61,5 @@ title = 'Octocat Code'
 
   [markup.highlight]
     noClasses = false
+    codeFences = true
+    guessSyntax = true

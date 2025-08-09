@@ -52,3 +52,24 @@ contoh details
   alt="Deskripsi gambar" 
   caption="*Gambar contoh dengan zoom*" 
   >}}
+
+### flowchart LR
+  {{< mermaid >}}
+flowchart LR
+    y("👫 You") --> h{"🤝 Found this helpful?"}
+    h --> |Yes| r[/"⭐ Check out my featured posts!"/]
+    h --> |No| su[/"📝 Suggest changes by clicking near the title"/]
+    click r "/categories/featured" _blank
+{{< /mermaid >}}
+
+### gitGraph
+
+{{< mermaid >}}
+gitGraph
+  commit
+  branch feature
+  checkout feature
+  commit
+  checkout main
+  merge feature
+{{< /mermaid >}}

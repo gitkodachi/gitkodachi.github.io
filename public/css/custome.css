@@ -199,3 +199,23 @@ pre:hover .copy-btn {
 pre:hover .copy-btn {
   opacity: 1 !important;
 }
+
+/* Custom Mermaid */
+.mermaid {
+  background: var(--code-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  overflow: auto;
+  text-align: center;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Untuk mode gelap */
+.dark .mermaid {
+  background: rgba(15, 23, 42, 0.5);
+}

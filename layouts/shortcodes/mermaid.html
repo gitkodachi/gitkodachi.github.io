@@ -1,0 +1,5 @@
+<!-- layouts/shortcodes/mermaid.html -->
+{{ .Page.Store.Set "hasMermaid" true }}
+<div class="mermaid" style="background:transparent">
+  {{ .Inner | safeHTML }}
+</div>
