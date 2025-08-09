@@ -64,12 +64,14 @@ Sebelum kita bisa upload semua revisi yang ada di repository lokal, kita harus m
 
 {{< mermaid >}}
 flowchart TD
-    A[Local] -->|git push| B(Remote)
-    B --> C{GitHub}
-    C -->|PR| D[Merge]
-    
-    style A fill:#f0abfc,stroke:#333
-    style B fill:#a5b4fc,stroke:#333
+    A[Remote Control] -->|Sinyal Infrared| B(Receiver)
+    B --> C{Decoder}
+    C -->|Perintah ON/OFF| D[Power Control]
+    C -->|Perintah Volume| E[Volume Control]
+    C -->|Perintah Channel| F[Channel Selector]
+    D --> G[Device]
+    E --> G
+    F --> G
 {{< /mermaid >}}
 
 Ada dua pilihan URL remote yang bisa kita berikan:
