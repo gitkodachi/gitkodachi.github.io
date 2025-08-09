@@ -1,5 +1,5 @@
 ---
-title: "Belajar Git #07: Menggunakan Cabang untuk mencegah Konflik"
+title: "Belajar Git #07: Menggunakan Percabangan untuk mencegah Konflik"
 date: 2025-06-27
 thumbnail: "/images/cover/git-petanikode.png"
 image: "/images/cover/git-petanikode.png"
@@ -168,7 +168,7 @@ git checkout halaman_login
 
 Setela itu, edit file **login.html** atau **index.html**, karena kedua file tersebut ada di kedua cabang yang akan kita gabungkan.
 
-```bash
+```diff
 $ git diff
 diff --git a/login.html b/login.html
 index 23a3f5c..eea5658 100644

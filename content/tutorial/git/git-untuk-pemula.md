@@ -118,5 +118,28 @@ Jadi, apakah kamu sudah mengenal git?
 
 Bagus, selanjutnya silakan ikuti tutorial git berikut ini.
 
-  - [Tutorial Git #01: Cara Install Git dan Konfigurasi Awal yang harus dilakukan]({{< ref "tutorial/git/git-install" >}})
-  - [Tutorial Git #02: Membuat Repositori Baru dalam Proyek]({{< ref "tutorial/git/git-init" >}})
+- [Tutorial Git #01: Cara Install Git dan Konfigurasi Awal]({{< ref "tutorial/git/git-install" >}})
+
+- [Tutorial Git #02: Membuat Repositori Baru dalam Proyek]({{< ref "tutorial/git/git-init" >}})
+
+- [Tutorial Git #03: Cara Membuat Repository Git Pada Proyek]({{< ref "tutorial/git/git-commit" >}})
+
+- [Tutorial Git #04: Melihat Catatan Log Revisi]({{< ref "tutorial/git/git-log" >}})
+
+- [Tutorial Git #05: Melihat Perbandingan Revisi dengan Git Diff]({{< ref "tutorial/git/git-diff" >}})
+
+- [Tutorial Git #06: Membatalkan Revisi]({{< ref "tutorial/git/git-revert" >}})
+
+- [Tutorial Git #07: Menggunakan Cabang untuk Mencegah Konflik]({{< ref "tutorial/git/git-branch" >}})
+
+- [Tutorial Git #08: Perbedaan Git Checkout, Reset, dan Revert]({{< ref "tutorial/git/git-checkout-reset-revert" >}})
+
+- [Tutorial Git #09: Bekerja dengan Remote Repository]({{< ref "tutorial/git/git-untuk-pemula" >}})
+
+- [Tutorial Git #10: Berkontribusi di Proyek Open Source]({{< ref "tutorial/git/github-workflow" >}})
+
+**P.S**: Kalau link di atas masih mati, berarti masih dalam draf. Sering-sering dicek agar tidak ketinggalan. 😄
+
+📖 {{< referensi 
+    name="PetaniKode" 
+    url="https://www.petanikode.com/git-untuk-pemula/" >}}
