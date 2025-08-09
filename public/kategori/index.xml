@@ -2,101 +2,101 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Octocat Code</title>
-    <link>https://gitkodachi.github.io/kategori/</link>
+    <link>http://localhost:1313/kategori/</link>
     <description>Recent content on Octocat Code</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gitkodachi.github.io/kategori/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/kategori/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Basic Programming</title>
-      <link>https://gitkodachi.github.io/kategori/basic-programming/</link>
+      <link>http://localhost:1313/kategori/basic-programming/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/basic-programming/</guid>
+      <guid>http://localhost:1313/kategori/basic-programming/</guid>
       <description>&lt;p&gt;Temukan tutorial yang ingin kamu pelajari.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Web Programming</title>
-      <link>https://gitkodachi.github.io/kategori/web-programming/</link>
+      <link>http://localhost:1313/kategori/web-programming/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/web-programming/</guid>
+      <guid>http://localhost:1313/kategori/web-programming/</guid>
       <description>&lt;p&gt;Temukan tutorial yang ingin kamu pelajari.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tutorial-Lainya</title>
-      <link>https://gitkodachi.github.io/kategori/tutorial-lainya/</link>
+      <link>http://localhost:1313/kategori/tutorial-lainya/</link>
       <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/tutorial-lainya/</guid>
+      <guid>http://localhost:1313/kategori/tutorial-lainya/</guid>
       <description></description>
     </item>
     <item>
       <title>Archive</title>
-      <link>https://gitkodachi.github.io/kategori/archive/</link>
+      <link>http://localhost:1313/kategori/archive/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/archive/</guid>
+      <guid>http://localhost:1313/kategori/archive/</guid>
       <description></description>
     </item>
     <item>
       <title>Edukasi</title>
-      <link>https://gitkodachi.github.io/kategori/edukasi/</link>
+      <link>http://localhost:1313/kategori/edukasi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/edukasi/</guid>
+      <guid>http://localhost:1313/kategori/edukasi/</guid>
       <description></description>
     </item>
     <item>
       <title>Multimedia</title>
-      <link>https://gitkodachi.github.io/kategori/multimedia/</link>
+      <link>http://localhost:1313/kategori/multimedia/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/multimedia/</guid>
+      <guid>http://localhost:1313/kategori/multimedia/</guid>
       <description></description>
     </item>
     <item>
       <title>Produktivitas</title>
-      <link>https://gitkodachi.github.io/kategori/produktivitas/</link>
+      <link>http://localhost:1313/kategori/produktivitas/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/produktivitas/</guid>
+      <guid>http://localhost:1313/kategori/produktivitas/</guid>
       <description></description>
     </item>
     <item>
       <title>Statistik</title>
-      <link>https://gitkodachi.github.io/kategori/statistik/</link>
+      <link>http://localhost:1313/kategori/statistik/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/statistik/</guid>
+      <guid>http://localhost:1313/kategori/statistik/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorial</title>
-      <link>https://gitkodachi.github.io/kategori/tutorial/</link>
+      <link>http://localhost:1313/kategori/tutorial/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/tutorial/</guid>
+      <guid>http://localhost:1313/kategori/tutorial/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorial Lainya</title>
-      <link>https://gitkodachi.github.io/kategori/tutorial-lainnya/</link>
+      <link>http://localhost:1313/kategori/tutorial-lainnya/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/tutorial-lainnya/</guid>
+      <guid>http://localhost:1313/kategori/tutorial-lainnya/</guid>
       <description>&lt;p&gt;Temukan tutorial yang ingin kamu pelajari.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Video</title>
-      <link>https://gitkodachi.github.io/kategori/video/</link>
+      <link>http://localhost:1313/kategori/video/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/video/</guid>
+      <guid>http://localhost:1313/kategori/video/</guid>
       <description></description>
     </item>
     <item>
       <title>Virtualisasi</title>
-      <link>https://gitkodachi.github.io/kategori/virtualisasi/</link>
+      <link>http://localhost:1313/kategori/virtualisasi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/virtualisasi/</guid>
+      <guid>http://localhost:1313/kategori/virtualisasi/</guid>
       <description></description>
     </item>
     <item>
       <title>Windows</title>
-      <link>https://gitkodachi.github.io/kategori/tutorial-lainnya/windows/</link>
+      <link>http://localhost:1313/kategori/tutorial-lainnya/windows/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/tutorial-lainnya/windows/</guid>
+      <guid>http://localhost:1313/kategori/tutorial-lainnya/windows/</guid>
       <description>&lt;p&gt;Temukan tutorial yang ingin kamu pelajari.&lt;/p&gt;</description>
     </item>
   </channel>

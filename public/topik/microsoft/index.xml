@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Microsoft on Octocat Code</title>
-    <link>https://gitkodachi.github.io/topik/microsoft/</link>
+    <link>http://localhost:1313/topik/microsoft/</link>
     <description>Recent content in Microsoft on Octocat Code</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 25 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gitkodachi.github.io/topik/microsoft/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/topik/microsoft/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>BSOD</title>
-      <link>https://gitkodachi.github.io/kategori/tutorial-lainnya/windows/bsod/</link>
+      <link>http://localhost:1313/kategori/tutorial-lainnya/windows/bsod/</link>
       <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/tutorial-lainnya/windows/bsod/</guid>
+      <guid>http://localhost:1313/kategori/tutorial-lainnya/windows/bsod/</guid>
       <description>&lt;h3 id=&#34;awal-mula-kemunculan-bsod-windows&#34;&gt;Awal Mula Kemunculan BSOD Windows&lt;/h3&gt;&#xA;&lt;p&gt;Sebagai catatan, BSOD pertama kali hadir di awal 1990-an. Di masa Windows 3.1, layar biru dikenal dengan sebutan blue screen of unhappiness, yang muncul saat pengguna menekan control-alt-delete untuk menutup program yang macet. Kemudian, pada 1993, istilah blue screen of death mulai digunakan di Windows NT ketika sistem benar-benar tidak bisa dipulihkan lagi.&lt;/p&gt;&#xA;&lt;p&gt;Sebenarnya, layar hitam bukan hal baru sepenuhnya. Microsoft pernah memperkenalkannya pada Windows 11 di 2021, tapi kali ini desain dan pesan yang muncul telah diperbarui agar lebih ringkas dan relevan.&lt;/p&gt;</description>
     </item>
   </channel>
