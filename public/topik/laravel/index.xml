@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Laravel on Octocat Code</title>
-    <link>https://gitkodachi.github.io/topik/laravel/</link>
+    <link>http://localhost:1313/topik/laravel/</link>
     <description>Recent content in Laravel on Octocat Code</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 09 Jul 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gitkodachi.github.io/topik/laravel/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/topik/laravel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Membuat CRUD Produk</title>
-      <link>https://gitkodachi.github.io/post/produk-crud/</link>
+      <link>http://localhost:1313/post/produk-crud/</link>
       <pubDate>Wed, 09 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/post/produk-crud/</guid>
+      <guid>http://localhost:1313/post/produk-crud/</guid>
       <description>&lt;h2 id=&#34;menambahkan-produk&#34;&gt;Menambahkan Produk&lt;/h2&gt;&#xA;&lt;p&gt;Tambahkan kode berikut ke dalam controller:&lt;/p&gt;&#xA;&lt;div class=&#34;rounded overflow-hidden border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 relative group text-xs&#34;&gt;&#xD;&#xA;  &#xD;&#xA;    &lt;div class=&#34;px-3 py-1.5 font-semibold bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-600&#34;&gt;&#xD;&#xA;      ProdukController.php&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;  &#xD;&#xA;&#xD;&#xA;  &lt;button onclick=&#34;copyCode(this)&#34; &#xD;&#xA;          class=&#34;absolute top-1.5 right-1.5 text-[10px] px-1.5 py-0.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded shadow hidden group-hover:block transition&#34;&gt;&#xD;&#xA;    Copy&#xD;&#xA;  &lt;/button&gt;&#xD;&#xA;&#xD;&#xA;  &lt;pre class=&#34;bg-white dark:bg-slate-900 px-3 py-2 text-[13px] text-slate-800 dark:text-slate-100 overflow-auto&#34;&gt;&#xD;&#xA;    &lt;code class=&#34;language-php&#34;&gt;&#xD;&#xA;public function store(Request $request)&#xD;&#xA;{&#xD;&#xA;    $request-&gt;validate([&#xD;&#xA;        &#39;nama&#39; =&gt; &#39;required|max:45&#39;,&#xD;&#xA;        &#39;jenis&#39; =&gt; &#39;required|max:45&#39;,&#xD;&#xA;        // ...&#xD;&#xA;    ]);&#xD;&#xA;}&#xD;&#xA;&lt;/code&gt;&#xD;&#xA;  &lt;/pre&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;routing&#34;&gt;Routing&lt;/h2&gt;&#xA;&lt;p&gt;Tambahkan routing ke dalam file &lt;code&gt;routes/web.php&lt;/code&gt;:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</title>
-      <link>https://gitkodachi.github.io/kategori/basic-programming/tutorial-laravel/</link>
+      <link>http://localhost:1313/kategori/basic-programming/tutorial-laravel/</link>
       <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/basic-programming/tutorial-laravel/</guid>
+      <guid>http://localhost:1313/kategori/basic-programming/tutorial-laravel/</guid>
       <description>&lt;h2 id=&#34;pendahuluan&#34;&gt;Pendahuluan&lt;/h2&gt;&#xA;&lt;p&gt;Laravel 11 hadir dengan berbagai fitur baru yang membuat pengembangan web lebih efisien&amp;hellip;&lt;/p&gt;&#xA;&lt;h3 id=&#34;instalasi-laravel-11&#34;&gt;Instalasi Laravel 11&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;composer create-project laravel/laravel:^11.0 my-project&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &amp;ldquo;de Finibus Bonorum et Malorum&amp;rdquo; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &amp;ldquo;Lorem ipsum dolor sit amet..&amp;rdquo;, comes from a line in section 1.10.32.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</title>
-      <link>https://gitkodachi.github.io/post/tutorial-laravel/</link>
+      <link>http://localhost:1313/post/tutorial-laravel/</link>
       <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/post/tutorial-laravel/</guid>
+      <guid>http://localhost:1313/post/tutorial-laravel/</guid>
       <description>&lt;h2 id=&#34;pendahuluan&#34;&gt;Pendahuluan&lt;/h2&gt;&#xA;&lt;p&gt;Laravel 11 hadir dengan berbagai fitur baru yang membuat pengembangan web lebih efisien&amp;hellip;&lt;/p&gt;&#xA;&lt;h3 id=&#34;instalasi-laravel-11&#34;&gt;Instalasi Laravel 11&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;composer create-project laravel/laravel:^11.0 my-project&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &amp;ldquo;de Finibus Bonorum et Malorum&amp;rdquo; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &amp;ldquo;Lorem ipsum dolor sit amet..&amp;rdquo;, comes from a line in section 1.10.32.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</title>
-      <link>https://gitkodachi.github.io/post/tutorial/</link>
+      <link>http://localhost:1313/post/tutorial/</link>
       <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/post/tutorial/</guid>
+      <guid>http://localhost:1313/post/tutorial/</guid>
       <description>&lt;h2 id=&#34;pendahuluan&#34;&gt;Pendahuluan&lt;/h2&gt;&#xA;&lt;p&gt;Laravel 11 hadir dengan berbagai fitur baru yang membuat pengembangan web lebih efisien&amp;hellip;&lt;/p&gt;&#xA;&lt;h3 id=&#34;instalasi-laravel-11&#34;&gt;Instalasi Laravel 11&lt;/h3&gt;&#xA;&lt;div class=&#34;rounded overflow-hidden border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 relative group text-xs&#34;&gt;&#xD;&#xA;  &#xD;&#xA;    &lt;div class=&#34;px-3 py-1.5 font-semibold bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-600&#34;&gt;&#xD;&#xA;      Contoh Kode&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;  &#xD;&#xA;&#xD;&#xA;  &lt;button onclick=&#34;copyCode(this)&#34; &#xD;&#xA;          class=&#34;absolute top-1.5 right-1.5 text-[10px] px-1.5 py-0.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded shadow hidden group-hover:block transition&#34;&gt;&#xD;&#xA;    Copy&#xD;&#xA;  &lt;/button&gt;&#xD;&#xA;&#xD;&#xA;  &lt;pre class=&#34;bg-white dark:bg-slate-900 px-3 py-2 text-[13px] text-slate-800 dark:text-slate-100 overflow-auto&#34;&gt;&#xD;&#xA;    &lt;code class=&#34;language-php&#34;&gt;&#xD;&#xA;composer create-project laravel/laravel:^11.0 my-project&#xD;&#xA;&lt;/code&gt;&#xD;&#xA;  &lt;/pre&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xA;&lt;div class=&#34;rounded overflow-hidden border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 relative group text-xs&#34;&gt;&#xD;&#xA;  &#xD;&#xA;    &lt;div class=&#34;px-3 py-1.5 font-semibold bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-600&#34;&gt;&#xD;&#xA;      Contoh Kode&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;  &#xD;&#xA;&#xD;&#xA;  &lt;button onclick=&#34;copyCode(this)&#34; &#xD;&#xA;          class=&#34;absolute top-1.5 right-1.5 text-[10px] px-1.5 py-0.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded shadow hidden group-hover:block transition&#34;&gt;&#xD;&#xA;    Copy&#xD;&#xA;  &lt;/button&gt;&#xD;&#xA;&#xD;&#xA;  &lt;pre class=&#34;bg-white dark:bg-slate-900 px-3 py-2 text-[13px] text-slate-800 dark:text-slate-100 overflow-auto&#34;&gt;&#xD;&#xA;    &lt;code class=&#34;language-php&#34;&gt;&#xD;&#xA;composer create-project laravel/laravel:^11.0 my-project&#xD;&#xA;&lt;/code&gt;&#xD;&#xA;  &lt;/pre&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xA;&lt;div class=&#34;rounded overflow-hidden border border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 relative group text-xs&#34;&gt;&#xD;&#xA;  &#xD;&#xA;    &lt;div class=&#34;px-3 py-1.5 font-semibold bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white border-b border-slate-300 dark:border-slate-600&#34;&gt;&#xD;&#xA;      Contoh Kode&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;  &#xD;&#xA;&#xD;&#xA;  &lt;button onclick=&#34;copyCode(this)&#34; &#xD;&#xA;          class=&#34;absolute top-1.5 right-1.5 text-[10px] px-1.5 py-0.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded shadow hidden group-hover:block transition&#34;&gt;&#xD;&#xA;    Copy&#xD;&#xA;  &lt;/button&gt;&#xD;&#xA;&#xD;&#xA;  &lt;pre class=&#34;bg-white dark:bg-slate-900 px-3 py-2 text-[13px] text-slate-800 dark:text-slate-100 overflow-auto&#34;&gt;&#xD;&#xA;    &lt;code class=&#34;language-bash&#34;&gt;&#xD;&#xA;echo &#34;Hello World&#34;&#xD;&#xA;&lt;/code&gt;&#xD;&#xA;  &lt;/pre&gt;&#xD;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Laravel</title>
-      <link>https://gitkodachi.github.io/post/laravel/</link>
+      <link>http://localhost:1313/post/laravel/</link>
       <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/post/laravel/</guid>
+      <guid>http://localhost:1313/post/laravel/</guid>
       <description>&lt;h2 id=&#34;laravel&#34;&gt;#Laravel&lt;/h2&gt;&#xA;&lt;p&gt;Pemula bisa langsung bikin CRUD!&lt;/p&gt;&#xA;&lt;h1 id=&#34;tutorial-laravel-untuk-pemula&#34;&gt;Tutorial Laravel untuk Pemula&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Sabardi&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;pengenalan-laravel&#34;&gt;Pengenalan Laravel&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Laravel&lt;/strong&gt; adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web&amp;hellip;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</title>
-      <link>https://gitkodachi.github.io/kategori/web-programming/laravel/</link>
+      <link>http://localhost:1313/kategori/web-programming/laravel/</link>
       <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/web-programming/laravel/</guid>
+      <guid>http://localhost:1313/kategori/web-programming/laravel/</guid>
       <description>&lt;h2 id=&#34;laravel&#34;&gt;#Laravel&lt;/h2&gt;&#xA;&lt;h2 id=&#34;php&#34;&gt;#PHP&lt;/h2&gt;&#xA;&lt;h2 id=&#34;mysql&#34;&gt;#MySQL&lt;/h2&gt;&#xA;&lt;p&gt;Pemula bisa langsung bikin CRUD!&lt;/p&gt;&#xA;&lt;h1 id=&#34;tutorial-laravel-untuk-pemula&#34;&gt;Tutorial Laravel untuk Pemula&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Sabardi&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;pengenalan-laravel&#34;&gt;Pengenalan Laravel&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Laravel&lt;/strong&gt; adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web&amp;hellip;&lt;/p&gt;</description>
     </item>
   </channel>

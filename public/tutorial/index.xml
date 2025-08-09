@@ -2,101 +2,101 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Semua Tutorial on Octocat Code</title>
-    <link>https://gitkodachi.github.io/tutorial/</link>
+    <link>http://localhost:1313/tutorial/</link>
     <description>Recent content in Semua Tutorial on Octocat Code</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gitkodachi.github.io/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tutorial/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tutorial Belajar Git untuk Pemula</title>
-      <link>https://gitkodachi.github.io/tutorial/git/</link>
+      <link>http://localhost:1313/tutorial/git/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/tutorial/git/</guid>
+      <guid>http://localhost:1313/tutorial/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorial Git untuk Pemula</title>
-      <link>https://gitkodachi.github.io/tutorial/c/</link>
+      <link>http://localhost:1313/tutorial/c/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/tutorial/c/</guid>
+      <guid>http://localhost:1313/tutorial/c/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorial Git untuk Pemula</title>
-      <link>https://gitkodachi.github.io/tutorial/chsarp/</link>
+      <link>http://localhost:1313/tutorial/chsarp/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/tutorial/chsarp/</guid>
+      <guid>http://localhost:1313/tutorial/chsarp/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorial Git untuk Pemula</title>
-      <link>https://gitkodachi.github.io/tutorial/codeigniter/</link>
+      <link>http://localhost:1313/tutorial/codeigniter/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/tutorial/codeigniter/</guid>
+      <guid>http://localhost:1313/tutorial/codeigniter/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorial Git untuk Pemula</title>
-      <link>https://gitkodachi.github.io/tutorial/css/</link>
+      <link>http://localhost:1313/tutorial/css/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/tutorial/css/</guid>
+      <guid>http://localhost:1313/tutorial/css/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorial Git untuk Pemula</title>
-      <link>https://gitkodachi.github.io/tutorial/java/</link>
+      <link>http://localhost:1313/tutorial/java/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/tutorial/java/</guid>
+      <guid>http://localhost:1313/tutorial/java/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorial Git untuk Pemula</title>
-      <link>https://gitkodachi.github.io/tutorial/javascript/</link>
+      <link>http://localhost:1313/tutorial/javascript/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/tutorial/javascript/</guid>
+      <guid>http://localhost:1313/tutorial/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorial Git untuk Pemula</title>
-      <link>https://gitkodachi.github.io/tutorial/kotlin/</link>
+      <link>http://localhost:1313/tutorial/kotlin/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/tutorial/kotlin/</guid>
+      <guid>http://localhost:1313/tutorial/kotlin/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorial Git untuk Pemula</title>
-      <link>https://gitkodachi.github.io/tutorial/nodejs/</link>
+      <link>http://localhost:1313/tutorial/nodejs/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/tutorial/nodejs/</guid>
+      <guid>http://localhost:1313/tutorial/nodejs/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorial Git untuk Pemula</title>
-      <link>https://gitkodachi.github.io/tutorial/php/</link>
+      <link>http://localhost:1313/tutorial/php/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/tutorial/php/</guid>
+      <guid>http://localhost:1313/tutorial/php/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorial Git untuk Pemula</title>
-      <link>https://gitkodachi.github.io/tutorial/python/</link>
+      <link>http://localhost:1313/tutorial/python/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/tutorial/python/</guid>
+      <guid>http://localhost:1313/tutorial/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorial HTML untuk Pemula</title>
-      <link>https://gitkodachi.github.io/tutorial/html/</link>
+      <link>http://localhost:1313/tutorial/html/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/tutorial/html/</guid>
+      <guid>http://localhost:1313/tutorial/html/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorial Hugo untuk Pemula</title>
-      <link>https://gitkodachi.github.io/tutorial/hugo/</link>
+      <link>http://localhost:1313/tutorial/hugo/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/tutorial/hugo/</guid>
+      <guid>http://localhost:1313/tutorial/hugo/</guid>
       <description></description>
     </item>
   </channel>
