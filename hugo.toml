@@ -23,7 +23,6 @@ title = 'Octocat Code'
   name = "software"
   weight = 80
 
-
 [taxonomies]
   kategori = "kategori"
   topik = "topik"

@@ -5,6 +5,7 @@ thumbnail: "/images/cover/git-petanikode.png"
 image: "/images/cover/git-petanikode.png"
 series: "git"
 tutorial: ["Git"]
+topik: ["Git"]
 description: "Pelajari dasar-dasar version control dengan Git untuk pemula."
 ---
 
@@ -60,7 +61,7 @@ Sebelum diubah:
 </html>
 ```
 
-Setalh diubah:
+Setelah diubah:
 ```html
 etelah diubah:
 
