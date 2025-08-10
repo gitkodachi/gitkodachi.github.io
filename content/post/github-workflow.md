@@ -152,7 +152,7 @@ Push-nya ke mana?
 
 Ya ke repository hasil fork tadi.
 
-Repository yang kita clone dari Github, akan otomatis membuat [remote bernama](/../../git-remote) **origin**.
+Repository yang kita clone dari Github, akan otomatis membuat [remote bernama](/tutorial/git/git-remote) **origin**.
 
 Untuk melihatnya, gunakan perintah **git remote -v**.
 
