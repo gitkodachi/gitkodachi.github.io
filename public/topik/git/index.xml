@@ -1,326 +1,110 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on Octocat Code</title><link>https://gitkodachi.github.io/topik/git/</link><description>Recent content in Git on Octocat Code</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://gitkodachi.github.io/topik/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Apa itu Git dan Kenapa Penting bagi Programmer?</title><link>https://gitkodachi.github.io/tutorial/git/git-untuk-pemula/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-untuk-pemula/</guid><description>&lt;p>Git adalah salah satu tool yang sering digunakan dalam proyek pengembangan software.&lt;/p>
-&lt;p>Git bahkan menjadi tool yang wajib dipahami oleh programmer, karena banyak digunakan di mana-mana.&lt;/p>
-&lt;p>Pada kesempatan ini kita akan belajar Git dari dasar.&lt;/p>
-&lt;p>Artikel ini hanya akan membahas pengenalan Git saja. Untuk mempelajari Git lebih lanjut, saya sudah menyediakan link di bagian akhir.&lt;/p>
-&lt;h2 id="mengenal-git">Mengenal Git&lt;/h2>
-&lt;p>Git adalah salah satu sistem pengontrol versi (Version Control System) pada proyek perangkat lunak yang diciptakan oleh Linus Torvalds.&lt;/p></description></item><item><title>Belajar Git #1: Cara Install Git dan Konfigurasi Awal Yang Harus dilakukan</title><link>https://gitkodachi.github.io/tutorial/git/git-install/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-install/</guid><description>&lt;p>Kita sudah mengenal Git pada &lt;a href="https://gitkodachi.github.io/tutorial/git/git-untuk-pemula/">tulisan sebelumnya&lt;/a>. Selanjutnya Kita akan melakukan instalasi dan persiapan untuk mulai belajar Git.&lt;/p>
-&lt;p>Tulisan ini terbagi menjadi tiga bagian:&lt;/p>
-&lt;ol>
-&lt;li>Cara Instalasi Git di Linux.&lt;/li>
-&lt;li>Cara Instalasi Git di Windows.&lt;/li>
-&lt;li>Konfigurasi Awal yang Harus dilkaukan Setelah Menginstal Git.&lt;/li>
-&lt;/ol>
-&lt;p>Mari kita mulai&amp;hellip;&lt;/p>
-&lt;h1 id="1-cara-install-git-di-linux">&lt;strong>1. Cara Install Git di Linux&lt;/strong>&lt;/h1>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo apt install git
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>atau&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo apt-install git
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Pada Fedora:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">yum install git
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Setelah itu , coba periksa versi yang terinstal dengan perintah:&lt;/p></description></item><item><title>Belajar Git #02: Membuat Repositori Baru dalam Proyek</title><link>https://gitkodachi.github.io/tutorial/git/git-init/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-init/</guid><description>&lt;p>Repositori &lt;em>(repository)&lt;/em> dalam bahasa indonesia artinya gudang. Repositori merupakan istilah yang digunakan untuk direktori proyek yang menggunakan Git.&lt;/p>
-&lt;p>Jika kita memiliki sebuah direktori dengan nama &lt;strong>proyek-01&lt;/strong> dan di dalamnya sudah menggunakan git, maka kita sudah punya repositori bernama &lt;strong>proyek-01&lt;/strong>.&lt;/p>
-&lt;h3 id="membuat-repository">Membuat Repository&lt;/h3>
-&lt;p>Pembuatan repositori dapat dilakukan dengan perintah &lt;strong>git init nama-dir&lt;/strong>. Contoh:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git init proyek-01
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Perintah tersebut akan membuat direktori bernama &lt;strong>proyek-01&lt;/strong>. Kalau direktorinya sudah ada, maka Git akan melakukan inisialisasi di dalam direktori tersebut.&lt;/p></description></item><item><title>Belajar Git #03: Simpan Perubahan Revisi dengan Git Commit</title><link>https://gitkodachi.github.io/tutorial/git/git-commit/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-commit/</guid><description>&lt;p>Pada &lt;a href="../git-init">tutorial Git yang kedua&lt;/a>, kita sudah membuat repositori kosong. Belum ada apa-apa di sana.&lt;/p>
-&lt;p>Sekarang coba tambahkan sebuah file baru.&lt;/p>
-&lt;p>Sebagai contoh, saya akan menambahkan tiga file HTML kosong.&lt;/p>
-
-&lt;figure class="my-4 text-center">
- &lt;img 
- src="https://gitkodachi.github.io/images/content/git/project-01_repositori-git-petanikode.png" 
- alt="Deskripsi gambar" 
- class="cursor-zoom-in max-w-full rounded"
- onclick="zoom(this)"
- >
- 
- &lt;figcaption class="text-sm text-gray-500 mt-2">
- &lt;em>Keterangan gambar opsional&lt;/em>
- &lt;/figcaption>
- 
-&lt;/figure>
-
-&lt;script>
-function zoom(img) {
- img.classList.toggle('zoomed');
- document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
- 
- 
- if (img.classList.contains('zoomed')) {
- const handleKey = (e) => e.key === 'Escape' &amp;&amp; zoom(img);
- document.addEventListener('keydown', handleKey);
- img.onzoomout = () => document.removeEventListener('keydown', handleKey);
- } else if (img.onzoomout) {
- img.onzoomout();
- }
-}
-&lt;/script>
-
-&lt;style>
-img.zoomed {
- position: fixed;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- max-height: 90vh;
- z-index: 100;
- cursor: zoom-out;
- box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
-}
-&lt;/style>
-&lt;p>Setelah ditambahkan, coba ketik perintah git status untuk melihat status repositorinya.&lt;/p></description></item><item><title>Belajar Git #04: Melihat Catatan Log Revisi</title><link>https://gitkodachi.github.io/tutorial/git/git-log/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-log/</guid><description>&lt;p>Pada &lt;a href="../git-commit">tutorial sebelumnya&lt;/a>, kita sudah membuat dua revisi pada repositori project-01. Sekarang bagaimana caranya kita melihat catatan log dari revisi-reivisi tersebut?&lt;/p>
-&lt;p>Git sudah menyediakan perintah git log untuk melihat catatan log perubahan pada repositori. Contoh penggunaannya:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git log
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Maka kita akan melihat log perubahan apa saja yang sudah dilakukan dalam repositori.&lt;/p>
-
-&lt;figure class="my-4 text-center">
- &lt;img 
- src="https://gitkodachi.github.io/images/content/git/log-revisi-yang-sudah-dibuat.png" 
- alt="Deskripsi gambar" 
- class="cursor-zoom-in max-w-full rounded"
- onclick="zoom(this)"
- >
- 
- &lt;figcaption class="text-sm text-gray-500 mt-2">
- &lt;em>Pada gambar di atas, terdapat dua revisi perubahan yang telah dilakuan.&lt;/em>
- &lt;/figcaption>
- 
-&lt;/figure>
-
-&lt;script>
-function zoom(img) {
- img.classList.toggle('zoomed');
- document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
- 
- 
- if (img.classList.contains('zoomed')) {
- const handleKey = (e) => e.key === 'Escape' &amp;&amp; zoom(img);
- document.addEventListener('keydown', handleKey);
- img.onzoomout = () => document.removeEventListener('keydown', handleKey);
- } else if (img.onzoomout) {
- img.onzoomout();
- }
-}
-&lt;/script>
-
-&lt;style>
-img.zoomed {
- position: fixed;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- max-height: 90vh;
- z-index: 100;
- cursor: zoom-out;
- box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
-}
-&lt;/style>
-&lt;h3 id="log-yang-lebih-pendek">Log yang Lebih Pendek&lt;/h3>
-&lt;p>Untuk menampilkan log yang lebih pendek, kita bisa menambahkan argumen &lt;strong>&amp;ndash;oneline&lt;/strong>.&lt;/p></description></item><item><title>Belajar Git #05: Melihat Perbandingan Revisi dengan Git Diff</title><link>https://gitkodachi.github.io/tutorial/git/git-diff/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-diff/</guid><description>&lt;p>Pada tutorial sebelumnya, kita sudah belajar cara melihat log revisi di repositori. Sekarang kita kan pelajari perintah &lt;strong>git diff&lt;/strong>, fungsinya untuk melihat perbedaan perubahan di revisi.&lt;/p>
-&lt;h3 id="melihat-perbandingan-perubahan-yang-dilakukan-pada-revisi">Melihat Perbandingan Perubahan yang Dilakukan pada Revisi&lt;/h3>
-&lt;p>Gunakan perintah berikut ini untuk melihat perubahan yang dilakukan pada revisi tertentu.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git diff cf08ca0837cf26f1c595be36bb3a6b815e311be1
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;em>cf08ca0837cf26f1c595be36bb3a6b815e311be1&lt;/em> adalah nomer revisi yang ingin dilihat.&lt;/p>
-
-&lt;figure class="my-4 text-center">
- &lt;img 
- src="https://gitkodachi.github.io/images/content/git/git-diff-pada-nomer-revisi.png" 
- alt="Deskripsi gambar" 
- class="cursor-zoom-in max-w-full rounded"
- onclick="zoom(this)"
- >
- 
- &lt;figcaption class="text-sm text-gray-500 mt-2">
- &lt;em>Keterangan gambar opsional&lt;/em>
- &lt;/figcaption>
- 
-&lt;/figure>
-
-&lt;script>
-function zoom(img) {
- img.classList.toggle('zoomed');
- document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
- 
- 
- if (img.classList.contains('zoomed')) {
- const handleKey = (e) => e.key === 'Escape' &amp;&amp; zoom(img);
- document.addEventListener('keydown', handleKey);
- img.onzoomout = () => document.removeEventListener('keydown', handleKey);
- } else if (img.onzoomout) {
- img.onzoomout();
- }
-}
-&lt;/script>
-
-&lt;style>
-img.zoomed {
- position: fixed;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- max-height: 90vh;
- z-index: 100;
- cursor: zoom-out;
- box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
-}
-&lt;/style>
-&lt;p>Lihatlah hasil di atas, simbol plus &lt;strong>(+)&lt;/strong> artinya kode yang ditambahkan. Sedangkan kalau ada kode yang dihapus simbolnya akan menggunakan minus &lt;strong>(-)&lt;/strong>.&lt;/p></description></item><item><title>Belajar Git #06: Perintah Untuk Membatalkan Revisi</title><link>https://gitkodachi.github.io/tutorial/git/git-revert/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-revert/</guid><description>&lt;p>Pada &lt;a href="../git-diff">tutorial git 05&lt;/a>, kita sudah belajar cara melihat perbedaan di setiap revisi. Sekarang kita akan belajar, cara membatalkan sebuah revisi.&lt;/p>
-&lt;p>Terkadang pada perubahan yang kita lakukan terjadi kesalahan dan kita ingin mengembalikannya seperti keadaan sebelumnya. Maka kita perlu menyuruh git untuk mengembalikannya. Ada beberapa perintah yang digunakan di antaranya: &lt;strong>git checkout, git reset,&lt;/strong> dan &lt;strong>git revert&lt;/strong>.&lt;/p>
-&lt;h3 id="membatalkan-perubahan">Membatalkan Perubahan&lt;/h3>
-&lt;p>Jika revisi kita belum staged ataupun mengetahui, kita bisa mengembalikannya menggunakan perintah &lt;strong>git checkout nama_file.html&lt;/strong>.&lt;/p></description></item><item><title>Belajar Git #07: Menggunakan Percabangan untuk mencegah Konflik</title><link>https://gitkodachi.github.io/tutorial/git/git-branch/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-branch/</guid><description>&lt;p>Bayangkan anda sedang bekerja dengan tim pada suatu repositori Git. Repositori ini dikerjakan secara bersama-sama.&lt;/p>
-&lt;p>Kadang… akan terjadi konflik, karena kode yang kita tulis berbeda dengan yang lain.&lt;/p>
-&lt;p>Misalnya, Si A menulis kode untuk fitur X dengan algoritma yang ia ketahui. Sedangkan si B menulis dengan algoritma yang berbeda.&lt;/p>
-&lt;p>Lalu mereka melakukan commit, dan kode sumber jadi berantakan. Anggota tim yang lain menjadi pusing.&lt;/p>
-
- &lt;figure class="my-4 text-center">
- &lt;img 
- src="https://gitkodachi.github.io/images/content/git/konflik-branch-repositori-git.png" 
- alt="Deskripsi gambar" 
- class="cursor-zoom-in max-w-full rounded"
- onclick="zoom(this)"
- >
- 
- &lt;figcaption class="text-sm text-gray-500 mt-2">
- &lt;em>Gambar contoh dengan zoom&lt;/em>
- &lt;/figcaption>
- 
- &lt;/figure>
- 
- &lt;script>
- function zoom(img) {
- img.classList.toggle('zoomed');
- document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
- 
- 
- if (img.classList.contains('zoomed')) {
- const handleKey = (e) => e.key === 'Escape' &amp;&amp; zoom(img);
- document.addEventListener('keydown', handleKey);
- img.onzoomout = () => document.removeEventListener('keydown', handleKey);
- } else if (img.onzoomout) {
- img.onzoomout();
- }
- }
- &lt;/script>
- 
- &lt;style>
- img.zoomed {
- position: fixed;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- max-height: 90vh;
- z-index: 100;
- cursor: zoom-out;
- box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
- }
- &lt;/style>
-&lt;p>Agar tidak terjadi hal yang seperti ini, kita harus membuat cabang (branch) tersendiri.&lt;/p></description></item><item><title>Belajar Git #08: Perbedaan Git checkout, Git Reset, dan Git Revert</title><link>https://gitkodachi.github.io/tutorial/git/git-checkout-reset-revert/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-checkout-reset-revert/</guid><description>&lt;p>Pada &lt;a href="../git-revert">tutorial ke-6&lt;/a>, kita sudah membahas cara membatalkan revisi menggunakan perintah git checkout, git reset, dan git revert.&lt;/p>
-&lt;p>Sekilas, tiga perintah tersebut melakukan hal yang sama. Akan tetapi ada perbedaannya.&lt;/p>
-&lt;p>Apa itu?&lt;/p>
-&lt;p>Mari kita bahas…&lt;/p>
-&lt;h3 id="git-checkout">Git Checkout&lt;/h3>
-&lt;p>Perintah &lt;strong>git checkout&lt;/strong> seperti mesin waktu, kita bisa kembalikan kondisi file proyek seperti waktu yang dituju.&lt;/p>
-&lt;p>Misalnya:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git checkout 06f735af7724558164c87f6b1ce3ca7778eb1c1b
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Maka semua file akan dikembalikan seperti keadaan pada nomer &lt;em>commit&lt;/em> tersebut.&lt;/p>
-
-&lt;figure class="my-4 text-center">
- &lt;img 
- src="https://gitkodachi.github.io/images/content/git/git-checkout-masa-lalu.png" 
- alt="Deskripsi gambar" 
- class="cursor-zoom-in max-w-full rounded"
- onclick="zoom(this)"
- >
- 
- &lt;figcaption class="text-sm text-gray-500 mt-2">
- &lt;em>Keterangan gambar opsional&lt;/em>
- &lt;/figcaption>
- 
-&lt;/figure>
-
-&lt;script>
-function zoom(img) {
- img.classList.toggle('zoomed');
- document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
- 
- 
- if (img.classList.contains('zoomed')) {
- const handleKey = (e) => e.key === 'Escape' &amp;&amp; zoom(img);
- document.addEventListener('keydown', handleKey);
- img.onzoomout = () => document.removeEventListener('keydown', handleKey);
- } else if (img.onzoomout) {
- img.onzoomout();
- }
-}
-&lt;/script>
-
-&lt;style>
-img.zoomed {
- position: fixed;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- max-height: 90vh;
- z-index: 100;
- cursor: zoom-out;
- box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
-}
-&lt;/style>
-&lt;p>Akan tetapi, ini bersifat temporer (sementara). Pengembalian ini tidak disimpan dalam database Git.&lt;/p></description></item><item><title>Belajar Git #09: Berkerja Dengan Remote Repository</title><link>https://gitkodachi.github.io/tutorial/git/git-remote/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-remote/</guid><description>&lt;p>Pada proyek pengembangan software yang melibatkan banyak orang (tim), kita tidak hanya akan menyimpan sendiri repository proyeknya.&lt;/p>
-&lt;p>Semua tim yang terlibat dalam pengkodean (&lt;em>coding&lt;/em>) akan menyimpan repository lokal di komputernya masing-masing.&lt;/p>
-&lt;p>Setelah itu, akan dilakukan penggabungan ke repository inti atau remote.&lt;/p>
-&lt;p>Biasanya akan ada repository pusat atau untuk menyimpan source code yang sudah digabungkan (&lt;em>merge&lt;/em>) dari beberapa orang.&lt;/p>
-
- &lt;figure class="my-4 text-center">
- &lt;img 
- src="https://gitkodachi.github.io/images/content/git/sistem-git.png" 
- alt="Deskripsi gambar" 
- class="cursor-zoom-in max-w-full rounded"
- onclick="zoom(this)"
- >
- 
- &lt;figcaption class="text-sm text-gray-500 mt-2">
- &lt;em>Gambar contoh dengan zoom&lt;/em>
- &lt;/figcaption>
- 
- &lt;/figure>
- 
- &lt;script>
- function zoom(img) {
- img.classList.toggle('zoomed');
- document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
- 
- 
- if (img.classList.contains('zoomed')) {
- const handleKey = (e) => e.key === 'Escape' &amp;&amp; zoom(img);
- document.addEventListener('keydown', handleKey);
- img.onzoomout = () => document.removeEventListener('keydown', handleKey);
- } else if (img.onzoomout) {
- img.onzoomout();
- }
- }
- &lt;/script>
- 
- &lt;style>
- img.zoomed {
- position: fixed;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- max-height: 90vh;
- z-index: 100;
- cursor: zoom-out;
- box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
- }
- &lt;/style>
-&lt;p>Di mana nyimpan repository remote-nya?&lt;/p></description></item><item><title>Belajar Git #10: Menggunakan Git Pull Git Fetch</title><link>https://gitkodachi.github.io/tutorial/git/git-full-fetch/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-full-fetch/</guid><description/></item><item><title>Belajar Git #12: Cara Menggunakan Git Pada Visual Studio Code</title><link>https://gitkodachi.github.io/tutorial/git/git-vscode/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/git/git-vscode/</guid><description/></item><item><title>Cara Setup SSH Key untuk Github agar Bisa Ngepush Tanpa Password</title><link>https://gitkodachi.github.io/post/github-ssh/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/post/github-ssh/</guid><description>&lt;p>Kita bisa melakukan push ke Github melalui dua metode yakni, melalui protokol HTTPS dan SSH.&lt;/p>
-&lt;p>Jika kita menggunakan HTTPS, maka kita akan dimintai password di setiap kali melakukan push. Sedangkan kalau pakai SSH, ini tidak perlu..&lt;/p>
-&lt;p>..karena password-nya akan diwakili oleh SSH Key.&lt;/p>
-&lt;p>Pada tutorial ini, kita akan belajar gimana cara setup SSH Key untuk Github. Sehingga nanti bisa melakukan push tanpa harus ngetik password terus menerus.&lt;/p>
-&lt;p>Mari kita mulai!&lt;/p></description></item><item><title>Github Workflow: Cara Berkontribusi di Proyek Open Source</title><link>https://gitkodachi.github.io/post/github-workflow/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/post/github-workflow/</guid><description>&lt;p>Github saat ini sudah menjadi rumah bagi proyek-proyek open source.&lt;/p>
-&lt;p>Jutaan programmer dari seluruh dunia menaruh kodenya di sana.&lt;/p>
-&lt;p>Bahkan proyek open source seperti &lt;a href="https://github.com/torvalds/linux">Linux&lt;/a>, &lt;a href="https://github.com/linuxmint/Cinnamon">Cinnamon&lt;/a>, &lt;a href="https://github.com/laravel/laravel">Laravel&lt;/a>, &lt;a href="https://github.com/BlankOn">BlankOn&lt;/a>, dll. menggunakan Github.&lt;/p>
-&lt;p>Bagaimana proyek-proyek itu digarap bersama?&lt;/p>
-&lt;p>Itulah yang akan kita pelajari pada artikel ini.&lt;/p>
-&lt;p>Kita akan belajar tentang Git dan Github workflow atau alur kerja Github untuk berkontribusi pada proyek open source.&lt;/p>
-&lt;p>Kita akan langsung melakukan kontribusi pada proyek “dummy” yang sudah saya siapkan.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Octocat Code</title>
+    <link>http://localhost:1313/topik/git/</link>
+    <description>Recent content in Git on Octocat Code</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/topik/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apa itu Git dan Kenapa Penting bagi Programmer?</title>
+      <link>http://localhost:1313/tutorial/git/git-untuk-pemula/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-untuk-pemula/</guid>
+      <description>&lt;p&gt;Git adalah salah satu tool yang sering digunakan dalam proyek pengembangan software.&lt;/p&gt;&#xA;&lt;p&gt;Git bahkan menjadi tool yang wajib dipahami oleh programmer, karena banyak digunakan di mana-mana.&lt;/p&gt;&#xA;&lt;p&gt;Pada kesempatan ini kita akan belajar Git dari dasar.&lt;/p&gt;&#xA;&lt;p&gt;Artikel ini hanya akan membahas pengenalan Git saja. Untuk mempelajari Git lebih lanjut, saya sudah menyediakan link di bagian akhir.&lt;/p&gt;&#xA;&lt;h2 id=&#34;mengenal-git&#34;&gt;Mengenal Git&lt;/h2&gt;&#xA;&lt;p&gt;Git adalah salah satu sistem pengontrol versi (Version Control System) pada proyek perangkat lunak yang diciptakan oleh Linus Torvalds.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #1: Cara Install Git dan Konfigurasi Awal Yang Harus dilakukan</title>
+      <link>http://localhost:1313/tutorial/git/git-install/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-install/</guid>
+      <description>&lt;p&gt;Kita sudah mengenal Git pada &lt;a href=&#34;http://localhost:1313/tutorial/git/git-untuk-pemula/&#34;&gt;tulisan sebelumnya&lt;/a&gt;. Selanjutnya Kita akan melakukan instalasi dan persiapan untuk mulai belajar Git.&lt;/p&gt;&#xA;&lt;p&gt;Tulisan ini terbagi menjadi tiga bagian:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Cara Instalasi Git di Linux.&lt;/li&gt;&#xA;&lt;li&gt;Cara Instalasi Git di Windows.&lt;/li&gt;&#xA;&lt;li&gt;Konfigurasi Awal yang Harus dilkaukan Setelah Menginstal Git.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Mari kita mulai&amp;hellip;&lt;/p&gt;&#xA;&lt;h1 id=&#34;1-cara-install-git-di-linux&#34;&gt;&lt;strong&gt;1. Cara Install Git di Linux&lt;/strong&gt;&lt;/h1&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install git&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;atau&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-install git&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Pada Fedora:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yum install git&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Setelah itu , coba periksa versi yang terinstal dengan perintah:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #02: Membuat Repositori Baru dalam Proyek</title>
+      <link>http://localhost:1313/tutorial/git/git-init/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-init/</guid>
+      <description>&lt;p&gt;Repositori &lt;em&gt;(repository)&lt;/em&gt; dalam bahasa indonesia artinya gudang. Repositori merupakan istilah yang digunakan untuk direktori proyek yang menggunakan Git.&lt;/p&gt;&#xA;&lt;p&gt;Jika kita memiliki sebuah direktori dengan nama &lt;strong&gt;proyek-01&lt;/strong&gt; dan di dalamnya sudah menggunakan git, maka kita sudah punya repositori bernama &lt;strong&gt;proyek-01&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;membuat-repository&#34;&gt;Membuat Repository&lt;/h3&gt;&#xA;&lt;p&gt;Pembuatan repositori dapat dilakukan dengan perintah &lt;strong&gt;git init nama-dir&lt;/strong&gt;. Contoh:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git init proyek-01&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Perintah tersebut akan membuat direktori bernama &lt;strong&gt;proyek-01&lt;/strong&gt;. Kalau direktorinya sudah ada, maka Git akan melakukan inisialisasi di dalam direktori tersebut.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #03: Simpan Perubahan Revisi dengan Git Commit</title>
+      <link>http://localhost:1313/tutorial/git/git-commit/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-commit/</guid>
+      <description>&lt;p&gt;Pada &lt;a href=&#34;../git-init&#34;&gt;tutorial Git yang kedua&lt;/a&gt;, kita sudah membuat repositori kosong. Belum ada apa-apa di sana.&lt;/p&gt;&#xA;&lt;p&gt;Sekarang coba tambahkan sebuah file baru.&lt;/p&gt;&#xA;&lt;p&gt;Sebagai contoh, saya akan menambahkan tiga file HTML kosong.&lt;/p&gt;&#xA;&#xD;&#xA;&lt;figure class=&#34;my-4 text-center&#34;&gt;&#xD;&#xA;  &lt;img &#xD;&#xA;    src=&#34;http://localhost:1313/images/content/git/project-01_repositori-git-petanikode.png&#34; &#xD;&#xA;    alt=&#34;Deskripsi gambar&#34; &#xD;&#xA;    class=&#34;cursor-zoom-in max-w-full rounded&#34;&#xD;&#xA;    onclick=&#34;zoom(this)&#34;&#xD;&#xA;  &gt;&#xD;&#xA;  &#xD;&#xA;  &lt;figcaption class=&#34;text-sm text-gray-500 mt-2&#34;&gt;&#xD;&#xA;    &lt;em&gt;Keterangan gambar opsional&lt;/em&gt;&#xD;&#xA;  &lt;/figcaption&gt;&#xD;&#xA;  &#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&#xD;&#xA;&lt;script&gt;&#xD;&#xA;function zoom(img) {&#xD;&#xA;  img.classList.toggle(&#39;zoomed&#39;);&#xD;&#xA;  document.body.style.overflow = img.classList.contains(&#39;zoomed&#39;) ? &#39;hidden&#39; : &#39;&#39;;&#xD;&#xA;  &#xD;&#xA;  &#xD;&#xA;  if (img.classList.contains(&#39;zoomed&#39;)) {&#xD;&#xA;    const handleKey = (e) =&gt; e.key === &#39;Escape&#39; &amp;&amp; zoom(img);&#xD;&#xA;    document.addEventListener(&#39;keydown&#39;, handleKey);&#xD;&#xA;    img.onzoomout = () =&gt; document.removeEventListener(&#39;keydown&#39;, handleKey);&#xD;&#xA;  } else if (img.onzoomout) {&#xD;&#xA;    img.onzoomout();&#xD;&#xA;  }&#xD;&#xA;}&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&lt;style&gt;&#xD;&#xA;img.zoomed {&#xD;&#xA;  position: fixed;&#xD;&#xA;  top: 50%;&#xD;&#xA;  left: 50%;&#xD;&#xA;  transform: translate(-50%, -50%);&#xD;&#xA;  max-height: 90vh;&#xD;&#xA;  z-index: 100;&#xD;&#xA;  cursor: zoom-out;&#xD;&#xA;  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);&#xD;&#xA;}&#xD;&#xA;&lt;/style&gt;&#xA;&lt;p&gt;Setelah ditambahkan, coba ketik perintah git status untuk melihat status repositorinya.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #04: Melihat Catatan Log Revisi</title>
+      <link>http://localhost:1313/tutorial/git/git-log/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-log/</guid>
+      <description>&lt;p&gt;Pada &lt;a href=&#34;../git-commit&#34;&gt;tutorial sebelumnya&lt;/a&gt;, kita sudah membuat dua revisi pada repositori project-01. Sekarang bagaimana caranya kita melihat catatan log dari revisi-reivisi tersebut?&lt;/p&gt;&#xA;&lt;p&gt;Git sudah menyediakan perintah git log untuk melihat catatan log perubahan pada repositori. Contoh penggunaannya:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git log&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Maka kita akan melihat log perubahan apa saja yang sudah dilakukan dalam repositori.&lt;/p&gt;&#xA;&#xD;&#xA;&lt;figure class=&#34;my-4 text-center&#34;&gt;&#xD;&#xA;  &lt;img &#xD;&#xA;    src=&#34;http://localhost:1313/images/content/git/log-revisi-yang-sudah-dibuat.png&#34; &#xD;&#xA;    alt=&#34;Deskripsi gambar&#34; &#xD;&#xA;    class=&#34;cursor-zoom-in max-w-full rounded&#34;&#xD;&#xA;    onclick=&#34;zoom(this)&#34;&#xD;&#xA;  &gt;&#xD;&#xA;  &#xD;&#xA;  &lt;figcaption class=&#34;text-sm text-gray-500 mt-2&#34;&gt;&#xD;&#xA;    &lt;em&gt;Pada gambar di atas, terdapat dua revisi perubahan yang telah dilakuan.&lt;/em&gt;&#xD;&#xA;  &lt;/figcaption&gt;&#xD;&#xA;  &#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&#xD;&#xA;&lt;script&gt;&#xD;&#xA;function zoom(img) {&#xD;&#xA;  img.classList.toggle(&#39;zoomed&#39;);&#xD;&#xA;  document.body.style.overflow = img.classList.contains(&#39;zoomed&#39;) ? &#39;hidden&#39; : &#39;&#39;;&#xD;&#xA;  &#xD;&#xA;  &#xD;&#xA;  if (img.classList.contains(&#39;zoomed&#39;)) {&#xD;&#xA;    const handleKey = (e) =&gt; e.key === &#39;Escape&#39; &amp;&amp; zoom(img);&#xD;&#xA;    document.addEventListener(&#39;keydown&#39;, handleKey);&#xD;&#xA;    img.onzoomout = () =&gt; document.removeEventListener(&#39;keydown&#39;, handleKey);&#xD;&#xA;  } else if (img.onzoomout) {&#xD;&#xA;    img.onzoomout();&#xD;&#xA;  }&#xD;&#xA;}&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&lt;style&gt;&#xD;&#xA;img.zoomed {&#xD;&#xA;  position: fixed;&#xD;&#xA;  top: 50%;&#xD;&#xA;  left: 50%;&#xD;&#xA;  transform: translate(-50%, -50%);&#xD;&#xA;  max-height: 90vh;&#xD;&#xA;  z-index: 100;&#xD;&#xA;  cursor: zoom-out;&#xD;&#xA;  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);&#xD;&#xA;}&#xD;&#xA;&lt;/style&gt;&#xA;&lt;h3 id=&#34;log-yang-lebih-pendek&#34;&gt;Log yang Lebih Pendek&lt;/h3&gt;&#xA;&lt;p&gt;Untuk menampilkan log yang lebih pendek, kita bisa menambahkan argumen &lt;strong&gt;&amp;ndash;oneline&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #05: Melihat Perbandingan Revisi dengan Git Diff</title>
+      <link>http://localhost:1313/tutorial/git/git-diff/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-diff/</guid>
+      <description>&lt;p&gt;Pada tutorial sebelumnya, kita sudah belajar cara melihat log revisi di repositori. Sekarang kita kan pelajari perintah &lt;strong&gt;git diff&lt;/strong&gt;, fungsinya untuk melihat perbedaan perubahan di revisi.&lt;/p&gt;&#xA;&lt;h3 id=&#34;melihat-perbandingan-perubahan-yang-dilakukan-pada-revisi&#34;&gt;Melihat Perbandingan Perubahan yang Dilakukan pada Revisi&lt;/h3&gt;&#xA;&lt;p&gt;Gunakan perintah berikut ini untuk melihat perubahan yang dilakukan pada revisi tertentu.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git diff cf08ca0837cf26f1c595be36bb3a6b815e311be1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;cf08ca0837cf26f1c595be36bb3a6b815e311be1&lt;/em&gt; adalah nomer revisi yang ingin dilihat.&lt;/p&gt;&#xA;&#xD;&#xA;&lt;figure class=&#34;my-4 text-center&#34;&gt;&#xD;&#xA;  &lt;img &#xD;&#xA;    src=&#34;http://localhost:1313/images/content/git/git-diff-pada-nomer-revisi.png&#34; &#xD;&#xA;    alt=&#34;Deskripsi gambar&#34; &#xD;&#xA;    class=&#34;cursor-zoom-in max-w-full rounded&#34;&#xD;&#xA;    onclick=&#34;zoom(this)&#34;&#xD;&#xA;  &gt;&#xD;&#xA;  &#xD;&#xA;  &lt;figcaption class=&#34;text-sm text-gray-500 mt-2&#34;&gt;&#xD;&#xA;    &lt;em&gt;Keterangan gambar opsional&lt;/em&gt;&#xD;&#xA;  &lt;/figcaption&gt;&#xD;&#xA;  &#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&#xD;&#xA;&lt;script&gt;&#xD;&#xA;function zoom(img) {&#xD;&#xA;  img.classList.toggle(&#39;zoomed&#39;);&#xD;&#xA;  document.body.style.overflow = img.classList.contains(&#39;zoomed&#39;) ? &#39;hidden&#39; : &#39;&#39;;&#xD;&#xA;  &#xD;&#xA;  &#xD;&#xA;  if (img.classList.contains(&#39;zoomed&#39;)) {&#xD;&#xA;    const handleKey = (e) =&gt; e.key === &#39;Escape&#39; &amp;&amp; zoom(img);&#xD;&#xA;    document.addEventListener(&#39;keydown&#39;, handleKey);&#xD;&#xA;    img.onzoomout = () =&gt; document.removeEventListener(&#39;keydown&#39;, handleKey);&#xD;&#xA;  } else if (img.onzoomout) {&#xD;&#xA;    img.onzoomout();&#xD;&#xA;  }&#xD;&#xA;}&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&lt;style&gt;&#xD;&#xA;img.zoomed {&#xD;&#xA;  position: fixed;&#xD;&#xA;  top: 50%;&#xD;&#xA;  left: 50%;&#xD;&#xA;  transform: translate(-50%, -50%);&#xD;&#xA;  max-height: 90vh;&#xD;&#xA;  z-index: 100;&#xD;&#xA;  cursor: zoom-out;&#xD;&#xA;  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);&#xD;&#xA;}&#xD;&#xA;&lt;/style&gt;&#xA;&lt;p&gt;Lihatlah hasil di atas, simbol plus &lt;strong&gt;(+)&lt;/strong&gt; artinya kode yang ditambahkan. Sedangkan kalau ada kode yang dihapus simbolnya akan menggunakan minus &lt;strong&gt;(-)&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #06: Perintah Untuk Membatalkan Revisi</title>
+      <link>http://localhost:1313/tutorial/git/git-revert/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-revert/</guid>
+      <description>&lt;p&gt;Pada &lt;a href=&#34;../git-diff&#34;&gt;tutorial git 05&lt;/a&gt;, kita sudah belajar cara melihat perbedaan di setiap revisi. Sekarang kita akan belajar, cara membatalkan sebuah revisi.&lt;/p&gt;&#xA;&lt;p&gt;Terkadang pada perubahan yang kita lakukan terjadi kesalahan dan kita ingin mengembalikannya seperti keadaan sebelumnya. Maka kita perlu menyuruh git untuk mengembalikannya. Ada beberapa perintah yang digunakan di antaranya: &lt;strong&gt;git checkout, git reset,&lt;/strong&gt; dan &lt;strong&gt;git revert&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;membatalkan-perubahan&#34;&gt;Membatalkan Perubahan&lt;/h3&gt;&#xA;&lt;p&gt;Jika revisi kita belum staged ataupun mengetahui, kita bisa mengembalikannya menggunakan perintah &lt;strong&gt;git checkout nama_file.html&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #07: Menggunakan Percabangan untuk mencegah Konflik</title>
+      <link>http://localhost:1313/tutorial/git/git-branch/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-branch/</guid>
+      <description>&lt;p&gt;Bayangkan anda sedang bekerja dengan tim pada suatu repositori Git. Repositori ini dikerjakan secara bersama-sama.&lt;/p&gt;&#xA;&lt;p&gt;Kadang… akan terjadi konflik, karena kode yang kita tulis berbeda dengan yang lain.&lt;/p&gt;&#xA;&lt;p&gt;Misalnya, Si A menulis kode untuk fitur X dengan algoritma yang ia ketahui. Sedangkan si B menulis dengan algoritma yang berbeda.&lt;/p&gt;&#xA;&lt;p&gt;Lalu mereka melakukan commit, dan kode sumber jadi berantakan. Anggota tim yang lain menjadi pusing.&lt;/p&gt;&#xA;&#xD;&#xA;  &lt;figure class=&#34;my-4 text-center&#34;&gt;&#xD;&#xA;    &lt;img &#xD;&#xA;      src=&#34;http://localhost:1313/images/content/git/konflik-branch-repositori-git.png&#34; &#xD;&#xA;      alt=&#34;Deskripsi gambar&#34; &#xD;&#xA;      class=&#34;cursor-zoom-in max-w-full rounded&#34;&#xD;&#xA;      onclick=&#34;zoom(this)&#34;&#xD;&#xA;    &gt;&#xD;&#xA;    &#xD;&#xA;    &lt;figcaption class=&#34;text-sm text-gray-500 mt-2&#34;&gt;&#xD;&#xA;      &lt;em&gt;Gambar contoh dengan zoom&lt;/em&gt;&#xD;&#xA;    &lt;/figcaption&gt;&#xD;&#xA;    &#xD;&#xA;  &lt;/figure&gt;&#xD;&#xA;  &#xD;&#xA;  &lt;script&gt;&#xD;&#xA;  function zoom(img) {&#xD;&#xA;    img.classList.toggle(&#39;zoomed&#39;);&#xD;&#xA;    document.body.style.overflow = img.classList.contains(&#39;zoomed&#39;) ? &#39;hidden&#39; : &#39;&#39;;&#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    if (img.classList.contains(&#39;zoomed&#39;)) {&#xD;&#xA;      const handleKey = (e) =&gt; e.key === &#39;Escape&#39; &amp;&amp; zoom(img);&#xD;&#xA;      document.addEventListener(&#39;keydown&#39;, handleKey);&#xD;&#xA;      img.onzoomout = () =&gt; document.removeEventListener(&#39;keydown&#39;, handleKey);&#xD;&#xA;    } else if (img.onzoomout) {&#xD;&#xA;      img.onzoomout();&#xD;&#xA;    }&#xD;&#xA;  }&#xD;&#xA;  &lt;/script&gt;&#xD;&#xA;  &#xD;&#xA;  &lt;style&gt;&#xD;&#xA;  img.zoomed {&#xD;&#xA;    position: fixed;&#xD;&#xA;    top: 50%;&#xD;&#xA;    left: 50%;&#xD;&#xA;    transform: translate(-50%, -50%);&#xD;&#xA;    max-height: 90vh;&#xD;&#xA;    z-index: 100;&#xD;&#xA;    cursor: zoom-out;&#xD;&#xA;    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);&#xD;&#xA;  }&#xD;&#xA;  &lt;/style&gt;&#xA;&lt;p&gt;Agar tidak terjadi hal yang seperti ini, kita harus membuat cabang (branch) tersendiri.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #08: Perbedaan Git checkout, Git Reset, dan Git Revert</title>
+      <link>http://localhost:1313/tutorial/git/git-checkout-reset-revert/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-checkout-reset-revert/</guid>
+      <description>&lt;p&gt;Pada &lt;a href=&#34;../git-revert&#34;&gt;tutorial ke-6&lt;/a&gt;, kita sudah membahas cara membatalkan revisi menggunakan perintah git checkout, git reset, dan git revert.&lt;/p&gt;&#xA;&lt;p&gt;Sekilas, tiga perintah tersebut melakukan hal yang sama. Akan tetapi ada perbedaannya.&lt;/p&gt;&#xA;&lt;p&gt;Apa itu?&lt;/p&gt;&#xA;&lt;p&gt;Mari kita bahas…&lt;/p&gt;&#xA;&lt;h3 id=&#34;git-checkout&#34;&gt;Git Checkout&lt;/h3&gt;&#xA;&lt;p&gt;Perintah &lt;strong&gt;git checkout&lt;/strong&gt; seperti mesin waktu, kita bisa kembalikan kondisi file proyek seperti waktu yang dituju.&lt;/p&gt;&#xA;&lt;p&gt;Misalnya:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout 06f735af7724558164c87f6b1ce3ca7778eb1c1b&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Maka semua file akan dikembalikan seperti keadaan pada nomer &lt;em&gt;commit&lt;/em&gt; tersebut.&lt;/p&gt;&#xA;&#xD;&#xA;&lt;figure class=&#34;my-4 text-center&#34;&gt;&#xD;&#xA;  &lt;img &#xD;&#xA;    src=&#34;http://localhost:1313/images/content/git/git-checkout-masa-lalu.png&#34; &#xD;&#xA;    alt=&#34;Deskripsi gambar&#34; &#xD;&#xA;    class=&#34;cursor-zoom-in max-w-full rounded&#34;&#xD;&#xA;    onclick=&#34;zoom(this)&#34;&#xD;&#xA;  &gt;&#xD;&#xA;  &#xD;&#xA;  &lt;figcaption class=&#34;text-sm text-gray-500 mt-2&#34;&gt;&#xD;&#xA;    &lt;em&gt;Keterangan gambar opsional&lt;/em&gt;&#xD;&#xA;  &lt;/figcaption&gt;&#xD;&#xA;  &#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&#xD;&#xA;&lt;script&gt;&#xD;&#xA;function zoom(img) {&#xD;&#xA;  img.classList.toggle(&#39;zoomed&#39;);&#xD;&#xA;  document.body.style.overflow = img.classList.contains(&#39;zoomed&#39;) ? &#39;hidden&#39; : &#39;&#39;;&#xD;&#xA;  &#xD;&#xA;  &#xD;&#xA;  if (img.classList.contains(&#39;zoomed&#39;)) {&#xD;&#xA;    const handleKey = (e) =&gt; e.key === &#39;Escape&#39; &amp;&amp; zoom(img);&#xD;&#xA;    document.addEventListener(&#39;keydown&#39;, handleKey);&#xD;&#xA;    img.onzoomout = () =&gt; document.removeEventListener(&#39;keydown&#39;, handleKey);&#xD;&#xA;  } else if (img.onzoomout) {&#xD;&#xA;    img.onzoomout();&#xD;&#xA;  }&#xD;&#xA;}&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&lt;style&gt;&#xD;&#xA;img.zoomed {&#xD;&#xA;  position: fixed;&#xD;&#xA;  top: 50%;&#xD;&#xA;  left: 50%;&#xD;&#xA;  transform: translate(-50%, -50%);&#xD;&#xA;  max-height: 90vh;&#xD;&#xA;  z-index: 100;&#xD;&#xA;  cursor: zoom-out;&#xD;&#xA;  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);&#xD;&#xA;}&#xD;&#xA;&lt;/style&gt;&#xA;&lt;p&gt;Akan tetapi, ini bersifat temporer (sementara). Pengembalian ini tidak disimpan dalam database Git.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #09: Berkerja Dengan Remote Repository</title>
+      <link>http://localhost:1313/tutorial/git/git-remote/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-remote/</guid>
+      <description>&lt;p&gt;Pada proyek pengembangan software yang melibatkan banyak orang (tim), kita tidak hanya akan menyimpan sendiri repository proyeknya.&lt;/p&gt;&#xA;&lt;p&gt;Semua tim yang terlibat dalam pengkodean (&lt;em&gt;coding&lt;/em&gt;) akan menyimpan repository lokal di komputernya masing-masing.&lt;/p&gt;&#xA;&lt;p&gt;Setelah itu, akan dilakukan penggabungan ke repository inti atau remote.&lt;/p&gt;&#xA;&lt;p&gt;Biasanya akan ada repository pusat atau untuk menyimpan source code yang sudah digabungkan (&lt;em&gt;merge&lt;/em&gt;) dari beberapa orang.&lt;/p&gt;&#xA;&#xD;&#xA;  &lt;figure class=&#34;my-4 text-center&#34;&gt;&#xD;&#xA;    &lt;img &#xD;&#xA;      src=&#34;http://localhost:1313/images/content/git/sistem-git.png&#34; &#xD;&#xA;      alt=&#34;Deskripsi gambar&#34; &#xD;&#xA;      class=&#34;cursor-zoom-in max-w-full rounded&#34;&#xD;&#xA;      onclick=&#34;zoom(this)&#34;&#xD;&#xA;    &gt;&#xD;&#xA;    &#xD;&#xA;    &lt;figcaption class=&#34;text-sm text-gray-500 mt-2&#34;&gt;&#xD;&#xA;      &lt;em&gt;Gambar contoh dengan zoom&lt;/em&gt;&#xD;&#xA;    &lt;/figcaption&gt;&#xD;&#xA;    &#xD;&#xA;  &lt;/figure&gt;&#xD;&#xA;  &#xD;&#xA;  &lt;script&gt;&#xD;&#xA;  function zoom(img) {&#xD;&#xA;    img.classList.toggle(&#39;zoomed&#39;);&#xD;&#xA;    document.body.style.overflow = img.classList.contains(&#39;zoomed&#39;) ? &#39;hidden&#39; : &#39;&#39;;&#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    if (img.classList.contains(&#39;zoomed&#39;)) {&#xD;&#xA;      const handleKey = (e) =&gt; e.key === &#39;Escape&#39; &amp;&amp; zoom(img);&#xD;&#xA;      document.addEventListener(&#39;keydown&#39;, handleKey);&#xD;&#xA;      img.onzoomout = () =&gt; document.removeEventListener(&#39;keydown&#39;, handleKey);&#xD;&#xA;    } else if (img.onzoomout) {&#xD;&#xA;      img.onzoomout();&#xD;&#xA;    }&#xD;&#xA;  }&#xD;&#xA;  &lt;/script&gt;&#xD;&#xA;  &#xD;&#xA;  &lt;style&gt;&#xD;&#xA;  img.zoomed {&#xD;&#xA;    position: fixed;&#xD;&#xA;    top: 50%;&#xD;&#xA;    left: 50%;&#xD;&#xA;    transform: translate(-50%, -50%);&#xD;&#xA;    max-height: 90vh;&#xD;&#xA;    z-index: 100;&#xD;&#xA;    cursor: zoom-out;&#xD;&#xA;    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);&#xD;&#xA;  }&#xD;&#xA;  &lt;/style&gt;&#xA;&lt;p&gt;Di mana nyimpan repository remote-nya?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Git #10: Menggunakan Git Pull Git Fetch</title>
+      <link>http://localhost:1313/tutorial/git/git-full-fetch/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-full-fetch/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Belajar Git #12: Cara Menggunakan Git Pada Visual Studio Code</title>
+      <link>http://localhost:1313/tutorial/git/git-vscode/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/git/git-vscode/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cara Setup SSH Key untuk Github agar Bisa Ngepush Tanpa Password</title>
+      <link>http://localhost:1313/post/github-ssh/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/github-ssh/</guid>
+      <description>&lt;p&gt;Kita bisa melakukan push ke Github melalui dua metode yakni, melalui protokol HTTPS dan SSH.&lt;/p&gt;&#xA;&lt;p&gt;Jika kita menggunakan HTTPS, maka kita akan dimintai password di setiap kali melakukan push. Sedangkan kalau pakai SSH, ini tidak perlu..&lt;/p&gt;&#xA;&lt;p&gt;..karena password-nya akan diwakili oleh SSH Key.&lt;/p&gt;&#xA;&lt;p&gt;Pada tutorial ini, kita akan belajar gimana cara setup SSH Key untuk Github. Sehingga nanti bisa melakukan push tanpa harus ngetik password terus menerus.&lt;/p&gt;&#xA;&lt;p&gt;Mari kita mulai!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Github Workflow: Cara Berkontribusi di Proyek Open Source</title>
+      <link>http://localhost:1313/post/github-workflow/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/github-workflow/</guid>
+      <description>&lt;p&gt;Github saat ini sudah menjadi rumah bagi proyek-proyek open source.&lt;/p&gt;&#xA;&lt;p&gt;Jutaan programmer dari seluruh dunia menaruh kodenya di sana.&lt;/p&gt;&#xA;&lt;p&gt;Bahkan proyek open source seperti &lt;a href=&#34;https://github.com/torvalds/linux&#34;&gt;Linux&lt;/a&gt;, &lt;a href=&#34;https://github.com/linuxmint/Cinnamon&#34;&gt;Cinnamon&lt;/a&gt;, &lt;a href=&#34;https://github.com/laravel/laravel&#34;&gt;Laravel&lt;/a&gt;, &lt;a href=&#34;https://github.com/BlankOn&#34;&gt;BlankOn&lt;/a&gt;, dll. menggunakan Github.&lt;/p&gt;&#xA;&lt;p&gt;Bagaimana proyek-proyek itu digarap bersama?&lt;/p&gt;&#xA;&lt;p&gt;Itulah yang akan kita pelajari pada artikel ini.&lt;/p&gt;&#xA;&lt;p&gt;Kita akan belajar tentang Git dan Github workflow atau alur kerja Github untuk berkontribusi pada proyek open source.&lt;/p&gt;&#xA;&lt;p&gt;Kita akan langsung melakukan kontribusi pada proyek “dummy” yang sudah saya siapkan.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

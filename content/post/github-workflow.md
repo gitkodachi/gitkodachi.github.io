@@ -242,4 +242,4 @@ Jika ingin berkontribusi lagi, pastikan repository lokal tetap terupdate dengan 
 
 Update bisa dilakukan dengan perintah **git pull** atau **git fetch**.
 
-Pelajari caranya di sini: Bekerja dengan [Remote Repository](git-remote).
+Pelajari caranya di sini: Bekerja dengan [Remote Repository](/tutorial/git/git-remote).
