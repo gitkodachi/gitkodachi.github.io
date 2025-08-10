@@ -424,19 +424,9 @@
         
       
     
-      
-      
-        
-        
-        
-      
-    
   
 
   
-    
-      
-      
     
       
       
@@ -465,12 +455,6 @@
        class="p-1 px-2 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-700 dark:hover:text-white dark:hover:bg-slate-600 hover:text-teal-600 hover:bg-teal-100/25 transition"
        href="/topik/github/">
       #github
-    </a>
-  
-    <a rel="tag"
-       class="p-1 px-2 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-700 dark:hover:text-white dark:hover:bg-slate-600 hover:text-teal-600 hover:bg-teal-100/25 transition"
-       href="/topik/ssh/">
-      #ssh
     </a>
   
 </section>
@@ -509,6 +493,683 @@
 <li><a href="https://gitkodachi.github.io/topik/git/">Git</a></li>
 <li><a href="#">Teks Editor</a>.</li>
 </ol>
+<h3 id="langkah-langkah-berkontribusi-pada-proyek-open-source-di-github">Langkah-langkah Berkontribusi pada Proyek Open Source di Github</h3>
+<p>Ada beberapa langkah yang harus dilakukan untuk berkontribusi di Proyek open source:</p>
+<ol>
+<li>Baca Aturan Berkontribusi</li>
+</ol>
+<p>Jika kamu tertarik berkontribusi pada sebuah proyek di Github, pastikan membaca aturan kontribusi.</p>
+<p>Pada aturan kontribusi, biasanya akan ada larangan dan tata cara berkontribusi yang harus dipatuhi bersama.</p>
+<p>Aturan berkontribusi biasanya ditulis pada file <strong>CONTRIBUTING.md</strong> dan <strong>README.md</strong>.</p>
+<p>Contoh aturan berkontribusi pada <a href="https://github.com/gohugoio/hugo">proyek Hugo</a>:</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/git/contributing.png" 
+      alt="Deskripsi gambar" 
+      class="cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    img.classList.toggle('zoomed');
+    document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+    
+    
+    if (img.classList.contains('zoomed')) {
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+    } else if (img.onzoomout) {
+      img.onzoomout();
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    z-index: 100;
+    cursor: zoom-out;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+  }
+  </style>
+<p>Apa yang akan terjadi bila saya tidak mengikuti aturan berkontribusi?</p>
+<p>Bisa jadi kontribusimu akan ditolak oleh admin.</p>
+<p>Karena itu, bacalah aturan berkontribusi dengan teliti dan seksama.</p>
+<ol start="2">
+<li>Fork &amp; Clone Repository</li>
+</ol>
+<p>Setelah kita selesai membaca aturan berkontribusi, langkah selanjutnya adalah melakukan fork repository ke akun kita.</p>
+<p>Fork bisa kita artikan sebagai menyalin repository dari akun orang lain atau organisasi ke akun kita sendiri.</p>
+<p>Nah untuk mempraktikannya, saya sudah menyiapkan proyek bernama <a href="https://github.com/petanikode/belajar-git">belajar-git</a>.</p>
+<p>Silakan buka proyek tersebut, lalu klik tombol Fork.</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/git/fork.png" 
+      alt="Deskripsi gambar" 
+      class="cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    img.classList.toggle('zoomed');
+    document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+    
+    
+    if (img.classList.contains('zoomed')) {
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+    } else if (img.onzoomout) {
+      img.onzoomout();
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    z-index: 100;
+    cursor: zoom-out;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+  }
+  </style>
+<p>Tunggu beberapa saat, repository sedang di-fork.</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/git/forking.png" 
+      alt="Deskripsi gambar" 
+      class="cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    img.classList.toggle('zoomed');
+    document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+    
+    
+    if (img.classList.contains('zoomed')) {
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+    } else if (img.onzoomout) {
+      img.onzoomout();
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    z-index: 100;
+    cursor: zoom-out;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+  }
+  </style>
+<p>Setelah itu, akan ada repository baru bernama <strong>belajar-git</strong> di akun kita.</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/git/hasil-fork.png" 
+      alt="Deskripsi gambar" 
+      class="cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    img.classList.toggle('zoomed');
+    document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+    
+    
+    if (img.classList.contains('zoomed')) {
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+    } else if (img.onzoomout) {
+      img.onzoomout();
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    z-index: 100;
+    cursor: zoom-out;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+  }
+  </style>
+<p>Sekarang repository <strong>belajar-git</strong> telah menjadi milik kita dan bebas melakukan apapun terhadapnya.</p>
+<p>Selanjutnya silakan <em>clone</em> (download) repository tersebut ke komputer lokal.</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/git/clone-github.png" 
+      alt="Deskripsi gambar" 
+      class="cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    img.classList.toggle('zoomed');
+    document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+    
+    
+    if (img.classList.contains('zoomed')) {
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+    } else if (img.onzoomout) {
+      img.onzoomout();
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    z-index: 100;
+    cursor: zoom-out;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+  }
+  </style>
+<p>HTTPS:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/octocatcode/belajar-git.git
+</span></span></code></pre></div><p>SSH:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone git@github.com:octocatcode/belajar-git.git
+</span></span></code></pre></div><p>Saya biasanya <a href="../github-ssh">menggunakan SSH</a>, biar tidak memasukkan password saat melakukan push.</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/git/git-clone.png" 
+      alt="Deskripsi gambar" 
+      class="cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    img.classList.toggle('zoomed');
+    document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+    
+    
+    if (img.classList.contains('zoomed')) {
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+    } else if (img.onzoomout) {
+      img.onzoomout();
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    z-index: 100;
+    cursor: zoom-out;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+  }
+  </style>
+<ol start="3">
+<li>Lakukan Modifikasi</li>
+</ol>
+<p>Setelah kita melakukan clone ke komputer lokal, selanjutnya silakan buka dengan teks editor dan lakukan modifikasi.</p>
+<p>Sebagai contoh, saya membukanya dengan <a href="https://www.petanikode.com/text-editor-vscode">VS Code</a>.</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/git/vscode-belajar-git.png" 
+      alt="Deskripsi gambar" 
+      class="cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    img.classList.toggle('zoomed');
+    document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+    
+    
+    if (img.classList.contains('zoomed')) {
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+    } else if (img.onzoomout) {
+      img.onzoomout();
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    z-index: 100;
+    cursor: zoom-out;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+  }
+  </style>
+<p>Buatlah beberapa perubahan dan simpan perubahan yang kamu lakukan dengan <strong>Git</strong>.</p>
+<p>Lakukan <em>commit</em> terhadap apa yang kamu rubah.</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/git/commit-perubahan.png" 
+      alt="Deskripsi gambar" 
+      class="cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    img.classList.toggle('zoomed');
+    document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+    
+    
+    if (img.classList.contains('zoomed')) {
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+    } else if (img.onzoomout) {
+      img.onzoomout();
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    z-index: 100;
+    cursor: zoom-out;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+  }
+  </style>
+<p>Perlu diperhatikan juga:</p>
+<ul>
+<li>Gunakan pesan <em>commit</em> yang informatif dan mewakili apa yang sudah kamu ubah.</li>
+<li>Hindari menggunakan <strong>git add .</strong> untuk melakukan <em>commit</em> ke semua file.</li>
+</ul>
+<ol start="4">
+<li>Push Kontribusimu</li>
+</ol>
+<p>Setelah kita selesai melakukan perubahan dan commit, langkah berikutnya adalah melakukan push.</p>
+<p>Push-nya ke mana?</p>
+<p>Ya ke repository hasil fork tadi.</p>
+<p>Repository yang kita clone dari Github, akan otomatis membuat <a href="../git-remote">remote bernama</a> <strong>origin</strong>.</p>
+<p>Untuk melihatnya, gunakan perintah <strong>git remote -v</strong>.</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/git/git-remote.png" 
+      alt="Deskripsi gambar" 
+      class="cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    img.classList.toggle('zoomed');
+    document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+    
+    
+    if (img.classList.contains('zoomed')) {
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+    } else if (img.onzoomout) {
+      img.onzoomout();
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    z-index: 100;
+    cursor: zoom-out;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+  }
+  </style>
+<p>Alamat tujuan push dan <em>fetch</em> mengarah ke alamat repository di akun kita.</p>
+<p>Silakan melakukan <em>push</em> dengan perintah berikut.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git ush origin master
+</span></span></code></pre></div><p>Tunggulah beberapa saat…</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/git/git-push.png" 
+      alt="Deskripsi gambar" 
+      class="cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    img.classList.toggle('zoomed');
+    document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+    
+    
+    if (img.classList.contains('zoomed')) {
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+    } else if (img.onzoomout) {
+      img.onzoomout();
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    z-index: 100;
+    cursor: zoom-out;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+  }
+  </style>
+<p>Setelah selesai, coba lihat repository <strong>belajar-git</strong> di akun Github-mu.</p>
+<p>Apakah berhasil di-push atau tidak?</p>
+<p>Kalau berhasil, silakan lanjutkan ke langkah berikutnya.</p>
+<ol start="5">
+<li>Membuat Pull Request</li>
+</ol>
+<p>Pull Request adalah istilah yang bisa kita artikan sebagai permintaan untuk menggabungkan kode.</p>
+<p>Kita sudah membuat perubahan di repository hasil fork, lalu ingin menggabungkan dengan repository sumber.</p>
+<p>Maka kita harus membuat <em>Pull Request</em>.</p>
+<p>Silakan klik tombol <em>New Pull Request</em> pada repository <strong>belajar-git</strong>.</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/git/new-pull-req.png" 
+      alt="Deskripsi gambar" 
+      class="cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    img.classList.toggle('zoomed');
+    document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+    
+    
+    if (img.classList.contains('zoomed')) {
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+    } else if (img.onzoomout) {
+      img.onzoomout();
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    z-index: 100;
+    cursor: zoom-out;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+  }
+  </style>
+<p>Setelah itu, Github akan melakukan komparasi.</p>
+<p>Apakah ada kode yang bentrok atau tidak?</p>
+<p>Kalau tidak ada yang bentrok biasanya akan muncul tulisan hijau <em>“Able to merge</em>”.</p>
+<p>Selanjutnya silakan klik tombol <em>Create Pull Request</em>.</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/git/create-pull.png" 
+      alt="Deskripsi gambar" 
+      class="cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    img.classList.toggle('zoomed');
+    document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+    
+    
+    if (img.classList.contains('zoomed')) {
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+    } else if (img.onzoomout) {
+      img.onzoomout();
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    z-index: 100;
+    cursor: zoom-out;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+  }
+  </style>
+<p>Silakan isi judul <em>Pull Request</em> dan pesan yang ingin disampaikan ke komunitas.</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/git/diskusi-pull.png" 
+      alt="Deskripsi gambar" 
+      class="cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    img.classList.toggle('zoomed');
+    document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+    
+    
+    if (img.classList.contains('zoomed')) {
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+    } else if (img.onzoomout) {
+      img.onzoomout();
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    z-index: 100;
+    cursor: zoom-out;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+  }
+  </style>
+<p>Setelah itu admin atau owner akan melakukan review kontribusimu.</p>
+<p>Biasanya akan terjadi diskusi untuk membahas <em>pull request</em> yang telah kita buat.</p>
+<p>Apakah akan ditolak atau diterima?</p>
+<p>Kalau diterima, biasanya akan ada tulisan <em>“Merged</em>” berwarna ungu.</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/git/marged.png" 
+      alt="Deskripsi gambar" 
+      class="cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    img.classList.toggle('zoomed');
+    document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+    
+    
+    if (img.classList.contains('zoomed')) {
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.onzoomout = () => document.removeEventListener('keydown', handleKey);
+    } else if (img.onzoomout) {
+      img.onzoomout();
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    z-index: 100;
+    cursor: zoom-out;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+  }
+  </style>
+<p>Selesai.</p>
+<p>Jika ingin berkontribusi lagi, pastikan repository lokal tetap terupdate dengan repository sumber.</p>
+<p>Update bisa dilakukan dengan perintah <strong>git pull</strong> atau <strong>git fetch</strong>.</p>
+<p>Pelajari caranya di sini: Bekerja dengan <a href="git-remote">Remote Repository</a>.</p>
 
         
         

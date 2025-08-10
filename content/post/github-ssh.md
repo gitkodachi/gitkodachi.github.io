@@ -76,7 +76,7 @@ cat ~/.ssh/id_anda.pub
 
 Copy semua teks yang ditampilkan.
   {{< image 
-  src="/images/content/git/ssh-public-key.AVIF" 
+  src="/images/content/git/ssh-public-key.avif" 
   alt="Deskripsi gambar" 
   caption="*Gambar contoh dengan zoom*" 
   >}}
@@ -86,7 +86,7 @@ Lalu masuk ke [Settings>SSH and GPG Keys](https://github.com/settings/keys), tam
 Setelah itu masukkan atau paste public key yang kamu copy tadi.
 
   {{< image 
-  src="/images/content/git/github-add-ssh-key.AVIF" 
+  src="/images/content/git/github-add-ssh-key.avif" 
   alt="Deskripsi gambar" 
   caption="*Gambar contoh dengan zoom*" 
   >}}
@@ -106,7 +106,7 @@ ssh-add dian
 Silakan ganti **dian** dengan **id** dari **SSH** key yang kamu buat tadi. Jika berhasil, maka akan muncul seperti ini:
 
   {{< image 
-  src="/images/content/git/ssh-add.AVIF" 
+  src="/images/content/git/ssh-add.avif" 
   alt="Deskripsi gambar" 
   caption="*Gambar contoh dengan zoom*" 
   >}}
@@ -121,7 +121,7 @@ ssh -T git@github.com
 Jika hasilnya seperti berikut ini, berarti berhasil. Selanjutnya kita tinggal melakukan push dengan SSH.
 
   {{< image 
-  src="/images/content/git/test-ssh-github.AVIF" 
+  src="/images/content/git/test-ssh-github.avif" 
   alt="Deskripsi gambar" 
   caption="*Gambar contoh dengan zoom*" 
   >}}
@@ -152,7 +152,7 @@ IdentityFile ~/.ssh/dian
 Ganti dian dengan id SSH Key yang kamu buat.
 
   {{< image 
-  src="/images/content/git/ssh-config.AVIF" 
+  src="/images/content/git/ssh-config.avif" 
   alt="Deskripsi gambar" 
   caption="*Gambar contoh dengan zoom*" 
   >}}
