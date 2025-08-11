@@ -78,17 +78,23 @@
         {{ partial "components/mermaid.html" }}
       </div>
     </article>
+
+    <div class="p-4 mt-4 rounded-2xl text-slate-500 dark:text-slate-300 bg-white dark:bg-slate-800 shadow-md">
+      {{ if .Params.show_tutorial_list }}
+        {{ partial "components/daftar-tutorial.html" . }}
+      {{ end }}
+    </div>
   </div>
 
   <!-- Sidebar -->
   <aside class="px-4 md:px-8 md:pl-4 md:pr-0 lg:pl-8 lg:pr-0 mt-8 lg:mt-0 col-span-12 lg:col-span-4">
     <!-- Newsletter -->
-    <div class="p-6 mb-8 rounded-2xl text-slate-500 dark:text-slate-300 bg-white dark:bg-slate-800 shadow-md">
+    <div class="p-2 mb-8 rounded-2xl text-slate-500 dark:text-slate-300 bg-white dark:bg-slate-800 shadow-md">
       {{ partial "components/newsletter.html" . }}
     </div>
 
     <!-- Artikel Terkait -->
-    <div class="p-6 rounded-2xl text-slate-500 dark:text-slate-300 bg-white dark:bg-slate-800 shadow-md">
+    <div class="p-2 rounded-2xl text-slate-500 dark:text-slate-300 bg-white dark:bg-slate-800 shadow-md">
       {{ partial "components/related-posts.html" . }}
     </div>
   </aside>

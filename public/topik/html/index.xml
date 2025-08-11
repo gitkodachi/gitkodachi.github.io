@@ -1,1 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Html on Octocat Code</title><link>https://gitkodachi.github.io/topik/html/</link><description>Recent content in Html on Octocat Code</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 10 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://gitkodachi.github.io/topik/html/index.xml" rel="self" type="application/rss+xml"/><item><title>Belajar HTML dari Nol: Pengenalan Dasar HTML untuk Pemula</title><link>https://gitkodachi.github.io/tutorial/html/html-dasar/</link><pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/tutorial/html/html-dasar/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Html on Octocat Code</title>
+    <link>http://localhost:1313/topik/html/</link>
+    <description>Recent content in Html on Octocat Code</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/topik/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Belajar HTML dari Nol: Pengenalan Dasar HTML untuk Pemula</title>
+      <link>http://localhost:1313/tutorial/html/html-dasar/</link>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/html/html-dasar/</guid>
+      <description>&lt;p&gt;HTML memang bahasa yang &lt;strong&gt;wajib dipelajari&lt;/strong&gt;, bagi yang mau menjadi web developer.&lt;/p&gt;&#xA;&lt;p&gt;Karena…&lt;/p&gt;&#xA;&lt;p&gt;HTML merupakan bahasa dasar untuk membuat web.&lt;/p&gt;&#xA;&lt;p&gt;Saya yakin, kamu sudah pernah mendengar HTML sebelumnya. Tapi tidak ada salahnya membaca kembali artikel ini.&lt;/p&gt;&#xA;&lt;p&gt;Pada tutorial ini, kita akan benar-benar membahas dari nol hingga kamu bisa membuat halaman HTML sendiri.&lt;/p&gt;&#xA;&lt;p&gt;Baiklah…&lt;/p&gt;&#xA;&lt;p&gt;Mari kita mulai!&lt;/p&gt;&#xA;&lt;h3 id=&#34;apa-itu-html-&#34;&gt;Apa itu HTML ?&lt;/h3&gt;&#xA;&lt;p&gt;Mari kita lihat pengertian HTML menurut wikipedia:&lt;/p&gt;&#xA;&lt;div class=&#34;custom-alert custom-alert-info&#34; role=&#34;alert&#34;&gt;&#xD;&#xA;  &lt;div class=&#34;custom-alert-header&#34;&gt;&lt;i class=&#34;custom-alert-icon fas fa-circle-info&#34;&gt;&lt;/i&gt;&lt;span class=&#34;custom-alert-title&#34;&gt;HTML&lt;/span&gt;&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;  &lt;div class=&#34;custom-alert-content&#34;&gt;&#xD;&#xA;    &amp;ldquo;&lt;em&gt;HTML atau HyperText Markup Language merupakan sebuah bahasa &lt;a href=&#34;https://kbbi.web.id/markah&#34;&gt;markah&lt;/a&gt; untuk membuat halaman web.&lt;/em&gt;&amp;rdquo;&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xA;&lt;p&gt;untuk membuat halaman web berikut&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Belajar HTML #02: Memahami Tag, Element, dan Atribut dalam HTML</title>
+      <link>http://localhost:1313/tutorial/html/tag-element-atribut/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/html/tag-element-atribut/</guid>
+      <description>&lt;h3 id=&#34;perbedaan-tag-element-dan-atribut&#34;&gt;Perbedaan Tag, Element, dan Atribut&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Tag&lt;/strong&gt;: Penanda awalan dan akhiran&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Ini paragraf&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Belajar HTML #02: Mengenal Tag, Elemen, dan Atribut dalam HTML&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

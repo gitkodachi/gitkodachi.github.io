@@ -1,181 +1,1655 @@
-<!doctype html><html class="scroll-smooth dark" lang=id x-data :class="{ 'dark': $store.theme.dark }"><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Semua Tutorial - Octocat Code</title><meta name=description content><link rel=icon type=image/png href=/icons/app-icons/favicon-96x96.png sizes=96x96><link rel=icon type=image/svg+xml href=/icons/app-icons/favicon.svg><link rel="shortcut icon" href=/icons/app-icons/favicon.ico><link rel=apple-touch-icon href=/icons/app-icons/apple-touch-icon.png sizes=180x180><link rel=manifest href=/site.webmanifest><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Rubik:wght@500;700&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Rubik:wght@500;700&family=JetBrains+Mono&display=swap" rel=stylesheet><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css><link rel=stylesheet href=/css/styles.css><link rel=stylesheet href=/css/syntax-light.css media="(prefers-color-scheme: light)"><link rel=stylesheet href=/css/syntax-dark.css media="(prefers-color-scheme: dark)"><link rel=stylesheet href=/css/custome.css><link rel=stylesheet href=/css/scrollToTopBtn.css><link rel=stylesheet href=/css/alert.css><link rel=stylesheet href=/css/precode.css><meta property="og:type" content="website"><meta property="og:url" content="https://gitkodachi.github.io/tutorial/"><meta property="og:title" content="Semua Tutorial"><meta property="og:description" content><meta property="og:image" content="/img/og-default.jpg"><meta name=twitter:card content="summary_large_image"><meta name=twitter:url content="https://gitkodachi.github.io/tutorial/"><meta name=twitter:title content="Semua Tutorial"><meta name=twitter:description content><meta name=twitter:image content="/img/og-default.jpg"></head><body class="font-sans bg-slate-100 dark:bg-slate-900 text-gray-900 dark:text-gray-100"><div id=searchModal class="overlay transform-gpu fixed z-50 backdrop-blur bg-black/30 inset-0 p-4 flex hidden justify-center items-start pt-24"><div class="bg-white dark:bg-slate-700 p-6 rounded-xl w-full max-w-md shadow-lg space-y-4"><div class="flex justify-between items-center"><h2 class="text-lg font-semibold text-gray-800 dark:text-white">Cari Sesuatu</h2><button id=searchClose class="text-slate-300 dark:text-gray-800 hover:text-emerald-500">
-<i data-lucide=x class="w-5 h-5"></i></button></div><input id=searchInput type=text placeholder="Cari tutorial..." class="w-full mt-4 p-2 border border-gray-300 rounded-md dark:bg-slate-700 dark:border-slate-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-slate-500"><ul id=searchResults class="space-y-2 max-h-64 overflow-y-auto"></ul></div></div><nav class="bg-teal-600 dark:bg-teal-900 text-white sticky top-0 z-40 shadow-md"><div class="container mx-auto px-4 lg:max-w-7xl flex justify-between"><div class="flex flex-row gap-1 items-center py-3 md:py-2"><a class="inline-block mr-2" href=https://gitkodachi.github.io/ aria-label="Go to home"><img src=/images/global/octocat-new-logo-no-bg.png alt=Logo class="w-8 h-8 active:scale-95">
-</a><a href=https://gitkodachi.github.io/ class="hidden md:inline-flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-gray-100 hover:bg-teal-700 focus:ring-2 focus:ring-teal-500"><svg class="w-5 h-5" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0 7-7 7 7M5 10v10a1 1 0 001 1h3m10-11 2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> Home</a>
-<a href=# target=_blank class="hidden md:inline-flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-gray-100 hover:bg-teal-700 focus:ring-2 focus:ring-teal-500"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentcolor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12A9 9 0 113 12a9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375.0 010 .656l-5.603 3.113a.375.375.0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"/></svg>
-Kelas</a>
-<a href=/tutorial/ class="hidden md:inline-flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-gray-100 hover:bg-teal-700 focus:ring-2 focus:ring-teal-500"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>Tutorial</a>
-<a href=/buku/ class="hidden md:inline-flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-gray-100 hover:bg-teal-700 focus:ring-2 focus:ring-teal-500"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747.0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746.0-3.332.477-4.5 1.253"/></svg> Buku</a>
-<a href=/software/ class="hidden md:inline-flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-gray-100 hover:bg-teal-700 focus:ring-2 focus:ring-teal-500"><svg class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2z"/></svg> software</a>
-<a href=# rel=noopener target=_blank class="hidden md:inline-flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-gray-100 hover:bg-teal-700 focus:ring-2 focus:ring-teal-500"><svg width="16" height="16" fill="currentcolor" class="bi bi-discord" viewBox="0 0 16 16"><path d="M13.545 2.907a13.2 13.2.0 00-3.257-1.011.05.05.0 00-.052.025c-.141.25-.297.577-.406.833a12.2 12.2.0 00-3.658.0 8 8 0 00-.412-.833.05.05.0 00-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04.0 00-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3.0 003.995 2.02.05.05.0 00.056-.019q.463-.63.818-1.329a.05.05.0 00-.01-.059l-.018-.011a9 9 0 01-1.248-.595.05.05.0 01-.02-.066l.015-.019q.127-.095.248-.195a.05.05.0 01.051-.007c2.619 1.196 5.454 1.196 8.041.0a.05.05.0 01.053.007q.121.1.248.195a.05.05.0 01-.004.085 8 8 0 01-1.249.594.05.05.0 00-.03.03.05.05.0 00.003.041c.24.465.515.909.817 1.329a.05.05.0 00.056.019 13.2 13.2.0 004.001-2.02.05.05.0 00.021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03.0 00-.02-.019m-8.198 7.307c-.789.0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807.0 1.45.73 1.438 1.613.0.888-.637 1.612-1.438 1.612m5.316.0c-.788.0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807.0 1.451.73 1.438 1.613.0.888-.631 1.612-1.438 1.612"/></svg> Discord</a></div><div class="flex items-center gap-3 ml-6"><button id=searchToggle class="p-1 rounded-full text-teal-100 hover:bg-teal-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-500" aria-label=Search title="Search the article here">
-<svg class="h-8 w-8 md:h-6 md:w-6 active:scale-95" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5A7 7 0 113 10a7 7 0 0114 0z"/></svg>
+<!DOCTYPE html>
+<html class="scroll-smooth dark" lang="id" x-data="" :class="{ 'dark': $store.theme.dark }">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Semua Tutorial - Octocat Code</title>
+<meta name="description" content="">
+
+
+<link rel="icon" type="image/png" href="/icons/app-icons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="/icons/app-icons/favicon.svg">
+<link rel="shortcut icon" href="/icons/app-icons/favicon.ico">
+<link rel="apple-touch-icon" href="/icons/app-icons/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Rubik:wght@500;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<link rel="stylesheet" href="/css/styles.css">
+
+
+<link rel="stylesheet" href="/css/syntax-light.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="/css/syntax-dark.css" media="(prefers-color-scheme: dark)">
+
+ <link rel="stylesheet" href="/css/custome.css">
+ <link rel="stylesheet" href="/css/scrollToTopBtn.css">
+ <link rel="stylesheet" href="/css/alert.css">
+ <link rel="stylesheet" href="/css/precode.css">
+ 
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://localhost:1313/tutorial/">
+<meta property="og:title" content="Semua Tutorial">
+<meta property="og:description" content="">
+<meta property="og:image" content="/img/og-default.jpg">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="http://localhost:1313/tutorial/">
+<meta name="twitter:title" content="Semua Tutorial">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="/img/og-default.jpg">
+
+</head>
+<body class="font-sans bg-slate-100 dark:bg-slate-900 text-gray-900 dark:text-gray-100">
+  <div id="searchModal" class="overlay transform-gpu fixed z-50 backdrop-blur bg-black/30 inset-0 p-4 flex hidden justify-center items-start pt-24">
+  <div class="bg-white dark:bg-slate-700 p-6 rounded-xl w-full max-w-md shadow-lg space-y-4">
+    <div class="flex justify-between items-center">
+      <h2 class="text-lg font-semibold text-gray-800 dark:text-white">Cari Sesuatu</h2>
+      <button id="searchClose" class="text-slate-300 dark:text-gray-800 hover:text-emerald-500">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <input id="searchInput" type="text" placeholder="Cari tutorial..."
+      class="w-full mt-4 p-2 border border-gray-300 rounded-md dark:bg-slate-700 dark:border-slate-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-slate-500">
+
+    <ul id="searchResults" class="space-y-2 max-h-64 overflow-y-auto"></ul>
+  </div>
+</div>
+
+  <nav class="bg-teal-600 dark:bg-teal-900 text-white sticky top-0 z-40 shadow-md">
+  <div class="container mx-auto px-4 lg:max-w-7xl flex justify-between">
+    <div class="flex flex-row gap-1 items-center py-3 md:py-2">
+      <a class="inline-block mr-2"
+          href="https://gitkodachi.github.io/" aria-label="Go to home">
+          <img src="/images/global/octocat-new-logo-no-bg.png" alt="Logo" class="w-8 h-8 active:scale-95">
+        </a>
+        <a href="https://gitkodachi.github.io/"
+          class="hidden md:inline-flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-gray-100 hover:bg-teal-700 focus:ring-2 focus:ring-teal-500"><svg
+            class="w-5 h-5" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 12l2-2m0 0 7-7 7 7M5 10v10a1 1 0 001 1h3m10-11 2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg> Home</a>
+        <a href="#" target="_blank"
+          class="hidden md:inline-flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-gray-100 hover:bg-teal-700 focus:ring-2 focus:ring-teal-500"><svg
+            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentcolor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12A9 9 0 113 12a9 9 0 0118 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.91 11.672a.375.375.0 010 .656l-5.603 3.113a.375.375.0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+          </svg>
+          Kelas</a>
+        <a href=/tutorial/
+          class="hidden md:inline-flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-gray-100 hover:bg-teal-700 focus:ring-2 focus:ring-teal-500"><svg
+            class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>Tutorial</a>
+        <a href=/buku/
+          class="hidden md:inline-flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-gray-100 hover:bg-teal-700 focus:ring-2 focus:ring-teal-500"><svg
+            class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747.0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746.0-3.332.477-4.5 1.253" />
+          </svg> Buku</a>
+        <a href=/software/
+          class="hidden md:inline-flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-gray-100 hover:bg-teal-700 focus:ring-2 focus:ring-teal-500">
+          <svg class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" 
+                  d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg> software</a>
+        <a href="#" rel=noopener target="_blank"
+          class="hidden md:inline-flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-gray-100 hover:bg-teal-700 focus:ring-2 focus:ring-teal-500"><svg
+            width="16" height="16" fill="currentcolor" class="bi bi-discord" viewBox="0 0 16 16">
+            <path
+              d="M13.545 2.907a13.2 13.2.0 00-3.257-1.011.05.05.0 00-.052.025c-.141.25-.297.577-.406.833a12.2 12.2.0 00-3.658.0 8 8 0 00-.412-.833.05.05.0 00-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04.0 00-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3.0 003.995 2.02.05.05.0 00.056-.019q.463-.63.818-1.329a.05.05.0 00-.01-.059l-.018-.011a9 9 0 01-1.248-.595.05.05.0 01-.02-.066l.015-.019q.127-.095.248-.195a.05.05.0 01.051-.007c2.619 1.196 5.454 1.196 8.041.0a.05.05.0 01.053.007q.121.1.248.195a.05.05.0 01-.004.085 8 8 0 01-1.249.594.05.05.0 00-.03.03.05.05.0 00.003.041c.24.465.515.909.817 1.329a.05.05.0 00.056.019 13.2 13.2.0 004.001-2.02.05.05.0 00.021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03.0 00-.02-.019m-8.198 7.307c-.789.0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807.0 1.45.73 1.438 1.613.0.888-.637 1.612-1.438 1.612m5.316.0c-.788.0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807.0 1.451.73 1.438 1.613.0.888-.631 1.612-1.438 1.612" />
+          </svg> Discord</a></div>
+      <div class="flex items-center gap-3 ml-6">
+        <button id="searchToggle"
+          class="p-1 rounded-full text-teal-100 hover:bg-teal-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
+          aria-label="Search" title="Search the article here">
+          <svg class="h-8 w-8 md:h-6 md:w-6 active:scale-95" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5A7 7 0 113 10a7 7 0 0114 0z" />
+          </svg>
+        </button>
+      <button aria-label="Theme switcher" type=button
+        @click="$store.theme.switcherOpen = !$store.theme.switcherOpen" @click.away="$store.theme.switcherOpen = false"
+        class="p-1 rounded-full text-teal-100 hover:bg-teal-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-500">
+        <svg viewBox="0 0 24 24" fill="none" class="h-8 w-8 md:h-6 md:w-6 active:scale-95"
+          :class="{'hidden': $store.theme.dark }">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M17.715 15.15A6.5 6.5.0 019 6.035c-2.894.887-5 3.61-5 6.832.0 3.94 3.153 7.136 7.042 7.136 3.101.0 5.734-2.032 6.673-4.853z" />
+          <path
+            d="m17.715 15.15.95.316a1 1 0 00-1.445-1.185l.495.869zM9 6.035l.846.534a1 1 0 00-1.14-1.49L9 6.035zm8.221 8.246a5.47 5.47.0 01-2.72.718v2a7.47 7.47.0 003.71-.98l-.99-1.738zm-2.72.718A5.5 5.5.0 019 9.5H7a7.5 7.5.0 007.5 7.5v-2zM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47.0 007 9.5h2zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552.0 6.553-2.327 7.622-5.537l-1.897-.632z"
+            class="fill-teal-100" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M17 3a1 1 0 011 1 2 2 0 002 2 1 1 0 110 2 2 2 0 00-2 2 1 1 0 11-2 0 2 2 0 00-2-2 1 1 0 110-2 2 2 0 002-2 1 1 0 011-1z"
+            class="fill-teal-100" />
+        </svg>
+        <svg class="h-8 w-8 md:h-6 md:w-6 hidden active:scale-95" :class="{'hidden': !$store.theme.dark }" fill="none"
+          viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364-.707-.707M6.343 6.343l-.707-.707m12.728.0-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      </button>
+      <template x-if=$store.theme.switcherOpen>
+        <ul
+          class="absolute z-50 top-full bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-slate-700 font-semibold dark:bg-slate-800 dark:ring-0 dark:border dark:border-white/5 dark:text-slate-300"
+          data-state=open>
+          <li class="py-1 px-2 flex items-center cursor-pointer hover:text-teal-500"
+            :class="{'text-teal-500': !$store.theme.dark && !$store.theme.system}" role=option tabindex=-1
+            :aria-selected=!$store.theme.dark @click="$store.theme.setTheme('light')"><svg viewBox="0 0 24 24"
+              fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2">
+              <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentcolor" />
+              <path
+                d="M12 4v1m5.66 1.344-.828.828m3.173 4.832h-1m-1.345 5.66-.828-.828M12 20.01V19M6.34 17.664l.835-.836m-3.18-4.824h1.01M6 6l.835.836"
+                stroke="currentcolor" />
+            </svg>Light</li>
+          <li class="py-1 px-2 flex items-center cursor-pointer hover:text-teal-500" id=headlessui-listbox-option-:rq:
+            role=option @click="$store.theme.setTheme('dark')" :aria-selected=$store.theme.dark
+            :class="{'text-teal-500': $store.theme.dark && !$store.theme.system}"><svg viewBox="0 0 24 24" fill="none"
+              class="w-6 h-6 mr-2">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M17.715 15.15A6.5 6.5.0 019 6.035c-2.894.887-5 3.61-5 6.832.0 3.94 3.153 7.136 7.042 7.136 3.101.0 5.734-2.032 6.673-4.853z"
+                class="fill-transparent" />
+              <path
+                d="m17.715 15.15.95.316a1 1 0 00-1.445-1.185l.495.869zM9 6.035l.846.534a1 1 0 00-1.14-1.49L9 6.035zm8.221 8.246a5.47 5.47.0 01-2.72.718v2a7.47 7.47.0 003.71-.98l-.99-1.738zm-2.72.718A5.5 5.5.0 019 9.5H7a7.5 7.5.0 007.5 7.5v-2zM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47.0 007 9.5h2zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552.0 6.553-2.327 7.622-5.537l-1.897-.632z"
+                fill="currentcolor" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M17 3a1 1 0 011 1 2 2 0 002 2 1 1 0 110 2 2 2 0 00-2 2 1 1 0 11-2 0 2 2 0 00-2-2 1 1 0 110-2 2 2 0 002-2 1 1 0 011-1z"
+                fill="currentcolor" />
+            </svg>Dark</li>
+          <li class="py-1 px-2 flex items-center cursor-pointer hover:text-teal-500"
+            :class="{'text-teal-500': $store.theme.system}" id=headlessui-listbox-option-:rr: role=option tabindex=-1
+            @click="$store.theme.setTheme('system')" :aria-selected=$store-theme.system><svg viewBox="0 0 24 24"
+              fill="none" class="w-6 h-6 mr-2">
+              <path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v7a2 2 0 01-2 2H6a2 2 0 01-2-2V6z" stroke-width="2"
+                stroke-linejoin="round" stroke="currentcolor" :class="{'fill-teal-400/20': $store.theme.system }" />
+              <path d="M14 15c0 3 2 5 2 5H8s2-2 2-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                stroke="currentcolor" />
+            </svg>System</li>
+        </ul>
+      </template>
+      <button aria-label="side menu toggler" type=button
+        class="md:hidden p-1 rounded-full text-teal-100 hover:bg-teal-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
+        @click="$dispatch('sidemenu')">
+        <svg class="h-8 w-8 md:h-6 md:w-6 stroke-teal-100 active:scale-95" fill="none" viewBox="0 0 24 24"
+          stroke="currentcolor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h8m-8 6h16" />
+        </svg>
+      </button>
+      <a href="https://gitkodachi.github.io/"#newsletter title="Subscribe to our newsletter"
+        class="hidden lg:inline-block px-3 py-2 bg-teal-500 hover:bg-teal-700 focus:ring-2 focus:ring-teal-400 rounded-lg active:bg-teal-500"><span
+          class=line-clamp-1>Join Newsletter</span></a>
+    </div>
+  </div>
+
+  <aside id=side-menu class="overlay transform-gpu" x-data="{sideMenuOpen: false, moreOpen: false}"
+    @sidemenu.window="sideMenuOpen = true" x-show=sideMenuOpen x-transition:enter="transition ease-out duration-100"
+    x-transition:enter-start=opacity-0 x-transition:enter-end=opacity-100
+    x-transition:leave="transition ease-in duration-300" x-transition:leave-start=opacity-100
+    x-transition:leave-end=opacity-0 style=display:none>
+    <div class="bg-white dark:bg-slate-700 w-3/4 h-screen p-4 overflow-y-auto rounded-tr-xl rounded-br-lg transform-gpu"
+      @click.away="sideMenuOpen = false" x-show=sideMenuOpen x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start=-translate-x-96 x-transition:enter-end=translate-x-0
+      x-transition:leave="transition ease-in duration-300" x-transition:leave-start=translate-x-0
+      x-transition:leave-end=-translate-x-96>
+      <header class="flex justify-between">
+        <h1 class="font-bold text-2xl">Menu</h1><button aria-label="close side menu" type=button
+          class="p-1 rounded-full" aria-label=Close @click="sideMenuOpen = false"><svg
+            class="h-6 w-6 md:h-6 md:w-6 active:scale-95" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg></button>
+      </header>
+      <nav class=my-4><a href="https://gitkodachi.github.io/"
+          class="flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500"><svg
+            class="w-5 h-5" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 12l2-2m0 0 7-7 7 7M5 10v10a1 1 0 001 1h3m10-11 2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg> Home</a>
+        <a href=# target=_blank
+          class="flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500"><svg
+            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentcolor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12A9 9 0 113 12a9 9 0 0118 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.91 11.672a.375.375.0 010 .656l-5.603 3.113a.375.375.0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+          </svg> Kelas</a>
+        <a href=/tutorial/
+          class="flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500"><svg
+            class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>Tutorial
+        </a><a href=/buku/
+          class="flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500"><svg
+            class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747.0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746.0-3.332.477-4.5 1.253" />
+          </svg> Buku
+        </a><a href=/software/
+          class="flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500">
+          <svg class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" 
+                  d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg> Software
+        </a><a href=#
+          class="flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500"><svg
+            width="16" height="16" fill="currentcolor" class="bi bi-discord" viewBox="0 0 16 16">
+            <path
+              d="M13.545 2.907a13.2 13.2.0 00-3.257-1.011.05.05.0 00-.052.025c-.141.25-.297.577-.406.833a12.2 12.2.0 00-3.658.0 8 8 0 00-.412-.833.05.05.0 00-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04.0 00-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3.0 003.995 2.02.05.05.0 00.056-.019q.463-.63.818-1.329a.05.05.0 00-.01-.059l-.018-.011a9 9 0 01-1.248-.595.05.05.0 01-.02-.066l.015-.019q.127-.095.248-.195a.05.05.0 01.051-.007c2.619 1.196 5.454 1.196 8.041.0a.05.05.0 01.053.007q.121.1.248.195a.05.05.0 01-.004.085 8 8 0 01-1.249.594.05.05.0 00-.03.03.05.05.0 00.003.041c.24.465.515.909.817 1.329a.05.05.0 00.056.019 13.2 13.2.0 004.001-2.02.05.05.0 00.021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03.0 00-.02-.019m-8.198 7.307c-.789.0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807.0 1.45.73 1.438 1.613.0.888-.637 1.612-1.438 1.612m5.316.0c-.788.0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807.0 1.451.73 1.438 1.613.0.888-.631 1.612-1.438 1.612" />
+          </svg> Discord</a>
+        <hr class="my-4 border-slate-400/25"><button @click="moreOpen = !moreOpen"
+          x-text="moreOpen ? 'Less...': 'More...'"
+          class="w-full mb-4 flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500">More...</button>
+        <template x-if=moreOpen>
+          <div><a href=/about/
+              class="flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500">About</a>
+            <a href=/faqs/
+              class="flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500">FAQs</a>
+            <a href=/contact/
+              class="flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500">Contact</a>
+          </div>
+        </template>
+      </nav>
+      <footer class="mt-auto py-4 hidden" :class="{'hidden': !moreOpen}">
+        <div class="py-3 flex gap-2 items-center flex-wrap"><a
+            class="inline-block hover:bg-[#3b5998] rounded-full p-2 hover:text-white" rel=noopener target=_blank
+            href=#><svg class="h-6 w-6" aria-hidden="true" focusable="false"
+              data-prefix="fab" data-icon="facebook" class="svg-inline--fa fa-facebook fa-w-16" role="img"
+              viewBox="0 0 512 512">
+              <path fill="currentcolor"
+                d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14.0 55.52 4.84 55.52 4.84v61h-31.28c-30.8.0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+            </svg>
+          </a><a class="inline-block hover:bg-[#1da1f2] rounded-full p-2 hover:text-white" rel=noopener target=_blank
+            href=#><svg class="h-6 w-6" aria-hidden="true" focusable="false"
+              data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter fa-w-16" role="img"
+              viewBox="0 0 512 512">
+              <path fill="currentcolor"
+                d="M459.37 151.716c.325 4.548.32 9.097.325 13.645.0 138.72-105.583 298.558-298.558 298.558-59.452.0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055.0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421.0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391.0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04.0-57.828 46.782-104.934 104.934-104.934 30.213.0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+            </svg>
+          </a><a class="inline-block hover:bg-[#0088cc] rounded-full p-2 hover:text-white" rel=noopener target=_blank
+            href=#><svg class="h-6 w-6" aria-hidden="true" focusable="false" data-prefix="fab"
+              data-icon="telegram" class="svg-inline--fa fa-telegram fa-w-16" role="img" viewBox="0 0 496 512">
+              <path fill="currentcolor"
+                d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z" />
+            </svg>
+          </a><a class="inline-block hover:bg-[#c13584] rounded-full p-2 hover:text-white" rel=noopener target=_blank
+            href=#><svg class="h-6 w-6" aria-hidden="true" focusable="false"
+              data-prefix="fab" data-icon="instagram" class="svg-inline--fa fa-instagram fa-w-14" role="img"
+              viewBox="0 0 448 512">
+              <path fill="currentcolor"
+                d="M224.1 141c-63.6.0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1.0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9.0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9.0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9.0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9.0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8.0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+            </svg>
+          </a><a class="inline-block hover:bg-[#ff0000] rounded-full p-2 hover:text-white" rel=noopener target=_blank
+            href="#"><svg class="h-6 w-6" aria-hidden="true"
+              focusable="false" data-prefix="fab" data-icon="youtube" class="svg-inline--fa fa-youtube fa-w-18"
+              role="img" viewBox="0 0 576 512">
+              <path fill="currentcolor"
+                d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78.0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
+            </svg></a></div>
+        <p class=text-xs>Copyright &copy; 2025 <a href="https://gitkodachi.github.io/"
+            class=hover:text-teal-400><strong>Code Craft</strong></a></p>
+      </footer>
+    </div>
+  </aside>
+</nav> 
+  
+<button id="scrollToTopBtn"
+  class="hidden fixed bottom-6 left-4 lg:bottom-10 lg:left-10 z-50 p-3 rounded-full text-white shadow-lg ring-2 ring-white dark:ring-cyan-300 focus:outline-none transition-transform transform hover:-translate-y-1 hover:scale-105 bg-gradient-to-br from-emerald-500 to-emerald-700 dark:from-cyan-400 dark:to-cyan-600"
+  aria-label="Scroll to Top">
+<i data-lucide="rocket" class="w-8 h-8"></i>
 </button>
-<button aria-label="Theme switcher" type=button @click="$store.theme.switcherOpen = !$store.theme.switcherOpen" @click.away="$store.theme.switcherOpen = false" class="p-1 rounded-full text-teal-100 hover:bg-teal-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-500">
-<svg viewBox="0 0 24 24" fill="none" class="h-8 w-8 md:h-6 md:w-6 active:scale-95"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.715 15.15A6.5 6.5.0 019 6.035c-2.894.887-5 3.61-5 6.832.0 3.94 3.153 7.136 7.042 7.136 3.101.0 5.734-2.032 6.673-4.853z"/><path d="m17.715 15.15.95.316a1 1 0 00-1.445-1.185l.495.869zM9 6.035l.846.534a1 1 0 00-1.14-1.49L9 6.035zm8.221 8.246a5.47 5.47.0 01-2.72.718v2a7.47 7.47.0 003.71-.98l-.99-1.738zm-2.72.718A5.5 5.5.0 019 9.5H7a7.5 7.5.0 007.5 7.5v-2zM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47.0 007 9.5h2zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552.0 6.553-2.327 7.622-5.537l-1.897-.632z" class="fill-teal-100"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17 3a1 1 0 011 1 2 2 0 002 2 1 1 0 110 2 2 2 0 00-2 2 1 1 0 11-2 0 2 2 0 00-2-2 1 1 0 110-2 2 2 0 002-2 1 1 0 011-1z" class="fill-teal-100"/></svg>
-<svg class="h-8 w-8 md:h-6 md:w-6 hidden active:scale-95" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364-.707-.707M6.343 6.343l-.707-.707m12.728.0-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-</button>
-<template x-if=$store.theme.switcherOpen><ul class="absolute z-50 top-full bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-slate-700 font-semibold dark:bg-slate-800 dark:ring-0 dark:border dark:border-white/5 dark:text-slate-300" data-state=open><li class="py-1 px-2 flex items-center cursor-pointer hover:text-teal-500" :class="{'text-teal-500': !$store.theme.dark && !$store.theme.system}" role=option tabindex=-1 :aria-selected=!$store.theme.dark @click="$store.theme.setTheme('light')"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentcolor"/><path d="M12 4v1m5.66 1.344-.828.828m3.173 4.832h-1m-1.345 5.66-.828-.828M12 20.01V19M6.34 17.664l.835-.836m-3.18-4.824h1.01M6 6l.835.836" stroke="currentcolor"/></svg>Light</li><li class="py-1 px-2 flex items-center cursor-pointer hover:text-teal-500" id=headlessui-listbox-option-:rq: role=option @click="$store.theme.setTheme('dark')" :aria-selected=$store.theme.dark :class="{'text-teal-500': $store.theme.dark && !$store.theme.system}"><svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.715 15.15A6.5 6.5.0 019 6.035c-2.894.887-5 3.61-5 6.832.0 3.94 3.153 7.136 7.042 7.136 3.101.0 5.734-2.032 6.673-4.853z" class="fill-transparent"/><path d="m17.715 15.15.95.316a1 1 0 00-1.445-1.185l.495.869zM9 6.035l.846.534a1 1 0 00-1.14-1.49L9 6.035zm8.221 8.246a5.47 5.47.0 01-2.72.718v2a7.47 7.47.0 003.71-.98l-.99-1.738zm-2.72.718A5.5 5.5.0 019 9.5H7a7.5 7.5.0 007.5 7.5v-2zM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47.0 007 9.5h2zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552.0 6.553-2.327 7.622-5.537l-1.897-.632z" fill="currentcolor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17 3a1 1 0 011 1 2 2 0 002 2 1 1 0 110 2 2 2 0 00-2 2 1 1 0 11-2 0 2 2 0 00-2-2 1 1 0 110-2 2 2 0 002-2 1 1 0 011-1z" fill="currentcolor"/></svg>Dark</li><li class="py-1 px-2 flex items-center cursor-pointer hover:text-teal-500" :class="{'text-teal-500': $store.theme.system}" id=headlessui-listbox-option-:rr: role=option tabindex=-1 @click="$store.theme.setTheme('system')" :aria-selected=$store-theme.system><svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 mr-2"><path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v7a2 2 0 01-2 2H6a2 2 0 01-2-2V6z" stroke-width="2" stroke-linejoin="round" stroke="currentcolor"/><path d="M14 15c0 3 2 5 2 5H8s2-2 2-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentcolor"/></svg>System</li></ul></template><button aria-label="side menu toggler" type=button class="md:hidden p-1 rounded-full text-teal-100 hover:bg-teal-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-500" @click="$dispatch('sidemenu')">
-<svg class="h-8 w-8 md:h-6 md:w-6 stroke-teal-100 active:scale-95" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h8m-8 6h16"/></svg>
-</button>
-<a href=https://gitkodachi.github.io/ #newsletter title="Subscribe to our newsletter" class="hidden lg:inline-block px-3 py-2 bg-teal-500 hover:bg-teal-700 focus:ring-2 focus:ring-teal-400 rounded-lg active:bg-teal-500"><span class=line-clamp-1>Join Newsletter</span></a></div></div><aside id=side-menu class="overlay transform-gpu" x-data="{sideMenuOpen: false, moreOpen: false}" @sidemenu.window="sideMenuOpen = true" x-show=sideMenuOpen x-transition:enter="transition ease-out duration-100" x-transition:enter-start=opacity-0 x-transition:enter-end=opacity-100 x-transition:leave="transition ease-in duration-300" x-transition:leave-start=opacity-100 x-transition:leave-end=opacity-0 style=display:none><div class="bg-white dark:bg-slate-700 w-3/4 h-screen p-4 overflow-y-auto rounded-tr-xl rounded-br-lg transform-gpu" @click.away="sideMenuOpen = false" x-show=sideMenuOpen x-transition:enter="transition ease-out duration-300" x-transition:enter-start=-translate-x-96 x-transition:enter-end=translate-x-0 x-transition:leave="transition ease-in duration-300" x-transition:leave-start=translate-x-0 x-transition:leave-end=-translate-x-96><header class="flex justify-between"><h1 class="font-bold text-2xl">Menu</h1><button aria-label="close side menu" type=button class="p-1 rounded-full" aria-label=Close @click="sideMenuOpen = false"><svg class="h-6 w-6 md:h-6 md:w-6 active:scale-95" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg></button></header><nav class=my-4><a href=https://gitkodachi.github.io/ class="flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500"><svg class="w-5 h-5" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0 7-7 7 7M5 10v10a1 1 0 001 1h3m10-11 2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> Home</a>
-<a href=# target=_blank class="flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentcolor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12A9 9 0 113 12a9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375.0 010 .656l-5.603 3.113a.375.375.0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"/></svg> Kelas</a>
-<a href=/tutorial/ class="flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>Tutorial
-</a><a href=/buku/ class="flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747.0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746.0-3.332.477-4.5 1.253"/></svg> Buku
-</a><a href=/software/ class="flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500"><svg class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2z"/></svg> Software
-</a><a href=# class="flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500"><svg width="16" height="16" fill="currentcolor" class="bi bi-discord" viewBox="0 0 16 16"><path d="M13.545 2.907a13.2 13.2.0 00-3.257-1.011.05.05.0 00-.052.025c-.141.25-.297.577-.406.833a12.2 12.2.0 00-3.658.0 8 8 0 00-.412-.833.05.05.0 00-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04.0 00-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3.0 003.995 2.02.05.05.0 00.056-.019q.463-.63.818-1.329a.05.05.0 00-.01-.059l-.018-.011a9 9 0 01-1.248-.595.05.05.0 01-.02-.066l.015-.019q.127-.095.248-.195a.05.05.0 01.051-.007c2.619 1.196 5.454 1.196 8.041.0a.05.05.0 01.053.007q.121.1.248.195a.05.05.0 01-.004.085 8 8 0 01-1.249.594.05.05.0 00-.03.03.05.05.0 00.003.041c.24.465.515.909.817 1.329a.05.05.0 00.056.019 13.2 13.2.0 004.001-2.02.05.05.0 00.021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03.0 00-.02-.019m-8.198 7.307c-.789.0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807.0 1.45.73 1.438 1.613.0.888-.637 1.612-1.438 1.612m5.316.0c-.788.0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807.0 1.451.73 1.438 1.613.0.888-.631 1.612-1.438 1.612"/></svg> Discord</a><hr class="my-4 border-slate-400/25"><button @click="moreOpen = !moreOpen" x-text="moreOpen ? 'Less...': 'More...'" class="w-full mb-4 flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500">More...</button>
-<template x-if=moreOpen><div><a href=/about/ class="flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500">About</a>
-<a href=/faqs/ class="flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500">FAQs</a>
-<a href=/contact/ class="flex items-center gap-1 px-3 py-2 rounded-lg font-medium text-slate-800 hover:bg-slate-400/25 dark:text-slate-100 focus:ring-2 focus:ring-teal-500">Contact</a></div></template></nav><footer class="mt-auto py-4 hidden" :class="{'hidden': !moreOpen}"><div class="py-3 flex gap-2 items-center flex-wrap"><a class="inline-block hover:bg-[#3b5998] rounded-full p-2 hover:text-white" rel=noopener target=_blank href=#><svg class="h-6 w-6" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" class="svg-inline--fa fa-facebook fa-w-16" role="img" viewBox="0 0 512 512"><path fill="currentcolor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14.0 55.52 4.84 55.52 4.84v61h-31.28c-30.8.0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
-</a><a class="inline-block hover:bg-[#1da1f2] rounded-full p-2 hover:text-white" rel=noopener target=_blank href=#><svg class="h-6 w-6" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter fa-w-16" role="img" viewBox="0 0 512 512"><path fill="currentcolor" d="M459.37 151.716c.325 4.548.32 9.097.325 13.645.0 138.72-105.583 298.558-298.558 298.558-59.452.0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055.0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421.0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391.0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04.0-57.828 46.782-104.934 104.934-104.934 30.213.0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
-</a><a class="inline-block hover:bg-[#0088cc] rounded-full p-2 hover:text-white" rel=noopener target=_blank href=#><svg class="h-6 w-6" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="telegram" class="svg-inline--fa fa-telegram fa-w-16" role="img" viewBox="0 0 496 512"><path fill="currentcolor" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"/></svg>
-</a><a class="inline-block hover:bg-[#c13584] rounded-full p-2 hover:text-white" rel=noopener target=_blank href=#><svg class="h-6 w-6" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" class="svg-inline--fa fa-instagram fa-w-14" role="img" viewBox="0 0 448 512"><path fill="currentcolor" d="M224.1 141c-63.6.0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1.0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9.0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9.0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9.0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9.0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8.0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-</a><a class="inline-block hover:bg-[#ff0000] rounded-full p-2 hover:text-white" rel=noopener target=_blank href=#><svg class="h-6 w-6" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" class="svg-inline--fa fa-youtube fa-w-18" role="img" viewBox="0 0 576 512"><path fill="currentcolor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78.0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></a></div><p class=text-xs>Copyright &copy; 2025 <a href=https://gitkodachi.github.io/ class=hover:text-teal-400><strong>Code Craft</strong></a></p></footer></div></aside></nav><button id=scrollToTopBtn class="hidden fixed bottom-6 left-4 lg:bottom-10 lg:left-10 z-50 p-3 rounded-full text-white shadow-lg ring-2 ring-white dark:ring-cyan-300 focus:outline-none transition-transform transform hover:-translate-y-1 hover:scale-105 bg-gradient-to-br from-emerald-500 to-emerald-700 dark:from-cyan-400 dark:to-cyan-600" aria-label="Scroll to Top">
-<i data-lucide=rocket class="w-8 h-8"></i></button><main><div class="container lg:max-w-3xl mt-16 mx-auto px-4 mb-20"><section class=mb-16><div class="font-bold uppercase text-teal-600 dark:text-teal-400 text-sm mb-2">Rekomendasi</div><h2 class="text-3xl text-slate-500 dark:text-slate-300 font-bold tracking-tight mb-2">Most Popular <span class=inline-block>Tutorial 🏆</span></h2><p class="text-lg mb-8 text-slate-500 dark:text-slate-300">Paling banyak dibaca dan direkomendasikan.</p><div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-500 dark:text-slate-300 mb-8"><a href=/tutorial/html class="inline-flex gap-4 p-4 shadow-md bg-white dark:bg-slate-800 rounded-xl active:scale-95 active:shadow-sm transition-all hover:shadow-lg"><div><svg class="h-16 w-16" viewBox="0 0 128 128"><path fill="#e44d26" d="M9.032 2l10.005 112.093 44.896 12.401 45.02-12.387L118.968 2H9.032zm89.126 26.539-.627 7.172L97.255 39H44.59l1.257 14H96.003l-.336 3.471-3.233 36.119-.238 2.27L64 102.609v.002l-.034.018-28.177-7.423L33.876 74H47.691l.979 10.919L63.957 89H64v-.546l15.355-3.875L80.959 67H33.261l-3.383-38.117L29.549 25h68.939l-.33 3.539z"/></svg></div><div><h3 class="font-medium line-clamp-1 mb-1">Tutorial HTML untuk Pemula</h3><p class="text-xs line-clamp-2 text-slate-700 dark:text-slate-300">Pelajari
-dasar-dasar HTML untuk membuat website dari nol.</p></div></a><a href=/tutorial/javascript class="inline-flex gap-4 p-4 shadow-md bg-white dark:bg-slate-800 rounded-xl active:scale-95 active:shadow-sm transition-all hover:shadow-lg"><div><svg class="h-16 w-16" viewBox="0 0 128 128"><path fill="#f0db4f" d="M1.408 1.408h125.184v125.185H1.408z"/><path fill="#323330" d="M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.475 9.163-5.879-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949-4.688 2.713-4.688 2.713-9.508 5.485 1.143 2.499 2.344 3.63 4.26 5.795 9.068 9.198 31.76 8.746 35.83-5.176.165-.478 1.261-3.666.38-8.581zM69.462 58.943H57.753l-.048 30.272c0 6.438.333 12.34-.714 14.149-1.713 3.558-6.152 3.117-8.175 2.427-2.059-1.012-3.106-2.451-4.319-4.485-.333-.584-.583-1.036-.667-1.071l-9.52 5.83c1.583 3.249 3.915 6.069 6.902 7.901 4.462 2.678 10.459 3.499 16.731 2.059 4.082-1.189 7.604-3.652 9.448-7.401 2.666-4.915 2.094-10.864 2.07-17.444.06-10.735.001-21.468.001-32.237z"/></svg></div><div><h3 class="font-medium line-clamp-1 mb-1">Tutorial Dasar Javascript</h3><p class="text-xs line-clamp-2 text-slate-700 dark:text-slate-300">Pelajari
-dasar-dasar pemrograman Javascript untuk membuat website yang interaktif.</p></div></a><a href=/tutorial/java class="inline-flex gap-4 p-4 shadow-md bg-white dark:bg-slate-800 rounded-xl active:scale-95 active:shadow-sm transition-all hover:shadow-lg"><div><svg class="h-16 w-16" viewBox="0 0 128 128"><path fill="#0074bd" d="M47.617 98.12s-4.767 2.774 3.397 3.71c9.892 1.13 14.947.968 25.845-1.092.0.0 2.871 1.795 6.873 3.351-24.439 10.47-55.308-.607-36.115-5.969zM44.629 84.455s-5.348 3.959 2.823 4.805c10.567 1.091 18.91 1.18 33.354-1.6.0.0 1.993 2.025 5.132 3.131-29.542 8.64-62.446.68-41.309-6.336z"/><path fill="#ea2d2e" d="M69.802 61.271c6.025 6.935-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.777c-6.559-9.215-11.587-13.792 15.635-29.58.0.001-42.731 10.67-22.324 34.187z"/><path fill="#0074bd" d="M102.123 108.229s3.529 2.91-3.888 5.159c-14.102 4.272-58.706 5.56-71.094.171-4.451-1.938 3.899-4.625 6.526-5.192 2.739-.593 4.303-.485 4.303-.485-4.953-3.487-32.013 6.85-13.743 9.815 49.821 8.076 90.817-3.637 77.896-9.468zM49.912 70.294s-22.686 5.389-8.033 7.348c6.188.828 18.518.638 30.011-.326 9.39-.789 18.813-2.474 18.813-2.474s-3.308 1.419-5.704 3.053c-23.042 6.061-67.544 3.238-54.731-2.958 10.832-5.239 19.644-4.643 19.644-4.643zM90.609 93.041c23.421-12.167 12.591-23.86 5.032-22.285-1.848.385-2.677.72-2.677.72s.688-1.079 2-1.543c14.953-5.255 26.451 15.503-4.823 23.725.0-.002.359-.327.468-.617z"/><path fill="#ea2d2e" d="M76.491 1.587S89.459 14.563 64.188 34.51c-20.266 16.006-4.621 25.13-.007 35.559-11.831-10.673-20.509-20.07-14.688-28.815C58.041 28.42 81.722 22.195 76.491 1.587z"/><path fill="#0074bd" d="M52.214 126.021c22.476 1.437 57-.8 57.817-11.436.0.0-1.571 4.032-18.577 7.231-19.186 3.612-42.854 3.191-56.887.874.0.001 2.875 2.381 17.647 3.331z"/></svg></div><div><h3 class="font-medium line-clamp-1 mb-1">Tutorial Java untuk Pemula</h3><p class="text-xs line-clamp-2 text-slate-700 dark:text-slate-300">Pelajari
-dasar-dasar pemrograman Java dari nol.</p></div></a><a href=/tutorial/c/ class="inline-flex gap-4 p-4 shadow-md bg-white dark:bg-slate-800 rounded-xl active:scale-95 active:shadow-sm transition-all hover:shadow-lg"><div><svg class="h-16 w-16" viewBox="0 0 128 128"><path fill="#03599c" d="M117.5 33.5l.3-.2c-.6-1.1-1.5-2.1-2.4-2.6L67.1 2.9c-.8-.5-1.9-.7-3.1-.7-1.2.0-2.3.3-3.1.7l-48 27.9c-1.7 1-2.9 3.5-2.9 5.4v55.7c0 1.1.2 2.3.9 3.4l-.2.1c.5.8 1.2 1.5 1.9 1.9l48.2 27.9c.8.5 1.9.7 3.1.7s2.3-.3 3.1-.7l48-27.9c1.7-1 2.9-3.5 2.9-5.4V36.1c.1-.8.0-1.7-.4-2.6zM64 88.5c9.1.0 17.1-5 21.3-12.4l12.9 7.6c-6.8 11.8-19.6 19.8-34.2 19.8-21.8.0-39.5-17.7-39.5-39.5S42.2 24.5 64 24.5c14.7.0 27.5 8.1 34.3 20l-13 7.5C81.1 44.5 73.1 39.5 64 39.5c-13.5.0-24.5 11-24.5 24.5s11 24.5 24.5 24.5z"/></svg></div><div><h3 class="font-medium line-clamp-1 mb-1">Tutorial Dasar Pemrograman C</h3><p class="text-xs line-clamp-2 text-slate-700 dark:text-slate-300">Pelajari
-dasar-dasar pemrograman C untuk dari nol.</p></div></a><a href=/tutorial/python/ class="inline-flex gap-4 p-4 shadow-md bg-white dark:bg-slate-800 rounded-xl active:scale-95 active:shadow-sm transition-all hover:shadow-lg"><div><svg class="h-16 w-16" viewBox="0 0 128 128"><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="70.252" y1="1237.476" x2="170.659" y2="1151.089" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"><stop offset="0" stop-color="#5a9fd4"/><stop offset="1" stop-color="#306998"/></linearGradient><path fill="url(#a)" d="M63.391 1.988c-4.222.02-8.252.379-11.8 1.007-10.45 1.846-12.346 5.71-12.346 12.837v9.411h24.693v3.137H29.977c-7.176.0-13.46 4.313-15.426 12.521-2.268 9.405-2.368 15.275.0 25.096 1.755 7.311 5.947 12.519 13.124 12.519h8.491V67.234c0-8.151 7.051-15.34 15.426-15.34h24.665c6.866.0 12.346-5.654 12.346-12.548V15.833c0-6.693-5.646-11.72-12.346-12.837-4.244-.706-8.645-1.027-12.866-1.008zM50.037 9.557c2.55.0 4.634 2.117 4.634 4.721.0 2.593-2.083 4.69-4.634 4.69-2.56.0-4.633-2.097-4.633-4.69-.001-2.604 2.073-4.721 4.633-4.721z"/><linearGradient id="b" gradientUnits="userSpaceOnUse" x1="209.474" y1="1098.811" x2="173.62" y2="1149.537" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"><stop offset="0" stop-color="#ffd43b"/><stop offset="1" stop-color="#ffe873"/></linearGradient><path fill="url(#b)" d="M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655H51.591c-6.756.0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547 7.816 2.297 15.312 2.713 24.665.0 6.216-1.801 12.346-5.423 12.346-12.547v-9.412H63.938v-3.138h37.012c7.176.0 9.852-5.005 12.348-12.519 2.578-7.735 2.467-15.174.0-25.096-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zM77.809 87.927c2.561.0 4.634 2.097 4.634 4.692.0 2.602-2.074 4.719-4.634 4.719-2.55.0-4.633-2.117-4.633-4.719.0-2.595 2.083-4.692 4.633-4.692z"/><radialGradient id="c" cx="1825.678" cy="444.45" r="26.743" gradientTransform="matrix(0 -.24 -1.055 0 532.979 557.576)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b8b8b8" stop-opacity=".498"/><stop offset="1" stop-color="#7f7f7f" stop-opacity="0"/></radialGradient><path opacity=".444" fill="url(#c)" enable-background="new" d="M97.309 119.597c0 3.543-14.816 6.416-33.091 6.416-18.276.0-33.092-2.873-33.092-6.416.0-3.544 14.815-6.417 33.092-6.417 18.275.0 33.091 2.872 33.091 6.417z"/></svg></div><div><h3 class="font-medium line-clamp-1 mb-1">Tutorial Python untuk Pemula</h3><p class="text-xs line-clamp-2 text-slate-700 dark:text-slate-300">Pelajari
-dasar-dasar pemrograman Python untuk pemula.</p></div></a><a href=/tutorial/git class="inline-flex gap-4 p-4 shadow-md bg-white dark:bg-slate-800 rounded-xl active:scale-95 active:shadow-sm transition-all hover:shadow-lg"><div><svg class="h-16 w-16" viewBox="0 0 128 128"><path fill="#f34f29" d="M124.737 58.378 69.621 3.264c-3.172-3.174-8.32-3.174-11.497.0L46.68 14.71l14.518 14.518c3.375-1.139 7.243-.375 9.932 2.314 2.703 2.706 3.461 6.607 2.294 9.993l13.992 13.993c3.385-1.167 7.292-.413 9.994 2.295 3.78 3.777 3.78 9.9.0 13.679-3.78 3.78-9.901 3.78-13.683.0-2.842-2.844-3.545-7.019-2.105-10.521L68.574 47.933l-.002 34.341c.922.455 1.791 1.063 2.559 1.828 3.778 3.777 3.778 9.898.0 13.683-3.779 3.777-9.904 3.777-13.679.0-3.778-3.784-3.778-9.905.0-13.683.934-.933 2.014-1.638 3.167-2.11V47.333c-1.153-.472-2.231-1.172-3.167-2.111-2.862-2.86-3.551-7.06-2.083-10.576L41.056 20.333 3.264 58.123c-3.175 3.177-3.175 8.325.0 11.5l55.117 55.114c3.174 3.174 8.32 3.174 11.499.0l54.858-54.858c3.174-3.176 3.174-8.327-.001-11.501z"/></svg></div><div><h3 class="font-medium line-clamp-1 mb-1">Tutorial Git untuk Pemula</h3><p class="text-xs line-clamp-2 text-slate-700 dark:text-slate-300">Pelajari
-dasar-dasar Git untuk version control pada project dan kolaborasi dengan tim.</p></div></a></div></section></div><section><div class="container text-slate-500 dark:text-slate-300 lg:max-w-3xl mt-16 mx-auto px-4 mb-20"><div class="font-bold uppercase text-teal-600 dark:text-teal-400 text-sm mb-2">Explore</div><h2 class="text-3xl font-bold tracking-tight mb-2">Semua Tutorial</h2><p class="text-lg mb-8 text-slate-500 dark:text-slate-300">Temukan tutorial yang ingin kamu pelajari.</p><div class="grid grid-cols-1 gap-8 mb-8"><div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg"><div class="shrink-0 h-20 w-20 md:h-36 md:w-36"><a href=/tutorial/hugo/ class="inline-block w-full h-full"><picture><img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded" src=/images/thumbnail/Hugo-01.svg data-src=/images/thumbnail/Hugo-01.svg data-sizes=auto alt="Tutorial Hugo untuk Pemula"></picture></a></div><div class=grow><h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2"><a href=/tutorial/hugo/>Tutorial Hugo untuk Pemula</a></h2><p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">Pelajari dasar-dasar version control dengan Git untuk pemula.</p></div><div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm"><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Multi</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Platform</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">1</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Artikel</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Level</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Pemula</span></span></div></div><div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg"><div class="shrink-0 h-20 w-20 md:h-36 md:w-36"><a href=/tutorial/html/ class="inline-block w-full h-full"><picture><img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded" src=/images/thumbnail/html-sqr.png data-src=/images/thumbnail/html-sqr.png data-sizes=auto alt="Tutorial HTML untuk Pemula"></picture></a></div><div class=grow><h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2"><a href=/tutorial/html/>Tutorial HTML untuk Pemula</a></h2><p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">Belajar HTML dasar dari Nol. Pahami tag-tag esensial yang sering dipakai. Lalu buat sendiri websitemu dengan HTML. Selamat Belajar!</p></div><div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm"><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Multi</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Platform</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">1</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Artikel</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Level</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Pemula</span></span></div></div><div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg"><div class="shrink-0 h-20 w-20 md:h-36 md:w-36"><a href=/tutorial/python/ class="inline-block w-full h-full"><picture><img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded" src=/images/thumbnail/python-sqr.png data-src=/images/thumbnail/python-sqr.png data-sizes=auto alt="Tutorial Git untuk Pemula"></picture></a></div><div class=grow><h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2"><a href=/tutorial/python/>Tutorial Git untuk Pemula</a></h2><p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">Pelajari dasar-dasar version control dengan Git untuk pemula.</p></div><div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm"><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Multi</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Platform</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">5</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Artikel</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Level</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Pemula</span></span></div></div><div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg"><div class="shrink-0 h-20 w-20 md:h-36 md:w-36"><a href=/tutorial/php/ class="inline-block w-full h-full"><picture><img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded" src=/images/thumbnail/php.svg data-src=/images/thumbnail/php.svg data-sizes=auto alt="Tutorial Git untuk Pemula"></picture></a></div><div class=grow><h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2"><a href=/tutorial/php/>Tutorial Git untuk Pemula</a></h2><p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">Pelajari dasar-dasar version control dengan Git untuk pemula.</p></div><div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm"><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Multi</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Platform</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">5</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Artikel</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Level</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Pemula</span></span></div></div><div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg"><div class="shrink-0 h-20 w-20 md:h-36 md:w-36"><a href=/tutorial/nodejs/ class="inline-block w-full h-full"><picture><img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded" src=/images/thumbnail/nodejs.svg data-src=/images/thumbnail/nodejs.svg data-sizes=auto alt="Tutorial Git untuk Pemula"></picture></a></div><div class=grow><h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2"><a href=/tutorial/nodejs/>Tutorial Git untuk Pemula</a></h2><p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">Pelajari dasar-dasar version control dengan Git untuk pemula.</p></div><div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm"><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Multi</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Platform</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">5</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Artikel</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Level</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Pemula</span></span></div></div><div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg"><div class="shrink-0 h-20 w-20 md:h-36 md:w-36"><a href=/tutorial/kotlin/ class="inline-block w-full h-full"><picture><img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded" src=/images/thumbnail/kotlin.png data-src=/images/thumbnail/kotlin.png data-sizes=auto alt="Tutorial Git untuk Pemula"></picture></a></div><div class=grow><h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2"><a href=/tutorial/kotlin/>Tutorial Git untuk Pemula</a></h2><p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">Pelajari dasar-dasar version control dengan Git untuk pemula.</p></div><div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm"><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Multi</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Platform</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">5</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Artikel</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Level</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Pemula</span></span></div></div><div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg"><div class="shrink-0 h-20 w-20 md:h-36 md:w-36"><a href=/tutorial/javascript/ class="inline-block w-full h-full"><picture><img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded" src=/images/thumbnail/javascript.png data-src=/images/thumbnail/javascript.png data-sizes=auto alt="Tutorial Git untuk Pemula"></picture></a></div><div class=grow><h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2"><a href=/tutorial/javascript/>Tutorial Git untuk Pemula</a></h2><p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">Pelajari dasar-dasar version control dengan Git untuk pemula.</p></div><div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm"><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Multi</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Platform</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">5</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Artikel</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Level</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Pemula</span></span></div></div><div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg"><div class="shrink-0 h-20 w-20 md:h-36 md:w-36"><a href=/tutorial/java/ class="inline-block w-full h-full"><picture><img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded" src=/images/thumbnail/java.svg data-src=/images/thumbnail/java.svg data-sizes=auto alt="Tutorial Git untuk Pemula"></picture></a></div><div class=grow><h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2"><a href=/tutorial/java/>Tutorial Git untuk Pemula</a></h2><p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">Pelajari dasar-dasar version control dengan Git untuk pemula.</p></div><div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm"><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Multi</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Platform</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">5</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Artikel</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Level</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Pemula</span></span></div></div><div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg"><div class="shrink-0 h-20 w-20 md:h-36 md:w-36"><a href=/tutorial/css/ class="inline-block w-full h-full"><picture><img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded" src=/images/thumbnail/css-sqr.png data-src=/images/thumbnail/css-sqr.png data-sizes=auto alt="Tutorial Git untuk Pemula"></picture></a></div><div class=grow><h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2"><a href=/tutorial/css/>Tutorial Git untuk Pemula</a></h2><p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">Pelajari dasar-dasar version control dengan Git untuk pemula.</p></div><div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm"><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Multi</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Platform</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">5</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Artikel</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Level</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Pemula</span></span></div></div><div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg"><div class="shrink-0 h-20 w-20 md:h-36 md:w-36"><a href=/tutorial/codeigniter/ class="inline-block w-full h-full"><picture><img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded" src=/images/thumbnail/codeigniter.png data-src=/images/thumbnail/codeigniter.png data-sizes=auto alt="Tutorial Git untuk Pemula"></picture></a></div><div class=grow><h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2"><a href=/tutorial/codeigniter/>Tutorial Git untuk Pemula</a></h2><p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">Pelajari dasar-dasar version control dengan Git untuk pemula.</p></div><div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm"><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Multi</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Platform</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">5</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Artikel</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Level</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Pemula</span></span></div></div><div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg"><div class="shrink-0 h-20 w-20 md:h-36 md:w-36"><a href=/tutorial/chsarp/ class="inline-block w-full h-full"><picture><img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded" src=/images/thumbnail/csharp.png data-src=/images/thumbnail/csharp.png data-sizes=auto alt="Tutorial Git untuk Pemula"></picture></a></div><div class=grow><h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2"><a href=/tutorial/chsarp/>Tutorial Git untuk Pemula</a></h2><p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">Pelajari dasar-dasar version control dengan Git untuk pemula.</p></div><div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm"><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Multi</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Platform</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">5</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Artikel</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Level</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Pemula</span></span></div></div><div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg"><div class="shrink-0 h-20 w-20 md:h-36 md:w-36"><a href=/tutorial/c/ class="inline-block w-full h-full"><picture><img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded" src=/images/thumbnail/c.webp data-src=/images/thumbnail/c.webp data-sizes=auto alt="Tutorial Git untuk Pemula"></picture></a></div><div class=grow><h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2"><a href=/tutorial/c/>Tutorial Git untuk Pemula</a></h2><p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">Pelajari dasar-dasar version control dengan Git untuk pemula.</p></div><div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm"><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Multi</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Platform</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">5</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Artikel</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Level</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Pemula</span></span></div></div><div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg"><div class="shrink-0 h-20 w-20 md:h-36 md:w-36"><a href=/tutorial/git/ class="inline-block w-full h-full"><picture><img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded" src=/images/thumbnail/git-sqr.png data-src=/images/thumbnail/git-sqr.png data-sizes=auto alt="Tutorial Belajar Git untuk Pemula"></picture></a></div><div class=grow><h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2"><a href=/tutorial/git/>Tutorial Belajar Git untuk Pemula</a></h2><p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">Kumpulan Tutorial Belajar Git dalam Bahasa Indonesia. Git adalah program yang bertugas mengontrol versi dalam source code.</p></div><div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm"><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Multi</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Platform</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">1</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Artikel</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Level</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Pemula</span></span></div></div><div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg"><div class="shrink-0 h-20 w-20 md:h-36 md:w-36"><a href=/tutorial/github/ class="inline-block w-full h-full"><picture><img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded" src=/images/thumbnail/default.svg data-src=/images/thumbnail/default.svg data-sizes=auto alt=Github></picture></a></div><div class=grow><h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2"><a href=/tutorial/github/>Github</a></h2><p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3"></p></div><div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm"><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Multi</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Platform</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">1</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Artikel</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Level</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Pemula</span></span></div></div><div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg"><div class="shrink-0 h-20 w-20 md:h-36 md:w-36"><a href=/tutorial/laravel/ class="inline-block w-full h-full"><picture><img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded" src=/images/thumbnail/default.svg data-src=/images/thumbnail/default.svg data-sizes=auto alt=Laravel></picture></a></div><div class=grow><h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2"><a href=/tutorial/laravel/>Laravel</a></h2><p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3"></p></div><div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm"><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Multi</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Platform</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">1</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Artikel</span>
-</span><span><svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-<b class="text-slate-700 dark:text-slate-100">Level</b>
-<span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">Pemula</span></span></div></div></div><ul class="flex flex-row justify-center md:justify-start gap-2 md:gap-4 my-8"><ul class="flex flex-row justify-center md:justify-start gap-2 md:gap-4 my-8"><li class="text-white dark:text-white hover:bg-teal-500 hover:text-white dark:hover:bg-teal-500 dark:hover:text-white h-8 w-8 rounded-full"><a href=/tutorial/ class="inline-flex justify-center items-center p-1 h-8 w-8 rounded-full" title="Previous Page"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></a></li><li class="bg-teal-600 text-white dark:bg-slate-800 dark:text-white hover:bg-teal-500 hover:text-white dark:hover:bg-teal-500 dark:hover:text-white h-8 w-8 rounded-full"><a href=/tutorial/ class="inline-flex justify-center p-1 h-8 w-8 rounded-full">1</a></li><li class="bg-teal-600 dark:bg-teal-600 text-white dark:text-white hover:bg-teal-500 hover:text-white dark:hover:bg-teal-500 dark:hover:text-white h-8 w-8 rounded-full"><span class="inline-flex justify-center p-1 h-8 w-8 rounded-full">2</span></li><li class="bg-teal-600 text-white dark:bg-slate-800 dark:text-white hover:bg-teal-500 hover:text-white dark:hover:bg-teal-500 dark:hover:text-white h-8 w-8 rounded-full"><a href=/tutorial/page/3/ class="inline-flex justify-center p-1 h-8 w-8 rounded-full">3</a></li><li class="text-white dark:text-white hover:bg-teal-500 hover:text-white dark:hover:bg-teal-500 dark:hover:text-white h-8 w-8 rounded-full"><a href=/tutorial/page/3/ class="inline-flex justify-center items-center p-1 h-8 w-8 rounded-full" title="Next Page"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></li><li class="text-white dark:text-white hover:bg-teal-500 hover:text-white dark:hover:bg-teal-500 dark:hover:text-white h-8 w-8 rounded-full"><a href=/tutorial/page/3/ class="inline-flex justify-center items-center p-1 h-8 w-8 rounded-full" title="Last Page"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7"/></svg></a></li></ul></ul></div></section></div></main><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css integrity=sha512-... crossorigin=anonymous referrerpolicy=no-referrer><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js></script><script src=https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js></script><script>hljs.highlightAll()</script><script src=//unpkg.com/alpinejs defer></script><style>[x-cloak]{display:none !important}</style><script>document.addEventListener("alpine:init",()=>{Alpine.store("theme",{dark:!1,switcherOpen:!1,system:!1,init(){const e=localStorage.getItem("theme"),t=window.matchMedia("(prefers-color-scheme: dark)").matches;e==="dark"?this.dark=!0:e==="light"?this.dark=!1:e==="system"?(this.system=!0,this.dark=t):(this.system=!0,this.dark=t),this.applyTheme(),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",e=>{this.system&&(this.dark=e.matches,this.applyTheme())})},setTheme(e){e==="dark"?(this.dark=!0,this.system=!1,localStorage.setItem("theme","dark")):e==="light"?(this.dark=!1,this.system=!1,localStorage.setItem("theme","light")):(this.system=!0,this.dark=window.matchMedia("(prefers-color-scheme: dark)").matches,localStorage.setItem("theme","system")),this.applyTheme()},applyTheme(){this.dark?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark")}}),Alpine.store("search").init()})</script><script src=/js/fuse.min.js></script><script src=/js/lucide.min.js></script><script>const searchToggle=document.getElementById("searchToggle"),searchModal=document.getElementById("searchModal"),searchClose=document.getElementById("searchClose"),searchCloseBtn=document.getElementById("searchCloseBtn"),searchInput=document.getElementById("searchInput"),searchResults=document.getElementById("searchResults");let fuse,fuseIndex=[];fetch("/index.json").then(e=>e.json()).then(e=>{fuseIndex=e,fuse=new Fuse(fuseIndex,{keys:["title","content"],threshold:.3})}),searchToggle?.addEventListener("click",()=>{searchModal.classList.remove("hidden"),setTimeout(()=>{searchInput.focus(),lucide.createIcons()},100)}),[searchClose,searchCloseBtn].forEach(e=>e?.addEventListener("click",()=>{searchModal.classList.add("hidden"),searchInput.value="",searchResults.innerHTML=""})),searchInput?.addEventListener("input",()=>{const e=searchInput.value.trim();if(!e||!fuse)return searchResults.innerHTML="";const t=fuse.search(e).slice(0,8);searchResults.innerHTML=t.length?t.map(e=>`
-          <li>
-            <a href="${e.item.permalink}" class="block p-2 rounded-md text-white-100 hover:bg-teal-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-500">
-              <strong>${e.item.title}</strong><br>
-              <small>${e.item.content.slice(0,80)}...</small>
+
+  <main>
+    
+
+
+
+
+<div class="container lg:max-w-3xl mt-16 mx-auto px-4 mb-20">
+
+    
+    <section class="mb-16">
+        <div class="font-bold uppercase text-teal-600 dark:text-teal-400 text-sm mb-2">Rekomendasi</div>
+        <h2 class="text-3xl text-slate-500 dark:text-slate-300 font-bold tracking-tight mb-2">Most Popular <span
+                class="inline-block">Tutorial 🏆</span></h2>
+        <p class="text-lg mb-8 text-slate-500 dark:text-slate-300">Paling banyak dibaca dan direkomendasikan.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-500 dark:text-slate-300 mb-8">
+            <a href="/tutorial/html"
+                class="inline-flex gap-4 p-4 shadow-md bg-white dark:bg-slate-800 rounded-xl active:scale-95 active:shadow-sm transition-all hover:shadow-lg">
+                <div>
+                    <svg class="h-16 w-16" viewBox="0 0 128 128">
+                        <path fill="#e44d26"
+                            d="M9.032 2l10.005 112.093 44.896 12.401 45.02-12.387L118.968 2H9.032zm89.126 26.539-.627 7.172L97.255 39H44.59l1.257 14H96.003l-.336 3.471-3.233 36.119-.238 2.27L64 102.609v.002l-.034.018-28.177-7.423L33.876 74H47.691l.979 10.919L63.957 89H64v-.546l15.355-3.875L80.959 67H33.261l-3.383-38.117L29.549 25h68.939l-.33 3.539z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-medium line-clamp-1 mb-1">Tutorial HTML untuk Pemula</h3>
+                    <p class="text-xs line-clamp-2 text-slate-700 dark:text-slate-300">Pelajari
+                        dasar-dasar HTML untuk membuat website dari nol.</p>
+                </div>
             </a>
-          </li>`).join(""):'<li class="text-gray-500 dark:text-gray-400">Tidak ada hasil ditemukan.</li>'}),document.addEventListener("keydown",e=>{e.key==="Escape"&&searchModal.classList.add("hidden")})</script><script>const scrollToTopBtn=document.getElementById("scrollToTopBtn");window.addEventListener("scroll",()=>{window.scrollY>100?scrollToTopBtn.classList.remove("hidden"):scrollToTopBtn.classList.add("hidden")}),scrollToTopBtn?.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})}),document.addEventListener("DOMContentLoaded",()=>{lucide.createIcons()})</script><script>function switchTab(e,t){const n=e.closest(".simple-tabs");n.querySelectorAll(".tab-button").forEach(e=>{e.classList.remove("active")}),n.querySelectorAll(".tab-content").forEach(e=>{e.classList.remove("active")}),e.classList.add("active"),document.getElementById(t).classList.add("active")}</script><script>document.addEventListener("DOMContentLoaded",()=>{const e=e=>{if(e.querySelector(".copy-btn")||!e.querySelector("code"))return;const t=document.createElement("button");t.className="copy-btn absolute top-2 right-2 text-xs px-2 py-1 bg-slate-700 hover:bg-slate-600 text-white rounded opacity-0 transition-all duration-200",t.innerHTML='<i class="fas fa-copy" aria-hidden="true"></i>',t.setAttribute("aria-label","Copy code"),t.setAttribute("title","Copy to clipboard"),t.addEventListener("click",async()=>{try{const n=e.querySelector("code").textContent.trim();await navigator.clipboard.writeText(n),t.innerHTML='<i class="fas fa-check" aria-hidden="true"></i>',t.classList.add("bg-green-500","hover:bg-green-600"),setTimeout(()=>{t.innerHTML='<i class="fas fa-copy" aria-hidden="true"></i>',t.classList.remove("bg-green-500","hover:bg-green-600")},2e3)}catch{t.innerHTML='<i class="fas fa-times" aria-hidden="true"></i>',t.classList.add("bg-red-500","hover:bg-red-600"),setTimeout(()=>{t.innerHTML='<i class="fas fa-copy" aria-hidden="true"></i>',t.classList.remove("bg-red-500","hover:bg-red-600")},2e3)}}),e.style.position="relative",e.appendChild(t),e.addEventListener("mouseenter",()=>t.classList.remove("opacity-0")),e.addEventListener("mouseleave",()=>{t.innerHTML.includes("check")||t.classList.add("opacity-0")})};document.querySelectorAll("pre").forEach(e);const t=new MutationObserver(t=>{t.forEach(t=>{t.addedNodes.forEach(t=>{t.nodeType===1&&(t.matches("pre")&&e(t),t.querySelectorAll?.("pre").forEach(e))})})});t.observe(document.body,{childList:!0,subtree:!0})})</script><footer class="pt-16 bg-slate-800 text-white"><div class="container mx-auto px-4 lg:max-w-7xl grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"><div class="col-span-2 md:col-span-4 lg:col-span-2 mb-4 md:mb-6 lg:mb-0"><a href=https://gitkodachi.github.io/><img src=/images/global/octocat-footer.png alt=Logo class="w-48 h-auto hover:opacity-80 transition"></a><p class=mt-6>Mulai petualanganmu di dunia kode <i>(coding)</i> dengan tutorial yang ramah pemula.</p></div><div class="font-bold text-teal-600 dark:text-teal-400 mb-4 md:mb-0"><h3 class="text-xl font-bold mb-4">Belajar</h3><nav class="flex flex-col gap-2 text-slate-300 font-medium"><a href=/post/ class=hover:text-teal-400>Artikel</a>
-<a href=/tutorial/ class=hover:text-teal-400>Tutorial</a>
-<a href=/buku/ class=hover:text-teal-400>Buku</a></nav></div><div class="font-bold text-teal-600 dark:text-teal-400 mb-4 md:mb-0"><h3 class="text-xl font-bold mb-4">Software</h3><nav class="flex flex-col gap-2 text-slate-300 font-medium"><a href=/software/edukasi class=hover:text-teal-400>Edukasi</a>
-<a href=/software/multimedia class=hover:text-teal-400>Multimedia</a>
-<a href=/software/produktivitas class=hover:text-teal-400>Produktivitas</a></nav></div><div class="font-bold text-teal-600 dark:text-teal-400 mb-4 md:mb-0"><h3 class="text-xl font-bold mb-4">Popular Tutorial</h3><nav class="flex flex-col gap-2 text-slate-300 font-medium"><a href=/tutorial/c/ class=hover:text-teal-400>Tutorial Bahasa C</a>
-<a href=/tutorial/javascript/ class=hover:text-teal-400>Javascript</a>
-<a href=/tutorial/java/ class=hover:text-teal-400>Java</a>
-<a href=/tutorial/php/ class=hover:text-teal-400>PHP</a>
-<a href=/tutorial/python/ class=hover:text-teal-400>Python</a></nav></div><div class="font-bold text-teal-600 dark:text-teal-400 mb-4 md:mb-0"><h3 class="text-xl font-bold mb-4">Social Media</h3><nav class="flex flex-col gap-2 text-slate-300 font-medium"><a href=https://www.facebook.com/ target=_blank rel=noopener><i class="fab fa-facebook mr-2"></i> Facebook Page
-</a><a href=https://instagram.com/ target=_blank rel=noopener><i class="fab fa-instagram mr-2"></i> Instagram
-</a><a href=https://twitter.com/ target=_blank rel=noopener><i class="fab fa-twitter mr-2"></i> Twitter
-</a><a href="https://www.youtube.com/?sub_confirmation=1" target=_blank rel=noopener><i class="fab fa-youtube mr-2"></i> Youtube
-</a><a href=https://t.me/ target=_blank rel=noopener><i class="fab fa-telegram mr-2"></i> Telegram</a></nav></div></div><div class="text-xs tracking-wide py-6 mt-16 max-w-7xl mx-auto border-t border-slate-700 text-center"><h2 class=mb-2>Ikuti Kami di</h2><div class="flex justify-center gap-4 mb-4 text-white"><a href=https://www.facebook.com/ target=_blank rel=noopener class=hover:text-[#3b5998]><i class="fab fa-facebook-f text-lg"></i>
-</a><a href=https://twitter.com/ target=_blank rel=noopener class=hover:text-[#1da1f2]><i class="fab fa-twitter text-lg"></i>
-</a><a href=https://t.me/ target=_blank rel=noopener class=hover:text-[#0088cc]><i class="fab fa-telegram text-lg"></i>
-</a><a href=https://instagram.com/ target=_blank rel=noopener class=hover:text-[#c13584]><i class="fab fa-instagram text-lg"></i>
-</a><a href="https://www.youtube.com/?sub_confirmation=1" target=_blank rel=noopener class=hover:text-[#ff0000]><i class="fab fa-youtube text-lg"></i></a></div><p>© 2025 <a href=https://gitkodachi.github.io/ class="hover:text-teal-400 font-semibold">Payung Kode</a>
-· Made with ❤️ using <a href=https://gohugo.io class=hover:text-teal-400 target=_blank rel=noopener>Hugo 0.134.0</a></p></div></footer></body></html>
+            <a href="/tutorial/javascript"
+                class="inline-flex gap-4 p-4 shadow-md bg-white dark:bg-slate-800 rounded-xl active:scale-95 active:shadow-sm transition-all hover:shadow-lg">
+                <div>
+                    <svg class="h-16 w-16" viewBox="0 0 128 128">
+                        <path fill="#f0db4f" d="M1.408 1.408h125.184v125.185H1.408z"></path>
+                        <path fill="#323330"
+                            d="M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.475 9.163-5.879-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949-4.688 2.713-4.688 2.713-9.508 5.485 1.143 2.499 2.344 3.63 4.26 5.795 9.068 9.198 31.76 8.746 35.83-5.176.165-.478 1.261-3.666.38-8.581zM69.462 58.943H57.753l-.048 30.272c0 6.438.333 12.34-.714 14.149-1.713 3.558-6.152 3.117-8.175 2.427-2.059-1.012-3.106-2.451-4.319-4.485-.333-.584-.583-1.036-.667-1.071l-9.52 5.83c1.583 3.249 3.915 6.069 6.902 7.901 4.462 2.678 10.459 3.499 16.731 2.059 4.082-1.189 7.604-3.652 9.448-7.401 2.666-4.915 2.094-10.864 2.07-17.444.06-10.735.001-21.468.001-32.237z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-medium line-clamp-1 mb-1">Tutorial Dasar Javascript</h3>
+                    <p class="text-xs line-clamp-2 text-slate-700 dark:text-slate-300">Pelajari
+                        dasar-dasar pemrograman Javascript untuk membuat website yang interaktif.</p>
+                </div>
+            </a>
+            <a href="/tutorial/java"
+                class="inline-flex gap-4 p-4 shadow-md bg-white dark:bg-slate-800 rounded-xl active:scale-95 active:shadow-sm transition-all hover:shadow-lg">
+                <div>
+                    <svg class="h-16 w-16" viewBox="0 0 128 128">
+                        <path fill="#0074bd"
+                            d="M47.617 98.12s-4.767 2.774 3.397 3.71c9.892 1.13 14.947.968 25.845-1.092.0.0 2.871 1.795 6.873 3.351-24.439 10.47-55.308-.607-36.115-5.969zM44.629 84.455s-5.348 3.959 2.823 4.805c10.567 1.091 18.91 1.18 33.354-1.6.0.0 1.993 2.025 5.132 3.131-29.542 8.64-62.446.68-41.309-6.336z">
+                        </path>
+                        <path fill="#ea2d2e"
+                            d="M69.802 61.271c6.025 6.935-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.777c-6.559-9.215-11.587-13.792 15.635-29.58.0.001-42.731 10.67-22.324 34.187z">
+                        </path>
+                        <path fill="#0074bd"
+                            d="M102.123 108.229s3.529 2.91-3.888 5.159c-14.102 4.272-58.706 5.56-71.094.171-4.451-1.938 3.899-4.625 6.526-5.192 2.739-.593 4.303-.485 4.303-.485-4.953-3.487-32.013 6.85-13.743 9.815 49.821 8.076 90.817-3.637 77.896-9.468zM49.912 70.294s-22.686 5.389-8.033 7.348c6.188.828 18.518.638 30.011-.326 9.39-.789 18.813-2.474 18.813-2.474s-3.308 1.419-5.704 3.053c-23.042 6.061-67.544 3.238-54.731-2.958 10.832-5.239 19.644-4.643 19.644-4.643zM90.609 93.041c23.421-12.167 12.591-23.86 5.032-22.285-1.848.385-2.677.72-2.677.72s.688-1.079 2-1.543c14.953-5.255 26.451 15.503-4.823 23.725.0-.002.359-.327.468-.617z">
+                        </path>
+                        <path fill="#ea2d2e"
+                            d="M76.491 1.587S89.459 14.563 64.188 34.51c-20.266 16.006-4.621 25.13-.007 35.559-11.831-10.673-20.509-20.07-14.688-28.815C58.041 28.42 81.722 22.195 76.491 1.587z">
+                        </path>
+                        <path fill="#0074bd"
+                            d="M52.214 126.021c22.476 1.437 57-.8 57.817-11.436.0.0-1.571 4.032-18.577 7.231-19.186 3.612-42.854 3.191-56.887.874.0.001 2.875 2.381 17.647 3.331z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-medium line-clamp-1 mb-1">Tutorial Java untuk Pemula</h3>
+                    <p class="text-xs line-clamp-2 text-slate-700 dark:text-slate-300">Pelajari
+                        dasar-dasar pemrograman Java dari nol.</p>
+                </div>
+            </a>
+            <a href="/tutorial/c/"
+                class="inline-flex gap-4 p-4 shadow-md bg-white dark:bg-slate-800 rounded-xl active:scale-95 active:shadow-sm transition-all hover:shadow-lg">
+                <div>
+                    <svg class="h-16 w-16" viewBox="0 0 128 128">
+                        <path fill="#03599c"
+                            d="M117.5 33.5l.3-.2c-.6-1.1-1.5-2.1-2.4-2.6L67.1 2.9c-.8-.5-1.9-.7-3.1-.7-1.2.0-2.3.3-3.1.7l-48 27.9c-1.7 1-2.9 3.5-2.9 5.4v55.7c0 1.1.2 2.3.9 3.4l-.2.1c.5.8 1.2 1.5 1.9 1.9l48.2 27.9c.8.5 1.9.7 3.1.7s2.3-.3 3.1-.7l48-27.9c1.7-1 2.9-3.5 2.9-5.4V36.1c.1-.8.0-1.7-.4-2.6zM64 88.5c9.1.0 17.1-5 21.3-12.4l12.9 7.6c-6.8 11.8-19.6 19.8-34.2 19.8-21.8.0-39.5-17.7-39.5-39.5S42.2 24.5 64 24.5c14.7.0 27.5 8.1 34.3 20l-13 7.5C81.1 44.5 73.1 39.5 64 39.5c-13.5.0-24.5 11-24.5 24.5s11 24.5 24.5 24.5z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-medium line-clamp-1 mb-1">Tutorial Dasar Pemrograman C</h3>
+                    <p class="text-xs line-clamp-2 text-slate-700 dark:text-slate-300">Pelajari
+                        dasar-dasar pemrograman C untuk dari nol.</p>
+                </div>
+            </a>
+            <a href="/tutorial/python/"
+                class="inline-flex gap-4 p-4 shadow-md bg-white dark:bg-slate-800 rounded-xl active:scale-95 active:shadow-sm transition-all hover:shadow-lg">
+                <div>
+                    <svg class="h-16 w-16" viewBox="0 0 128 128">
+                        <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="70.252" y1="1237.476" x2="170.659"
+                            y2="1151.089" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)">
+                            <stop offset="0" stop-color="#5a9fd4"></stop>
+                            <stop offset="1" stop-color="#306998"></stop>
+                        </linearGradient>
+                        <path fill="url(#a)"
+                            d="M63.391 1.988c-4.222.02-8.252.379-11.8 1.007-10.45 1.846-12.346 5.71-12.346 12.837v9.411h24.693v3.137H29.977c-7.176.0-13.46 4.313-15.426 12.521-2.268 9.405-2.368 15.275.0 25.096 1.755 7.311 5.947 12.519 13.124 12.519h8.491V67.234c0-8.151 7.051-15.34 15.426-15.34h24.665c6.866.0 12.346-5.654 12.346-12.548V15.833c0-6.693-5.646-11.72-12.346-12.837-4.244-.706-8.645-1.027-12.866-1.008zM50.037 9.557c2.55.0 4.634 2.117 4.634 4.721.0 2.593-2.083 4.69-4.634 4.69-2.56.0-4.633-2.097-4.633-4.69-.001-2.604 2.073-4.721 4.633-4.721z">
+                        </path>
+                        <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="209.474" y1="1098.811" x2="173.62"
+                            y2="1149.537" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)">
+                            <stop offset="0" stop-color="#ffd43b"></stop>
+                            <stop offset="1" stop-color="#ffe873"></stop>
+                        </linearGradient>
+                        <path fill="url(#b)"
+                            d="M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655H51.591c-6.756.0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547 7.816 2.297 15.312 2.713 24.665.0 6.216-1.801 12.346-5.423 12.346-12.547v-9.412H63.938v-3.138h37.012c7.176.0 9.852-5.005 12.348-12.519 2.578-7.735 2.467-15.174.0-25.096-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zM77.809 87.927c2.561.0 4.634 2.097 4.634 4.692.0 2.602-2.074 4.719-4.634 4.719-2.55.0-4.633-2.117-4.633-4.719.0-2.595 2.083-4.692 4.633-4.692z">
+                        </path>
+                        <radialGradient id="c" cx="1825.678" cy="444.45" r="26.743"
+                            gradientTransform="matrix(0 -.24 -1.055 0 532.979 557.576)" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#b8b8b8" stop-opacity=".498"></stop>
+                            <stop offset="1" stop-color="#7f7f7f" stop-opacity="0"></stop>
+                        </radialGradient>
+                        <path opacity=".444" fill="url(#c)" enable-background="new"
+                            d="M97.309 119.597c0 3.543-14.816 6.416-33.091 6.416-18.276.0-33.092-2.873-33.092-6.416.0-3.544 14.815-6.417 33.092-6.417 18.275.0 33.091 2.872 33.091 6.417z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-medium line-clamp-1 mb-1">Tutorial Python untuk Pemula</h3>
+                    <p class="text-xs line-clamp-2 text-slate-700 dark:text-slate-300">Pelajari
+                        dasar-dasar pemrograman Python untuk pemula.</p>
+                </div>
+            </a>
+            <a href="/tutorial/git"
+                class="inline-flex gap-4 p-4 shadow-md bg-white dark:bg-slate-800 rounded-xl active:scale-95 active:shadow-sm transition-all hover:shadow-lg">
+                <div>
+                    <svg class="h-16 w-16" viewBox="0 0 128 128">
+                        <path fill="#f34f29"
+                            d="M124.737 58.378 69.621 3.264c-3.172-3.174-8.32-3.174-11.497.0L46.68 14.71l14.518 14.518c3.375-1.139 7.243-.375 9.932 2.314 2.703 2.706 3.461 6.607 2.294 9.993l13.992 13.993c3.385-1.167 7.292-.413 9.994 2.295 3.78 3.777 3.78 9.9.0 13.679-3.78 3.78-9.901 3.78-13.683.0-2.842-2.844-3.545-7.019-2.105-10.521L68.574 47.933l-.002 34.341c.922.455 1.791 1.063 2.559 1.828 3.778 3.777 3.778 9.898.0 13.683-3.779 3.777-9.904 3.777-13.679.0-3.778-3.784-3.778-9.905.0-13.683.934-.933 2.014-1.638 3.167-2.11V47.333c-1.153-.472-2.231-1.172-3.167-2.111-2.862-2.86-3.551-7.06-2.083-10.576L41.056 20.333 3.264 58.123c-3.175 3.177-3.175 8.325.0 11.5l55.117 55.114c3.174 3.174 8.32 3.174 11.499.0l54.858-54.858c3.174-3.176 3.174-8.327-.001-11.501z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-medium line-clamp-1 mb-1">Tutorial Git untuk Pemula</h3>
+                    <p class="text-xs line-clamp-2 text-slate-700 dark:text-slate-300">Pelajari
+                        dasar-dasar Git untuk version control pada project dan kolaborasi dengan tim.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+</div>
+
+
+<section>
+    <div class="container text-slate-500 dark:text-slate-300 lg:max-w-3xl mt-16 mx-auto px-4 mb-20">
+        <div class="font-bold uppercase text-teal-600 dark:text-teal-400 text-sm mb-2">Explore</div>
+        <h2 class="text-3xl font-bold  tracking-tight mb-2">Semua Tutorial</h2>
+        <p class="text-lg mb-8 text-slate-500 dark:text-slate-300">Temukan tutorial yang ingin kamu pelajari.</p>
+
+        <div class="grid grid-cols-1 gap-8 mb-8">
+            
+            <div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg">
+                <div class="shrink-0 h-20 w-20 md:h-36 md:w-36">
+                    <a href="/tutorial/hugo/" class="inline-block w-full h-full">
+                        <picture>
+                            <img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded"
+                                src="/images/thumbnail/Hugo-01.svg"
+                                data-src="/images/thumbnail/Hugo-01.svg"
+                                data-sizes="auto" alt="Tutorial Hugo untuk Pemula">
+                        </picture>
+                    </a>
+                </div>
+                <div class="grow">
+                    <h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2">
+                        <a href="/tutorial/hugo/">Tutorial Hugo untuk Pemula</a>
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+                        Pelajari dasar-dasar version control dengan Git untuk pemula.
+                    </p>
+                </div>
+                <div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm">
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Multi</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Platform</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">1</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Artikel</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Level</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Pemula</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg">
+                <div class="shrink-0 h-20 w-20 md:h-36 md:w-36">
+                    <a href="/tutorial/html/" class="inline-block w-full h-full">
+                        <picture>
+                            <img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded"
+                                src="/images/thumbnail/html-sqr.png"
+                                data-src="/images/thumbnail/html-sqr.png"
+                                data-sizes="auto" alt="Tutorial HTML untuk Pemula">
+                        </picture>
+                    </a>
+                </div>
+                <div class="grow">
+                    <h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2">
+                        <a href="/tutorial/html/">Tutorial HTML untuk Pemula</a>
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+                        Belajar HTML dasar dari Nol. Pahami tag-tag esensial yang sering dipakai. Lalu buat sendiri websitemu dengan HTML. Selamat Belajar!
+                    </p>
+                </div>
+                <div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm">
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Multi</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Platform</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">1</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Artikel</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Level</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Pemula</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg">
+                <div class="shrink-0 h-20 w-20 md:h-36 md:w-36">
+                    <a href="/tutorial/python/" class="inline-block w-full h-full">
+                        <picture>
+                            <img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded"
+                                src="/images/thumbnail/python-sqr.png"
+                                data-src="/images/thumbnail/python-sqr.png"
+                                data-sizes="auto" alt="Tutorial Git untuk Pemula">
+                        </picture>
+                    </a>
+                </div>
+                <div class="grow">
+                    <h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2">
+                        <a href="/tutorial/python/">Tutorial Git untuk Pemula</a>
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+                        Pelajari dasar-dasar version control dengan Git untuk pemula.
+                    </p>
+                </div>
+                <div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm">
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Multi</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Platform</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">5</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Artikel</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Level</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Pemula</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg">
+                <div class="shrink-0 h-20 w-20 md:h-36 md:w-36">
+                    <a href="/tutorial/php/" class="inline-block w-full h-full">
+                        <picture>
+                            <img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded"
+                                src="/images/thumbnail/php.svg"
+                                data-src="/images/thumbnail/php.svg"
+                                data-sizes="auto" alt="Tutorial Git untuk Pemula">
+                        </picture>
+                    </a>
+                </div>
+                <div class="grow">
+                    <h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2">
+                        <a href="/tutorial/php/">Tutorial Git untuk Pemula</a>
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+                        Pelajari dasar-dasar version control dengan Git untuk pemula.
+                    </p>
+                </div>
+                <div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm">
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Multi</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Platform</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">5</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Artikel</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Level</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Pemula</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg">
+                <div class="shrink-0 h-20 w-20 md:h-36 md:w-36">
+                    <a href="/tutorial/nodejs/" class="inline-block w-full h-full">
+                        <picture>
+                            <img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded"
+                                src="/images/thumbnail/nodejs.svg"
+                                data-src="/images/thumbnail/nodejs.svg"
+                                data-sizes="auto" alt="Tutorial Git untuk Pemula">
+                        </picture>
+                    </a>
+                </div>
+                <div class="grow">
+                    <h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2">
+                        <a href="/tutorial/nodejs/">Tutorial Git untuk Pemula</a>
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+                        Pelajari dasar-dasar version control dengan Git untuk pemula.
+                    </p>
+                </div>
+                <div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm">
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Multi</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Platform</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">5</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Artikel</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Level</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Pemula</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg">
+                <div class="shrink-0 h-20 w-20 md:h-36 md:w-36">
+                    <a href="/tutorial/kotlin/" class="inline-block w-full h-full">
+                        <picture>
+                            <img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded"
+                                src="/images/thumbnail/kotlin.png"
+                                data-src="/images/thumbnail/kotlin.png"
+                                data-sizes="auto" alt="Tutorial Git untuk Pemula">
+                        </picture>
+                    </a>
+                </div>
+                <div class="grow">
+                    <h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2">
+                        <a href="/tutorial/kotlin/">Tutorial Git untuk Pemula</a>
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+                        Pelajari dasar-dasar version control dengan Git untuk pemula.
+                    </p>
+                </div>
+                <div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm">
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Multi</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Platform</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">5</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Artikel</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Level</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Pemula</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg">
+                <div class="shrink-0 h-20 w-20 md:h-36 md:w-36">
+                    <a href="/tutorial/javascript/" class="inline-block w-full h-full">
+                        <picture>
+                            <img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded"
+                                src="/images/thumbnail/javascript.png"
+                                data-src="/images/thumbnail/javascript.png"
+                                data-sizes="auto" alt="Tutorial Git untuk Pemula">
+                        </picture>
+                    </a>
+                </div>
+                <div class="grow">
+                    <h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2">
+                        <a href="/tutorial/javascript/">Tutorial Git untuk Pemula</a>
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+                        Pelajari dasar-dasar version control dengan Git untuk pemula.
+                    </p>
+                </div>
+                <div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm">
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Multi</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Platform</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">5</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Artikel</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Level</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Pemula</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg">
+                <div class="shrink-0 h-20 w-20 md:h-36 md:w-36">
+                    <a href="/tutorial/java/" class="inline-block w-full h-full">
+                        <picture>
+                            <img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded"
+                                src="/images/thumbnail/java.svg"
+                                data-src="/images/thumbnail/java.svg"
+                                data-sizes="auto" alt="Tutorial Git untuk Pemula">
+                        </picture>
+                    </a>
+                </div>
+                <div class="grow">
+                    <h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2">
+                        <a href="/tutorial/java/">Tutorial Git untuk Pemula</a>
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+                        Pelajari dasar-dasar version control dengan Git untuk pemula.
+                    </p>
+                </div>
+                <div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm">
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Multi</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Platform</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">5</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Artikel</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Level</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Pemula</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg">
+                <div class="shrink-0 h-20 w-20 md:h-36 md:w-36">
+                    <a href="/tutorial/css/" class="inline-block w-full h-full">
+                        <picture>
+                            <img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded"
+                                src="/images/thumbnail/css-sqr.png"
+                                data-src="/images/thumbnail/css-sqr.png"
+                                data-sizes="auto" alt="Tutorial Git untuk Pemula">
+                        </picture>
+                    </a>
+                </div>
+                <div class="grow">
+                    <h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2">
+                        <a href="/tutorial/css/">Tutorial Git untuk Pemula</a>
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+                        Pelajari dasar-dasar version control dengan Git untuk pemula.
+                    </p>
+                </div>
+                <div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm">
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Multi</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Platform</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">5</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Artikel</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Level</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Pemula</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg">
+                <div class="shrink-0 h-20 w-20 md:h-36 md:w-36">
+                    <a href="/tutorial/codeigniter/" class="inline-block w-full h-full">
+                        <picture>
+                            <img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded"
+                                src="/images/thumbnail/codeigniter.png"
+                                data-src="/images/thumbnail/codeigniter.png"
+                                data-sizes="auto" alt="Tutorial Git untuk Pemula">
+                        </picture>
+                    </a>
+                </div>
+                <div class="grow">
+                    <h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2">
+                        <a href="/tutorial/codeigniter/">Tutorial Git untuk Pemula</a>
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+                        Pelajari dasar-dasar version control dengan Git untuk pemula.
+                    </p>
+                </div>
+                <div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm">
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Multi</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Platform</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">5</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Artikel</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Level</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Pemula</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg">
+                <div class="shrink-0 h-20 w-20 md:h-36 md:w-36">
+                    <a href="/tutorial/chsarp/" class="inline-block w-full h-full">
+                        <picture>
+                            <img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded"
+                                src="/images/thumbnail/csharp.png"
+                                data-src="/images/thumbnail/csharp.png"
+                                data-sizes="auto" alt="Tutorial Git untuk Pemula">
+                        </picture>
+                    </a>
+                </div>
+                <div class="grow">
+                    <h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2">
+                        <a href="/tutorial/chsarp/">Tutorial Git untuk Pemula</a>
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+                        Pelajari dasar-dasar version control dengan Git untuk pemula.
+                    </p>
+                </div>
+                <div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm">
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Multi</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Platform</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">5</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Artikel</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Level</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Pemula</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg">
+                <div class="shrink-0 h-20 w-20 md:h-36 md:w-36">
+                    <a href="/tutorial/c/" class="inline-block w-full h-full">
+                        <picture>
+                            <img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded"
+                                src="/images/thumbnail/c.webp"
+                                data-src="/images/thumbnail/c.webp"
+                                data-sizes="auto" alt="Tutorial Git untuk Pemula">
+                        </picture>
+                    </a>
+                </div>
+                <div class="grow">
+                    <h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2">
+                        <a href="/tutorial/c/">Tutorial Git untuk Pemula</a>
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+                        Pelajari dasar-dasar version control dengan Git untuk pemula.
+                    </p>
+                </div>
+                <div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm">
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Multi</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Platform</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">5</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Artikel</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Level</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Pemula</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg">
+                <div class="shrink-0 h-20 w-20 md:h-36 md:w-36">
+                    <a href="/tutorial/git/" class="inline-block w-full h-full">
+                        <picture>
+                            <img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded"
+                                src="/images/thumbnail/git-sqr.png"
+                                data-src="/images/thumbnail/git-sqr.png"
+                                data-sizes="auto" alt="Tutorial Belajar Git untuk Pemula">
+                        </picture>
+                    </a>
+                </div>
+                <div class="grow">
+                    <h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2">
+                        <a href="/tutorial/git/">Tutorial Belajar Git untuk Pemula</a>
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+                        Kumpulan Tutorial Belajar Git dalam Bahasa Indonesia. Git adalah program yang bertugas mengontrol versi dalam source code.
+                    </p>
+                </div>
+                <div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm">
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Multi</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Platform</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">1</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Artikel</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Level</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Pemula</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg">
+                <div class="shrink-0 h-20 w-20 md:h-36 md:w-36">
+                    <a href="/tutorial/github/" class="inline-block w-full h-full">
+                        <picture>
+                            <img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded"
+                                src="/images/thumbnail/default.svg"
+                                data-src="/images/thumbnail/default.svg"
+                                data-sizes="auto" alt="Github">
+                        </picture>
+                    </a>
+                </div>
+                <div class="grow">
+                    <h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2">
+                        <a href="/tutorial/github/">Github</a>
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+                        
+                    </p>
+                </div>
+                <div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm">
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Multi</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Platform</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">1</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Artikel</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Level</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Pemula</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 shadow-md p-6 rounded-2xl bg-white dark:bg-slate-800 hover:shadow-lg">
+                <div class="shrink-0 h-20 w-20 md:h-36 md:w-36">
+                    <a href="/tutorial/laravel/" class="inline-block w-full h-full">
+                        <picture>
+                            <img class="lazyload rounded-xl h-auto w-full dark:brightness-75 lazyloaded"
+                                src="/images/thumbnail/default.svg"
+                                data-src="/images/thumbnail/default.svg"
+                                data-sizes="auto" alt="Laravel">
+                        </picture>
+                    </a>
+                </div>
+                <div class="grow">
+                    <h2 class="text-xl font-bold mb-2 tracking-tight line-clamp-2">
+                        <a href="/tutorial/laravel/">Laravel</a>
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 line-clamp-3">
+                        
+                    </p>
+                </div>
+                <div class="shrink-0 px-4 hidden md:flex flex-col gap-4 justify-start md:justify-center text-sm">
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7A2 2 0 005 7v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Multi</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Platform</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">1</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Artikel</span>
+                    </span>
+                    <span>
+                        <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16 7A4 4 0 118 7a4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <b class="text-slate-700 dark:text-slate-100">Level</b>
+                        <span class="text-slate-500 dark:text-slate-400 xs:hidden sm:inline md:inline">
+                            Pemula</span>
+                    </span>
+                </div>
+            </div>
+            
+        </div>
+
+        
+        
+         <ul class="flex flex-row justify-center md:justify-start gap-2 md:gap-4 my-8">
+            
+<ul class="flex flex-row justify-center md:justify-start gap-2 md:gap-4 my-8">
+  
+    
+    <li class="text-white  dark:text-white hover:bg-teal-500 hover:text-white dark:hover:bg-teal-500 dark:hover:text-white h-8 w-8 rounded-full">
+      <a href="/tutorial/" class="inline-flex justify-center items-center p-1 h-8 w-8 rounded-full" title="Previous Page">
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </a>
+    </li>
+  
+
+  
+    
+      <li class="bg-teal-600 text-white dark:bg-slate-800 dark:text-white hover:bg-teal-500 hover:text-white dark:hover:bg-teal-500 dark:hover:text-white h-8 w-8 rounded-full">
+        <a href="/tutorial/" class="inline-flex justify-center p-1 h-8 w-8 rounded-full">1</a>
+      </li>
+    
+  
+    
+      <li class="bg-teal-600 dark:bg-teal-600 text-white  dark:text-white hover:bg-teal-500 hover:text-white dark:hover:bg-teal-500 dark:hover:text-white h-8 w-8 rounded-full">
+        <span class="inline-flex justify-center p-1 h-8 w-8 rounded-full">2</span>
+      </li>
+    
+  
+
+  
+</ul>
+
+        </ul>
+        
+    </div>
+</section>
+</div>
+
+  </main>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+
+<script src="//unpkg.com/alpinejs" defer></script>
+<style>
+  [x-cloak] { display: none !important; }
+</style>
+
+<script>
+document.addEventListener('alpine:init', () => {
+
+  Alpine.store('theme', {
+    dark: false,
+    switcherOpen: false,
+    system: false,
+    init() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark') {
+        this.dark = true;
+      } else if (savedTheme === 'light') {
+        this.dark = false;
+      } else if (savedTheme === 'system') {
+        this.system = true;
+        this.dark = systemPrefersDark;
+      } else {
+        this.system = true;
+        this.dark = systemPrefersDark;
+      }
+      this.applyTheme();
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (this.system) {
+          this.dark = e.matches;
+          this.applyTheme();
+        }
+      });
+    },
+    setTheme(theme) {
+      if (theme === 'dark') {
+        this.dark = true;
+        this.system = false;
+        localStorage.setItem('theme', 'dark');
+      } else if (theme === 'light') {
+        this.dark = false;
+        this.system = false;
+        localStorage.setItem('theme', 'light');
+      } else {
+        this.system = true;
+        this.dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        localStorage.setItem('theme', 'system');
+      }
+      this.applyTheme();
+    },
+    applyTheme() {
+      if (this.dark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+  });
+
+  
+  Alpine.store('search').init();
+});
+</script>
+
+<script src="/js/fuse.min.js"></script>
+<script src="/js/lucide.min.js"></script>
+<script>
+  const searchToggle = document.getElementById('searchToggle');
+  const searchModal = document.getElementById('searchModal');
+  const searchClose = document.getElementById('searchClose');
+  const searchCloseBtn = document.getElementById('searchCloseBtn');
+  const searchInput = document.getElementById("searchInput");
+  const searchResults = document.getElementById("searchResults");
+  let fuse, fuseIndex = [];
+
+  fetch("/index.json")
+    .then(res => res.json())
+    .then(data => {
+      fuseIndex = data;
+      fuse = new Fuse(fuseIndex, { keys: ["title", "content"], threshold: 0.3 });
+    });
+
+  searchToggle?.addEventListener('click', () => {
+    searchModal.classList.remove('hidden');
+    setTimeout(() => {
+      searchInput.focus();
+      lucide.createIcons();
+    }, 100);
+  });
+
+  [searchClose, searchCloseBtn].forEach(el => el?.addEventListener('click', () => {
+    searchModal.classList.add('hidden');
+    searchInput.value = '';
+    searchResults.innerHTML = '';
+  }));
+
+  searchInput?.addEventListener('input', () => {
+    const query = searchInput.value.trim();
+    if (!query || !fuse) return searchResults.innerHTML = '';
+    const results = fuse.search(query).slice(0, 8);
+    searchResults.innerHTML = results.length
+      ? results.map(r => `
+          <li>
+            <a href="${r.item.permalink}" class="block p-2 rounded-md text-white-100 hover:bg-teal-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-500">
+              <strong>${r.item.title}</strong><br>
+              <small>${r.item.content.slice(0, 80)}...</small>
+            </a>
+          </li>`).join('')
+      : '<li class="text-gray-500 dark:text-gray-400">Tidak ada hasil ditemukan.</li>';
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === "Escape") searchModal.classList.add('hidden');
+  });
+</script>
+
+<script>
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      scrollToTopBtn.classList.remove('hidden');
+    } else {
+      scrollToTopBtn.classList.add('hidden');
+    }
+  });
+
+  scrollToTopBtn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    lucide.createIcons();
+  });
+</script>
+
+<script>
+
+
+function switchTab(button, tabId) {
+  const tabContainer = button.closest('.simple-tabs');
+  
+  
+  tabContainer.querySelectorAll('.tab-button').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  tabContainer.querySelectorAll('.tab-content').forEach(content => {
+    content.classList.remove('active');
+  });
+  
+  
+  button.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+}
+</script>
+
+<script>
+ 
+document.addEventListener('DOMContentLoaded', () => {
+  const createCopyButton = (pre) => {
+    if (pre.querySelector('.copy-btn') || !pre.querySelector('code')) return;
+
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'copy-btn absolute top-2 right-2 text-xs px-2 py-1 bg-slate-700 hover:bg-slate-600 text-white rounded opacity-0 transition-all duration-200';
+    copyBtn.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>';
+    copyBtn.setAttribute('aria-label', 'Copy code');
+    copyBtn.setAttribute('title', 'Copy to clipboard');
+
+    copyBtn.addEventListener('click', async () => {
+      try {
+        const code = pre.querySelector('code').textContent.trim();
+        await navigator.clipboard.writeText(code);
+        
+        copyBtn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>';
+        copyBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+        
+        setTimeout(() => {
+          copyBtn.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>';
+          copyBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
+        }, 2000);
+      } catch (err) {
+        copyBtn.innerHTML = '<i class="fas fa-times" aria-hidden="true"></i>';
+        copyBtn.classList.add('bg-red-500', 'hover:bg-red-600');
+        setTimeout(() => {
+          copyBtn.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>';
+          copyBtn.classList.remove('bg-red-500', 'hover:bg-red-600');
+        }, 2000);
+      }
+    });
+
+    pre.style.position = 'relative';
+    pre.appendChild(copyBtn);
+
+    pre.addEventListener('mouseenter', () => copyBtn.classList.remove('opacity-0'));
+    pre.addEventListener('mouseleave', () => {
+      if (!copyBtn.innerHTML.includes('check')) {
+        copyBtn.classList.add('opacity-0');
+      }
+    });
+  };
+
+  
+  document.querySelectorAll('pre').forEach(createCopyButton);
+
+  
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach((node) => {
+        if (node.nodeType === 1) { 
+          if (node.matches('pre')) createCopyButton(node);
+          node.querySelectorAll?.('pre').forEach(createCopyButton);
+        }
+      });
+    });
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+});
+</script>
+
+  <footer class="pt-16 bg-slate-800 text-white">
+  <div class="container mx-auto px-4 lg:max-w-7xl grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+    
+    
+    <div class="col-span-2 md:col-span-4 lg:col-span-2 mb-4 md:mb-6 lg:mb-0">
+      <a href="https://gitkodachi.github.io/">
+        <img src="/images/global/octocat-footer.png" alt="Logo" class="w-48 h-auto hover:opacity-80 transition" />
+      </a>
+      <p class="mt-6">Mulai petualanganmu di dunia kode <i>(coding)</i> dengan tutorial yang ramah pemula.</p>
+    </div>
+
+    
+    <div class="font-bold text-teal-600 dark:text-teal-400 mb-4 md:mb-0">
+      <h3 class="text-xl font-bold mb-4">Belajar</h3>
+      <nav class="flex flex-col gap-2 text-slate-300 font-medium">
+        <a href="/post/" class="hover:text-teal-400">Artikel</a>
+        <a href="/tutorial/" class="hover:text-teal-400">Tutorial</a>
+        <a href="/buku/" class="hover:text-teal-400">Buku</a>
+      </nav>
+    </div>
+
+    
+    <div class="font-bold text-teal-600 dark:text-teal-400 mb-4 md:mb-0">
+      <h3 class="text-xl font-bold mb-4">Software</h3>
+      <nav class="flex flex-col gap-2 text-slate-300 font-medium">
+        <a href="/software/edukasi" class="hover:text-teal-400">Edukasi</a>
+        <a href="/software/multimedia" class="hover:text-teal-400">Multimedia</a>
+        <a href="/software/produktivitas" class="hover:text-teal-400">Produktivitas</a>
+      </nav>
+    </div>
+
+    
+    <div class="font-bold text-teal-600 dark:text-teal-400 mb-4 md:mb-0">
+      <h3 class="text-xl font-bold mb-4">Popular Tutorial</h3>
+      <nav class="flex flex-col gap-2 text-slate-300 font-medium">
+        <a href="/tutorial/c/" class="hover:text-teal-400">Tutorial Bahasa C</a>
+        <a href="/tutorial/javascript/" class="hover:text-teal-400">Javascript</a>
+        <a href="/tutorial/java/" class="hover:text-teal-400">Java</a>
+        <a href="/tutorial/php/" class="hover:text-teal-400">PHP</a>
+        <a href="/tutorial/python/" class="hover:text-teal-400">Python</a>
+      </nav>
+    </div>
+
+    
+    <div class="font-bold text-teal-600 dark:text-teal-400 mb-4 md:mb-0">
+      <h3 class="text-xl font-bold mb-4">Social Media</h3>
+      <nav class="flex flex-col gap-2 text-slate-300 font-medium">
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+          <i class="fab fa-facebook mr-2"></i> Facebook Page
+        </a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener">
+          <i class="fab fa-instagram mr-2"></i> Instagram
+        </a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener">
+          <i class="fab fa-twitter mr-2"></i> Twitter
+        </a>
+        <a href="https://www.youtube.com/?sub_confirmation=1" target="_blank" rel="noopener">
+          <i class="fab fa-youtube mr-2"></i> Youtube
+        </a>
+        <a href="https://t.me/" target="_blank" rel="noopener">
+          <i class="fab fa-telegram mr-2"></i> Telegram
+        </a>
+      </nav>
+    </div>
+
+    
+    
+
+  </div>
+
+  
+  <div class="text-xs tracking-wide py-6 mt-16 max-w-7xl mx-auto border-t border-slate-700 text-center">
+    <h2 class="mb-2">Ikuti Kami di</h2>
+    <div class="flex justify-center gap-4 mb-4 text-white">
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="hover:text-[#3b5998]">
+        <i class="fab fa-facebook-f text-lg"></i>
+      </a>
+      <a href="https://twitter.com/" target="_blank" rel="noopener" class="hover:text-[#1da1f2]">
+        <i class="fab fa-twitter text-lg"></i>
+      </a>
+      <a href="https://t.me/" target="_blank" rel="noopener" class="hover:text-[#0088cc]">
+        <i class="fab fa-telegram text-lg"></i>
+      </a>
+      <a href="https://instagram.com/" target="_blank" rel="noopener" class="hover:text-[#c13584]">
+        <i class="fab fa-instagram text-lg"></i>
+      </a>
+      <a href="https://www.youtube.com/?sub_confirmation=1" target="_blank" rel="noopener" class="hover:text-[#ff0000]">
+        <i class="fab fa-youtube text-lg"></i>
+      </a>
+    </div>
+    <p>© 2025 <a href="https://gitkodachi.github.io/" class="hover:text-teal-400 font-semibold">Payung Kode</a>
+      · Made with ❤️ using <a href="https://gohugo.io" class="hover:text-teal-400" target="_blank" rel="noopener">Hugo 0.134.0</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

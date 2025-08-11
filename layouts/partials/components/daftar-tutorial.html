@@ -1,0 +1,31 @@
+{{ with .Params.series }}
+<div class="tutorial-checklist">
+  <h2 class="font-bold text-lg mb-4">📚 Daftar Tutorial</h2>
+  <ol class="space-y-2">
+    {{ $pages := where site.RegularPages "Params.series" . }}
+    {{ $currentPageURL := $.RelPermalink }} <!-- Simpan URL halaman saat ini -->
+    
+    {{ range sort $pages ".Params.weight" "asc" }}
+    <li class="mb-2 rounded-md {{ if eq .RelPermalink $currentPageURL }}bg-teal-100 dark:bg-teal-900{{ end }}">
+      {{ if eq .RelPermalink $currentPageURL }}
+        <!-- Halaman aktif -->
+        <div class="flex items-center gap-3 p-2 w-full cursor-default">
+          <span class="flex items-center justify-center h-5 w-5 rounded-full bg-teal-500 text-white text-xs">→</span>
+          <span>{{ .LinkTitle | default .Title }}</span>
+        </div>
+      {{ else }}
+        <!-- Halaman lain -->
+        <a href="{{ .RelPermalink }}" class="flex items-center gap-3 p-2 w-full hover:bg-teal-50 dark:hover:bg-teal-800">
+          {{ if .Params.completed }}
+            <span class="flex items-center justify-center h-5 w-5 rounded-full bg-green-500 text-white text-xs">✓</span>
+          {{ else }}
+            <span class="flex items-center justify-center h-5 w-5 rounded-full border border-gray-300 text-xs"></span>
+          {{ end }}
+          <span>{{ .LinkTitle | default .Title }}</span>
+        </a>
+      {{ end }}
+    </li>
+    {{ end }}
+  </ol>
+</div>
+{{ end }}

@@ -3,7 +3,7 @@
   <img 
     src="{{ .Get "src" | absURL }}" 
     alt="{{ .Get "alt" | default "Image" }}" 
-    class="cursor-zoom-in max-w-full rounded"
+    class="mx-auto cursor-zoom-in max-w-full rounded"
     onclick="zoom(this)"
   >
   {{ with .Get "caption" }}
@@ -15,16 +15,26 @@
 
 <script>
 function zoom(img) {
-  img.classList.toggle('zoomed');
-  document.body.style.overflow = img.classList.contains('zoomed') ? 'hidden' : '';
+  const isZoomed = img.classList.toggle('zoomed');
   
-  // ESC key to exit
-  if (img.classList.contains('zoomed')) {
+  if (isZoomed) {
+    // Calculate scale to fit screen
+    const scale = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.9 / img.naturalHeight,
+      1.0 // Max 100% scale
+    );
+    
+    img.style.setProperty('--zoom-scale', scale);
+    document.body.style.overflow = 'hidden';
+    
+    // ESC key to exit
     const handleKey = (e) => e.key === 'Escape' && zoom(img);
     document.addEventListener('keydown', handleKey);
-    img.onzoomout = () => document.removeEventListener('keydown', handleKey);
-  } else if (img.onzoomout) {
-    img.onzoomout();
+    img.dataset.escHandler = handleKey;
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', img.dataset.escHandler);
   }
 }
 </script>
@@ -34,10 +44,19 @@ img.zoomed {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+  max-width: 90vw;
   max-height: 90vh;
-  z-index: 100;
+  z-index: 1000;
   cursor: zoom-out;
-  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+/* Prevents scrolling when zoomed */
+body.overflow-hidden {
+  overflow: hidden !important;
 }
 </style>

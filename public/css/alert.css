@@ -191,8 +191,8 @@
 .custom-alert-content a {
   color: inherit;
   text-decoration: underline;
-  text-underline-offset: 0.2em;
+  text-underline-offset: 0.1em;
 }
 .custom-alert-content a:hover {
-  opacity: 0.8;
+  opacity: 0.6;
 }

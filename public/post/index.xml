@@ -1,13 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Octocat Code</title><link>https://gitkodachi.github.io/post/</link><description>Recent content on Octocat Code</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://gitkodachi.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Cara Setup SSH Key untuk Github agar Bisa Ngepush Tanpa Password</title><link>https://gitkodachi.github.io/post/github-ssh/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/post/github-ssh/</guid><description>&lt;p>Kita bisa melakukan push ke Github melalui dua metode yakni, melalui protokol HTTPS dan SSH.&lt;/p>
-&lt;p>Jika kita menggunakan HTTPS, maka kita akan dimintai password di setiap kali melakukan push. Sedangkan kalau pakai SSH, ini tidak perlu..&lt;/p>
-&lt;p>..karena password-nya akan diwakili oleh SSH Key.&lt;/p>
-&lt;p>Pada tutorial ini, kita akan belajar gimana cara setup SSH Key untuk Github. Sehingga nanti bisa melakukan push tanpa harus ngetik password terus menerus.&lt;/p>
-&lt;p>Mari kita mulai!&lt;/p></description></item><item><title>Tutorial Git #2: Cara Membuat Repositori Baru dalam Proyek</title><link>https://gitkodachi.github.io/post/git-init/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/post/git-init/</guid><description>&lt;p>Repositori &lt;em>(repository)&lt;/em> dalam bahasa indonesia artinya gudang. Repositori merupakan istilah yang digunakan untuk direktori proyek yang menggunakan Git.&lt;/p>
-&lt;p>Jika kita memiliki sebuah direktori dengan nama &lt;strong>proyek-01&lt;/strong> dan di dalamnya sudah menggunakan git, maka kita sudah punya repositori bernama &lt;strong>proyek-01&lt;/strong>.&lt;/p>
-&lt;h3 id="membuat-repository">Membuat Repository&lt;/h3>
-&lt;p>Pembuatan repositori dapat dilakukan dengan perintah &lt;strong>git init nama-dir&lt;/strong>. Contoh:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git init proyek-01
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Perintah tersebut akan membuat direktori bernama &lt;strong>proyek-01&lt;/strong>. Kalau direktorinya sudah ada, maka Git akan melakukan inisialisasi di dalam direktori tersebut.&lt;/p></description></item><item><title>Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</title><link>https://gitkodachi.github.io/post/laravel-11/</link><pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/post/laravel-11/</guid><description>&lt;h2 id="pengenalan-laravel">Pengenalan Laravel&lt;/h2>
-&lt;p>&lt;strong>Laravel&lt;/strong> adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web. Framework ini mengikuti pola arsitektur Model-View-Controller (MVC) dan menyediakan berbagai fitur serta alat yang berguna untuk mempercepat proses pengembangan web.&lt;/p>
-&lt;p>&lt;strong>Laravel&lt;/strong> sangat populer di kalangan pengembang web karena dokumentasinya yang lengkap, komunitas yang aktif, dan ekosistem paket yang kaya yang memungkinkan pengembang untuk memperluas fungsi dasar framework sesuai kebutuhan.&lt;/p>
-&lt;p>&lt;strong>Framework&lt;/strong>: adalah kumpulan program berupa file pustaka (libraries) atau class-class yang mendukung dalam pengembangan aplikasi secara terstruktur dan independen terhadap aplikasi. Software Framework adalah sebuah desain yang bisa digunakan berulang-ulang (re-usable design) untuk sebuah sistem atau sub sistem piranti lunak.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Octocat Code</title>
+    <link>http://localhost:1313/post/</link>
+    <description>Recent content on Octocat Code</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cara Setup SSH Key untuk Github agar Bisa Ngepush Tanpa Password</title>
+      <link>http://localhost:1313/post/github-ssh/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/github-ssh/</guid>
+      <description>&lt;p&gt;Kita bisa melakukan push ke Github melalui dua metode yakni, melalui protokol HTTPS dan SSH.&lt;/p&gt;&#xA;&lt;p&gt;Jika kita menggunakan HTTPS, maka kita akan dimintai password di setiap kali melakukan push. Sedangkan kalau pakai SSH, ini tidak perlu..&lt;/p&gt;&#xA;&lt;p&gt;..karena password-nya akan diwakili oleh SSH Key.&lt;/p&gt;&#xA;&lt;p&gt;Pada tutorial ini, kita akan belajar gimana cara setup SSH Key untuk Github. Sehingga nanti bisa melakukan push tanpa harus ngetik password terus menerus.&lt;/p&gt;&#xA;&lt;p&gt;Mari kita mulai!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tutorial Git #2: Cara Membuat Repositori Baru dalam Proyek</title>
+      <link>http://localhost:1313/post/git-init/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/git-init/</guid>
+      <description>&lt;p&gt;Repositori &lt;em&gt;(repository)&lt;/em&gt; dalam bahasa indonesia artinya gudang. Repositori merupakan istilah yang digunakan untuk direktori proyek yang menggunakan Git.&lt;/p&gt;&#xA;&lt;p&gt;Jika kita memiliki sebuah direktori dengan nama &lt;strong&gt;proyek-01&lt;/strong&gt; dan di dalamnya sudah menggunakan git, maka kita sudah punya repositori bernama &lt;strong&gt;proyek-01&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;membuat-repository&#34;&gt;Membuat Repository&lt;/h3&gt;&#xA;&lt;p&gt;Pembuatan repositori dapat dilakukan dengan perintah &lt;strong&gt;git init nama-dir&lt;/strong&gt;. Contoh:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git init proyek-01&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Perintah tersebut akan membuat direktori bernama &lt;strong&gt;proyek-01&lt;/strong&gt;. Kalau direktorinya sudah ada, maka Git akan melakukan inisialisasi di dalam direktori tersebut.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</title>
+      <link>http://localhost:1313/post/laravel-11/</link>
+      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/laravel-11/</guid>
+      <description>&lt;h2 id=&#34;pengenalan-laravel&#34;&gt;Pengenalan Laravel&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Laravel&lt;/strong&gt; adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web. Framework ini mengikuti pola arsitektur Model-View-Controller (MVC) dan menyediakan berbagai fitur serta alat yang berguna untuk mempercepat proses pengembangan web.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Laravel&lt;/strong&gt; sangat populer di kalangan pengembang web karena dokumentasinya yang lengkap, komunitas yang aktif, dan ekosistem paket yang kaya yang memungkinkan pengembang untuk memperluas fungsi dasar framework sesuai kebutuhan.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Framework&lt;/strong&gt;: adalah kumpulan program berupa file pustaka (libraries) atau class-class yang mendukung dalam pengembangan aplikasi secara terstruktur dan independen terhadap aplikasi. Software Framework adalah sebuah desain yang bisa digunakan berulang-ulang (re-usable design) untuk sebuah sistem atau sub sistem piranti lunak.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

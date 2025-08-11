@@ -1,12 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MySQL on Octocat Code</title><link>https://gitkodachi.github.io/topik/mysql/</link><description>Recent content in MySQL on Octocat Code</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 25 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://gitkodachi.github.io/topik/mysql/index.xml" rel="self" type="application/rss+xml"/><item><title>Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</title><link>https://gitkodachi.github.io/kategori/web-programming/laravel/</link><pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/kategori/web-programming/laravel/</guid><description>&lt;h2 id="laravel">#Laravel&lt;/h2>
-&lt;h2 id="php">#PHP&lt;/h2>
-&lt;h2 id="mysql">#MySQL&lt;/h2>
-&lt;p>Pemula bisa langsung bikin CRUD!&lt;/p>
-&lt;h1 id="tutorial-laravel-untuk-pemula">Tutorial Laravel untuk Pemula&lt;/h1>
-&lt;p>&lt;strong>Sabardi&lt;/strong>&lt;/p>
-&lt;hr>
-&lt;h2 id="pengenalan-laravel">Pengenalan Laravel&lt;/h2>
-&lt;p>&lt;strong>Laravel&lt;/strong> adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web&amp;hellip;&lt;/p></description></item><item><title>Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</title><link>https://gitkodachi.github.io/post/laravel-11/</link><pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate><guid>https://gitkodachi.github.io/post/laravel-11/</guid><description>&lt;h2 id="pengenalan-laravel">Pengenalan Laravel&lt;/h2>
-&lt;p>&lt;strong>Laravel&lt;/strong> adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web. Framework ini mengikuti pola arsitektur Model-View-Controller (MVC) dan menyediakan berbagai fitur serta alat yang berguna untuk mempercepat proses pengembangan web.&lt;/p>
-&lt;p>&lt;strong>Laravel&lt;/strong> sangat populer di kalangan pengembang web karena dokumentasinya yang lengkap, komunitas yang aktif, dan ekosistem paket yang kaya yang memungkinkan pengembang untuk memperluas fungsi dasar framework sesuai kebutuhan.&lt;/p>
-&lt;p>&lt;strong>Framework&lt;/strong>: adalah kumpulan program berupa file pustaka (libraries) atau class-class yang mendukung dalam pengembangan aplikasi secara terstruktur dan independen terhadap aplikasi. Software Framework adalah sebuah desain yang bisa digunakan berulang-ulang (re-usable design) untuk sebuah sistem atau sub sistem piranti lunak.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MySQL on Octocat Code</title>
+    <link>http://localhost:1313/topik/mysql/</link>
+    <description>Recent content in MySQL on Octocat Code</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/topik/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</title>
+      <link>http://localhost:1313/kategori/web-programming/laravel/</link>
+      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/web-programming/laravel/</guid>
+      <description>&lt;h2 id=&#34;laravel&#34;&gt;#Laravel&lt;/h2&gt;&#xA;&lt;h2 id=&#34;php&#34;&gt;#PHP&lt;/h2&gt;&#xA;&lt;h2 id=&#34;mysql&#34;&gt;#MySQL&lt;/h2&gt;&#xA;&lt;p&gt;Pemula bisa langsung bikin CRUD!&lt;/p&gt;&#xA;&lt;h1 id=&#34;tutorial-laravel-untuk-pemula&#34;&gt;Tutorial Laravel untuk Pemula&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Sabardi&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;pengenalan-laravel&#34;&gt;Pengenalan Laravel&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Laravel&lt;/strong&gt; adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</title>
+      <link>http://localhost:1313/post/laravel-11/</link>
+      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/laravel-11/</guid>
+      <description>&lt;h2 id=&#34;pengenalan-laravel&#34;&gt;Pengenalan Laravel&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Laravel&lt;/strong&gt; adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web. Framework ini mengikuti pola arsitektur Model-View-Controller (MVC) dan menyediakan berbagai fitur serta alat yang berguna untuk mempercepat proses pengembangan web.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Laravel&lt;/strong&gt; sangat populer di kalangan pengembang web karena dokumentasinya yang lengkap, komunitas yang aktif, dan ekosistem paket yang kaya yang memungkinkan pengembang untuk memperluas fungsi dasar framework sesuai kebutuhan.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Framework&lt;/strong&gt;: adalah kumpulan program berupa file pustaka (libraries) atau class-class yang mendukung dalam pengembangan aplikasi secara terstruktur dan independen terhadap aplikasi. Software Framework adalah sebuah desain yang bisa digunakan berulang-ulang (re-usable design) untuk sebuah sistem atau sub sistem piranti lunak.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -241,3 +241,10 @@ pre:hover .copy-btn {
   border-radius: 12px; /* sudut melengkung untuk iframe */
 }
 
+/* Daftar Tutorial */
+.tutorial-checklist {
+  font-family: system-ui, sans-serif;
+}
+.tutorial-checklist li {
+  transition: background 0.2s ease;
+}
