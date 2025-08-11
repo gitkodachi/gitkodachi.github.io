@@ -410,6 +410,6 @@ Berikutnya silakan pelajari tentang definisi tag, elemen, dan atribut:
 
 - [Belajar HTML #02: Mengenal tag, elemen, dan atribut dalam HTML](#)
 
-{{< alert type="tip" title="Belajar HTML" >}}
-[Belajar HTML #02: Mengenal tag, elemen, dan atribut dalam HTML](http://localhost:1313/tutorial/html/)
+{{< alert type="info" title="" >}}
+"Untuk tutorial HTML lainnya, silakan cek di [List tutorial HTML](#)"
 {{< /alert >}}

@@ -119,3 +119,256 @@ Tag HTML nantinya akan ditulis bertumpuk-tumpuk. Artinya, di dalam tag ada tag l
 Tapi tenang saja.. saya punya resep agar kamu mudah mengingatnya:
 
 {{< embed url="https://www.youtube.com/watch?v=5GnFZ8XpMak&t=585s" >}}
+
+Jika kamu paham maksud dari jokes di atas, maka bagus.. saya tidak perlu jelaskan lagi.
+
+Tapi kalau belum paham, berikut ini penjelasannya:
+
+Tag yang pertama dibuat, harus ditutup terakhir. Bukan ditutup pertama.
+
+Contoh:
+
+```html
+<i><b><u>memasak</u></b></i>
+```
+
+Tag `<i>` ditutup terakhir, karena ia yang ditulis pertama. Lalu tag `</u>` ditutup pertama kali karena ia berada di dalam tag `<b>` dan `<i>`.
+
+### Apa itu Elemen ?
+
+Elemen dalam HTML adalah sebuah komponen yang menyusun dokumen HTML. Elemen kadang juga disebut sebagai node, karena ia merupakan salah satu jenis node yang menyusun dokumen HTML dalam diagram HTML tree.
+
+  {{< image 
+  src="images/content/tutorial/html/pohon-html.gif" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+  >}}
+
+  Pada diagram tersebut, terdapat tiga macam node.. yakni: **Node elemen**, **Node atribut**, dan **Node teks**.
+
+Elemen dibentuk dari **tag pembuka**, **isi tag**, dan t**ag penutup**. Kadang juga ditambahkan beberapa atribut.
+
+Contoh:
+
+  {{< image 
+  src="images/content/tutorial/html/element.png" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+  >}}
+
+Pada contoh di atas, terdapat satu elemen `<p>` dengan atribut align="center" dan memiliki isi berupa teks, yakni Hello World!.
+
+Elemen tidak selalu berisi teks, kadang ia juga akan berisi elemen lain. Ini biasanya kita sebut dengan nested element atau elemen di dalam elemen.
+
+Bila digambarkan dalam bentuk kotak persegi, maka akan terlihat seperti ini:
+
+  {{< image 
+  src="images/content/tutorial/html/element-html.png" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+  >}}
+
+  Elemen HTML ada banyak jenisnya. Ada elemen khusus untuk teks, ada elemen untuk multimedia, script, tabel, metadata, dll. Nanti kita akan pelajari ini secara bertahap. Semua jenis elemen HTML bisa kamu baca di sini: [HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element).
+
+Beberapa elemen HTML kadang ditambahkan atribut sebagai pelengkap.
+
+### Apa itu Atribut ?
+
+Atribut adalah kata kunci khusus yang berada di dalam tag pembuka. Atribut juga disebut sebagai modifier yang akan menentukan perilaku dari elemen.
+
+  {{< image 
+  src="images/content/tutorial/html/atribut.png" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+  >}}
+
+Atribut dapat ditambahkan pada elemen manapun. Ada juga elemen yang mewajibkan menggunakan atribut seperti elemen `<a>`, `<img>`, `<video>`, dll.
+
+Contoh:
+
+```html
+<a href="https://petanikode.com">Petani Kode.com</a>
+```
+
+Tag `<a>` adalah tag untuk membuat link. Tag ini mewajibkan menambahkan atribut href untuk menyatakan halaman tujuan dari link.
+
+Jumlah atribut pada elemen bisa lebih dari satu.
+
+Contoh:
+
+```html
+<img src="gambar.jpg" width="100" height="100" />
+```
+
+Atribut src adalah atribut khusus untuk tag <img> yang fungsinya untuk menentukan gambar yang akan ditampilkan. Lalu atribut width dan height adalah atribut yang mengatur ukurannya.
+
+### Jenis-jenis Atribut HTMl
+
+Tiap-tiap elemen kadang memiliki atribut khusus yang hanya bisa digunakan pada elemen tersebut. Ada juga atribut yang bersifat global dan bisa ditambahkan ke semua elemen.
+
+Berikut ini jenis-jenis atribut yang harus diketahui:
+
+
+|**Nama Atribut**| **Deskripsi atau fungsi**                                                |
+|:---------------|:-------------------------------------------------------------------------|
+|accesskey	     | Menentukan tombol shortcut untuk mengaktifkan atau fokus pada elemen     |
+|class	         | Menentukan class CSS yang akan digunakan                                 |
+|contenteditable | Menentukan isi elemen bisa diedit atau tidak                             |
+|data-*	         | Digunakan untuk menyimpan data                                           |
+|dir	           | Menentukan arah teks dari elemen (kiri ke kanan atau sebaliknya)         |
+|draggable	     | Menentukan apakah elemen bisa di drag atau tidak                         |
+|hidden	         | untuk menyembunyikan elemen                                              |
+|id	             | Menentukan id unik untuk elemen                                          |
+|lang	           | Menentukan bahasa yang digunakan untuk isi elemen                        |
+|spellcheck	     | Menentukan apakah isi elemen harus dilakukan pengejaan grammar atau tudak|
+|style	         | Menentukan inline CSS untuk elemen                                       |
+|tabindex	       | Menentukan urutan atau indeks tab dari elemen (saat tombol tab ditekan)  |
+|title	         | Menentukan informasi tambahan tentang elemen                             |
+|translate	     | Menentukan apakah konten dari elemen bisa diterjemahkan atau tidak       |
+
+#### 2. Atribut Event
+
+Atribut event adalah atribut yang digunakan untuk menentukan aksi yang akan dilakukan saat terjadi sesuatu pada elemen. Atribut ini nanti akan banyak digunakan pada [pemrograman Javascript](#).
+
+Berikut ini daftar atribut event saat terjadi sesuatu pada Jendela browser:
+
+|**Nama atribut**|	**Nilai**	     |   **Fungsi: Menjalankan script**                 |
+|:---------------|:----------------|:-------------------------------------------------|
+|onafterprint	   | kode javascript | setelah dokumen dicetak                          |  
+|onbeforeprint	 | kode javascript | sebelum dokumen dicetak                          |
+|onbeforeunload	 | kode javascript | sebelum saat dokumen tidak ter-load              |
+|onerror	       | kode javascript | saat terjadi error                               |
+|onhashchange	   | kode javascript | saat terjadi perubahan pada bagian anchor di URL |
+|onload	         | kode javascript | setelah loading selesai                          |
+|onmessage	     | kode javascript | saat ada pesan                                   |
+|onoffline	     | kode javascript | saat tiba-tiba offline                           |
+|ononline	       | kode javascript | saat tiba-tiba online                            |
+|onpagehide	     | kode javascript | saat user tidak sedang membuka halaman web       |
+|onpageshow	     | kode javascript | saat user membuka kembali halaman web            |
+|onpopstate	     | kode javascript | saat history browser berubah                     |
+|onresize	       | kode javascript | saat ukuran jendela browser berubah              |
+|onstorage	     | kode javascript | saat area penyimpanan (Web Storage) di-update    |
+|onunload	       | kode javascript | saat web browser ditutup                         |
+
+Selain atribut tersebut, masih banyak lagi atribut event yang lainnya. Semuanya bisa kamu lihat di: [HTML Event Attributes](#).
+
+#### 3. Atribut Khusus
+Atribut khusus adalah atribut yang hanya bisa dipakai pada elemen tertentu dan kadang atribut ini tidak bisa digunakan pada elemen yang lain.
+
+Contoh:
+
+
+|**Nama atribut**	|**Bisa dipakai di tag**                        |
+|:----------------|:----------------------------------------------|
+|src	            |`<audio>`, `<embed>`, `<iframe>`, `<img>`, dll |
+|href	            |`<a>`, `<link>`                                |
+|action	          |`<form>`                                       |
+|autoplay	        |`<audio>`, `<video>`                           |
+
+
+### Cara Menulis Atribut yang Benar!
+
+Penulisan atribut sebenarnya gampang.. kita hanya perlu menambahkannya pada tag pembuka dengan format seperti ini:
+
+```html
+bana-atribut="nilai"
+```
+
+Namun, ada beberapa hal yang perlu diperhatikan agar penulisannya benar dan valid:
+
+#### 1. Gunakan Huruf Kecil
+
+Menulis atribut dengan huruf besar sah-sah saja, dan bahkan valid menurut validator W3C.
+
+Tapi saya sarankan menggunakan huruf kecil saja. Karena lebih umum digunakan dan juga mudah terbaca.
+
+Contoh: (bagus)
+
+```html
+<p align="center">Belajar HTML di Petani Kode</p>
+```
+
+#### 2. Gunakan Tanda Kutip
+
+Gunakan tanda petik untuk mengisi nilai atribut yang mengandung teks.
+
+Mengapa?
+
+Karena jika terdapat lebih dari satu kata, ia akan menciptakan spasi dan akan dianggap sebagai atribut baru.
+
+Contoh: (bagus)
+
+```html
+<h1 title="tutorial HTML untuk pemula">Belajar HTML</h1>
+```
+
+Contoh: (buruk)
+
+```html
+<h1 title=tutorial HTML untuk pemula>Belajar HTML</h1>
+```
+
+Tanda petik yang digunakan, boleh petik ganda (") dan juga petik tunggal (').
+
+Nah untuk nilai angka, boleh pakai tanda petik dan juga boleh tidak.
+
+Contoh:
+
+```html
+<img src="gambar.jpg" width=120 height=120 />
+```
+
+Lalu, untuk atribut yang bernilai boolean (true dan false).. nilainya boleh ditulis dan boleh tidak.
+
+Contoh:
+
+```html
+<input type="text" required="true" />
+<input type="text" required />
+```
+
+#### 3. Penggunaan Spasi
+
+Jika ada atribut yang memiliki lebih dari satu nama, maka ia ditulis dengan tanda min (-), bukan spasi.
+
+Contoh:
+
+```html
+<img data-src="gambar.jpg" />
+```
+
+Lalu, spasi juga digunakan untuk memisahkan dua atau lebih atribut.
+
+Contoh:
+
+```html
+<img class="lazyload" data-src="gambar.jpg" src="placeholder.jpg" />
+```
+
+Bisa juga ditulis seperti ini:
+
+```html
+<img class="lazyload" 
+    data-src="gambar.jpg" 
+    src="placeholder.jpg" />
+```
+
+### Apa Selanjutnya?
+
+Kita baru saja belajar tentang Tag, Atribut, dan Elemen dalam HTML. Saya kira kamu sudah dapat membedakan ketiga hal ini.
+
+Elemen adalah komponen yang menyusun dokumen HTML. Sedangkan Tag adalah penanda untuk memulai dan mengakhiri elemen. Lalu atribut adalah modifier untuk menentukan perilaku elemen.
+
+Nah, selanjutnya kita akan berkenalan dengan elemen-elemen dasar di HTML seperti paragraf, heading, list, tabel, link, form, dan lain-lain.
+
+Karena itu, silakan lanjutkan pelajari tentang:
+
+- [Belajar HTML #03: Membuat Paragraf pada HTML](#)
+- [Belajar HTML #04: Membuat Heading pada HTML](#)
+- [Belajar HTML #05: Membuat Komentar pada HTML](#)
+- [Belajar HTML #06: Text Formatting pada HTML](#)
+- [Belajar HTML #07: Membuat link di HTML](#)
+
+{{< alert type="info" title="" >}}
+"Untuk tutorial HTML lainnya, silakan cek di [List tutorial HTML](#)"
+{{< /alert >}}

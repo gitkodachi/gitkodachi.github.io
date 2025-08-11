@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SSH on Octocat Code</title>
-    <link>http://localhost:1313/topik/ssh/</link>
+    <link>https://gitkodachi.github.io/topik/ssh/</link>
     <description>Recent content in SSH on Octocat Code</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/topik/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://gitkodachi.github.io/topik/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cara Setup SSH Key untuk Github agar Bisa Ngepush Tanpa Password</title>
-      <link>http://localhost:1313/post/github-ssh/</link>
+      <link>https://gitkodachi.github.io/post/github-ssh/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/github-ssh/</guid>
+      <guid>https://gitkodachi.github.io/post/github-ssh/</guid>
       <description>&lt;p&gt;Kita bisa melakukan push ke Github melalui dua metode yakni, melalui protokol HTTPS dan SSH.&lt;/p&gt;&#xA;&lt;p&gt;Jika kita menggunakan HTTPS, maka kita akan dimintai password di setiap kali melakukan push. Sedangkan kalau pakai SSH, ini tidak perlu..&lt;/p&gt;&#xA;&lt;p&gt;..karena password-nya akan diwakili oleh SSH Key.&lt;/p&gt;&#xA;&lt;p&gt;Pada tutorial ini, kita akan belajar gimana cara setup SSH Key untuk Github. Sehingga nanti bisa melakukan push tanpa harus ngetik password terus menerus.&lt;/p&gt;&#xA;&lt;p&gt;Mari kita mulai!&lt;/p&gt;</description>
     </item>
   </channel>
