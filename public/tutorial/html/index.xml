@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tutorial HTML untuk Pemula on Octocat Code</title>
-    <link>http://localhost:1313/tutorial/html/</link>
+    <link>https://gitkodachi.github.io/tutorial/html/</link>
     <description>Recent content in Tutorial HTML untuk Pemula on Octocat Code</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jul 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tutorial/html/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://gitkodachi.github.io/tutorial/html/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Belajar HTML dari Nol: Pengenalan Dasar HTML untuk Pemula</title>
-      <link>http://localhost:1313/tutorial/html/html-dasar/</link>
+      <link>https://gitkodachi.github.io/tutorial/html/html-dasar/</link>
       <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tutorial/html/html-dasar/</guid>
+      <guid>https://gitkodachi.github.io/tutorial/html/html-dasar/</guid>
       <description></description>
     </item>
   </channel>

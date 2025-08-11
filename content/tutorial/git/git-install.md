@@ -261,4 +261,4 @@ Dengan demikian, Git akan otomatis menggunakan nama **main** sebagai branch utam
 
 ### Apa Selanjutnya?
 
-Bagus, kita sudah mempersiapkan semuanya. Selanjutnya kita bisa langsung belajar membuat [repositori git]({{< ref "tutorial/git/git-init" >}}).
+Bagus, kita sudah mempersiapkan semuanya. Selanjutnya kita bisa langsung belajar membuat [repositori git]({{< ref "/post/git-init" >}}).
