@@ -1,0 +1,44 @@
+{{/* Ambil parameter URL */}}
+{{ $raw := .Get "url" | default "" }}
+{{ $u := trim $raw " " | chomp }}
+{{ $low := lower $u }}
+
+{{ if not $u }}
+  <p style="color:red;">❌ Embed error: URL tidak ditemukan</p>
+{{ else }}
+  {{ $embedURL := "" }}
+
+  {{ if or (findRE "youtu\\.be" $low) (findRE "youtube\\.com" $low) }}
+    {{ $id := replaceRE "^.*(youtu\\.be/|v=)([^&#]+).*$" "$2" $u }}
+    {{ $embedURL = printf "https://www.youtube.com/embed/%s" $id }}
+
+  {{ else if findRE "twitter\\.com" $low }}
+    <blockquote class="twitter-tweet">
+      <a href="{{ $u }}"></a>
+    </blockquote>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  {{ else if findRE "tiktok\\.com" $low }}
+    {{ $id := replaceRE "^.*/video/([0-9]+).*$" "$1" $u }}
+    {{ $embedURL = printf "https://www.tiktok.com/embed/%s" $id }}
+
+  {{ else if findRE "instagram\\.com" $low }}
+    {{ $embedURL = printf "%s%s" $u "embed" }}
+
+  {{ else if findRE "vimeo\\.com" $low }}
+    {{ $id := replaceRE "^.*vimeo\\.com/([0-9]+).*$" "$1" $u }}
+    {{ $embedURL = printf "https://player.vimeo.com/video/%s" $id }}
+
+  {{ else if findRE "facebook\\.com" $low }}
+    {{ $embedURL = printf "https://www.facebook.com/plugins/video.php?href=%s&show_text=false" $u }}
+
+  {{ else }}
+    <p style="color:red;">⚠️ Embed error: Platform tidak dikenali</p>
+  {{ end }}
+
+  {{ if $embedURL }}
+    <div class="embed-container mb-4">
+      <iframe src="{{ $embedURL }}" frameborder="0" allowfullscreen loading="lazy"></iframe>
+    </div>
+  {{ end }}
+{{ end }}
