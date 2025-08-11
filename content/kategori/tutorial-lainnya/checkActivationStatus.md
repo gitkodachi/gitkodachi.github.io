@@ -75,9 +75,5 @@ gitGraph
 {{< /mermaid >}}
 
 {{< embed url="https://youtu.be/dQw4w9WgXcQ" >}}
-{{< embed url="https://twitter.com/stefanbc/status/667164837641502720" >}}
-{{< embed url="https://www.tiktok.com/@scout2015/video/7118395091903522053" >}}
-{{< embed url="https://www.instagram.com/p/CQ0lh3psW7K/" >}}
-{{< embed url="https://vimeo.com/76979871" >}}
-{{< embed url="https://www.facebook.com/username/videos/1234567890/" >}}
+
 

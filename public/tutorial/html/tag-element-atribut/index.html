@@ -466,13 +466,170 @@
 
       
       <div class="content">
-        <h3 id="perbedaan-tag-element-dan-atribut">Perbedaan Tag, Element, dan Atribut</h3>
-<ol>
-<li><strong>Tag</strong>: Penanda awalan dan akhiran
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Ini paragraf<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></span></code></pre></div></li>
-</ol>
-<p>Belajar HTML #02: Mengenal Tag, Elemen, dan Atribut dalam HTML</p>
+        <p>Tag, elemen, dan atribut merupakan tiga bagian penting yang ada di dalam HTML. Bagi kamu yang baru belajar HTML, wajib hukumnya untuk mengetahui ketiga Hal ini.</p>
+<p>Apa itu Tag?</p>
+<p>Apa itu Elemen?</p>
+<p>Apa itu Atribut?</p>
+<p>Serta apa perbedaan Tag, Elemen, dan Atribut?</p>
+<p>Mari kita bahas…</p>
+<h3 id="apa-itu-tag">Apa itu Tag?</h3>
+<p>Tag adalah sebuah <strong>penanda awalan</strong> dan akhiran dari sebuah <strong>elemen</strong> di HTML. Tag dibuat dengan kurung sudut (&lt;&hellip;&gt;), lalu di dalamnya berisi nama tag dan kadang juga ditambahkan dengan atribut.</p>
+<p>Contoh: <code>&lt;p&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;head&gt;</code>, dan sebagainya.</p>
+<p>Tag selalu ditulis berpasangan. Ada tag pembuka dan ada tag penutupnya. Namun, ada juga beberapa <a href="#">tag yang tidak memiliki pasangan penutup</a>. Tag penutup ditulis dengan menambahkan garis miring (/) di depan nama tag.</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/tutorial/html/tag.png" 
+      alt="Deskripsi gambar" 
+      class="mx-auto cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    const isZoomed = img.classList.toggle('zoomed');
+    
+    if (isZoomed) {
+      
+      const scale = Math.min(
+        window.innerWidth * 0.9 / img.naturalWidth,
+        window.innerHeight * 0.9 / img.naturalHeight,
+        1.0 
+      );
+      
+      img.style.setProperty('--zoom-scale', scale);
+      document.body.style.overflow = 'hidden';
+      
+      
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.dataset.escHandler = handleKey;
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', img.dataset.escHandler);
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1000;
+    cursor: zoom-out;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  
+   
+  body.overflow-hidden {
+    overflow: hidden !important;
+  }
+  </style>
+<p>Setiap tag memiliki fungsi masing-masing. Ada yang digunakan untuk membuat judul, membuat link, membuat paragraf, heading, dan lain-lain.</p>
+<p>Masih ingat sejarah HTML?</p>
+<p>Dulu.. awalnya HTML cuma punya <strong>18 tag</strong>. Sekarang HTML sudah punya sekitar <strong>250</strong> tag.</p>
+<p>Wah! banyak ya.</p>
+<p>Apa semua tag ini harus kita hafal?</p>
+<p>Jawabannya:</p>
+<p><strong>Tidak harus</strong>, saja juga tidak bisa menghafal semuanya. Cukup ketahui tag-tag dasar saja.</p>
+<p>Berikut ini daftar tag-tag dasar, yang menurut saya harus kamu ingat.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Tag</th>
+          <th style="text-align: left">Fungsi</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>&lt;html&gt;</code></td>
+          <td style="text-align: left">untuk memulai dokumen HTML</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>&lt;head&gt;</code></td>
+          <td style="text-align: left">untuk membuat bagian head</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>&lt;body&gt;</code></td>
+          <td style="text-align: left">untuk membuat bagian body</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>&lt;h1&gt;</code></td>
+          <td style="text-align: left">sampai <code>&lt;h6&gt;</code>	untuk membuat heading pada artikel</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>&lt;p&gt;</code></td>
+          <td style="text-align: left">untuk membuat paragraf</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>&lt;-!-- --&gt;</code></td>
+          <td style="text-align: left">untuk membuat komentar</td>
+      </tr>
+  </tbody>
+</table>
+<p>Beberapa tag ini sudah kita coba pada <a href="#">tutorial pertama</a> dan juga ada yang belum.</p>
+<p>Tenang saja.. Nanti juga saya akan perkenalkan tag-tag lain yang umum digunakan dalam pembuatan web.</p>
+<p>Untuk saat ini, cukup pahami: <strong>Apa itu tag dan cara menulisnya</strong>.</p>
+<h4 id="1-tag-tag-wajib">1. Tag-tag wajib</h4>
+<p>Ada beberapa tag yang wajib ada di HTML. Tag ini harus kamu tulis.. kalau tidak, bisa jadi kode HTML-mu akan error menurut validator W3C.</p>
+<p>Berikut ini daftar tag yang wajib ada di HTML:</p>
+<ul>
+<li><code>&lt;!DOCTYPE html&gt;</code> — untuk deklarasi type dokumen;</li>
+<li><code>&lt;html&gt;</code> — tag utama dalam HTML;</li>
+<li><code>&lt;head&gt;</code> — untuk bagian kepala dari dokumen;</li>
+<li><code>&lt;title&gt;</code> — untuk judul web;</li>
+<li><code>&lt;body&gt;</code> — untuk bagian body dari dokumen.</li>
+</ul>
+<h4 id="2-gunakan-huruf-kecil">2. Gunakan Huruf Kecil</h4>
+<p>Hindari menggunakan huruf besar dalam menuliskan nama tag dan sebaiknya gunakan huruf kecil saja.</p>
+<p>Huruf kecil lebih gampang diketik dan juga akan membuat kode HTML terlihat lebih bersih dan rapi.</p>
+<p>Contoh: (bagus)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Belajar tentang tag di HTML<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span> 
+</span></span></code></pre></div><p>contoh: (buruk)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">BODY</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">P</span><span class="p">&gt;</span>Belajar tentang tag di HTML<span class="p">&lt;/</span><span class="nt">P</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">BODY</span><span class="p">&gt;</span> 
+</span></span></code></pre></div><p>Tapi khusus untuk tag <code>&lt;!DOCTYPE html&gt;</code>.. ia ditulis dengan huruf besar. Sebenarnya bisa juga dengan huruf kecil dan akan valid menurut validator W3C.</p>
+<p>Tapi untuk dokumen XHTML, menggunakan <strong>DOCTYPE</strong> dengan huruf kecil akan mengakibatkan error.</p>
+<h4 id="3-pastikan-menutup-tag-dengan-benar">3. Pastikan Menutup Tag dengan benar</h4>
+<p>Tag HTML nantinya akan ditulis bertumpuk-tumpuk. Artinya, di dalam tag ada tag lagi. Kadang kita sering salah dalam menutup tag yang bertumpuk ini. Akibatnya, kode HTML kita tidak valid.</p>
+<p>Tapi tenang saja.. saya punya resep agar kamu mudah mengingatnya:</p>
+
+
+
+
+
+
+  
+
+  
+    
+    
+
+  
+
+  
+    <div class="embed-container mb-4">
+      <iframe src="https://www.youtube.com/embed/5GnFZ8XpMak" frameborder="0" allowfullscreen loading="lazy"></iframe>
+    </div>
+  
+
+
 
         
         
