@@ -14,7 +14,7 @@
             <!-- Konten di kanan -->
             <div class="grow">
                 <h1 class="font-extrabold text-xl md:text-3xl lg:text-4xl tracking-tight mb-3">
-                    {{ .LinkTitle }}
+                    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
                 </h1>
                 <p class="text-base text-slate-500 dark:text-slate-300">
                     {{ .Description | default .Summary }}
@@ -50,7 +50,7 @@
                             d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
                         </path>
                     </svg>
-                    <span>{{ .Title }}</span>
+                    <span>{{ .LinkTitle | default .Title }}</span>
                 </a>
             </li>
             {{ end }}
@@ -81,7 +81,9 @@
           </a>
           <div class="grow">
             <h3 class="text-md font-bold mb-2 tracking-tight line-clamp-1">
-              <a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a>
+              <a href="{{ .RelPermalink }}" title="{{ .LinkTitle | default .Title }}">
+              {{ .LinkTitle | default .Title }}
+            </a>
             </h3>
             <p class="text-xs text-slate-500 dark:text-slate-300 line-clamp-2">
               {{ .Description | truncate 80 }}
@@ -91,11 +93,6 @@
       </div>
       {{ end }}
     {{ end }}
-  </div>
-
-  <!-- Newsletter SEKARANG ADA DI SINI, masih dalam div "Tutorial Lainnya" -->
-  <div class="p-6 mt-8 rounded-2xl text-slate-500 dark:text-slate-300 bg-white dark:bg-slate-800 shadow-md">
-    {{ partial "components/newsletter.html" . }}
   </div>
 </div>
 

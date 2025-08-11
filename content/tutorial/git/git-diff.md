@@ -1,8 +1,10 @@
 ---
-title: "Belajar Git #05: Melihat Perbandingan Revisi dengan Git Diff"
+title: "Tutorial Git #5: Melihat Perbandingan Revisi dengan Git Diff"
+linkTitle: "Belajar Git #05: Melihat Perbandingan Revisi dengan Git Diff"
 date: 2025-06-27
 thumbnail: "/images/cover/git-petanikode.png"
 image: "/images/cover/git-petanikode.png"
+weight: 5
 series: "git"
 tutorial: ["Git"]
 topik: ["Git"]

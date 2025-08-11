@@ -4,7 +4,6 @@ date: 2025-06-27
 thumbnail: "/images/cover/github-ssh.png"
 image: "/images/cover/github-ssh.png"
 series: ["git", "SSH", "Github"]
-tutorial: ["Git", "SSH", "Github"]
 topik: ["Git", "SSH", "Github"]
 description: "Pelajari dasar-dasar version control dengan Git untuk pemula."
 ---

@@ -1,8 +1,10 @@
 ---
-title: "Belajar Git #07: Menggunakan Percabangan untuk mencegah Konflik"
+title: "Tutorial Git #07: Menggunakan Percabangan untuk mencegah Konflik"
+linkTitle: "Belajar Git #07: Menggunakan Cabang untuk Mencegah Konflik"
 date: 2025-06-27
 thumbnail: "/images/cover/git-petanikode.png"
 image: "/images/cover/git-petanikode.png"
+weight: 7
 series: "git"
 tutorial: ["Git"]
 topik: ["Git"]

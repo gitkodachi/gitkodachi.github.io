@@ -1,8 +1,10 @@
 ---
 title: "Github Workflow: Cara Berkontribusi di Proyek Open Source"
+linkTitle: "Belajar Git #11: Cara Berkontribusi di Proyek Open Source dengan Git"
 date: 2025-06-27
 thumbnail: "/images/cover/github-workflow.png"
 image: "/images/cover/github-workflow.png"
+weight: 11
 series: ["git", "Github"]
 tutorial: ["Git", "Github"]
 topik: ["Git", "Github"]

@@ -1,8 +1,10 @@
 ---
-title: "Belajar Git #06: Perintah Untuk Membatalkan Revisi"
+title: "Tutorial Git #06: Perintah Untuk Membatalkan Revisi"
+linkTitle: "Belajar Git #06: Perintah untuk Membatalkan Revisi"
 date: 2025-06-27
 thumbnail: "/images/cover/git-petanikode.png"
 image: "/images/cover/git-petanikode.png"
+weight: 6
 series: "git"
 tutorial: ["Git"]
 topik: ["Git"]
