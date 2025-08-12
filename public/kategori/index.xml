@@ -6,8 +6,64 @@
     <description>Recent content on Octocat Code</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://gitkodachi.github.io/kategori/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Archive</title>
+      <link>https://gitkodachi.github.io/kategori/archive/</link>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://gitkodachi.github.io/kategori/archive/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Edukasi</title>
+      <link>https://gitkodachi.github.io/kategori/edukasi/</link>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://gitkodachi.github.io/kategori/edukasi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Multimedia</title>
+      <link>https://gitkodachi.github.io/kategori/multimedia/</link>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://gitkodachi.github.io/kategori/multimedia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Produktivitas</title>
+      <link>https://gitkodachi.github.io/kategori/produktivitas/</link>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://gitkodachi.github.io/kategori/produktivitas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Statistik</title>
+      <link>https://gitkodachi.github.io/kategori/statistik/</link>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://gitkodachi.github.io/kategori/statistik/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorial</title>
+      <link>https://gitkodachi.github.io/kategori/tutorial/</link>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://gitkodachi.github.io/kategori/tutorial/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Video</title>
+      <link>https://gitkodachi.github.io/kategori/video/</link>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://gitkodachi.github.io/kategori/video/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Virtualisasi</title>
+      <link>https://gitkodachi.github.io/kategori/virtualisasi/</link>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://gitkodachi.github.io/kategori/virtualisasi/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Basic Programming</title>
       <link>https://gitkodachi.github.io/kategori/basic-programming/</link>
@@ -30,67 +86,11 @@
       <description></description>
     </item>
     <item>
-      <title>Archive</title>
-      <link>https://gitkodachi.github.io/kategori/archive/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/archive/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Edukasi</title>
-      <link>https://gitkodachi.github.io/kategori/edukasi/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/edukasi/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Multimedia</title>
-      <link>https://gitkodachi.github.io/kategori/multimedia/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/multimedia/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Produktivitas</title>
-      <link>https://gitkodachi.github.io/kategori/produktivitas/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/produktivitas/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Statistik</title>
-      <link>https://gitkodachi.github.io/kategori/statistik/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/statistik/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tutorial</title>
-      <link>https://gitkodachi.github.io/kategori/tutorial/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/tutorial/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Tutorial Lainya</title>
       <link>https://gitkodachi.github.io/kategori/tutorial-lainnya/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://gitkodachi.github.io/kategori/tutorial-lainnya/</guid>
       <description>&lt;p&gt;Temukan tutorial yang ingin kamu pelajari.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Video</title>
-      <link>https://gitkodachi.github.io/kategori/video/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/video/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Virtualisasi</title>
-      <link>https://gitkodachi.github.io/kategori/virtualisasi/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/kategori/virtualisasi/</guid>
-      <description></description>
     </item>
     <item>
       <title>Windows</title>

@@ -22,6 +22,10 @@ git commit -m "Fitur baru: search modal"
 git push origin dev
 ```
 
+```bash
+{{ partial "components/post-grid.html" (dict "ctx" .) }}
+```
+
 ✅ 4) Setelah yakin fix & rapi → baru merge ke main pakai Pull Request (PR)
 
 > Note: Jangan merge manual di VS Code kecuali ngerti konfliknya.

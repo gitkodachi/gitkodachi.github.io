@@ -1,6 +1,7 @@
 ---
 title: "Winrar"
 author: "default"
+date: 2025-07-10
 description: "Winrar Merupakan Archive sebagai compress file dalam beberapa file atau folder menjadi satu file archive."
 os: ["Windows", "macOS"]
 kategori: ["edukasi", "archive"]

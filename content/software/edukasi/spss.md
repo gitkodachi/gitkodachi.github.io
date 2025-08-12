@@ -1,6 +1,7 @@
 ---
 title: "IBM SPSS Static"
 author: "default"
+date: 2025-07-10
 description: "SPSS software yang sangat populer untuk di gunakan analisis statistik segala bidang ilmiah"
 os: ["Windows", "macOS"]
 kategori: ["edukasi", "statistik"]

@@ -1,6 +1,7 @@
 ---
 title: "VLC Media Player"
-author: "default" # <-- harus ada dan sesuai dengan data/authors/default.yaml
+author: "default" 
+date: 2025-07-10
 description: "Photomath merupakan salah satu aplikasi yang berhasil menggabungkan antara kamera dan kalkulator"
 os: ["Windows", "macOS", "Linux", "Android", "iOS"]
 kategori: ["multimedia", "video"]

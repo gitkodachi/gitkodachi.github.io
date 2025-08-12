@@ -40,7 +40,7 @@ title = 'Octocat Code'
   flowchart = "{ useMaxWidth: false }"
 
 [pagination]
-  paperSize = 10
+  paperSize = 6
 
 [outputFormats]
   [outputFormats.SearchIndex]

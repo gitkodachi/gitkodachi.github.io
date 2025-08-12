@@ -1,6 +1,7 @@
 ---
 title: "Cara Menginstall Virtualbox di Windows"
 author: "default"
+date: 2025-07-10
 description: "VirtualBox perangkat lunak virtualisasi sumber terbuka dan gratis oleh Oracle digunakan untuk menjalankan berbagai sistem operasi dalam lingkungan Windows"
 os: ["Windows", "macOS", "Linux", "Android", "iOS"]
 kategori: ["produktivitas", "virtualisasi", "tutorial"]

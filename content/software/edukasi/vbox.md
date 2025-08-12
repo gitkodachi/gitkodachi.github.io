@@ -1,6 +1,7 @@
 ---
 title: "Virtual Box"
 author: "default"
+date: 2025-07-10
 description: "Virtualbox Terbaru plus extension pack merupakan salah satu software berguna sebagai virtual mechine installasi sistem operasi diatas windows, linux dll"
 os: ["Windows", "macOS"]
 kategori: ["edukasi", "virtualisasi", "tutorial"]
