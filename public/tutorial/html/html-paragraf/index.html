@@ -467,6 +467,7 @@
         <p>Setelah belajar tentang <a href="#">apa itu HTML, Tag, Elemen, dan Atribut</a>. Berikutnya, kita akan belajar tentang elemen-elemen dasar pada HTML yang sering digunakan dalam membuat web.</p>
 <p>Mari kita mulai dengan mengenal elemen paragraf.</p>
 <h3 id="membuat-paragraf-di-html">Membuat Paragraf di HTML</h3>
+<p>untuk membuat halaman web berikut<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <p>Paragraf adalah kumpulan dari beberapa kalimat. Pada web, Paragraf biasanya digunakan untuk menampilkan teks atau artikel.</p>
 <p>Paragraf pada HTML dibuat dengan tag <code>&lt;p&gt;</code>. Selain tag ini, ada juga tag pendukung lain seperti <code>&lt;div&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;br&gt;</code>, dan <code>&lt;pre&gt;</code>.</p>
 <p>Contoh:</p>
@@ -1041,7 +1042,518 @@
     overflow: hidden !important;
   }
   </style>
-<h2 id="tobe-contine">Tobe contine</h2>
+<p>coba perhatikan!</p>
+<p>Tag <code>&lt;p&gt;</code> vs Tag <code>&lt;div&gt;</code>
+Tag <code>&lt;p&gt;</code> dan Tag <code>&lt;div&gt;</code>, memiliki perilaku yang hampir sama. Tapi tag <code>&lt;div&gt;</code> sebenarnya bukanlah tag untuk membuat paragraf, melainkan tag untuk membuat layout web.</p>
+<p>Kadang tag <code>&lt;div&gt;</code> sering ‘disalahgunakan’ untuk membuat paragraf.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Tutorial Paragraf di HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Ini adalah sebuah paragraf yang berisi beberapa kalimat.
+</span></span><span class="line"><span class="cl">        Saya sedang belajar HTML di Petani Kode. Saat ini Sedang,
+</span></span><span class="line"><span class="cl">        Belajar tentang paragraf.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Paragraf adalah kumpulan dari beberapa kalimat yang saling
+</span></span><span class="line"><span class="cl">        mendukung. Punya ide pokok sebagai dasar dari paragraf itu sendiri.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Ini boleh-boleh, saja. Tapi hasilnya tidak akan sama seperti tag <code>&lt;p&gt;</code>.</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="https://gitkodachi.github.io/images/content/tutorial/html/tag-p-vs-div.png" 
+      alt="Deskripsi gambar" 
+      class="mx-auto cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    const isZoomed = img.classList.toggle('zoomed');
+    
+    if (isZoomed) {
+      
+      const scale = Math.min(
+        window.innerWidth * 0.9 / img.naturalWidth,
+        window.innerHeight * 0.9 / img.naturalHeight,
+        1.0 
+      );
+      
+      img.style.setProperty('--zoom-scale', scale);
+      document.body.style.overflow = 'hidden';
+      
+      
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.dataset.escHandler = handleKey;
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', img.dataset.escHandler);
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1000;
+    cursor: zoom-out;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  
+   
+  body.overflow-hidden {
+    overflow: hidden !important;
+  }
+  </style>
+<p>Paragraf yang dibuat dengan tag <code>&lt;div&gt;</code> tidak akan memiliki jarak margin antar paragraf.</p>
+<p>Tag <code>&lt;div&gt;</code> biasanya digunakan untuk membungkus teks yang ada di luar artikel. Contoh seperti teks pada footer, header, sidebar, dll.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Tutorial Paragraf di HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Ini adalah sebuah paragraf yang berisi beberapa kalimat.
+</span></span><span class="line"><span class="cl">        Saya sedang belajar HTML di Petani Kode. Saat ini Sedang,
+</span></span><span class="line"><span class="cl">        Belajar tentang paragraf.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Paragraf adalah kumpulan dari beberapa kalimat yang saling
+</span></span><span class="line"><span class="cl">        mendukung. Punya ide pokok sebagai dasar dari paragraf itu sendiri.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">hr</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="ni">&amp;copy;</span> 2020 Belajar HTML by Petani Kode<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Hasilnya:</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="https://gitkodachi.github.io/images/content/tutorial/html/p-footer.png" 
+      alt="Deskripsi gambar" 
+      class="mx-auto cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    const isZoomed = img.classList.toggle('zoomed');
+    
+    if (isZoomed) {
+      
+      const scale = Math.min(
+        window.innerWidth * 0.9 / img.naturalWidth,
+        window.innerHeight * 0.9 / img.naturalHeight,
+        1.0 
+      );
+      
+      img.style.setProperty('--zoom-scale', scale);
+      document.body.style.overflow = 'hidden';
+      
+      
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.dataset.escHandler = handleKey;
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', img.dataset.escHandler);
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1000;
+    cursor: zoom-out;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  
+   
+  body.overflow-hidden {
+    overflow: hidden !important;
+  }
+  </style>
+<h3 id="bonus-paragraph-style">Bonus: Paragraph Style</h3>
+<p>Sebenarnya ini ranah pembahasan tentang CSS bukan HTML. Karena itu, kamu boleh baca dan juga boleh tidak.</p>
+<p>Paragraph Style adalah style CSS yang kita berikan kepada paragraf agar tampil lebih menarik.</p>
+<p>Berikut ini beberapa style yang bisa diberikan pada paragraf:</p>
+<h4 id="1-baris-pertama-masuk-ke-dalam">1. Baris Pertama Masuk ke Dalam</h4>
+<p>Baris pertama pada paragraf kadang sering ditulis masuk ke dalam atau ini juga disebut dengan indentasi.</p>
+<p>Contoh:</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="https://gitkodachi.github.io/images/content/tutorial/html/paragraf-indentasi.png" 
+      alt="Deskripsi gambar" 
+      class="mx-auto cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    const isZoomed = img.classList.toggle('zoomed');
+    
+    if (isZoomed) {
+      
+      const scale = Math.min(
+        window.innerWidth * 0.9 / img.naturalWidth,
+        window.innerHeight * 0.9 / img.naturalHeight,
+        1.0 
+      );
+      
+      img.style.setProperty('--zoom-scale', scale);
+      document.body.style.overflow = 'hidden';
+      
+      
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.dataset.escHandler = handleKey;
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', img.dataset.escHandler);
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1000;
+    cursor: zoom-out;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  
+   
+  body.overflow-hidden {
+    overflow: hidden !important;
+  }
+  </style>
+<p>Bagaimanakah cara membuat yang seperti itu di HTML?</p>
+<p>Gampang!</p>
+<p>Kita bisa memanfaatkan style CSS.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Tutorial Paragraf di HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Paragraf Indentasi<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;text-indent: 45px;&#34;</span><span class="p">&gt;</span>Contoh ini baris pertama yang ditulis masuk ke dalam.
+</span></span><span class="line"><span class="cl">Baris kedua tetap ditulis seperti biasa. Dan juga baris
+</span></span><span class="line"><span class="cl">Ke-3 ditulis seperti biasa.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Hasilnya:</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="https://gitkodachi.github.io/images/content/tutorial/html/hasil-p-indentasi.png" 
+      alt="Deskripsi gambar" 
+      class="mx-auto cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    const isZoomed = img.classList.toggle('zoomed');
+    
+    if (isZoomed) {
+      
+      const scale = Math.min(
+        window.innerWidth * 0.9 / img.naturalWidth,
+        window.innerHeight * 0.9 / img.naturalHeight,
+        1.0 
+      );
+      
+      img.style.setProperty('--zoom-scale', scale);
+      document.body.style.overflow = 'hidden';
+      
+      
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.dataset.escHandler = handleKey;
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', img.dataset.escHandler);
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1000;
+    cursor: zoom-out;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  
+   
+  body.overflow-hidden {
+    overflow: hidden !important;
+  }
+  </style>
+<p>Atribut style merupakan atribut untuk menambahkan style CSS. Pada contoh di atas kita menambahkan text-indent dengan nilai 45px, nilai ini akan menentukan jarak (ke dalam) dari baris pertama.</p>
+<h4 id="2-warna-untuk-paragraf">2. Warna untuk Paragraf</h4>
+<p>Warna bisa kita berikan kepada teks dan background. Properti CSS yang digunakan untuk memberikan warna adalah color (untuk teks) dan background-color (untuk background).</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Tutorial Paragraf di HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Warna untuk Paragraf<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;color: blue;&#34;</span><span class="p">&gt;</span>Contoh paragraf dengan warna teks biru.
+</span></span><span class="line"><span class="cl">Ini baris kedua dari paragraf. Semua teks yang ada di dalam
+</span></span><span class="line"><span class="cl">paragraf ini  akan berwarna biru.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;color: white; background-color:purple&#34;</span><span class="p">&gt;</span>Contoh paragraf dengan 
+</span></span><span class="line"><span class="cl">warna teks putih dan warna background-nya adalah ungu.
+</span></span><span class="line"><span class="cl">Ini baris kedua dari paragraf. Semua teks yang ada di dalam
+</span></span><span class="line"><span class="cl">paragraf ini  akan berwarna putih.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Hasilnya:</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="https://gitkodachi.github.io/images/content/tutorial/html/paragraf-warna.png" 
+      alt="Deskripsi gambar" 
+      class="mx-auto cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    const isZoomed = img.classList.toggle('zoomed');
+    
+    if (isZoomed) {
+      
+      const scale = Math.min(
+        window.innerWidth * 0.9 / img.naturalWidth,
+        window.innerHeight * 0.9 / img.naturalHeight,
+        1.0 
+      );
+      
+      img.style.setProperty('--zoom-scale', scale);
+      document.body.style.overflow = 'hidden';
+      
+      
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.dataset.escHandler = handleKey;
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', img.dataset.escHandler);
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1000;
+    cursor: zoom-out;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  
+   
+  body.overflow-hidden {
+    overflow: hidden !important;
+  }
+  </style>
+<h4 id="3-mengubah-jenis-font">3. Mengubah Jenis Font</h4>
+<p>Tidak suka dengan jenis font yang digunakan, kamu bisa menggantinya dengan style CSS.</p>
+<p>Caranya..</p>
+<p>Kita bisa gunakan properti font-family lalu diberikan nilai dengan nama font yang akan digunakan.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Tutorial Paragraf di HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Font untuk Paragraf<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;font-family: Arial;&#34;</span><span class="p">&gt;</span>Ini adalah contoh paragraf yang
+</span></span><span class="line"><span class="cl">menggunakan font Arial. Semua teks pada paragraf ini akan menggunakan
+</span></span><span class="line"><span class="cl">font Arial. Arial adalah salah satu font yang umum digunakan pada
+</span></span><span class="line"><span class="cl">Windows.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;font-family: &#39;Times New Roman&#39;&#34;</span><span class="p">&gt;</span>Ini adalah paragraf yang
+</span></span><span class="line"><span class="cl">menggunakan font Times New Roman. Font ini juga umum digunakan dalam
+</span></span><span class="line"><span class="cl">penulisan teks. Perhatikan penulisan Times New Roman pada style CSS,
+</span></span><span class="line"><span class="cl">ia diapit dengan tanda petik karena mengandung lebih dari satu kata.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Hasilnya:</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="https://gitkodachi.github.io/images/content/tutorial/html/paragraf-font.png" 
+      alt="Deskripsi gambar" 
+      class="mx-auto cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    const isZoomed = img.classList.toggle('zoomed');
+    
+    if (isZoomed) {
+      
+      const scale = Math.min(
+        window.innerWidth * 0.9 / img.naturalWidth,
+        window.innerHeight * 0.9 / img.naturalHeight,
+        1.0 
+      );
+      
+      img.style.setProperty('--zoom-scale', scale);
+      document.body.style.overflow = 'hidden';
+      
+      
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.dataset.escHandler = handleKey;
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', img.dataset.escHandler);
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1000;
+    cursor: zoom-out;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  
+   
+  body.overflow-hidden {
+    overflow: hidden !important;
+  }
+  </style>
+<h3 id="apa-selanjutnya">Apa Selanjutnya?</h3>
+<p>Pada tutorial ini, kita sudah belajar beberapa tag:</p>
+<ul>
+<li><code>&lt;p&gt;</code> untuk membuat paragraf;</li>
+<li><code>&lt;hr&gt;</code> untuk membuat garis lurus;</li>
+<li><code>&lt;br&gt;</code> untuk membuat baris baru;</li>
+<li><code>&lt;div&gt;</code> untuk membuat paragraf di luar artikel atau layout;</li>
+<li><code>&lt;pre&gt;</code> untuk membuat paragraf dengan format yang sudah ditentukan.
+Ini adalah tag-tag dasar yang perlu diingat dalam membuat paragraf di HTML.</li>
+</ul>
+<p>Selanjutnya, silakan pelajari tentang:</p>
+<ul>
+<li><a href="#">Belajar HTML #04: Membuat Heading di HTML</a></li>
+</ul>
+<div class="custom-alert custom-alert-info" role="alert">
+  <div class="custom-alert-header"><i class="custom-alert-icon fas fa-circle-info"></i><span class="custom-alert-title">Info</span>
+  </div>
+  <div class="custom-alert-content">
+    &ldquo;Untuk tutorial HTML lainnya, silakan cek di <a href="#">List tutorial HTML</a>&rdquo;
+  </div>
+</div>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://id.wikipedia.org/wiki/HTML">https://id.wikipedia.org/wiki/HTML</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
 
         
         
@@ -1092,6 +1604,42 @@
       
     </li>
     
+    <li class="mb-2 rounded-md ">
+      
+        
+        <a href="/tutorial/html/html-heading/" class="flex items-center gap-3 p-2 w-full hover:bg-teal-50 dark:hover:bg-teal-800">
+          
+            <span class="flex items-center justify-center h-5 w-5 rounded-full border border-gray-300 text-xs"></span>
+          
+          <span>Belajar HTML #04: Membuat Heading di HTML</span>
+        </a>
+      
+    </li>
+    
+    <li class="mb-2 rounded-md ">
+      
+        
+        <a href="/tutorial/html/html-komentar/" class="flex items-center gap-3 p-2 w-full hover:bg-teal-50 dark:hover:bg-teal-800">
+          
+            <span class="flex items-center justify-center h-5 w-5 rounded-full border border-gray-300 text-xs"></span>
+          
+          <span>Belajar HTML #05: Cara Membuat Komentar</span>
+        </a>
+      
+    </li>
+    
+    <li class="mb-2 rounded-md ">
+      
+        
+        <a href="/tutorial/html/html-text-formating/" class="flex items-center gap-3 p-2 w-full hover:bg-teal-50 dark:hover:bg-teal-800">
+          
+            <span class="flex items-center justify-center h-5 w-5 rounded-full border border-gray-300 text-xs"></span>
+          
+          <span>Belajar HTML #06: Text Formatting di HTML</span>
+        </a>
+      
+    </li>
+    
   </ol>
 </div>
 
@@ -1128,6 +1676,78 @@
 <div class="mb-16 rounded-2xl bg-white dark:bg-slate-800 shadow-md">
   <h2 class="text-2xl font-bold p-4 tracking-tight border-b dark:border-slate-700">🔥 Artikel Terbaru</h2>
   
+  
+  <a href="/tutorial/html/html-heading/" title="Belajar HTML #04: Cara Membuat Heading di HTML">
+    <div class="flex justify-between items-center gap-2 p-6 hover:bg-slate-100 dark:hover:bg-slate-700 active:scale-95 active:rounded-xl transition-all">
+      <div class="flex-1 min-w-0">
+        <h3 class="text-lg font-semibold tracking-tight line-clamp-2 leading-tight mb-1">
+          Belajar HTML #04: Cara Membuat Heading di HTML
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-200 line-clamp-1">
+          <time datetime="2025-07-10">10 Jul 2025</time>
+          
+        </p>
+      </div>
+      
+      
+        <img class="w-16 h-16 lazyload rounded-lg object-cover" 
+             src="https://gitkodachi.github.io/images/cover/html-heading.png" 
+             data-src="https://gitkodachi.github.io/images/cover/html-heading.png" 
+             alt="Belajar HTML #04: Cara Membuat Heading di HTML" 
+             height="64" 
+             width="64"
+             loading="lazy">
+      
+    </div>
+  </a>
+  
+  <a href="/tutorial/html/html-komentar/" title="Belajar HTML #05: Cara Membuat Komentar di HTML">
+    <div class="flex justify-between items-center gap-2 p-6 hover:bg-slate-100 dark:hover:bg-slate-700 active:scale-95 active:rounded-xl transition-all">
+      <div class="flex-1 min-w-0">
+        <h3 class="text-lg font-semibold tracking-tight line-clamp-2 leading-tight mb-1">
+          Belajar HTML #05: Cara Membuat Komentar di HTML
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-200 line-clamp-1">
+          <time datetime="2025-07-10">10 Jul 2025</time>
+          
+        </p>
+      </div>
+      
+      
+        <img class="w-16 h-16 lazyload rounded-lg object-cover" 
+             src="https://gitkodachi.github.io/images/cover/html.png" 
+             data-src="https://gitkodachi.github.io/images/cover/html.png" 
+             alt="Belajar HTML #05: Cara Membuat Komentar di HTML" 
+             height="64" 
+             width="64"
+             loading="lazy">
+      
+    </div>
+  </a>
+  
+  <a href="/tutorial/html/html-text-formating/" title="Belajar HTML #06: Text Formatting di HTML (Bold, Italic, Underline, dll)">
+    <div class="flex justify-between items-center gap-2 p-6 hover:bg-slate-100 dark:hover:bg-slate-700 active:scale-95 active:rounded-xl transition-all">
+      <div class="flex-1 min-w-0">
+        <h3 class="text-lg font-semibold tracking-tight line-clamp-2 leading-tight mb-1">
+          Belajar HTML #06: Text Formatting di HTML (Bold, Italic, Underline, dll)
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-200 line-clamp-1">
+          <time datetime="2025-07-10">10 Jul 2025</time>
+          
+        </p>
+      </div>
+      
+      
+        <img class="w-16 h-16 lazyload rounded-lg object-cover" 
+             src="https://gitkodachi.github.io/images/cover/html.png" 
+             data-src="https://gitkodachi.github.io/images/cover/html.png" 
+             alt="Belajar HTML #06: Text Formatting di HTML (Bold, Italic, Underline, dll)" 
+             height="64" 
+             width="64"
+             loading="lazy">
+      
+    </div>
+  </a>
   
   <a href="/tutorial/html/html-dasar/" title="Belajar HTML dari Nol: Pengenalan Dasar HTML untuk Pemula">
     <div class="flex justify-between items-center gap-2 p-6 hover:bg-slate-100 dark:hover:bg-slate-700 active:scale-95 active:rounded-xl transition-all">
