@@ -5,9 +5,9 @@ date: 2025-06-27
 thumbnail: "/images/cover/github-workflow.png"
 image: "/images/cover/github-workflow.png"
 weight: 11
-series: ["git", "Github"]
-tutorial: ["Git", "Github"]
-topik: ["Git", "Github"]
+series: ["git"]
+tutorial: ["Git"]
+topik: ["Git"]
 description: "Pelajari dasar-dasar version control dengan Git untuk pemula."
 ---
 

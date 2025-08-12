@@ -3,8 +3,6 @@ title: "Tutorial Git #2: Cara Membuat Repositori Baru dalam Proyek"
 date: 2025-06-27
 thumbnail: "/images/cover/git-petanikode.png"
 image: "/images/cover/git-petanikode.png"
-series: "git"
-topik: ["Git"]
 description: "Pelajari dasar-dasar version control dengan Git untuk pemula."
 ---
 

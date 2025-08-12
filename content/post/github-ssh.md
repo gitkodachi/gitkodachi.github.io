@@ -3,10 +3,9 @@ title: "Cara Setup SSH Key untuk Github agar Bisa Ngepush Tanpa Password"
 date: 2025-06-27
 thumbnail: "/images/cover/github-ssh.png"
 image: "/images/cover/github-ssh.png"
-series: ["git", "SSH", "Github"]
-topik: ["Git", "SSH", "Github"]
 description: "Pelajari dasar-dasar version control dengan Git untuk pemula."
 ---
+
 
 Kita bisa melakukan push ke Github melalui dua metode yakni, melalui protokol HTTPS dan SSH.
 
