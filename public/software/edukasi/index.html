@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="scroll-smooth dark" lang="id" x-data="" :class="{ 'dark': $store.theme.dark }">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -35,14 +35,14 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://gitkodachi.github.io/software/edukasi/">
+<meta property="og:url" content="http://localhost:1313/software/edukasi/">
 <meta property="og:title" content="Software Edukasi">
 <meta property="og:description" content="Software untuk menunjang kegiatan belajar dan pengajaran.">
 <meta property="og:image" content="/img/og-default.jpg">
 
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://gitkodachi.github.io/software/edukasi/">
+<meta name="twitter:url" content="http://localhost:1313/software/edukasi/">
 <meta name="twitter:title" content="Software Edukasi">
 <meta name="twitter:description" content="Software untuk menunjang kegiatan belajar dan pengajaran.">
 <meta name="twitter:image" content="/img/og-default.jpg">
@@ -118,26 +118,26 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5A7 7 0 113 10a7 7 0 0114 0z" />
           </svg>
         </button>
-      <button aria-label="Theme switcher" type=button
-        @click="$store.theme.switcherOpen = !$store.theme.switcherOpen" @click.away="$store.theme.switcherOpen = false"
-        class="p-1 rounded-full text-teal-100 hover:bg-teal-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-500">
-        <svg viewBox="0 0 24 24" fill="none" class="h-8 w-8 md:h-6 md:w-6 active:scale-95"
-          :class="{'hidden': $store.theme.dark }">
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M17.715 15.15A6.5 6.5.0 019 6.035c-2.894.887-5 3.61-5 6.832.0 3.94 3.153 7.136 7.042 7.136 3.101.0 5.734-2.032 6.673-4.853z" />
-          <path
-            d="m17.715 15.15.95.316a1 1 0 00-1.445-1.185l.495.869zM9 6.035l.846.534a1 1 0 00-1.14-1.49L9 6.035zm8.221 8.246a5.47 5.47.0 01-2.72.718v2a7.47 7.47.0 003.71-.98l-.99-1.738zm-2.72.718A5.5 5.5.0 019 9.5H7a7.5 7.5.0 007.5 7.5v-2zM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47.0 007 9.5h2zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552.0 6.553-2.327 7.622-5.537l-1.897-.632z"
-            class="fill-teal-100" />
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M17 3a1 1 0 011 1 2 2 0 002 2 1 1 0 110 2 2 2 0 00-2 2 1 1 0 11-2 0 2 2 0 00-2-2 1 1 0 110-2 2 2 0 002-2 1 1 0 011-1z"
-            class="fill-teal-100" />
-        </svg>
-        <svg class="h-8 w-8 md:h-6 md:w-6 hidden active:scale-95" :class="{'hidden': !$store.theme.dark }" fill="none"
-          viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364-.707-.707M6.343 6.343l-.707-.707m12.728.0-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-        </svg>
-      </button>
+        <button aria-label="Theme switcher" type=button
+          @click="$store.theme.switcherOpen = !$store.theme.switcherOpen" @click.away="$store.theme.switcherOpen = false"
+          class="p-1 rounded-full text-teal-100 hover:bg-teal-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-500">
+          <svg viewBox="0 0 24 24" fill="none" class="h-8 w-8 md:h-6 md:w-6 active:scale-95"
+            :class="{'hidden': $store.theme.dark }">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M17.715 15.15A6.5 6.5.0 019 6.035c-2.894.887-5 3.61-5 6.832.0 3.94 3.153 7.136 7.042 7.136 3.101.0 5.734-2.032 6.673-4.853z" />
+            <path
+              d="m17.715 15.15.95.316a1 1 0 00-1.445-1.185l.495.869zM9 6.035l.846.534a1 1 0 00-1.14-1.49L9 6.035zm8.221 8.246a5.47 5.47.0 01-2.72.718v2a7.47 7.47.0 003.71-.98l-.99-1.738zm-2.72.718A5.5 5.5.0 019 9.5H7a7.5 7.5.0 007.5 7.5v-2zM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47.0 007 9.5h2zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552.0 6.553-2.327 7.622-5.537l-1.897-.632z"
+              class="fill-teal-100" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M17 3a1 1 0 011 1 2 2 0 002 2 1 1 0 110 2 2 2 0 00-2 2 1 1 0 11-2 0 2 2 0 00-2-2 1 1 0 110-2 2 2 0 002-2 1 1 0 011-1z"
+              class="fill-teal-100" />
+          </svg>
+          <svg class="h-8 w-8 md:h-6 md:w-6 hidden active:scale-95" :class="{'hidden': !$store.theme.dark }" fill="none"
+            viewBox="0 0 24 24" stroke="currentcolor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364-.707-.707M6.343 6.343l-.707-.707m12.728.0-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        </button>
       <template x-if=$store.theme.switcherOpen>
         <ul
           class="absolute z-50 top-full bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-slate-700 font-semibold dark:bg-slate-800 dark:ring-0 dark:border dark:border-white/5 dark:text-slate-300"
@@ -317,7 +317,7 @@
             
             <picture class="shrink-0 w-24 h-24 md:w-40 md:h-40">
                 <img class="lazyload rounded-md h-full w-full dark:brightness-75 lazyloaded"
-                    src="https://gitkodachi.github.io/images/thumbnail/edukasi.png" 
+                    src="http://localhost:1313/images/thumbnail/edukasi.png" 
                     alt="Software Edukasi"
                     loading="lazy">
             </picture>
@@ -363,7 +363,7 @@
           <a href="/software/produktivitas/instal-vbox/" class="inline-block shrink-0 h-16 w-16 md:h-24 md:w-24">
             <picture class="shrink-0 w-24 h-24 md:w-40 md:h-40">
               <img class="lazyload object-cover h-full w-full dark:brightness-75 rounded-md lazyloaded"
-                   src="https://gitkodachi.github.io/images/content/software/vbox/vbox-2.png"
+                   src="http://localhost:1313/images/content/software/vbox/vbox-2.png"
                    alt="Cara Menginstall Virtualbox di Windows">
             </picture>
           </a>
@@ -385,7 +385,7 @@
           <a href="/software/edukasi/spss/" class="inline-block shrink-0 h-16 w-16 md:h-24 md:w-24">
             <picture class="shrink-0 w-24 h-24 md:w-40 md:h-40">
               <img class="lazyload object-cover h-full w-full dark:brightness-75 rounded-md lazyloaded"
-                   src="https://gitkodachi.github.io/images/content/software/spss.png"
+                   src="http://localhost:1313/images/content/software/spss.png"
                    alt="IBM SPSS Static">
             </picture>
           </a>
@@ -407,7 +407,7 @@
           <a href="/software/edukasi/vbox/" class="inline-block shrink-0 h-16 w-16 md:h-24 md:w-24">
             <picture class="shrink-0 w-24 h-24 md:w-40 md:h-40">
               <img class="lazyload object-cover h-full w-full dark:brightness-75 rounded-md lazyloaded"
-                   src="https://gitkodachi.github.io/images/content/software/vbox/vbox.png"
+                   src="http://localhost:1313/images/content/software/vbox/vbox.png"
                    alt="Virtual Box">
             </picture>
           </a>
@@ -429,7 +429,7 @@
           <a href="/software/multimedia/vlc/" class="inline-block shrink-0 h-16 w-16 md:h-24 md:w-24">
             <picture class="shrink-0 w-24 h-24 md:w-40 md:h-40">
               <img class="lazyload object-cover h-full w-full dark:brightness-75 rounded-md lazyloaded"
-                   src="https://gitkodachi.github.io/images/content/software/vlc.png"
+                   src="http://localhost:1313/images/content/software/vlc.png"
                    alt="VLC Media Player">
             </picture>
           </a>
@@ -451,7 +451,7 @@
           <a href="/software/edukasi/winrar/" class="inline-block shrink-0 h-16 w-16 md:h-24 md:w-24">
             <picture class="shrink-0 w-24 h-24 md:w-40 md:h-40">
               <img class="lazyload object-cover h-full w-full dark:brightness-75 rounded-md lazyloaded"
-                   src="https://gitkodachi.github.io/images/content/software/winrar/winrar.png"
+                   src="http://localhost:1313/images/content/software/winrar/winrar.png"
                    alt="Winrar">
             </picture>
           </a>
@@ -594,7 +594,11 @@ document.addEventListener('alpine:init', () => {
     .then(res => res.json())
     .then(data => {
       fuseIndex = data;
-      fuse = new Fuse(fuseIndex, { keys: ["title", "content"], threshold: 0.3 });
+      fuse = new Fuse(fuseIndex, { 
+      keys: ["title", "content"], 
+      threshold: 0.3,
+      includeMatches: true
+     });
     });
 
   searchToggle?.addEventListener('click', () => {

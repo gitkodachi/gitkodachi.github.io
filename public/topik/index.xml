@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Topik on Octocat Code</title>
-    <link>https://gitkodachi.github.io/topik/</link>
+    <link>http://localhost:1313/topik/</link>
     <description>Recent content in Topik on Octocat Code</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jul 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gitkodachi.github.io/topik/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/topik/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTML</title>
-      <link>https://gitkodachi.github.io/topik/html/</link>
+      <link>http://localhost:1313/topik/html/</link>
       <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/topik/html/</guid>
+      <guid>http://localhost:1313/topik/html/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>https://gitkodachi.github.io/topik/git/</link>
+      <link>http://localhost:1313/topik/git/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/topik/git/</guid>
+      <guid>http://localhost:1313/topik/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Laravel</title>
-      <link>https://gitkodachi.github.io/topik/laravel/</link>
+      <link>http://localhost:1313/topik/laravel/</link>
       <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/topik/laravel/</guid>
+      <guid>http://localhost:1313/topik/laravel/</guid>
       <description></description>
     </item>
     <item>
       <title>Microsoft</title>
-      <link>https://gitkodachi.github.io/topik/microsoft/</link>
+      <link>http://localhost:1313/topik/microsoft/</link>
       <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/topik/microsoft/</guid>
+      <guid>http://localhost:1313/topik/microsoft/</guid>
       <description></description>
     </item>
     <item>
       <title>Office</title>
-      <link>https://gitkodachi.github.io/topik/office/</link>
+      <link>http://localhost:1313/topik/office/</link>
       <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/topik/office/</guid>
+      <guid>http://localhost:1313/topik/office/</guid>
       <description></description>
     </item>
     <item>
       <title>PHP</title>
-      <link>https://gitkodachi.github.io/topik/php/</link>
+      <link>http://localhost:1313/topik/php/</link>
       <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/topik/php/</guid>
+      <guid>http://localhost:1313/topik/php/</guid>
       <description></description>
     </item>
     <item>
       <title>Windows</title>
-      <link>https://gitkodachi.github.io/topik/windows/</link>
+      <link>http://localhost:1313/topik/windows/</link>
       <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/topik/windows/</guid>
+      <guid>http://localhost:1313/topik/windows/</guid>
       <description></description>
     </item>
     <item>
       <title>MySQL</title>
-      <link>https://gitkodachi.github.io/topik/mysql/</link>
+      <link>http://localhost:1313/topik/mysql/</link>
       <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://gitkodachi.github.io/topik/mysql/</guid>
+      <guid>http://localhost:1313/topik/mysql/</guid>
       <description></description>
     </item>
   </channel>

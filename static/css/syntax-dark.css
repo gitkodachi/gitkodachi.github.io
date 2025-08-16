@@ -86,3 +86,8 @@
 /* GenericTraceback */ .chroma .gt {  }
 /* GenericUnderline */ .chroma .gl {  }
 /* TextWhitespace */ .chroma .w {  }
+
+pre.chroma, code.chroma {
+  background-color: #002b36 !important; /* background gelap */
+  color: #839496 !important; /* teks terang */
+}

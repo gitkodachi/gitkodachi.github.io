@@ -65,3 +65,6 @@ title = 'Octocat Code'
     noClasses = false
     codeFences = true
     guessSyntax = true
+    style = "dracula"
+    lineNumbers = true
+    pygmentsStyle = "solarized"
