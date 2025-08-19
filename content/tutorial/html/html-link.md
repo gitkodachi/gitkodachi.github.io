@@ -347,3 +347,362 @@ Silakan buka file contact.html kemudian ubah kodenya menjadi seperti ini:
     </body>
 </html>
 ```
+
+Hasilnya:
+
+Tes buka link Facebook:
+
+  {{< image 
+  src="images/content/tutorial/html/eksternal-link.gif" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+  >}}
+
+  Test buka link whatsapp:
+
+  {{< image 
+  src="images/content/tutorial/html/eksternal-link-facebook.gif" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+  >}}
+
+Sudah paham tentang eksternal link?
+
+Oke, sekarang lanjut belajar atribut:
+
+### Atribut-atribut untuk Link
+Selain atribut `href` terdapat juga beberapa atribut yang sering ditambahkan pada link, seperti: `target`, `title`, `rel`, `style`, dan lain-lain.
+
+#### Menggunakan Atribut `target`
+Atribut ini berfungsi untuk menentukan target dari pembukaan link. Ada beberapa target yang biasanya digunakan:
+
+- `_blank` akan membuka link pada jendela atau tab baru;
+- `_self` akan membuka link pada halaman itu sendiri (*default target*);
+- `_top` menuju bagian paling atas pada halaman;
+- `_parent` membuka link pada frame induk;
+- `nama-frame` akan membuka link pada `<iframe>` dengan nama tertentu;
+
+Contoh:
+
+```html
+<a href='https://www.facebook.com/gitkodachi' target='_blank'>Facebook</a>
+```
+Hasilnya:
+
+  {{< image 
+  src="images/content/tutorial/html/target-blank.gif" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+  >}}
+
+Saat link tersebut diklik, browser akan membuka tab baru. Ini karena kita memberikan atribut target dengan nilai `_blank`.
+
+Berikutnya, kita akan mencoba menampilkan link ke dalam sebuah frame.
+
+Buatlah file baru bernama `link-frame.html`, kemudian isi kodenya seperti ini:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Tutorial Link di HTML</title>
+</head>
+
+<body>
+  <p>
+    <a href="https://www.petanikode.com" target="myframe">Sebuah Link</a>
+  </p>
+  <p>
+    <!-- Frame yang akan menjadi target link -->
+    <iframe name="myframe" width="600" height="400"></iframe>
+  </p>
+</body>
+
+</html>
+```
+
+Hasilnya:
+
+  {{< image 
+  src="images/content/tutorial/html/link-frame.gif" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+  >}}
+
+#### Menggunakan Atribut `title`
+Atribut ini berfungsi untuk membuat tooltips. Tooltips adalah informasi tambahan yang akan tampil saat link disentuh pointer atau saat kita menahan tap di hp.
+
+Contoh:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tutorial Link di HTML</title>
+    </head>
+    <body>
+        <p>Untuk lebih lengkapnya, silakan buka:
+            <a href="about.html" title="Menuju ke halaman about">About us</a>
+        </p>
+    </body>
+</html>
+```
+
+Hasilnya:
+
+  {{< image 
+  src="images/content/tutorial/html/link-title.gif" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+  >}}
+
+{{< alert type="info" title="Live Demo" >}}
+Untuk lebih lengkapnya, silakan buka: [About us](https://gitkodachi.github.io/about/)
+{{< /alert >}}
+
+### Cara Mengubah Warna Link di HTML
+Warna default link adalah biru, ini bisa kita ubah dengan style CSS. Warna bisa kita berikan untuk teks dan latar belakang (`background`).
+
+Caranya:
+
+Tambahkan atribut `style` kemudian isi dengan style css untuk mengubah warna, yakni `color` (untuk teks) dan `background-color` (untuk latar).
+
+Contoh:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tutorial Link di HTML</title>
+    </head>
+    <body>
+      <h1>Selamat Datang</h1>
+        <p>
+          <a href="index.html" style="color:red">Home</a> |
+          <a href="contact.html" style="color:green">Contact</a> |
+          <a href="about.html" style="color:deeppink;">About</a> |
+          <a href="download.html" style="color:white;background-color: orange;">Download</a>
+        </p>
+        <hr>
+        <p>
+          Selamat datang di websiteku. Coba klik menu di atas,
+          maka kamu akan membuka halaman yang berbeda. Semua
+          link di atas adalah internal link.
+        </p>
+        <hr>
+        <div>Copyright &copy; 2020 by Petani Kode</div>
+    </body>
+</html>
+```
+
+Hasailnya:
+
+  {{< image 
+  src="images/content/tutorial/html/link-color.png" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+  >}}
+
+### Fungsi Menarik Lainnya dari Link
+Seperti yang saya bilang sebelumnya.. link tidak hanya digunakan untuk menghubungkan halaman web saja.
+
+Ia juga bisa digunakan untuk beberapa fungsi tertentu seperti:
+
+Membuat Link Buntu
+Link buntu adalah link yang tidak akan membuka apa-pun. Ia biasanya digunakan sebagai placeholder atau sampel saja.
+
+Cara membuatnya:
+
+Tambahkan tanda pagar atau tanda pagar dan tanda seru pada atribut `href`.
+
+Contoh:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tutorial Link di HTML</title>
+    </head>
+    <body>
+        <p>
+            <a href="#">Link Buntu</a>
+            <a href="#!">Link Buntu 2</a>
+        </p>
+    </body>
+</html>
+```
+
+Hasilnya:
+
+  {{< image 
+  src="images/content/tutorial/html/link-buntu.gif" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+  >}}
+
+Perhatikan!
+
+Pada contoh tersebut kita mengisi URL-nya dengan tanda pagar. Arti tanda pagar pada URL sebenarnya adalah `anchor` (jangkar).
+
+Jangkar ini nantinya akan membawa kita ke lokasi tertentu di dalam dokumen HTML. Jika hanya diisi pagar saja, maka ia tidak akan kemana-mana.
+
+#### Membuat Link Anchor
+Link anchor adalah link yang menuju ke suatu elemen tertentu. Cara kerjanya seperti saat kita mengaitkan jangkar, lalu ditarik ke sana. Karena itu, dia dinamakan anchor.
+
+  {{< image 
+  src="images/content/tutorial/html/anchor-link.png" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+  >}}
+
+Cara membuat link anchor adalah dengan mengisi alamat URL dengan tanda pagar `(#),` lalu diisi dengan nama id dari elemen yang akan dituju.
+
+Contoh:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tutorial Link di HTML</title>
+    </head>
+    <body>
+        <h1>Contoh Link Anchor</h1>
+        <p>Ini adalah contoh link anchor. Coba klik link ini:
+            <a href="#penutup">Meluncur ke Penutup</a> maka kamu
+            akan dibawa ke bagian penutup dari dokumen ini.
+        </p>
+        <h2>Apa itu Jangkar?</h2>
+        <p>
+            Anchor dalam bahasa indonesia artinya jangkar. Saya yakin
+            kamu pasti pernah melihat jangkar. Fungsi jangkar untuk 
+            menahan kapal agar tidak hanyut. Tapi dalam HTML, fungsinya
+            untuk membuat link yang bisa membawa kita meluncur ke tujuan
+            jangkar itu.
+        </p>
+        <p>
+            Jangkar atau anchor di HTML tidak hanya bisa digunakan pada
+            satu dokumen saja. Ia juga bisa digunakan untuk membuka dokumen
+            lain, lalu mengaitkan jangkarnya.
+        </p>
+        <p>
+            Jangkar biasanya dibuat dengan tanda pagar (#) lalu diikuti
+            dengan nama id dari elemen yang ingin dituju. Contohnya #penutup,
+            maka link yang menggunakan anchor tersebut akan mencari elemen
+            HTML yang memiliki id `penutup` dan membawa kita ke sana.
+            Kira-kira begitulah cara kerjanya.
+        </p>
+        <h2 id="penutup">Akhir Kata..</h2>
+        <p>
+            Ini adalah penutup dari artikel ini, dan coba perhatikan headingnya.
+            Di sana kita menggunakan id="penutup". Maka elemen ini akan menjadi
+            tujuan dari anchor link.
+        </p>
+        <p>
+            <a href="#top">Kembali ke Atas!</a>
+        </p>
+    </body>
+</html>
+```
+
+Hasilnya:
+
+  {{< image 
+  src="images/content/tutorial/html/link-anchor.gif" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+  >}}
+
+Kalau kita perhatikan, disana kita menggunakan `#top` sebgail URL
+
+```bash
+<a href="#top">Kembali ke Atas!</a>
+```
+
+Sedangkan elemen yang memiliki `id="top"`, tidak ada di dalam HTML yang kita tulis.
+
+Mengapa link anchor ini bisa menuju ke atas?
+
+Ini karena browser sudah paham, jika ada link anchor yang menuju ke `#top` maka ia akan dibawa ke bagian teratas dari dokumen.
+
+  {{< image 
+  src="images/content/tutorial/html/top-anchor.png" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+  >}}
+
+#### Membuat Link untuk Memanggil Fungsi Javascript
+Link dapat juga digunakan untuk memanggil fungsi Javascript.
+
+Pemanggilan fungsi Javascript biasanya dilakukan dengan atribut even seperti `onclick`, `onmouseover`, `onmouseout`, dan sebagainya.
+
+Contoh:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tutorial Link di HTML</title>
+    </head>
+    <body>
+        <p>
+            <a href="#" onclick="alert('Hello World!')">Jalankan JS</a>
+            <br>
+            <a href="#!" onmouseover="alert('link sudah kamu sentuh!')">Coba Sentuh Link ini</a>
+        </p>
+    </body>
+</html>
+```
+
+Hasilnya:
+
+
+  {{< image 
+  src="images/content/tutorial/html/link-js.gif" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+  >}}
+
+Sebenarnya hampir semua elemen bisa menjalankan fungsi Javascript dengan atribut event.
+
+Nah, khusus untuk link. Dia bisa juga menjalankan fungsi Javascript melalui atribut `href` atau URL.
+
+Contoh:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tutorial Link di HTML</title>
+    </head>
+    <body>
+        <p>
+            <a href="javascript:alert('Hello World!')">Jalankan JS</a>
+        </p>
+    </body>
+</html>
+```
+
+#### Hasilnya akan sama seperti contoh sebelemenya.
+
+Membuat Link dengan Gambar
+Membuat gambar sebagai link kadang sering dilakukan dalam web. Cara membuatnya sangat mudah, kita hanya perlu membungkus tag `<img>` dengan tag `<a>`.
+
+Contoh:
+
+```html
+<a href="#"><img src="https://www.petanikode.com/img/logo.svg" /></a>
+```
+
+### Apa Selanjutnya?
+Nah, sampai di sini dulu tutorial pertama ini..
+
+Jika ada yang belum jelas, bisa ditanyakan melalui komentar.
+
+Berikutnya silakan pelajari tentang definisi tag, elemen, dan atribut:
+
+- [Belajar HTML #08: Mengenal tag, elemen, dan atribut dalam HTML](#)
+
+{{< alert type="info" title="" >}}
+"Untuk tutorial HTML lainnya, silakan cek di [List tutorial HTML](#)"
+{{< /alert >}}

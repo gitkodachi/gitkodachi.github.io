@@ -181,7 +181,7 @@ Notepad boleh, Notepad++ juga boleh..
 
 Apapun teks editornya, yang penting bisa digunakan untuk membuat dan menulis dokumen HTML.
 
-Namun, pada tutorial ini.. kita akan menggunakan teks editor [Visual Studio Code](https://www.petanikode.com/text-editor-vscode/).
+Namun, pada tutorial ini.. kita akan menggunakan teks editor [Visual Studio Code](#).
 
 #### 2. Web Browser untuk Membuka HTML
 

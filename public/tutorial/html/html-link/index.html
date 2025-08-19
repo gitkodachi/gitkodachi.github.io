@@ -1278,7 +1278,908 @@
 </span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Copyright <span class="ni">&amp;copy;</span> 2020 by Petani Kode<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><p>Hasilnya:</p>
+<p>Tes buka link Facebook:</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/tutorial/html/eksternal-link.gif" 
+      alt="Deskripsi gambar" 
+      class="mx-auto cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    const isZoomed = img.classList.toggle('zoomed');
+    
+    if (isZoomed) {
+      
+      const scale = Math.min(
+        window.innerWidth * 0.9 / img.naturalWidth,
+        window.innerHeight * 0.9 / img.naturalHeight,
+        1.0 
+      );
+      
+      img.style.setProperty('--zoom-scale', scale);
+      document.body.style.overflow = 'hidden';
+      
+      
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.dataset.escHandler = handleKey;
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', img.dataset.escHandler);
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1000;
+    cursor: zoom-out;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  
+   
+  body.overflow-hidden {
+    overflow: hidden !important;
+  }
+  </style>
+<p>Test buka link whatsapp:</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/tutorial/html/eksternal-link-facebook.gif" 
+      alt="Deskripsi gambar" 
+      class="mx-auto cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    const isZoomed = img.classList.toggle('zoomed');
+    
+    if (isZoomed) {
+      
+      const scale = Math.min(
+        window.innerWidth * 0.9 / img.naturalWidth,
+        window.innerHeight * 0.9 / img.naturalHeight,
+        1.0 
+      );
+      
+      img.style.setProperty('--zoom-scale', scale);
+      document.body.style.overflow = 'hidden';
+      
+      
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.dataset.escHandler = handleKey;
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', img.dataset.escHandler);
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1000;
+    cursor: zoom-out;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  
+   
+  body.overflow-hidden {
+    overflow: hidden !important;
+  }
+  </style>
+<p>Sudah paham tentang eksternal link?</p>
+<p>Oke, sekarang lanjut belajar atribut:</p>
+<h3 id="atribut-atribut-untuk-link">Atribut-atribut untuk Link</h3>
+<p>Selain atribut <code>href</code> terdapat juga beberapa atribut yang sering ditambahkan pada link, seperti: <code>target</code>, <code>title</code>, <code>rel</code>, <code>style</code>, dan lain-lain.</p>
+<h4 id="menggunakan-atribut-target">Menggunakan Atribut <code>target</code></h4>
+<p>Atribut ini berfungsi untuk menentukan target dari pembukaan link. Ada beberapa target yang biasanya digunakan:</p>
+<ul>
+<li><code>_blank</code> akan membuka link pada jendela atau tab baru;</li>
+<li><code>_self</code> akan membuka link pada halaman itu sendiri (<em>default target</em>);</li>
+<li><code>_top</code> menuju bagian paling atas pada halaman;</li>
+<li><code>_parent</code> membuka link pada frame induk;</li>
+<li><code>nama-frame</code> akan membuka link pada <code>&lt;iframe&gt;</code> dengan nama tertentu;</li>
+</ul>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#39;https://www.facebook.com/gitkodachi&#39;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#39;_blank&#39;</span><span class="p">&gt;</span>Facebook<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Hasilnya:</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/tutorial/html/target-blank.gif" 
+      alt="Deskripsi gambar" 
+      class="mx-auto cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    const isZoomed = img.classList.toggle('zoomed');
+    
+    if (isZoomed) {
+      
+      const scale = Math.min(
+        window.innerWidth * 0.9 / img.naturalWidth,
+        window.innerHeight * 0.9 / img.naturalHeight,
+        1.0 
+      );
+      
+      img.style.setProperty('--zoom-scale', scale);
+      document.body.style.overflow = 'hidden';
+      
+      
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.dataset.escHandler = handleKey;
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', img.dataset.escHandler);
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1000;
+    cursor: zoom-out;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  
+   
+  body.overflow-hidden {
+    overflow: hidden !important;
+  }
+  </style>
+<p>Saat link tersebut diklik, browser akan membuka tab baru. Ini karena kita memberikan atribut target dengan nilai <code>_blank</code>.</p>
+<p>Berikutnya, kita akan mencoba menampilkan link ke dalam sebuah frame.</p>
+<p>Buatlah file baru bernama <code>link-frame.html</code>, kemudian isi kodenya seperti ini:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Tutorial Link di HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://www.petanikode.com&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;myframe&#34;</span><span class="p">&gt;</span>Sebuah Link<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- Frame yang akan menjadi target link --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;myframe&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;600&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;400&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Hasilnya:</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/tutorial/html/link-frame.gif" 
+      alt="Deskripsi gambar" 
+      class="mx-auto cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    const isZoomed = img.classList.toggle('zoomed');
+    
+    if (isZoomed) {
+      
+      const scale = Math.min(
+        window.innerWidth * 0.9 / img.naturalWidth,
+        window.innerHeight * 0.9 / img.naturalHeight,
+        1.0 
+      );
+      
+      img.style.setProperty('--zoom-scale', scale);
+      document.body.style.overflow = 'hidden';
+      
+      
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.dataset.escHandler = handleKey;
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', img.dataset.escHandler);
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1000;
+    cursor: zoom-out;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  
+   
+  body.overflow-hidden {
+    overflow: hidden !important;
+  }
+  </style>
+<h4 id="menggunakan-atribut-title">Menggunakan Atribut <code>title</code></h4>
+<p>Atribut ini berfungsi untuk membuat tooltips. Tooltips adalah informasi tambahan yang akan tampil saat link disentuh pointer atau saat kita menahan tap di hp.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Tutorial Link di HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Untuk lebih lengkapnya, silakan buka:
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;about.html&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Menuju ke halaman about&#34;</span><span class="p">&gt;</span>About us<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Hasilnya:</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/tutorial/html/link-title.gif" 
+      alt="Deskripsi gambar" 
+      class="mx-auto cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    const isZoomed = img.classList.toggle('zoomed');
+    
+    if (isZoomed) {
+      
+      const scale = Math.min(
+        window.innerWidth * 0.9 / img.naturalWidth,
+        window.innerHeight * 0.9 / img.naturalHeight,
+        1.0 
+      );
+      
+      img.style.setProperty('--zoom-scale', scale);
+      document.body.style.overflow = 'hidden';
+      
+      
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.dataset.escHandler = handleKey;
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', img.dataset.escHandler);
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1000;
+    cursor: zoom-out;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  
+   
+  body.overflow-hidden {
+    overflow: hidden !important;
+  }
+  </style>
+<div class="custom-alert custom-alert-info" role="alert">
+  <div class="custom-alert-header"><i class="custom-alert-icon fas fa-circle-info"></i><span class="custom-alert-title">Live Demo</span>
+  </div>
+  <div class="custom-alert-content">
+    Untuk lebih lengkapnya, silakan buka: <a href="https://gitkodachi.github.io/about/">About us</a>
+  </div>
+</div>
+<h3 id="cara-mengubah-warna-link-di-html">Cara Mengubah Warna Link di HTML</h3>
+<p>Warna default link adalah biru, ini bisa kita ubah dengan style CSS. Warna bisa kita berikan untuk teks dan latar belakang (<code>background</code>).</p>
+<p>Caranya:</p>
+<p>Tambahkan atribut <code>style</code> kemudian isi dengan style css untuk mengubah warna, yakni <code>color</code> (untuk teks) dan <code>background-color</code> (untuk latar).</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Tutorial Link di HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Selamat Datang<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;index.html&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;color:red&#34;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> |
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;contact.html&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;color:green&#34;</span><span class="p">&gt;</span>Contact<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> |
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;about.html&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;color:deeppink;&#34;</span><span class="p">&gt;</span>About<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> |
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;download.html&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;color:white;background-color: orange;&#34;</span><span class="p">&gt;</span>Download<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          Selamat datang di websiteku. Coba klik menu di atas,
+</span></span><span class="line"><span class="cl">          maka kamu akan membuka halaman yang berbeda. Semua
+</span></span><span class="line"><span class="cl">          link di atas adalah internal link.
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Copyright <span class="ni">&amp;copy;</span> 2020 by Petani Kode<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Hasailnya:</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/tutorial/html/link-color.png" 
+      alt="Deskripsi gambar" 
+      class="mx-auto cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    const isZoomed = img.classList.toggle('zoomed');
+    
+    if (isZoomed) {
+      
+      const scale = Math.min(
+        window.innerWidth * 0.9 / img.naturalWidth,
+        window.innerHeight * 0.9 / img.naturalHeight,
+        1.0 
+      );
+      
+      img.style.setProperty('--zoom-scale', scale);
+      document.body.style.overflow = 'hidden';
+      
+      
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.dataset.escHandler = handleKey;
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', img.dataset.escHandler);
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1000;
+    cursor: zoom-out;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  
+   
+  body.overflow-hidden {
+    overflow: hidden !important;
+  }
+  </style>
+<h3 id="fungsi-menarik-lainnya-dari-link">Fungsi Menarik Lainnya dari Link</h3>
+<p>Seperti yang saya bilang sebelumnya.. link tidak hanya digunakan untuk menghubungkan halaman web saja.</p>
+<p>Ia juga bisa digunakan untuk beberapa fungsi tertentu seperti:</p>
+<p>Membuat Link Buntu
+Link buntu adalah link yang tidak akan membuka apa-pun. Ia biasanya digunakan sebagai placeholder atau sampel saja.</p>
+<p>Cara membuatnya:</p>
+<p>Tambahkan tanda pagar atau tanda pagar dan tanda seru pada atribut <code>href</code>.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Tutorial Link di HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>Link Buntu<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#!&#34;</span><span class="p">&gt;</span>Link Buntu 2<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Hasilnya:</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/tutorial/html/link-buntu.gif" 
+      alt="Deskripsi gambar" 
+      class="mx-auto cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    const isZoomed = img.classList.toggle('zoomed');
+    
+    if (isZoomed) {
+      
+      const scale = Math.min(
+        window.innerWidth * 0.9 / img.naturalWidth,
+        window.innerHeight * 0.9 / img.naturalHeight,
+        1.0 
+      );
+      
+      img.style.setProperty('--zoom-scale', scale);
+      document.body.style.overflow = 'hidden';
+      
+      
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.dataset.escHandler = handleKey;
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', img.dataset.escHandler);
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1000;
+    cursor: zoom-out;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  
+   
+  body.overflow-hidden {
+    overflow: hidden !important;
+  }
+  </style>
+<p>Perhatikan!</p>
+<p>Pada contoh tersebut kita mengisi URL-nya dengan tanda pagar. Arti tanda pagar pada URL sebenarnya adalah <code>anchor</code> (jangkar).</p>
+<p>Jangkar ini nantinya akan membawa kita ke lokasi tertentu di dalam dokumen HTML. Jika hanya diisi pagar saja, maka ia tidak akan kemana-mana.</p>
+<h4 id="membuat-link-anchor">Membuat Link Anchor</h4>
+<p>Link anchor adalah link yang menuju ke suatu elemen tertentu. Cara kerjanya seperti saat kita mengaitkan jangkar, lalu ditarik ke sana. Karena itu, dia dinamakan anchor.</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/tutorial/html/anchor-link.png" 
+      alt="Deskripsi gambar" 
+      class="mx-auto cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    const isZoomed = img.classList.toggle('zoomed');
+    
+    if (isZoomed) {
+      
+      const scale = Math.min(
+        window.innerWidth * 0.9 / img.naturalWidth,
+        window.innerHeight * 0.9 / img.naturalHeight,
+        1.0 
+      );
+      
+      img.style.setProperty('--zoom-scale', scale);
+      document.body.style.overflow = 'hidden';
+      
+      
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.dataset.escHandler = handleKey;
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', img.dataset.escHandler);
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1000;
+    cursor: zoom-out;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  
+   
+  body.overflow-hidden {
+    overflow: hidden !important;
+  }
+  </style>
+<p>Cara membuat link anchor adalah dengan mengisi alamat URL dengan tanda pagar <code>(#),</code> lalu diisi dengan nama id dari elemen yang akan dituju.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Tutorial Link di HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Contoh Link Anchor<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Ini adalah contoh link anchor. Coba klik link ini:
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#penutup&#34;</span><span class="p">&gt;</span>Meluncur ke Penutup<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> maka kamu
+</span></span><span class="line"><span class="cl">            akan dibawa ke bagian penutup dari dokumen ini.
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Apa itu Jangkar?<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            Anchor dalam bahasa indonesia artinya jangkar. Saya yakin
+</span></span><span class="line"><span class="cl">            kamu pasti pernah melihat jangkar. Fungsi jangkar untuk 
+</span></span><span class="line"><span class="cl">            menahan kapal agar tidak hanyut. Tapi dalam HTML, fungsinya
+</span></span><span class="line"><span class="cl">            untuk membuat link yang bisa membawa kita meluncur ke tujuan
+</span></span><span class="line"><span class="cl">            jangkar itu.
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            Jangkar atau anchor di HTML tidak hanya bisa digunakan pada
+</span></span><span class="line"><span class="cl">            satu dokumen saja. Ia juga bisa digunakan untuk membuka dokumen
+</span></span><span class="line"><span class="cl">            lain, lalu mengaitkan jangkarnya.
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            Jangkar biasanya dibuat dengan tanda pagar (#) lalu diikuti
+</span></span><span class="line"><span class="cl">            dengan nama id dari elemen yang ingin dituju. Contohnya #penutup,
+</span></span><span class="line"><span class="cl">            maka link yang menggunakan anchor tersebut akan mencari elemen
+</span></span><span class="line"><span class="cl">            HTML yang memiliki id `penutup` dan membawa kita ke sana.
+</span></span><span class="line"><span class="cl">            Kira-kira begitulah cara kerjanya.
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;penutup&#34;</span><span class="p">&gt;</span>Akhir Kata..<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            Ini adalah penutup dari artikel ini, dan coba perhatikan headingnya.
+</span></span><span class="line"><span class="cl">            Di sana kita menggunakan id=&#34;penutup&#34;. Maka elemen ini akan menjadi
+</span></span><span class="line"><span class="cl">            tujuan dari anchor link.
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#top&#34;</span><span class="p">&gt;</span>Kembali ke Atas!<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Hasilnya:</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/tutorial/html/link-anchor.gif" 
+      alt="Deskripsi gambar" 
+      class="mx-auto cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    const isZoomed = img.classList.toggle('zoomed');
+    
+    if (isZoomed) {
+      
+      const scale = Math.min(
+        window.innerWidth * 0.9 / img.naturalWidth,
+        window.innerHeight * 0.9 / img.naturalHeight,
+        1.0 
+      );
+      
+      img.style.setProperty('--zoom-scale', scale);
+      document.body.style.overflow = 'hidden';
+      
+      
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.dataset.escHandler = handleKey;
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', img.dataset.escHandler);
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1000;
+    cursor: zoom-out;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  
+   
+  body.overflow-hidden {
+    overflow: hidden !important;
+  }
+  </style>
+<p>Kalau kita perhatikan, disana kita menggunakan <code>#top</code> sebgail URL</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">&lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&#34;#top&#34;</span>&gt;Kembali ke Atas!&lt;/a&gt;
+</span></span></code></pre></div><p>Sedangkan elemen yang memiliki <code>id=&quot;top&quot;</code>, tidak ada di dalam HTML yang kita tulis.</p>
+<p>Mengapa link anchor ini bisa menuju ke atas?</p>
+<p>Ini karena browser sudah paham, jika ada link anchor yang menuju ke <code>#top</code> maka ia akan dibawa ke bagian teratas dari dokumen.</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/tutorial/html/top-anchor.png" 
+      alt="Deskripsi gambar" 
+      class="mx-auto cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    const isZoomed = img.classList.toggle('zoomed');
+    
+    if (isZoomed) {
+      
+      const scale = Math.min(
+        window.innerWidth * 0.9 / img.naturalWidth,
+        window.innerHeight * 0.9 / img.naturalHeight,
+        1.0 
+      );
+      
+      img.style.setProperty('--zoom-scale', scale);
+      document.body.style.overflow = 'hidden';
+      
+      
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.dataset.escHandler = handleKey;
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', img.dataset.escHandler);
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1000;
+    cursor: zoom-out;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  
+   
+  body.overflow-hidden {
+    overflow: hidden !important;
+  }
+  </style>
+<h4 id="membuat-link-untuk-memanggil-fungsi-javascript">Membuat Link untuk Memanggil Fungsi Javascript</h4>
+<p>Link dapat juga digunakan untuk memanggil fungsi Javascript.</p>
+<p>Pemanggilan fungsi Javascript biasanya dilakukan dengan atribut even seperti <code>onclick</code>, <code>onmouseover</code>, <code>onmouseout</code>, dan sebagainya.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Tutorial Link di HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&#34;alert(&#39;Hello World!&#39;)&#34;</span><span class="p">&gt;</span>Jalankan JS<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#!&#34;</span> <span class="na">onmouseover</span><span class="o">=</span><span class="s">&#34;alert(&#39;link sudah kamu sentuh!&#39;)&#34;</span><span class="p">&gt;</span>Coba Sentuh Link ini<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Hasilnya:</p>
+
+  <figure class="my-4 text-center">
+    <img 
+      src="http://localhost:1313/images/content/tutorial/html/link-js.gif" 
+      alt="Deskripsi gambar" 
+      class="mx-auto cursor-zoom-in max-w-full rounded"
+      onclick="zoom(this)"
+    >
+    
+    <figcaption class="text-sm text-gray-500 mt-2">
+      <em>Gambar contoh dengan zoom</em>
+    </figcaption>
+    
+  </figure>
+  
+  <script>
+  function zoom(img) {
+    const isZoomed = img.classList.toggle('zoomed');
+    
+    if (isZoomed) {
+      
+      const scale = Math.min(
+        window.innerWidth * 0.9 / img.naturalWidth,
+        window.innerHeight * 0.9 / img.naturalHeight,
+        1.0 
+      );
+      
+      img.style.setProperty('--zoom-scale', scale);
+      document.body.style.overflow = 'hidden';
+      
+      
+      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      document.addEventListener('keydown', handleKey);
+      img.dataset.escHandler = handleKey;
+    } else {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', img.dataset.escHandler);
+    }
+  }
+  </script>
+  
+  <style>
+  img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 1000;
+    cursor: zoom-out;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    object-fit: contain;
+  }
+  
+   
+  body.overflow-hidden {
+    overflow: hidden !important;
+  }
+  </style>
+<p>Sebenarnya hampir semua elemen bisa menjalankan fungsi Javascript dengan atribut event.</p>
+<p>Nah, khusus untuk link. Dia bisa juga menjalankan fungsi Javascript melalui atribut <code>href</code> atau URL.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Tutorial Link di HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;javascript:alert(&#39;Hello World!&#39;)&#34;</span><span class="p">&gt;</span>Jalankan JS<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h4 id="hasilnya-akan-sama-seperti-contoh-sebelemenya">Hasilnya akan sama seperti contoh sebelemenya.</h4>
+<p>Membuat Link dengan Gambar
+Membuat gambar sebagai link kadang sering dilakukan dalam web. Cara membuatnya sangat mudah, kita hanya perlu membungkus tag <code>&lt;img&gt;</code> dengan tag <code>&lt;a&gt;</code>.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://www.petanikode.com/img/logo.svg&#34;</span> <span class="p">/&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h3 id="apa-selanjutnya">Apa Selanjutnya?</h3>
+<p>Nah, sampai di sini dulu tutorial pertama ini..</p>
+<p>Jika ada yang belum jelas, bisa ditanyakan melalui komentar.</p>
+<p>Berikutnya silakan pelajari tentang definisi tag, elemen, dan atribut:</p>
+<ul>
+<li><a href="#">Belajar HTML #08: Mengenal tag, elemen, dan atribut dalam HTML</a></li>
+</ul>
+<div class="custom-alert custom-alert-info" role="alert">
+  <div class="custom-alert-header"><i class="custom-alert-icon fas fa-circle-info"></i><span class="custom-alert-title">Info</span>
+  </div>
+  <div class="custom-alert-content">
+    &ldquo;Untuk tutorial HTML lainnya, silakan cek di <a href="#">List tutorial HTML</a>&rdquo;
+  </div>
+</div>
+
         
         
       </div>
@@ -1373,6 +2274,30 @@
           <span class="flex items-center justify-center h-5 w-5 rounded-full bg-teal-500 text-white text-xs">→</span>
           <span>Belajar HTML #07: Membuat Link pada HTML</span>
         </div>
+      
+    </li>
+    
+    <li class="mb-2 rounded-md ">
+      
+        
+        <a href="/tutorial/html/html-image/" class="flex items-center gap-3 p-2 w-full hover:bg-teal-50 dark:hover:bg-teal-800">
+          
+            <span class="flex items-center justify-center h-5 w-5 rounded-full border border-gray-300 text-xs"></span>
+          
+          <span>Belajar HTML #08: Menampilkan Gambar di HTML</span>
+        </a>
+      
+    </li>
+    
+    <li class="mb-2 rounded-md ">
+      
+        
+        <a href="/tutorial/html/html-list/" class="flex items-center gap-3 p-2 w-full hover:bg-teal-50 dark:hover:bg-teal-800">
+          
+            <span class="flex items-center justify-center h-5 w-5 rounded-full border border-gray-300 text-xs"></span>
+          
+          <span>Belajar HTML #09: Membuat List pada HTML</span>
+        </a>
       
     </li>
     
@@ -1564,6 +2489,54 @@
              src="http://localhost:1313/images/cover/html.png" 
              data-src="http://localhost:1313/images/cover/html.png" 
              alt="Belajar HTML #02: Memahami Tag, Element, dan Atribut dalam HTML" 
+             height="64" 
+             width="64"
+             loading="lazy">
+      
+    </div>
+  </a>
+  
+  <a href="/tutorial/html/html-image/" title="Belajar HTML #08: Cara Menampilkan Gambar di HTML">
+    <div class="flex justify-between items-center gap-2 p-6 hover:bg-slate-100 dark:hover:bg-slate-700 active:scale-95 active:rounded-xl transition-all">
+      <div class="flex-1 min-w-0">
+        <h3 class="text-lg font-semibold tracking-tight line-clamp-2 leading-tight mb-1">
+          Belajar HTML #08: Cara Menampilkan Gambar di HTML
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-200 line-clamp-1">
+          <time datetime="2025-06-27">27 Jun 2025</time>
+          
+        </p>
+      </div>
+      
+      
+        <img class="w-16 h-16 lazyload rounded-lg object-cover" 
+             src="http://localhost:1313/images/cover/img.png" 
+             data-src="http://localhost:1313/images/cover/img.png" 
+             alt="Belajar HTML #08: Cara Menampilkan Gambar di HTML" 
+             height="64" 
+             width="64"
+             loading="lazy">
+      
+    </div>
+  </a>
+  
+  <a href="/tutorial/html/html-list/" title="Belajar HTML #09: Cara Membuat List di HTML">
+    <div class="flex justify-between items-center gap-2 p-6 hover:bg-slate-100 dark:hover:bg-slate-700 active:scale-95 active:rounded-xl transition-all">
+      <div class="flex-1 min-w-0">
+        <h3 class="text-lg font-semibold tracking-tight line-clamp-2 leading-tight mb-1">
+          Belajar HTML #09: Cara Membuat List di HTML
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-200 line-clamp-1">
+          <time datetime="2025-06-27">27 Jun 2025</time>
+          
+        </p>
+      </div>
+      
+      
+        <img class="w-16 h-16 lazyload rounded-lg object-cover" 
+             src="http://localhost:1313/images/cover/img.png" 
+             data-src="http://localhost:1313/images/cover/img.png" 
+             alt="Belajar HTML #09: Cara Membuat List di HTML" 
              height="64" 
              width="64"
              loading="lazy">

@@ -77,3 +77,4 @@ gitGraph
 {{< embed url="https://youtu.be/dQw4w9WgXcQ" >}}
 
 
+{{< video src="/images/content/tutorial/html/image-link.webm" src_mp4="/images/content/tutorial/html/image-link.webm">}}
