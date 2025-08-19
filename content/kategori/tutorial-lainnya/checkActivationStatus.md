@@ -78,3 +78,35 @@ gitGraph
 
 
 {{< video src="/images/content/tutorial/html/image-link.webm" src_mp4="/images/content/tutorial/html/image-link.webm">}}
+
+### Untuk Progress tutorial
+kode di bawah ini untuk progress tutorial yang masih belom selesai tambahkan di didalam file layouts:
+layouts/components/daftar-tutorial.html bisa ditambah kedalam file setelah tag `</ol>.`
+
+```html
+<div class="not-prose font-sans mt-8 p-4 bg-amber-100/50 dark:bg-yellow-300/10 rounded-md">
+  <h5 class="font-semibold text-2xl mb-6">🚧 Work in Progress 🚧</h5>
+  <p>Maaf jika ada link yang belum aktif. Link tersebut masih dalam draft
+  atau sedang dikerjakan. Do'akan agar penulis tetap sehat dan tulisannya cepat terbit 🙏.
+  Kamu juga bisa memberikan dukungan dengan <a class="font-bold underline" href="https://trakteer.id/ardianta" target="_blank">mentrakteer kopi</a> ☕ supaya penulis kuat begadang, hehe.</p>
+</div>
+</div>
+```
+
+**Atau** Difrontmatter tambahka kode ini:
+```yaml
+linkTitle: "Belajar HTML #10: Membuat Tabel pada HTML"
+date: 2025-07-10
+weight: 10
+series: "HTML"
+tutorial: ["HTML"]
+topik: ["HTML"]
+thumbnail: "/images/cover/html.png"
+image: "/images/cover/html.png"
+show_tutorial_list: true
+completed: false
+current: true 
+coming_soon: true  # untuk item "Coming soon"
+description: "Belajar membuat tampilan web modern dengan HTML dan CSS untuk pemula."
+```
+

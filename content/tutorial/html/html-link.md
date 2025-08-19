@@ -656,7 +656,6 @@ Contoh:
 
 Hasilnya:
 
-
   {{< image 
   src="images/content/tutorial/html/link-js.gif" 
   alt="Deskripsi gambar" 
@@ -693,6 +692,41 @@ Contoh:
 ```html
 <a href="#"><img src="https://www.petanikode.com/img/logo.svg" /></a>
 ```
+
+#### Membuat Link Untuk Mengirim Email
+
+Link kadang juga digunakan untuk mengirim email.
+
+Cara membuatnya:
+
+Ubah URL tujuan dari link dengan `mailto`, lalu diikuti dengan alamat email yang akan menerima email.
+
+Contoh:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tutorial Link di HTML</title>
+    </head>
+    <body>
+        <p>
+            Info lebih lanjut:
+           <a href="mailto:tes@contoh.com" 
+           title="kirim email ke Admin">Hubungi Saya</a>
+        </p>
+    </body>
+</html>
+```
+
+  {{< image 
+  src="images/content/tutorial/html/link-email.gif" 
+  alt="Deskripsi gambar" 
+  caption="*Gambar contoh dengan zoom*" 
+  >}}
+
+Jika kamu membukanya di Google Chrome, maka ia akan membuka Gmail. Tapi jika dibuka di Firefox, ia akan memilih aplikasi email yang tersedia di komputer.
+
 
 ### Apa Selanjutnya?
 Nah, sampai di sini dulu tutorial pertama ini..
