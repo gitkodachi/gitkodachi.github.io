@@ -1,10 +1,8 @@
 ---
-title: "Tutorial Git untuk Pemula"
+title: "Tutorial Program Csharp untuk Pemula"
+linkTitle: "Tutorial Program Csharp untuk Pemula"
 date: 2025-06-27
 thumbnail: "/images/thumbnail/csharp.png"
-platform: "Multi"
-articles: 5
-level: "Pemula"
-description: "Pelajari dasar-dasar version control dengan Git untuk pemula."
+description: "Pelajari dasar-dasar Program Csharp untuk pemula."
 layout: single-tutorial
 ---

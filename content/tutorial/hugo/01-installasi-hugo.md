@@ -4,8 +4,10 @@ linkTitle: "Belajar Git #01: Cara Install hugo dan Konfigurasi Awal yang Harus D
 date: 2025-06-27
 image: "/images/cover/Hugo-01.png"
 thumbnail: "/images/cover/Hugo-01.png"
+weight: 1
 series: "hugo"
-tags: ["Hugo"]
+tutorial: ["Hugo"]
+topik: ["Hugo"]
 description: "Panduan lengkap instalasi Hugo di berbagai sistem operasi"
 ---
 

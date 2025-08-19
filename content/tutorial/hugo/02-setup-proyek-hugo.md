@@ -4,8 +4,10 @@ linkTitle: "Belajar Git #02: Setup Proyek hugo dan Konfigurasi Awal yang Harus D
 date: 2025-06-27
 image: "/images/cover/Hugo-01.png"
 thumbnail: "/images/cover/Hugo-01.png"
+weight: 2
 series: "hugo"
-tags: ["Hugo"]
+tutorial: ["Hugo"]
+topik: ["Hugo"]
 description: "Langkah-langkah membuat proyek baru Hugo, inisialisasi git, dan struktur folder."
 ---
 

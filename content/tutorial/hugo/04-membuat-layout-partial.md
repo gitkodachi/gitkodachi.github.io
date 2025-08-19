@@ -4,8 +4,10 @@ linkTitle: "Belajar Git #04: Menambahkan Layout Tema & Integrasi Tailwind CSS"
 date: 2025-06-27
 image: "/images/cover/Hugo-01.png"
 thumbnail: "/images/cover/Hugo-01.png"
+weight: 4
 series: "hugo"
-tags: ["Hugo"]
+tutorial: ["Hugo"]
+topik: ["Hugo"]
 description: "Cara menghubungkan tema Hugo dan mengintegrasikan Tailwind CSS menggunakan PostCSS."
 ---
 

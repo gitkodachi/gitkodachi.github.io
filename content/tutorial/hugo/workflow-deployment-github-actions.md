@@ -4,8 +4,10 @@ linkTitle: "Belajar hugo #06: Workflow Deployment Hugo dengan GitHub Actions"
 date: 2025-06-27
 image: "/images/cover/Hugo-01.png"
 thumbnail: "/images/cover/Hugo-01.png"
+weight: 0
 series: "hugo"
-tags: ["Hugo"]
+tutorial: ["Hugo"]
+topik: ["Hugo"]
 description: "Belajar cara setup workflow CI/CD menggunakan GitHub Actions untuk Hugo project dengan Tailwind CSS."
 ---
 

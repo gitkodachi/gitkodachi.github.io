@@ -1,12 +1,15 @@
 ---
 title: "IBM SPSS Static"
+linkTitle: "IBM SPSS Static V27"
 author: "default"
 date: 2025-07-10
-description: "SPSS software yang sangat populer untuk di gunakan analisis statistik segala bidang ilmiah"
-os: ["Windows", "macOS"]
-kategori: ["edukasi", "statistik"]
+weight: 1
+show_tutorial_list: true
+completed: false
+current: true 
 thumbnail: "/images/content/software/spss.png"
 image: "/images/content/software/spss.png"
+description: "SPSS software yang sangat populer untuk di gunakan analisis statistik segala bidang ilmiah"
 ---
 
 ### IBM SPSS Statistics 27.0.1 IF026 Full

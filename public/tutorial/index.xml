@@ -16,73 +16,17 @@
       <description></description>
     </item>
     <item>
-      <title>Tutorial Git untuk Pemula</title>
-      <link>http://localhost:1313/tutorial/c/</link>
-      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tutorial/c/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tutorial Git untuk Pemula</title>
-      <link>http://localhost:1313/tutorial/chsarp/</link>
-      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tutorial/chsarp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tutorial Git untuk Pemula</title>
+      <title>Tutorial Codeigniter untuk Pemula</title>
       <link>http://localhost:1313/tutorial/codeigniter/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tutorial/codeigniter/</guid>
       <description></description>
     </item>
     <item>
-      <title>Tutorial Git untuk Pemula</title>
+      <title>Tutorial CSS untuk Pemula</title>
       <link>http://localhost:1313/tutorial/css/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tutorial/css/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tutorial Git untuk Pemula</title>
-      <link>http://localhost:1313/tutorial/java/</link>
-      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tutorial/java/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tutorial Git untuk Pemula</title>
-      <link>http://localhost:1313/tutorial/javascript/</link>
-      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tutorial/javascript/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tutorial Git untuk Pemula</title>
-      <link>http://localhost:1313/tutorial/kotlin/</link>
-      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tutorial/kotlin/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tutorial Git untuk Pemula</title>
-      <link>http://localhost:1313/tutorial/nodejs/</link>
-      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tutorial/nodejs/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tutorial Git untuk Pemula</title>
-      <link>http://localhost:1313/tutorial/php/</link>
-      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tutorial/php/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tutorial Git untuk Pemula</title>
-      <link>http://localhost:1313/tutorial/python/</link>
-      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tutorial/python/</guid>
       <description></description>
     </item>
     <item>
@@ -97,6 +41,62 @@
       <link>http://localhost:1313/tutorial/hugo/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tutorial/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorial Java untuk Pemula</title>
+      <link>http://localhost:1313/tutorial/java/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorial Javascript untuk Pemula</title>
+      <link>http://localhost:1313/tutorial/javascript/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorial Kotlin untuk Pemula</title>
+      <link>http://localhost:1313/tutorial/kotlin/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/kotlin/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorial NodeJS untuk Pemula</title>
+      <link>http://localhost:1313/tutorial/nodejs/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/nodejs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorial PHP untuk Pemula</title>
+      <link>http://localhost:1313/tutorial/php/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/php/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorial Program C untuk Pemula</title>
+      <link>http://localhost:1313/tutorial/c/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/c/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorial Program Csharp untuk Pemula</title>
+      <link>http://localhost:1313/tutorial/chsarp/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/chsarp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorial Python untuk Pemula</title>
+      <link>http://localhost:1313/tutorial/python/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/python/</guid>
       <description></description>
     </item>
   </channel>

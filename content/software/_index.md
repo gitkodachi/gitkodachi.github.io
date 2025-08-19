@@ -1,5 +1,5 @@
 ---
 title: "Kategori Software"
-description: "Jelajahi berbagai software berdasarkan kategori seperti edukasi, multimedia, hingga produktivitas."
+date: 2025-06-27
 layout: software-list
 ---

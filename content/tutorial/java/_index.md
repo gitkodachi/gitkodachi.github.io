@@ -1,10 +1,8 @@
 ---
-title: "Tutorial Git untuk Pemula"
+title: "Tutorial Java untuk Pemula"
+linkTitle: "Tutorial Java untuk Pemula"
 date: 2025-06-27
 thumbnail: "/images/thumbnail/java.svg"
-platform: "Multi"
-articles: 5
-level: "Pemula"
-description: "Pelajari dasar-dasar version control dengan Git untuk pemula."
+description: "Pelajari dasar-dasar Java untuk pemula."
 layout: single-tutorial
 ---

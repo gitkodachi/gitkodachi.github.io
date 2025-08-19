@@ -4,8 +4,10 @@ linkTitle: "Belajar Git #05: Menambahkan Komponen Tema & Interaktifitas Frontend
 date: 2025-06-27
 image: "/images/cover/Hugo-01.png"
 thumbnail: "/images/cover/Hugo-01.png"
+weight: 5
 series: "hugo"
-tags: ["Hugo"]
+tutorial: ["Hugo"]
+topik: ["Hugo"]
 description: "Pelajari cara membuat komponen frontend reusable dan interaktif menggunakan Alpine.js dan Hugo Partial."
 ---
 

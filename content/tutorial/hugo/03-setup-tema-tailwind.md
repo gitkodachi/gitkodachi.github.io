@@ -4,8 +4,10 @@ linkTitle: "Belajar Git #03: Menambahkan Tema & Integrasi Tailwind CSS"
 date: 2025-06-27
 image: "/images/cover/Hugo-01.png"
 thumbnail: "/images/cover/Hugo-01.png"
+weight: 2
 series: "hugo"
-tags: ["Hugo"]
+tutorial: ["Hugo"]
+topik: ["Hugo"]
 description: "Cara menghubungkan tema Hugo dan mengintegrasikan Tailwind CSS menggunakan PostCSS."
 ---
 
