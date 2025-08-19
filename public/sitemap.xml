@@ -5,9 +5,6 @@
     <loc>http://localhost:1313/tutorial/html/html-dasar/</loc>
     <lastmod>2025-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/software/edukasi/spss/</loc>
-    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tutorial/git/git-untuk-pemula/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
@@ -86,46 +83,13 @@
     <loc>http://localhost:1313/tutorial/git/github-workflow/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/kategori/archive/</loc>
-    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/software/produktivitas/instal-vbox/</loc>
-    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/kategori/edukasi/</loc>
-    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/topik/html/</loc>
-    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/kategori/multimedia/</loc>
     <lastmod>2025-07-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
     <lastmod>2025-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/kategori/produktivitas/</loc>
-    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/topik/</loc>
-    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/kategori/tutorial/</loc>
-    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/kategori/video/</loc>
-    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/software/edukasi/vbox/</loc>
-    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/kategori/virtualisasi/</loc>
-    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/software/multimedia/vlc/</loc>
-    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/software/edukasi/winrar/</loc>
     <lastmod>2025-07-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/kategori/</loc>
@@ -152,9 +116,6 @@
     <loc>http://localhost:1313/topik/hugo/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/software/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/privacy/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
@@ -168,9 +129,6 @@
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tutorial/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/software/edukasi/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/about/</loc>
@@ -281,36 +239,34 @@
     <loc>http://localhost:1313/post/laravel-11/</loc>
     <lastmod>2023-06-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/software/laravel-datables/</loc>
+    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/software/laravel-dataviz/</loc>
+    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/software/laravel-realtime/</loc>
+    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/software/laravel/</loc>
+    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/software/modern-react/</loc>
+    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/software/react-aws/</loc>
+    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/software/react-express/</loc>
+    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/software/vuejs/</loc>
+    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/software/</loc>
+    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/buku/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/buku/laravel-datables/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/buku/laravel-dataviz/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/buku/laravel-realtime/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/buku/laravel/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/buku/modern-react/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/buku/react-aws/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/buku/react-express/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/buku/vuejs/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/software/multimedia/</loc>
-  </url><url>
-    <loc>http://localhost:1313/software/produktivitas/</loc>
   </url><url>
     <loc>http://localhost:1313/kategori/tutorial-lainnya/</loc>
   </url><url>
