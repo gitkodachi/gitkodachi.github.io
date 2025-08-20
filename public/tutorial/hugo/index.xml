@@ -16,13 +16,6 @@
       <description>&lt;h2 id=&#34;mengunduh-hgo&#34;&gt;Mengunduh Hgo&lt;/h2&gt;&#xA;&lt;p&gt;Silahkan download versi terbaru dari [Hugo Release]((&lt;a href=&#34;https://github.com/gohugoio/hugo/releases)&#34;&gt;https://github.com/gohugoio/hugo/releases)&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;instalasi-di-windows&#34;&gt;Instalasi di Windows&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Unduh file zip Window (Extended Edition)&lt;/li&gt;&#xA;&lt;li&gt;Extrack ke folder &amp;lsquo;C:\Hugo&#39;&lt;/li&gt;&#xA;&lt;li&gt;Tambahkan path &amp;lsquo;C:\Hugo&#39; ke environment variables&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;instalasi-di-macos-menggunakan-homebrew&#34;&gt;Instalasi di macOS (Menggunakan Homebrew)&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install hugo&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;instalasi-di-linux-menggunakan-snap&#34;&gt;Instalasi di Linux (menggunakan Snap)&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo snap install hugo --channel&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;extended&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;✅ Setelah instalasi, cek versi Hugo:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Belajar Python #01: Mengenal Bahasa Pemrograman Python</title>
-      <link>http://localhost:1313/tutorial/python/python-linux/</link>
-      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tutorial/python/python-linux/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Belajar Hugo #2: Setup Proyek Hugo dari Awal</title>
       <link>http://localhost:1313/tutorial/hugo/02-setup-proyek-hugo/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>

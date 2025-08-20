@@ -7,8 +7,10 @@ avatar: /images/global/avatar.png
 thumbnail: "/images/content/basic/window-11.png"
 image: "/images/content/basic/window-11.png"
 kategori: ["basic-programming"]
-topik: ["Windos", "Programming"]
-show_tutorial_list: false
+topik: ["Programming"]
+series: "Programming"
+tutorial: ["Programming"]
+show_tutorial_list: true
 completed: false
 current: true 
 ---

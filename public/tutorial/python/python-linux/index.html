@@ -661,7 +661,7 @@ Sementara untuk yang sudah mahir, bisa mencoba yang versi3.</p>
 
     <div class="p-4 mt-4 rounded-2xl text-slate-500 dark:text-slate-300 bg-white dark:bg-slate-800 shadow-md">
       
-        <div class="shadow-md bg-white dark:bg-slate-800 rounded-xl mt-0"> 
+        <div class="shadow-md bg-white dark:bg-slate-800 rounded-xl mt-0 sticky top-4">
   
   <div class="p-4 border-b border-gray-200 dark:border-gray-700">
     <h3 class="text-xl font-bold flex items-center gap-2">
@@ -673,7 +673,9 @@ Sementara untuk yang sudah mahir, bisa mencoba yang versi3.</p>
   </div>
 
   <div class="px-6 py-4">
-    <ol class="mt-8 space-y-2 mx-2">
+    <ol class="mt-4 space-y-2 mx-2">
+      
+      
       
       
       
@@ -681,18 +683,24 @@ Sementara untuk yang sudah mahir, bisa mencoba yang versi3.</p>
       
       
         
-        <li class="mb-2 rounded-md line-clamp-2 
+          
+        
+        
+        <li class="mb-2 rounded-md line-clamp-2 transition-all duration-200
              
-              bg-teal-600 text-white
+              bg-teal-600 text-white shadow-md
             ">
           
           
             
-            <div class="p-2 w-full h-full inline-flex items-center gap-2 cursor-default">
-              <svg class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+            <div class="p-3 w-full h-full inline-flex items-center gap-3 cursor-default">
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+                <span class="text-xs font-bold">1</span>
+              </div>
+              <span class="font-medium">Belajar Python #01: Mengenal Bahasa Pemrograman Python</span>
+              <svg class="h-4 w-4 ml-auto flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414.0l4-4z" clip-rule="evenodd"></path>
               </svg>
-              <span>Belajar Python #01: Mengenal Bahasa Pemrograman Python</span>
             </div>
           
           
@@ -700,12 +708,32 @@ Sementara untuk yang sudah mahir, bisa mencoba yang versi3.</p>
       
     </ol>
 
+    
+    
       
-      <div class="not-prose font-sans mt-8 p-4 bg-amber-100/50 dark:bg-yellow-300/10 rounded-md">
-        <h5 class="font-semibold text-2xl mb-6">🚧 Work in Progress 🚧</h5>
-        <p>Maaf jika ada link yang belum aktif. Link tersebut masih dalam draft atau sedang dikerjakan. Do'akan agar penulis tetap sehat dan tulisannya cepat terbit 🙏. Kamu juga bisa memberikan dukungan dengan <a class="font-bold underline" href="https://teer.id/smart_peaple" target="_blank" rel="noopener">mentrakteer kopi</a> ☕ supaya penulis kuat begadang, hehe.</p>
+      
+      
+      <div class="mt-6 bg-slate-100 dark:bg-slate-700 rounded-full h-2">
+        <div class="bg-teal-600 h-2 rounded-full transition-all duration-500" 
+            style="width: 0%"></div>
       </div>
-      
+      <div class="flex justify-between items-center mt-2 text-xs text-slate-500 dark:text-slate-400">
+        <span>Progress: 0/1 bagian</span>
+        <span>0% selesai</span>
+      </div>
+    
+
+    
+    <div class="not-prose font-sans mt-6 p-4 bg-amber-100/50 dark:bg-yellow-300/10  border border-amber-300  rounded-lg">
+      <div class="flex items-center gap-2 mb-3">
+        <svg class="h-5 w-5 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+        </svg>
+        <h5 class="font-semibold text-lg text-amber-800 dark:text-amber-300">🚧 Work in Progress 🚧</h5>
+      </div>
+      <p class="text-sm text-amber-700 dark:text-amber-200">Beberapa tutorial masih dalam pengerjaan. Dukung kami dengan memberikan semangat atau <a class="font-medium underline hover:text-amber-900 dark:hover:text-amber-100 transition-colors" href="https://teer.id/smart_peaple" target="_blank" rel="noopener">mentraktir kopi</a> ☕ agar kami semakin semangat membuat konten!</p>
+    </div>
+    
   </div>
 </div>
       

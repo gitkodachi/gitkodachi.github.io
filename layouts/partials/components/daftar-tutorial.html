@@ -1,4 +1,4 @@
-<div class="shadow-md bg-white dark:bg-slate-800 rounded-xl mt-0"> <!-- Ubah mt-0 untuk hapus margin top -->
+<div class="shadow-md bg-white dark:bg-slate-800 rounded-xl mt-0 sticky top-4">
   <!-- Header Daftar Tutorial -->
   <div class="p-4 border-b border-gray-200 dark:border-gray-700">
     <h3 class="text-xl font-bold flex items-center gap-2">
@@ -10,60 +10,93 @@
   </div>
 
   <div class="px-6 py-4">
-    <ol class="mt-8 space-y-2 mx-2">
+    <ol class="mt-4 space-y-2 mx-2">
       {{ $currentSeries := .Params.series }}
       {{ $pages := where site.RegularPages "Params.series" "==" $currentSeries }}
       {{ $currentPageURL := .RelPermalink }}
       {{ $hasComingSoon := false }}
+      {{ $totalPages := len $pages }}
+      {{ $completedPages := 0 }}
       
       {{ range sort $pages ".Params.weight" "asc" }}
-        {{ if .Params.coming_soon }}{{ $hasComingSoon = true }}{{ end }}
-        <li class="mb-2 rounded-md line-clamp-2 
+        {{ if .Params.coming_soon }}
+          {{ $hasComingSoon = true }}
+        {{ else }}
+          {{ $completedPages = add $completedPages 1 }}
+        {{ end }}
+        
+        <li class="mb-2 rounded-md line-clamp-2 transition-all duration-200
             {{ if eq .RelPermalink $currentPageURL }} 
-              bg-teal-600 text-white
+              bg-teal-600 text-white shadow-md
             {{ else if .Params.coming_soon }} 
-              bg-slate-50 text-slate-400 dark:bg-slate-600
+              bg-slate-50 text-slate-400 dark:bg-slate-600 cursor-not-allowed
             {{ else }} 
-              bg-slate-100 hover:bg-teal-600 hover:text-white dark:bg-slate-700 dark:hover:bg-teal-600
+              bg-slate-100 hover:bg-teal-600 hover:text-white dark:bg-slate-700 dark:hover:bg-teal-600 hover:shadow-md
             {{ end }}">
           
           {{ if eq .RelPermalink $currentPageURL }}
             <!-- Active Page -->
-            <div class="p-2 w-full h-full inline-flex items-center gap-2 cursor-default">
-              <svg class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+            <div class="p-3 w-full h-full inline-flex items-center gap-3 cursor-default">
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+                <span class="text-xs font-bold">{{ .Params.weight }}</span>
+              </div>
+              <span class="font-medium">{{ .LinkTitle | default .Title }}</span>
+              <svg class="h-4 w-4 ml-auto flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414.0l4-4z" clip-rule="evenodd"></path>
               </svg>
-              <span>{{ .LinkTitle | default .Title }}</span>
             </div>
           
           {{ else if .Params.coming_soon }}
             <!-- Coming Soon Page -->
-            <span class="p-2 w-full h-full inline-flex items-center gap-2">
-              <svg class="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7A2 2 0 005 5v14a2 2 0 002 2z"></path>
-              </svg>
-              <span>{{ .LinkTitle | default .Title }}</span>
-              <i class="text-xs text-slate-400">(Coming soon)</i>
-            </span>
+            <div class="p-3 w-full h-full inline-flex items-center gap-3">
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-500 flex items-center justify-center">
+                <span class="text-xs text-slate-500 dark:text-slate-300">{{ .Params.weight }}</span>
+              </div>
+              <span class="font-medium">{{ .LinkTitle | default .Title }}</span>
+              <span class="ml-auto text-xs bg-slate-200 dark:bg-slate-600 text-slate-500 dark:text-slate-300 px-2 py-1 rounded-full">Coming Soon</span>
+            </div>
           
           {{ else }}
             <!-- Regular Page -->
-            <a href="{{ .RelPermalink }}" class="p-2 w-full h-full inline-flex items-center gap-2">
-              <svg class="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            <a href="{{ .RelPermalink }}" class="p-3 w-full h-full inline-flex items-center gap-3 group">
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-teal-100 group-hover:bg-teal-700 group-hover:bg-opacity-30 dark:bg-teal-900 dark:bg-opacity-50 flex items-center justify-center transition-colors">
+                <span class="text-xs font-medium text-teal-700 group-hover:text-white dark:text-teal-300">{{ .Params.weight }}</span>
+              </div>
+              <span class="font-medium">{{ .LinkTitle | default .Title }}</span>
+              <svg class="h-4 w-4 ml-auto flex-shrink-0 text-slate-400 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
               </svg>
-              <span>{{ .LinkTitle | default .Title }}</span>
             </a>
           {{ end }}
         </li>
       {{ end }}
     </ol>
 
-      {{ if $hasComingSoon }}
-      <div class="not-prose font-sans mt-8 p-4 bg-amber-100/50 dark:bg-yellow-300/10 rounded-md">
-        <h5 class="font-semibold text-2xl mb-6">🚧 Work in Progress 🚧</h5>
-        <p>Maaf jika ada link yang belum aktif. Link tersebut masih dalam draft atau sedang dikerjakan. Do'akan agar penulis tetap sehat dan tulisannya cepat terbit 🙏. Kamu juga bisa memberikan dukungan dengan <a class="font-bold underline" href="https://teer.id/smart_peaple" target="_blank" rel="noopener">mentrakteer kopi</a> ☕ supaya penulis kuat begadang, hehe.</p>
+    <!-- Progress Bar -->
+    {{ if gt $totalPages 0 }}
+      {{ $percentage := mul (div (float $completedPages) (float $totalPages)) 100 }}
+      {{ $percentageFormatted := printf "%.0f" $percentage }}
+      
+      <div class="mt-6 bg-slate-100 dark:bg-slate-700 rounded-full h-2">
+        <div class="bg-teal-600 h-2 rounded-full transition-all duration-500" 
+            style="width: {{ $percentageFormatted }}%"></div>
       </div>
-      {{ end }}
+      <div class="flex justify-between items-center mt-2 text-xs text-slate-500 dark:text-slate-400">
+        <span>Progress: {{ $completedPages }}/{{ $totalPages }} bagian</span>
+        <span>{{ $percentageFormatted }}% selesai</span>
+      </div>
+    {{ end }}
+
+    {{ if $hasComingSoon }}
+    <div class="not-prose font-sans mt-6 p-4 bg-amber-100/50 dark:bg-yellow-300/10  border border-amber-300  rounded-lg">
+      <div class="flex items-center gap-2 mb-3">
+        <svg class="h-5 w-5 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+        </svg>
+        <h5 class="font-semibold text-lg text-amber-800 dark:text-amber-300">🚧 Work in Progress 🚧</h5>
+      </div>
+      <p class="text-sm text-amber-700 dark:text-amber-200">Beberapa tutorial masih dalam pengerjaan. Dukung kami dengan memberikan semangat atau <a class="font-medium underline hover:text-amber-900 dark:hover:text-amber-100 transition-colors" href="https://teer.id/smart_peaple" target="_blank" rel="noopener">mentraktir kopi</a> ☕ agar kami semakin semangat membuat konten!</p>
+    </div>
+    {{ end }}
   </div>
 </div>
