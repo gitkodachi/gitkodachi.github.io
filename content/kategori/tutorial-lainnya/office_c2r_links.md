@@ -7,6 +7,9 @@ thumbnail: "/images/thumbnail/blog_card.png"
 image: "/images/cover/mas.png"
 kategori: ["tutorial-lainya"]
 topik: ["windows", "office"]
+show_tutorial_list: false
+completed: false
+current: true 
 ---
 
 Semua tautan di bawah ini bersumber resmi dari Microsoft dengan lisensi Retail dan saluran pembaruan terkini.

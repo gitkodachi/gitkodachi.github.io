@@ -7,6 +7,9 @@ thumbnail: "/images/thumbnail/blog_card.png"
 image: "/images/cover/mas.png"
 kategori: ["tutorial-lainya"]
 topik: ["windows", "office"]
+show_tutorial_list: false
+completed: false
+current: true 
 ---
 
 Panduan tentang cara mencadangkan data dan menginstal ulang Windows.

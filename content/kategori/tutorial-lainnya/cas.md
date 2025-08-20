@@ -7,6 +7,9 @@ thumbnail: "/images/thumbnail/blog_card.png"
 image: "/images/cover/mas.png"
 kategori: ["tutorial-lainya"]
 topik: ["windows", "office"]
+show_tutorial_list: false
+completed: false
+current: true 
 ---
 
 Sebuah skrip Windows Powershell yang kuat untuk menampilkan status lisensi Microsoft Windows dan Office.
