@@ -161,9 +161,6 @@
     <loc>http://localhost:1313/kategori/tutorial-lainnya/clean-install-windows/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/topik/laravel/</loc>
-    <lastmod>2025-06-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/kategori/tutorial-lainnya/remove-malware/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
@@ -185,7 +182,7 @@
     <loc>http://localhost:1313/kategori/basic-programming/persiapan-awal/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/topik/php/</loc>
+    <loc>http://localhost:1313/topik/programming/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/kategori/tutorial-lainnya/download-software/</loc>
@@ -197,10 +194,19 @@
     <loc>http://localhost:1313/kategori/tutorial-lainya/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/topik/windos/</loc>
+    <lastmod>2025-06-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/topik/windows/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/topik/laravel/</loc>
+    <lastmod>2023-06-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/topik/mysql/</loc>
+    <lastmod>2023-06-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/topik/php/</loc>
     <lastmod>2023-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/kategori/web-programming/laravel/</loc>

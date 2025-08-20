@@ -1478,9 +1478,15 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="font-bold text-teal-600 dark:text-teal-400 mb-4 md:mb-0">
       <h3 class="text-xl font-bold mb-4">Belajar</h3>
       <nav class="flex flex-col gap-2 text-slate-300 font-medium">
-        <a href="/post/" class="hover:text-teal-400">Artikel</a>
-        <a href="/tutorial/" class="hover:text-teal-400">Tutorial</a>
-        <a href="/software/" class="hover:text-teal-400">Software</a>
+        <a href="/post/" class="hover:text-teal-400 transition-colors flex items-center">
+          <i class="fas fa-newspaper w-5 mr-2"></i> Artikel
+        </a>
+        <a href="/tutorial/" class="hover:text-teal-400 transition-colors flex items-center">
+          <i class="fas fa-graduation-cap w-5 mr-2"></i> Tutorial
+        </a>
+        <a href="/software/" class="hover:text-teal-400 transition-colors flex items-center">
+          <i class="fas fa-download w-5 mr-2"></i> Software
+        </a>
       </nav>
     </div>
 
@@ -1488,7 +1494,18 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="font-bold text-teal-600 dark:text-teal-400 mb-4 md:mb-0">
       <h3 class="text-xl font-bold mb-4">All Software</h3>
       <nav class="flex flex-col gap-2 text-slate-300 font-medium">
-        <a href="/software/" class="hover:text-teal-400">Sofware</a>
+        <a href="/software/" class="hover:text-teal-400 transition-colors flex items-center">
+          <i class="fas fa-laptop-code w-5 mr-2"></i> Software
+        </a>
+        <a href="/software/windows/" class="hover:text-teal-400 transition-colors flex items-center pl-7">
+          <i class="fab fa-windows w-5 mr-2"></i> Windows
+        </a>
+        <a href="/software/macos/" class="hover:text-teal-400 transition-colors flex items-center pl-7">
+          <i class="fab fa-apple w-5 mr-2"></i> macOS
+        </a>
+        <a href="/software/linux/" class="hover:text-teal-400 transition-colors flex items-center pl-7">
+          <i class="fab fa-linux w-5 mr-2"></i> Linux
+        </a>
       </nav>
     </div>
 
@@ -1496,9 +1513,21 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="font-bold text-teal-600 dark:text-teal-400 mb-4 md:mb-0">
       <h3 class="text-xl font-bold mb-4">Popular Tutorial</h3>
       <nav class="flex flex-col gap-2 text-slate-300 font-medium">
-        <a href="/tutorial/html/" class="hover:text-teal-400">HTML</a>
-        <a href="/tutorial/git/" class="hover:text-teal-400">Git</a>
-        <a href="/tutorial/hugo/" class="hover:text-teal-400">Hugo</a>
+        <a href="/tutorial/html/" class="hover:text-teal-400 transition-colors flex items-center">
+          <i class="fab fa-html5 w-5 mr-2"></i> HTML
+        </a>
+        <a href="/tutorial/git/" class="hover:text-teal-400 transition-colors flex items-center">
+          <i class="fab fa-git-alt w-5 mr-2"></i> Git
+        </a>
+        <a href="/tutorial/hugo/" class="hover:text-teal-400 transition-colors flex items-center">
+          <i class="fas fa-blog w-5 mr-2"></i> Hugo
+        </a>
+        <a href="/tutorial/javascript/" class="hover:text-teal-400 transition-colors flex items-center">
+          <i class="fab fa-js-square w-5 mr-2"></i> JavaScript
+        </a>
+        <a href="/tutorial/python/" class="hover:text-teal-400 transition-colors flex items-center">
+          <i class="fab fa-python w-5 mr-2"></i> Python
+        </a>
       </nav>
     </div>
 
@@ -1506,54 +1535,78 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="font-bold text-teal-600 dark:text-teal-400 mb-4 md:mb-0">
       <h3 class="text-xl font-bold mb-4">Social Media</h3>
       <nav class="flex flex-col gap-2 text-slate-300 font-medium">
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
-          <i class="fab fa-facebook mr-2"></i> Facebook Page
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="hover:text-[#3b5998] transition-colors flex items-center">
+          <i class="fab fa-facebook w-5 mr-2"></i> Facebook Page
         </a>
-        <a href="https://instagram.com/" target="_blank" rel="noopener">
-          <i class="fab fa-instagram mr-2"></i> Instagram
+        <a href="https://instagram.com/" target="_blank" rel="noopener" class="hover:text-[#E1306C] transition-colors flex items-center">
+          <i class="fab fa-instagram w-5 mr-2"></i> Instagram
         </a>
-        <a href="https://twitter.com/" target="_blank" rel="noopener">
-          <i class="fab fa-twitter mr-2"></i> Twitter
+        <a href="https://twitter.com/" target="_blank" rel="noopener" class="hover:text-[#1DA1F2] transition-colors flex items-center">
+          <i class="fab fa-twitter w-5 mr-2"></i> Twitter
         </a>
-        <a href="https://www.youtube.com/?sub_confirmation=1" target="_blank" rel="noopener">
-          <i class="fab fa-youtube mr-2"></i> Youtube
+        <a href="https://www.youtube.com/?sub_confirmation=1" target="_blank" rel="noopener" class="hover:text-[#FF0000] transition-colors flex items-center">
+          <i class="fab fa-youtube w-5 mr-2"></i> Youtube
         </a>
-        <a href="https://t.me/" target="_blank" rel="noopener">
-          <i class="fab fa-telegram mr-2"></i> Telegram
+        <a href="https://t.me/" target="_blank" rel="noopener" class="hover:text-[#0088cc] transition-colors flex items-center">
+          <i class="fab fa-telegram w-5 mr-2"></i> Telegram
+        </a>
+        <a href="https://github.com/" target="_blank" rel="noopener" class="hover:text-[#f5f5f5] transition-colors flex items-center">
+          <i class="fab fa-github w-5 mr-2"></i> GitHub
         </a>
       </nav>
     </div>
 
     
-    
+    <div class="font-bold text-teal-600 dark:text-teal-400 mb-4 md:mb-0">
+      <h3 class="text-xl font-bold mb-4">Payung Kode</h3>
+      <nav class="flex flex-col gap-2 text-slate-300 font-medium">
+        <a href="/about/" class="hover:text-teal-400 transition-colors flex items-center">
+          <i class="fas fa-info-circle w-5 mr-2"></i> About
+        </a>
+        <a href="/faqs/" class="hover:text-teal-400 transition-colors flex items-center">
+          <i class="fas fa-question-circle w-5 mr-2"></i> FAQs
+        </a>
+        <a href="/contact/" class="hover:text-teal-400 transition-colors flex items-center">
+          <i class="fas fa-envelope w-5 mr-2"></i> Contact
+        </a>
+        <a href="/privacy/" class="hover:text-teal-400 transition-colors flex items-center">
+          <i class="fas fa-shield-alt w-5 mr-2"></i> Privacy
+        </a>
+        <a href="/terms/" class="hover:text-teal-400 transition-colors flex items-center">
+          <i class="fas fa-file-contract w-5 mr-2"></i> Terms
+        </a>
+      </nav>
+    </div>
 
   </div>
 
   
   <div class="text-xs tracking-wide py-6 mt-16 max-w-7xl mx-auto border-t border-slate-700 text-center">
-    <h2 class="mb-2">Ikuti Kami di</h2>
+    <h2 class="mb-2 text-slate-300 font-medium">Ikuti Kami di</h2>
     <div class="flex justify-center gap-4 mb-4 text-white">
-      <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="hover:text-[#3b5998]">
-        <i class="fab fa-facebook-f text-lg"></i>
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="hover:text-[#3b5998] transition-colors p-2 bg-slate-700 rounded-full hover:bg-slate-600">
+        <i class="fab fa-facebook-f text-lg w-5 h-5 flex items-center justify-center"></i>
       </a>
-      <a href="https://twitter.com/" target="_blank" rel="noopener" class="hover:text-[#1da1f2]">
-        <i class="fab fa-twitter text-lg"></i>
+      <a href="https://twitter.com/" target="_blank" rel="noopener" class="hover:text-[#1da1f2] transition-colors p-2 bg-slate-700 rounded-full hover:bg-slate-600">
+        <i class="fab fa-twitter text-lg w-5 h-5 flex items-center justify-center"></i>
       </a>
-      <a href="https://t.me/" target="_blank" rel="noopener" class="hover:text-[#0088cc]">
-        <i class="fab fa-telegram text-lg"></i>
+      <a href="https://t.me/" target="_blank" rel="noopener" class="hover:text-[#0088cc] transition-colors p-2 bg-slate-700 rounded-full hover:bg-slate-600">
+        <i class="fab fa-telegram text-lg w-5 h-5 flex items-center justify-center"></i>
       </a>
-      <a href="https://instagram.com/" target="_blank" rel="noopener" class="hover:text-[#c13584]">
-        <i class="fab fa-instagram text-lg"></i>
+      <a href="https://instagram.com/" target="_blank" rel="noopener" class="hover:text-[#c13584] transition-colors p-2 bg-slate-700 rounded-full hover:bg-slate-600">
+        <i class="fab fa-instagram text-lg w-5 h-5 flex items-center justify-center"></i>
       </a>
-      <a href="https://www.youtube.com/?sub_confirmation=1" target="_blank" rel="noopener" class="hover:text-[#ff0000]">
-        <i class="fab fa-youtube text-lg"></i>
+      <a href="https://www.youtube.com/?sub_confirmation=1" target="_blank" rel="noopener" class="hover:text-[#ff0000] transition-colors p-2 bg-slate-700 rounded-full hover:bg-slate-600">
+        <i class="fab fa-youtube text-lg w-5 h-5 flex items-center justify-center"></i>
+      </a>
+      <a href="https://github.com/" target="_blank" rel="noopener" class="hover:text-[#f5f5f5] transition-colors p-2 bg-slate-700 rounded-full hover:bg-slate-600">
+        <i class="fab fa-github text-lg w-5 h-5 flex items-center justify-center"></i>
       </a>
     </div>
-    <p>© 2025 <a href="https://gitkodachi.github.io/" class="hover:text-teal-400 font-semibold">Payung Kode</a>
-      · Made with ❤️ using <a href="https://gohugo.io" class="hover:text-teal-400" target="_blank" rel="noopener">Hugo 0.134.0</a>
+    <p class="text-slate-400">© 2025 <a href="https://gitkodachi.github.io/" class="hover:text-teal-400 font-semibold transition-colors">Payung Kode</a>
+      · Made with ❤️ using <a href="https://gohugo.io" class="hover:text-teal-400 transition-colors" target="_blank" rel="noopener">Hugo 0.134.0</a>
     </p>
   </div>
 </footer>
-
 </body>
 </html>

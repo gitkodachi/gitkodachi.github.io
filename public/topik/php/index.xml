@@ -6,15 +6,8 @@
     <description>Recent content in PHP on Octocat Code</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Jun 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/topik/php/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Persiapan Pemprograman</title>
-      <link>http://localhost:1313/kategori/basic-programming/persiapan-awal/</link>
-      <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/kategori/basic-programming/persiapan-awal/</guid>
-      <description>&lt;h2 id=&#34;pendahuluan&#34;&gt;Pendahuluan&lt;/h2&gt;&#xA;&lt;p&gt;Laravel 11 hadir dengan berbagai fitur baru yang membuat pengembangan web lebih efisien&amp;hellip;&lt;/p&gt;&#xA;&lt;h3 id=&#34;instalasi-laravel-11&#34;&gt;Instalasi Laravel 11&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;composer create-project laravel/laravel:^11.0 my-project&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &amp;ldquo;de Finibus Bonorum et Malorum&amp;rdquo; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &amp;ldquo;Lorem ipsum dolor sit amet..&amp;rdquo;, comes from a line in section 1.10.32.&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</title>
       <link>http://localhost:1313/kategori/web-programming/laravel/</link>
