@@ -29,5 +29,19 @@
       <guid>http://localhost:1313/tutorial/hugo/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Tutorial Javascript untuk Pemula</title>
+      <link>http://localhost:1313/tutorial/javascript/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorial Python untuk Pemula</title>
+      <link>http://localhost:1313/tutorial/python/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/python/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Octocat Code</title>
+    <link>http://localhost:1313/topik/python/</link>
+    <description>Recent content in Python on Octocat Code</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/topik/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Belajar Python #01: Mengenal Bahasa Pemrograman Python</title>
+      <link>http://localhost:1313/tutorial/python/python-linux/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/python/python-linux/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
