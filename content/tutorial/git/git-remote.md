@@ -4,6 +4,9 @@ linkTitle: "Belajar Git #09: Bekerja dengan Remote Repositori"
 date: 2025-06-27
 thumbnail: "/images/cover/git-petanikode.png"
 image: "/images/cover/git-petanikode.png"
+show_tutorial_list: true
+completed: false
+current: true 
 weight: 9
 series: "git"
 tutorial: ["Git"]

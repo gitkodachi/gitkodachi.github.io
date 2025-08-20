@@ -1,9 +1,13 @@
 ---
 title: "Belajar Hugo #4: Membuat Layout & Partial di hugo"
-linkTitle: "Belajar Git #04: Menambahkan Layout Tema & Integrasi Tailwind CSS"
+linkTitle: "Belajar Hugo #04: Menambahkan Layout Tema & Integrasi Tailwind CSS"
+author: "default"
 date: 2025-06-27
 image: "/images/cover/Hugo-01.png"
 thumbnail: "/images/cover/Hugo-01.png"
+show_tutorial_list: true
+completed: false
+current: true 
 weight: 4
 series: "hugo"
 tutorial: ["Hugo"]

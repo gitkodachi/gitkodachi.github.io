@@ -4,6 +4,9 @@ linkTitle: "Belajar Git #08: Perbedaan Git checkout, Git Reset, dan Git Revert"
 date: 2025-06-27
 thumbnail: "/images/cover/git-petanikode.png"
 image: "/images/cover/git-petanikode.png"
+show_tutorial_list: true
+completed: false
+current: true 
 weight: 8
 series: "git"
 tutorial: ["Git"]

@@ -4,6 +4,9 @@ linkTitle: "Belajar Git #10: Menggunakan Git Pull dan Git Fetch"
 date: 2025-06-27
 thumbnail: "/images/cover/git-petanikode.png"
 image: "/images/cover/git-petanikode.png"
+show_tutorial_list: true
+completed: false
+current: true 
 weight: 10
 series: "git"
 tutorial: ["Git"]

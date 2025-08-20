@@ -1,9 +1,13 @@
 ---
 title: "Belajar Hugo #5: Membuat Komponen & Interaktifitas Frontend di Hugo"
-linkTitle: "Belajar Git #05: Menambahkan Komponen Tema & Interaktifitas Frontend"
+linkTitle: "Belajar Hugo #05: Menambahkan Komponen Tema & Interaktifitas Frontend"
+author: "default"
 date: 2025-06-27
 image: "/images/cover/Hugo-01.png"
 thumbnail: "/images/cover/Hugo-01.png"
+show_tutorial_list: true
+completed: false
+current: true 
 weight: 5
 series: "hugo"
 tutorial: ["Hugo"]

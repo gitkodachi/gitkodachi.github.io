@@ -5,6 +5,9 @@ date: 2025-06-27
 author: "default"
 thumbnail: "/images/cover/git-petanikode.png"
 image: "/images/cover/git-petanikode.png"
+show_tutorial_list: true
+completed: false
+current: true 
 weight: 1
 series: "git"
 tutorial: ["Git"]

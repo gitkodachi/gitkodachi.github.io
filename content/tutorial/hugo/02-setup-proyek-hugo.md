@@ -1,9 +1,13 @@
 ---
 title: "Belajar Hugo #2: Setup Proyek Hugo dari Awal"
-linkTitle: "Belajar Git #02: Setup Proyek hugo dan Konfigurasi Awal yang Harus Dilakukan"
+linkTitle: "Belajar Hugo #02: Setup Proyek hugo dan Konfigurasi Awal yang Harus Dilakukan"
+author: "default"
 date: 2025-06-27
 image: "/images/cover/Hugo-01.png"
 thumbnail: "/images/cover/Hugo-01.png"
+show_tutorial_list: true
+completed: false
+current: true 
 weight: 2
 series: "hugo"
 tutorial: ["Hugo"]

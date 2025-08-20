@@ -1,9 +1,13 @@
 ---
 title: "Belajar Hugo #3: Menambahkan Tema & Integrasi Tailwind CSS"
-linkTitle: "Belajar Git #03: Menambahkan Tema & Integrasi Tailwind CSS"
+linkTitle: "Belajar Hugo #03: Menambahkan Tema & Integrasi Tailwind CSS"
+author: "default"
 date: 2025-06-27
 image: "/images/cover/Hugo-01.png"
 thumbnail: "/images/cover/Hugo-01.png"
+show_tutorial_list: true
+completed: false
+current: true 
 weight: 2
 series: "hugo"
 tutorial: ["Hugo"]

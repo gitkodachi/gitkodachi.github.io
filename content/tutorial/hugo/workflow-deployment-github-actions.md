@@ -1,10 +1,14 @@
 ---
 title: "Belajar Hugo #6: Workflow Deployment Hugo dengan GitHub Actions"
-linkTitle: "Belajar hugo #06: Workflow Deployment Hugo dengan GitHub Actions"
+linkTitle: "Belajar Hugo #06: Workflow Deployment Hugo dengan GitHub Actions"
+author: "default"
+weight: 6
 date: 2025-06-27
 image: "/images/cover/Hugo-01.png"
 thumbnail: "/images/cover/Hugo-01.png"
-weight: 0
+show_tutorial_list: true
+completed: false
+current: true 
 series: "hugo"
 tutorial: ["Hugo"]
 topik: ["Hugo"]

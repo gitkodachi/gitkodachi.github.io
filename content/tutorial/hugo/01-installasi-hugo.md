@@ -1,10 +1,13 @@
 ---
 title: "Belajar Hugo #1: Instalasi Hugo di Windows, Mac, dan Linux"
-linkTitle: "Belajar Git #01: Cara Install hugo dan Konfigurasi Awal yang Harus Dilakukan"
-author: defautl
+linkTitle: "Belajar Hugo #01: Cara Install hugo dan Konfigurasi Awal yang Harus Dilakukan"
+author: "default"
 date: 2025-06-27
 image: "/images/cover/Hugo-01.png"
 thumbnail: "/images/cover/Hugo-01.png"
+show_tutorial_list: true
+completed: false
+current: true 
 weight: 1
 series: "hugo"
 tutorial: ["Hugo"]

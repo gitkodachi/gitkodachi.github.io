@@ -14,13 +14,13 @@
     <loc>http://localhost:1313/tutorial/git/git-install/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tutorial/html/tag-element-atribut/</loc>
+    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tutorial/hugo/02-setup-proyek-hugo/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tutorial/hugo/03-setup-tema-tailwind/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tutorial/html/tag-element-atribut/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tutorial/html/html-paragraf/</loc>
@@ -51,6 +51,9 @@
     <lastmod>2025-07-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tutorial/git/git-revert/</loc>
+    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tutorial/hugo/workflow-deployment-github-actions/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tutorial/html/html-link/</loc>
@@ -104,9 +107,6 @@
     <loc>http://localhost:1313/tutorial/git/git-vscode/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tutorial/hugo/workflow-deployment-github-actions/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/post/github-ssh/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
@@ -137,12 +137,6 @@
     <loc>http://localhost:1313/tutorial/git/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tutorial/codeigniter/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tutorial/css/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/post/git-init/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
@@ -150,30 +144,6 @@
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tutorial/hugo/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tutorial/java/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tutorial/javascript/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tutorial/kotlin/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tutorial/nodejs/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tutorial/php/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tutorial/c/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tutorial/chsarp/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tutorial/python/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/kategori/web-programming/</loc>

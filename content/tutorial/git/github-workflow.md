@@ -4,6 +4,9 @@ linkTitle: "Belajar Git #11: Cara Berkontribusi di Proyek Open Source dengan Git
 date: 2025-06-27
 thumbnail: "/images/cover/github-workflow.png"
 image: "/images/cover/github-workflow.png"
+show_tutorial_list: true
+completed: false
+current: true 
 weight: 11
 series: ["git"]
 tutorial: ["Git"]
