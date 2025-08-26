@@ -581,6 +581,48 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<script>
+
+function decodeAndRedirect(element) {
+  const encodedUrl = element.getAttribute('data-encoded-url');
+  if (encodedUrl) {
+    try {
+      
+      const decodedUrl = atob(encodedUrl);
+      
+      
+      window.open(decodedUrl, '_blank', 'noopener');
+    } catch (error) {
+      console.error('Error decoding URL:', error);
+      alert('Terjadi kesalahan saat memproses link download.');
+    }
+  }
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const downloadButtons = document.querySelectorAll('.download-btn[data-encoded-url]');
+  downloadButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      decodeAndRedirect(this);
+    });
+  });
+});
+
+
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+  alert('Klik kanan dinonaktifkan untuk melindungi konten.');
+});
+
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+    e.preventDefault();
+    alert('Shortcut ini dinonaktifkan untuk melindungi konten.');
+  }
+});
+</script>
   <footer class="pt-16 bg-slate-800 text-white">
   <div class="container mx-auto px-4 lg:max-w-7xl grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
     

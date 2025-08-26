@@ -229,3 +229,46 @@ document.addEventListener('DOMContentLoaded', () => {
   observer.observe(document.body, { childList: true, subtree: true });
 });
 </script>
+
+<script>
+// Fungsi untuk decode dan redirect
+function decodeAndRedirect(element) {
+  const encodedUrl = element.getAttribute('data-encoded-url');
+  if (encodedUrl) {
+    try {
+      // Decode base64 URL
+      const decodedUrl = atob(encodedUrl);
+      
+      // Redirect ke URL yang telah didecode
+      window.open(decodedUrl, '_blank', 'noopener');
+    } catch (error) {
+      console.error('Error decoding URL:', error);
+      alert('Terjadi kesalahan saat memproses link download.');
+    }
+  }
+}
+
+// Tambahkan event listener untuk semua tombol download
+document.addEventListener('DOMContentLoaded', function() {
+  const downloadButtons = document.querySelectorAll('.download-btn[data-encoded-url]');
+  downloadButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      decodeAndRedirect(this);
+    });
+  });
+});
+
+// Perlindungan tambahan (opsional)
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+  alert('Klik kanan dinonaktifkan untuk melindungi konten.');
+});
+
+// Blokir shortcut F12 dan Ctrl+Shift+I
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+    e.preventDefault();
+    alert('Shortcut ini dinonaktifkan untuk melindungi konten.');
+  }
+});
+</script>
