@@ -218,6 +218,9 @@
     <loc>http://localhost:1313/kategori/web-programming/</loc>
     <lastmod>2023-06-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/software/daemon-tools/</loc>
+    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/software/laravel-datables/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
@@ -243,6 +246,9 @@
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/software/</loc>
+    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/software/winrar/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/buku/</loc>
