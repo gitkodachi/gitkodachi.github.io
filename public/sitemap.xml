@@ -98,13 +98,7 @@
     <loc>http://localhost:1313/topik/</loc>
     <lastmod>2025-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/kategori/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/kategori/basic-programming/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tutorial/git/git-vscode/</loc>
@@ -158,10 +152,10 @@
     <loc>http://localhost:1313/tutorial/python/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/kategori/web-programming/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/kategori/tutorial-lainnya/mas/</loc>
+    <lastmod>2025-06-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/kategori/basic-programming/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/kategori/tutorial-lainnya/windows/bsod/</loc>
@@ -173,13 +167,13 @@
     <loc>http://localhost:1313/kategori/tutorial-lainnya/clean-install-windows/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/kategori/</loc>
+    <lastmod>2025-06-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/kategori/tutorial-lainnya/remove-malware/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/kategori/tutorial-lainnya/office_c2r_custom/</loc>
-    <lastmod>2025-06-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/topik/microsoft/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/topik/office/</loc>
@@ -194,19 +188,13 @@
     <loc>http://localhost:1313/kategori/basic-programming/persiapan-awal/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/topik/programming/</loc>
-    <lastmod>2025-06-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tutorial/programming/</loc>
-    <lastmod>2025-06-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/kategori/tutorial-lainnya/download-software/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/kategori/tutorial-lainnya/checkactivationstatus/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/kategori/tutorial-lainya/</loc>
+    <loc>http://localhost:1313/kategori/tutorial-lainnya/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/topik/windows/</loc>
@@ -225,6 +213,9 @@
     <lastmod>2023-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/laravel-11/</loc>
+    <lastmod>2023-06-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/kategori/web-programming/</loc>
     <lastmod>2023-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/software/laravel-datables/</loc>
@@ -255,8 +246,6 @@
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/buku/</loc>
-  </url><url>
-    <loc>http://localhost:1313/kategori/tutorial-lainnya/</loc>
   </url><url>
     <loc>http://localhost:1313/kategori/tutorial-lainnya/windows/</loc>
   </url>

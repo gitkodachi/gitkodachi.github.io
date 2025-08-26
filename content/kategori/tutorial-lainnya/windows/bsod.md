@@ -5,8 +5,8 @@ author: "default"
 avatar: /images/global/avatar.png
 thumbnail: "/images/thumbnail/windows.jpg"
 image: "/images/cover/bsosd.webp"
-kategori: ["tutorial-lainya"]
-topik: ["windows", "office", "microsoft"]
+kategori: ["tutorial-lainnya"]
+topik: ["windows", "office"]
 ---
 
 ### Awal Mula Kemunculan BSOD Windows

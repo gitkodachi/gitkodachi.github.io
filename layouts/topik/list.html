@@ -10,14 +10,18 @@
     {{ .Title }}
   </div>
 
-  <h2 class="text-3xl font-bold tracking-tight mb-4 text-slate-800 dark:text-white">
+  <h2 class="text-3xl font-bold tracking-tight mb-2 text-slate-800 dark:text-white">
     Ini dia yang kamu cari
   </h2>
 
-  {{ $pages := .Paginator.Pages }}
+  {{ $pages := .Pages }}
+  <p class="text-lg mb-8 text-slate-500 dark:text-slate-300">
+    Ada {{ len $pages }} artikel dalam kategori {{ .Title }}.
+  </p>
+
   {{ if eq (len $pages) 0 }}
     <p class="text-slate-500 dark:text-slate-400 mb-12">
-      Belum ada artikel untuk topik ini.
+      Belum ada artikel untuk Kategori ini.
     </p>
   {{ else }}
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
@@ -31,9 +35,6 @@
                    alt="{{ .Title }}">
             </picture>
           </a>
-          <span class="text-sm font-medium text-slate-800 dark:text-white">
-            {{ .Title }}
-          </span>
           <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-2 mb-1 line-clamp-2">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
           </h3>

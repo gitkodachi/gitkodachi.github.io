@@ -1,5 +1,4 @@
 ---
-# content/post/_index.md
-title: ""
-date: 2025-06-27
+title: "Kategori"
+type: "kategori"
 ---

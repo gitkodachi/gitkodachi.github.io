@@ -2,14 +2,10 @@
 title: "Window 11 Untuk Programming"
 linkTitle: "Persiapan Basic #01: System Operasi Yang digunakan?"
 date: 2025-06-25
-author: "default"
-avatar: /images/global/avatar.png
 thumbnail: "/images/content/basic/window-11.png"
 image: "/images/content/basic/window-11.png"
 kategori: ["basic-programming"]
-topik: ["Programming"]
-series: "Programming"
-tutorial: ["Programming"]
+topik: ["windows", "office"]
 show_tutorial_list: true
 completed: false
 current: true 

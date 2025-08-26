@@ -5,7 +5,7 @@ author: "default"
 avatar: /images/global/avatar.png
 thumbnail: "/images/thumbnail/blog_card.png"
 image: "/images/cover/mas.png"
-kategori: ["tutorial-lainya"]
+kategori: ["tutorial-lainnya"]
 topik: ["windows", "office"]
 show_tutorial_list: false
 completed: false
