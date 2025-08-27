@@ -1,4 +1,0 @@
----
-title: "Windows"
-layout: "taxonomy"
----

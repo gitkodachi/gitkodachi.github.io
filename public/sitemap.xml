@@ -14,6 +14,9 @@
     <loc>http://localhost:1313/tutorial/python/python-linux/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tutorial/windows/window10/</loc>
+    <lastmod>2025-06-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tutorial/git/git-install/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
@@ -25,6 +28,9 @@
   </url><url>
     <loc>http://localhost:1313/tutorial/hugo/03-setup-tema-tailwind/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tutorial/windows/bsod/</loc>
+    <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tutorial/html/html-paragraf/</loc>
     <lastmod>2025-07-10T00:00:00+00:00</lastmod>
@@ -152,13 +158,13 @@
     <loc>http://localhost:1313/tutorial/python/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tutorial/windows/</loc>
+    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/kategori/tutorial-lainnya/mas/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/kategori/basic-programming/</loc>
-    <lastmod>2025-06-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/kategori/tutorial-lainnya/windows/bsod/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/kategori/tutorial-lainnya/cas/</loc>
@@ -255,7 +261,5 @@
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/buku/</loc>
-  </url><url>
-    <loc>http://localhost:1313/kategori/tutorial-lainnya/windows/</loc>
   </url>
 </urlset>

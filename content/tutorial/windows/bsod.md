@@ -1,12 +1,15 @@
 ---
 title: "Blue Screen Windows (BSOD)"
+linkTitle: "Tutorial Windows #02: Blue Screen Windows (BSOD)"
 date: 2025-06-25
 author: "default"
+weight: 2
 avatar: /images/global/avatar.png
-thumbnail: "/images/thumbnail/windows.jpg"
+thumbnail: "/images/thumbnail/microsoft_logo.png"
 image: "/images/cover/bsosd.webp"
 kategori: ["tutorial-lainnya"]
 topik: ["windows", "office"]
+tutorial: ["windows"]
 series: "troubleshooting"
 show_tutorial_list: true
 completed: true

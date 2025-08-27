@@ -43,5 +43,12 @@
       <guid>http://localhost:1313/tutorial/python/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Tutorial Windows Untuk Pemula</title>
+      <link>http://localhost:1313/tutorial/windows/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/windows/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
