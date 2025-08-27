@@ -5,8 +5,8 @@ date: 2025-06-25
 author: "default"
 weight: 1
 avatar: /images/global/avatar.png
-thumbnail: "/images/thumbnail/microsoft_logo.png"
-image: "/images/cover/bsosd.webp"
+thumbnail: "/images/thumbnail/Komponen-BIOS.webp"
+image: "/images/thumbnail/bsosd.webp"
 kategori: ["tutorial-lainnya"]
 topik: ["windows", "office"]
 tutorial: ["windows"]
@@ -16,8 +16,7 @@ completed: true
 current: true 
 ---
 
-# Apakah BIOS?
-
+## Apakah BIOS?
 BIOS (*Basic Input/Output System*) adalah komponen vital komputer Anda yang menginisialisasi komponen perangkat keras seperti prosesor, memori dan drive saat Anda memulai sistem. Ini bertindak sebagai antarmuka antara perangkat keras dan perangkat lunak komputer Anda. Jika Anda Luncurkan **BIOS**, Anda dapat mengkonfigurasi pengaturan seperti urutan boot, dan waktu sistem, dan melakukan optimasi sistem kritis. Jika Anda perlu mengakses pengaturan ini, berikut panduan terperinci tentang cara melakukannya jalankan **BIOS** pada Windows 10 dan 11.
 
 {{< alert type="note" title="Catatan Teknis" >}}
