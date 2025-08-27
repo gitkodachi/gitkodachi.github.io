@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Laravel on Octocat Code</title>
+    <link>http://localhost:1313/tutorial/laravel/</link>
+    <description>Recent content in Laravel on Octocat Code</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tutorial/laravel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</title>
+      <link>http://localhost:1313/kategori/web-programming/laravel/</link>
+      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/web-programming/laravel/</guid>
+      <description>&lt;h2 id=&#34;laravel&#34;&gt;#Laravel&lt;/h2&gt;&#xA;&lt;h2 id=&#34;php&#34;&gt;#PHP&lt;/h2&gt;&#xA;&lt;h2 id=&#34;mysql&#34;&gt;#MySQL&lt;/h2&gt;&#xA;&lt;p&gt;Pemula bisa langsung bikin CRUD!&lt;/p&gt;&#xA;&lt;h1 id=&#34;tutorial-laravel-untuk-pemula&#34;&gt;Tutorial Laravel untuk Pemula&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Sabardi&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;pengenalan-laravel&#34;&gt;Pengenalan Laravel&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Laravel&lt;/strong&gt; adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

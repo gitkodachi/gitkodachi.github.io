@@ -1,5 +1,5 @@
 ---
-title: "BSOD"
+title: "Blue Screen Windows (BSOD)"
 date: 2025-06-25
 author: "default"
 avatar: /images/global/avatar.png
@@ -7,6 +7,10 @@ thumbnail: "/images/thumbnail/windows.jpg"
 image: "/images/cover/bsosd.webp"
 kategori: ["tutorial-lainnya"]
 topik: ["windows", "office"]
+series: "troubleshooting"
+show_tutorial_list: true
+completed: true
+current: true 
 ---
 
 ### Awal Mula Kemunculan BSOD Windows

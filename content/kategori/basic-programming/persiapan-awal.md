@@ -7,7 +7,7 @@ image: "/images/content/basic/window-11.png"
 kategori: ["basic-programming"]
 topik: ["windows", "office"]
 show_tutorial_list: true
-completed: false
+completed: true
 current: true 
 ---
 

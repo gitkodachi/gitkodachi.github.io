@@ -9,7 +9,7 @@ kategori: ["tutorial-lainnya"]
 topik: ["windows", "office"]
 series: "windows"
 show_tutorial_list: true
-completed: false
+completed: true
 current: true 
 ---
 

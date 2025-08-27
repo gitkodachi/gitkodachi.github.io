@@ -3,6 +3,7 @@ title: "Cara Setup SSH Key untuk Github agar Bisa Ngepush Tanpa Password"
 date: 2025-06-27
 thumbnail: "/images/cover/github-ssh.png"
 image: "/images/cover/github-ssh.png"
+tutorial: ["Git"]
 description: "Pelajari dasar-dasar version control dengan Git untuk pemula."
 ---
 
