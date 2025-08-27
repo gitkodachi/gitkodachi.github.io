@@ -5,6 +5,9 @@ author: "default"
 avatar: /images/global/avatar.png
 thumbnail: "/images/cover/laravel-11.png"
 image: "/images/cover/laravel-11.png"
+topik: ["Laravel", "PHP", "MySQL"]
+series: laravel
+show_tutorial_list: true
 ---
 
 ## Pengenalan Laravel
