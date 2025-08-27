@@ -7,8 +7,9 @@ thumbnail: "/images/thumbnail/blog_card.png"
 image: "/images/cover/mas.png"
 kategori: ["tutorial-lainnya"]
 topik: ["windows", "office"]
-show_tutorial_list: false
-completed: false
+series: "windows"
+show_tutorial_list: true
+completed: true
 current: true 
 ---
 
