@@ -37,24 +37,31 @@ Cara paling tradisional untuk mengakses BIOS adalah selama proses BIOS boot awal
 Cukup mulai dengan me-restart komputer Anda dan segera setelah logo muncul tekan BIOS Key untuk masuk ke BIOS. Kunci BIOS dapat bervariasi tergantung pada produsen komputer Anda. Kunci umum meliputi `Del`, `F2`, `F10`, `Esc`, dan `F12`. Anda biasanya akan melihat pesan di layar yang mengatakan, "Tekan [kunci] untuk memasukkan pengaturan" selama boot. Pastikan untuk menekan tombol tepat setelah menyalakan, sebelum Windows mulai memuat.
 
 #### Dafatar Kunci Bios pada Keyboard
-- F2
-- Dellete (*del*)
-- Esc
-- F10
-- Ctrl + Alt + Del
-- Ctrl + Alt + Esc
-- Fn + F2 (*untuk beberapa laptop*)
+{{< tabs >}}
+  {{< tab name="Tombol Bios Di Keyboard" >}}
+   - F2
+   - Dellete (*del*)
+   - Esc
+   - F10
+   - Ctrl + Alt + Del
+   - Ctrl + Alt + Esc
+   - Fn + F2 (*untuk beberapa laptop*)
+   {{< /tab >}}
 
-#### Dafatar Kunci Bios di Keyboard menurut produsen
-- Acer: F2 atau Del
-- ASUS: F2 (untuk sebagian besar PC), F2 atau Del (untuk beberapa motherboard)
-- Dell: F2 atau F12
-- HP: F10
-- Lenovo: F1 (desktop), F2 atau Fn+F2 (laptop), Masukkan lalu F1 (ThinkPads)
-- MSI: Del
-- Tablet Permukaan Microsoft: Tombol Volume Up
-- Samsung: F2
-- Toshiba: F2
+  {{< tab name="Tombol Bios di Keyboard menurut produsen" >}}
+   - Acer: F2 atau Del
+   - ASUS: F2 (untuk sebagian besar PC), F2 atau Del (untuk beberapa motherboard)
+   - Dell: F2 atau F12
+   - HP: F10
+   - Lenovo: F1 (desktop), F2 atau Fn+F2 (laptop), Masukkan lalu F1 (ThinkPads)
+   - MSI: Del
+   - Tablet Permukaan Microsoft: Tombol Volume Up
+   - Samsung: F2
+   - Toshiba: F2 
+   {{< /tab >}}
+{{< /tabs >}}
+
+
 
 #### Langkah 2: Tunggu layar BIOS muncul
 
@@ -129,35 +136,27 @@ Nyalakan komputer, dan segera tekan `Setup` key (umumnya `F2`, `F12`, atau `Del`
 
 Berikut daftar kunci pengaturan BIOS umum oleh produsen:
 
-{{< alert type="tip" title="" >}}
-#### Daftar Kunci Pengaturan BIOS PC Desktop
+#### Daftar Kunci Pengaturan BIOS PC Desktop atau Laptop
 
-- Acer: F2 atau Del
-- ASRock: F2 atau Del
-- ASUS: F2 atau Del
-- Dell: F2 atau F12
-- ECS: Del
-- Gigabyte: F2 atau Del
-- HP: F10
-- Lenovo: F1
-- MSI: Del
-- Samsung: F2
-
-#### Daftar Kunci Pengaturan BIOS Laptop
-
-- Acer: F2
-- ASUS: F2
-- Dell: F2
-- HP: F10
-- Lenovo: F2 atau Fn+F2
-- MSI: Del
-- Samsung: F2
-- Toshiba: F2
+| **Produsen Laptop**  | **Produsen Desktop** |
+|:------------------   |:---------------------|
+| Acer: F2             | Acer: F2 atau Del    |
+| ASUS: F2 atau Esc    | ASRock: F2 atau Del  |
+| Dell: F2 atau F12    | ASUS: F2 atau Esc    |
+| HP: F10              | Dell: F2 atau F12    |
+| Lenovo: F2 atau Fn+F2| Gigabyte: F2 atau Del|
+| MSI: Del             | HP: F10              |
+| Samsung: F2          | Lenovo: F1           |
+| Toshiba: F2          | MSI: Del             |
+| Axioo: F2            | Samsung: F2 atau F10 |
 
 #### Perangkat Lain Daftar Kunci Pengaturan BIOS
 
+{{< alert type="tip" title="" >}}
+
 - Tablet Permukaan Microsoft: Tombol Volume Up
 - Apple MacBook: Perintah + Opsi + P + R
+
 {{< /alert >}}
 
 
@@ -194,6 +193,36 @@ Dari menu Advanced Startup Options, pilih `Memecahkan masalah > Opsi Lanjutan > 
 Tip Penting: Metode ini sangat berguna jika Anda merasa nyaman menggunakan Command Prompt dan memerlukan cara cepat untuk mengakses BIOS.
 {{< /alert >}}
 
+### Metode 6: Menggunakan Dialog Jalankan untuk Mengakses BIOS
+
+Metode ini memungkinkan Anda mengakses `BIOS` melalui Run kotak dialog, yang merupakan cara lain untuk mencapai `Opsi Startup` Tingkat Lanjut.
+
+#### Langkah 1: Tekan Windows + R untuk membuka dialog Jalankan
+
+Di kotak dialog Jalankan, ketik `msconfig` dan memukul `Enter`.
+
+#### Langkah 2: Buka Boot Tab di Konfigurasi Sistem
+
+Di Konfigurasi Sistem jendela, klik pada `Boot` tab.
+
+#### Langkah 3: Aktifkan Safe Boot dan Restart
+
+Periksa `Aman Boot` opsi, klik `OK`, dan restart komputer Anda. Ini akan memunculkan menu Advanced Startup Options.
+
+#### Langkah 4: Arahkan ke Pengaturan Firmware UEFI
+
+Dari menu restart, pilih `Memecahkan masalah` > `Opsi Lanjutan` > `Pengaturan Firmware UEFI` dan klik Restart.
+
+#### Tips Mengatasi Masalah
+- `Kunci BIOS Tidak Bekerja`: Jika Anda tidak dapat menekan tombol yang benar saat startup, itu mungkin terlalu cepat. Coba aktifkan `Boot Cepat` opsi di `BIOS` Anda atau sesuaikan `Prioritas Boot` dalam pengaturan `firmware UEFI`.
+
+- `Tidak Ada Opsi BIOS yang Ditampilkan`: Jika Anda tidak melihat opsi BIOS saat menekan tombol atau menggunakan metode di atas, bisa jadi sistem Anda menggunakan UEFI. Pastikan untuk mengakses `Pengaturan Firmware UEFI` sebaliknya.
+
+- `Tidak Dapat Mengakses BIOS Setelah Beberapa Upaya`: Jika Anda tidak dapat memasuki BIOS setelah beberapa kali mencoba, pastikan keyboard Anda terhubung dengan benar, terutama jika Anda menggunakan keyboard nirkabel atau USB. Keyboard berkabel umumnya lebih dapat diandalkan selama proses booting.
+
+### Kesimpulan
+
+Mengakses BIOS pada Windows 10 dan 11 dapat dilakukan dengan beberapa cara tergantung pada pabrikan dan konfigurasi sistem Anda. Apakah Anda menggunakan metode penekanan tombol tradisional atau salah satu opsi alternatif yang tersedia dalam Windows, setiap metode menyediakan cara yang andal untuk mengakses pengaturan sistem penting. Selalu lanjutkan dengan hati-hati saat membuat perubahan di BIOS, karena pengaturan yang tidak tepat dapat menyebabkan ketidakstabilan sistem. Jika Anda tidak yakin tentang pengaturan tertentu, sebaiknya konsultasikan manual sistem Anda atau halaman dukungan pabrikan.
 
 {{< referensi 
   name="Geeksforgeeks" 

@@ -512,7 +512,28 @@
 <h4 id="langkah-1-restart-komputer-anda-dan-segera-tekan-tombol-bios">Langkah 1: Restart Komputer Anda dan Segera tekan tombol BIOS</h4>
 <p>Cukup mulai dengan me-restart komputer Anda dan segera setelah logo muncul tekan BIOS Key untuk masuk ke BIOS. Kunci BIOS dapat bervariasi tergantung pada produsen komputer Anda. Kunci umum meliputi <code>Del</code>, <code>F2</code>, <code>F10</code>, <code>Esc</code>, dan <code>F12</code>. Anda biasanya akan melihat pesan di layar yang mengatakan, &ldquo;Tekan [kunci] untuk memasukkan pengaturan&rdquo; selama boot. Pastikan untuk menekan tombol tepat setelah menyalakan, sebelum Windows mulai memuat.</p>
 <h4 id="dafatar-kunci-bios-pada-keyboard">Dafatar Kunci Bios pada Keyboard</h4>
-<ul>
+<div class="simple-tabs">
+  <div class="tab-buttons">
+    
+      <button 
+        class="tab-button active" 
+        onclick="switchTab(this, 'tab-0')"
+      >
+        Tombol Bios Di Keyboard
+      </button>
+    
+      <button 
+        class="tab-button " 
+        onclick="switchTab(this, 'tab-1')"
+      >
+        Tombol Bios di Keyboard menurut produsen
+      </button>
+    
+  </div>
+  <div class="tab-contents">
+    
+  <div id="tab-0" class="tab-content active">
+  <ul>
 <li>F2</li>
 <li>Dellete (<em>del</em>)</li>
 <li>Esc</li>
@@ -521,8 +542,11 @@
 <li>Ctrl + Alt + Esc</li>
 <li>Fn + F2 (<em>untuk beberapa laptop</em>)</li>
 </ul>
-<h4 id="dafatar-kunci-bios-di-keyboard-menurut-produsen">Dafatar Kunci Bios di Keyboard menurut produsen</h4>
-<ul>
+
+</div>
+
+  <div id="tab-1" class="tab-content ">
+  <ul>
 <li>Acer: F2 atau Del</li>
 <li>ASUS: F2 (untuk sebagian besar PC), F2 atau Del (untuk beberapa motherboard)</li>
 <li>Dell: F2 atau F12</li>
@@ -533,6 +557,12 @@
 <li>Samsung: F2</li>
 <li>Toshiba: F2</li>
 </ul>
+
+</div>
+
+  </div>
+</div>
+
 <h4 id="langkah-2-tunggu-layar-bios-muncul">Langkah 2: Tunggu layar BIOS muncul</h4>
 
 <figure class="my-4 text-center">
@@ -700,36 +730,59 @@ body.overflow-hidden {
 <h4 id="langkah-2-tekan-tombol-setup-saat-menyalakan-komputer">Langkah 2: Tekan tombol Setup saat menyalakan komputer</h4>
 <p>Nyalakan komputer, dan segera tekan <code>Setup</code> key (umumnya <code>F2</code>, <code>F12</code>, atau <code>Del</code>) ketika logo produsen muncul.</p>
 <p>Berikut daftar kunci pengaturan BIOS umum oleh produsen:</p>
+<h4 id="daftar-kunci-pengaturan-bios-pc-desktop-atau-laptop">Daftar Kunci Pengaturan BIOS PC Desktop atau Laptop</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Produsen Laptop</strong></th>
+          <th style="text-align: left"><strong>Produsen Desktop</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Acer: F2</td>
+          <td style="text-align: left">Acer: F2 atau Del</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">ASUS: F2 atau Esc</td>
+          <td style="text-align: left">ASRock: F2 atau Del</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Dell: F2 atau F12</td>
+          <td style="text-align: left">ASUS: F2 atau Esc</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">HP: F10</td>
+          <td style="text-align: left">Dell: F2 atau F12</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Lenovo: F2 atau Fn+F2</td>
+          <td style="text-align: left">Gigabyte: F2 atau Del</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">MSI: Del</td>
+          <td style="text-align: left">HP: F10</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Samsung: F2</td>
+          <td style="text-align: left">Lenovo: F1</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Toshiba: F2</td>
+          <td style="text-align: left">MSI: Del</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Axioo: F2</td>
+          <td style="text-align: left">Samsung: F2 atau F10</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="perangkat-lain-daftar-kunci-pengaturan-bios">Perangkat Lain Daftar Kunci Pengaturan BIOS</h4>
 <div class="custom-alert custom-alert-tip" role="alert">
   <div class="custom-alert-header"><i class="custom-alert-icon fas fa-lightbulb"></i><span class="custom-alert-title">Tip</span>
   </div>
   <div class="custom-alert-content">
-    <h4 id="daftar-kunci-pengaturan-bios-pc-desktop">Daftar Kunci Pengaturan BIOS PC Desktop</h4>
-<ul>
-<li>Acer: F2 atau Del</li>
-<li>ASRock: F2 atau Del</li>
-<li>ASUS: F2 atau Del</li>
-<li>Dell: F2 atau F12</li>
-<li>ECS: Del</li>
-<li>Gigabyte: F2 atau Del</li>
-<li>HP: F10</li>
-<li>Lenovo: F1</li>
-<li>MSI: Del</li>
-<li>Samsung: F2</li>
-</ul>
-<h4 id="daftar-kunci-pengaturan-bios-laptop">Daftar Kunci Pengaturan BIOS Laptop</h4>
-<ul>
-<li>Acer: F2</li>
-<li>ASUS: F2</li>
-<li>Dell: F2</li>
-<li>HP: F10</li>
-<li>Lenovo: F2 atau Fn+F2</li>
-<li>MSI: Del</li>
-<li>Samsung: F2</li>
-<li>Toshiba: F2</li>
-</ul>
-<h4 id="perangkat-lain-daftar-kunci-pengaturan-bios">Perangkat Lain Daftar Kunci Pengaturan BIOS</h4>
-<ul>
+    <ul>
 <li>Tablet Permukaan Microsoft: Tombol Volume Up</li>
 <li>Apple MacBook: Perintah + Opsi + P + R</li>
 </ul>
@@ -762,6 +815,30 @@ body.overflow-hidden {
     Tip Penting: Metode ini sangat berguna jika Anda merasa nyaman menggunakan Command Prompt dan memerlukan cara cepat untuk mengakses BIOS.
   </div>
 </div>
+<h3 id="metode-6-menggunakan-dialog-jalankan-untuk-mengakses-bios">Metode 6: Menggunakan Dialog Jalankan untuk Mengakses BIOS</h3>
+<p>Metode ini memungkinkan Anda mengakses <code>BIOS</code> melalui Run kotak dialog, yang merupakan cara lain untuk mencapai <code>Opsi Startup</code> Tingkat Lanjut.</p>
+<h4 id="langkah-1-tekan-windows--r-untuk-membuka-dialog-jalankan">Langkah 1: Tekan Windows + R untuk membuka dialog Jalankan</h4>
+<p>Di kotak dialog Jalankan, ketik <code>msconfig</code> dan memukul <code>Enter</code>.</p>
+<h4 id="langkah-2-buka-boot-tab-di-konfigurasi-sistem">Langkah 2: Buka Boot Tab di Konfigurasi Sistem</h4>
+<p>Di Konfigurasi Sistem jendela, klik pada <code>Boot</code> tab.</p>
+<h4 id="langkah-3-aktifkan-safe-boot-dan-restart">Langkah 3: Aktifkan Safe Boot dan Restart</h4>
+<p>Periksa <code>Aman Boot</code> opsi, klik <code>OK</code>, dan restart komputer Anda. Ini akan memunculkan menu Advanced Startup Options.</p>
+<h4 id="langkah-4-arahkan-ke-pengaturan-firmware-uefi">Langkah 4: Arahkan ke Pengaturan Firmware UEFI</h4>
+<p>Dari menu restart, pilih <code>Memecahkan masalah</code> &gt; <code>Opsi Lanjutan</code> &gt; <code>Pengaturan Firmware UEFI</code> dan klik Restart.</p>
+<h4 id="tips-mengatasi-masalah">Tips Mengatasi Masalah</h4>
+<ul>
+<li>
+<p><code>Kunci BIOS Tidak Bekerja</code>: Jika Anda tidak dapat menekan tombol yang benar saat startup, itu mungkin terlalu cepat. Coba aktifkan <code>Boot Cepat</code> opsi di <code>BIOS</code> Anda atau sesuaikan <code>Prioritas Boot</code> dalam pengaturan <code>firmware UEFI</code>.</p>
+</li>
+<li>
+<p><code>Tidak Ada Opsi BIOS yang Ditampilkan</code>: Jika Anda tidak melihat opsi BIOS saat menekan tombol atau menggunakan metode di atas, bisa jadi sistem Anda menggunakan UEFI. Pastikan untuk mengakses <code>Pengaturan Firmware UEFI</code> sebaliknya.</p>
+</li>
+<li>
+<p><code>Tidak Dapat Mengakses BIOS Setelah Beberapa Upaya</code>: Jika Anda tidak dapat memasuki BIOS setelah beberapa kali mencoba, pastikan keyboard Anda terhubung dengan benar, terutama jika Anda menggunakan keyboard nirkabel atau USB. Keyboard berkabel umumnya lebih dapat diandalkan selama proses booting.</p>
+</li>
+</ul>
+<h3 id="kesimpulan">Kesimpulan</h3>
+<p>Mengakses BIOS pada Windows 10 dan 11 dapat dilakukan dengan beberapa cara tergantung pada pabrikan dan konfigurasi sistem Anda. Apakah Anda menggunakan metode penekanan tombol tradisional atau salah satu opsi alternatif yang tersedia dalam Windows, setiap metode menyediakan cara yang andal untuk mengakses pengaturan sistem penting. Selalu lanjutkan dengan hati-hati saat membuat perubahan di BIOS, karena pengaturan yang tidak tepat dapat menyebabkan ketidakstabilan sistem. Jika Anda tidak yakin tentang pengaturan tertentu, sebaiknya konsultasikan manual sistem Anda atau halaman dukungan pabrikan.</p>
 <div class="content-source">
   <a href="https://www.geeksforgeeks.org/techtips/how-to-enter-bios-windows-10-11/" target="_blank" rel="noopener noreferrer" class="source-link">
     Sumber: Geeksforgeeks
