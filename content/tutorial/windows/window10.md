@@ -94,7 +94,7 @@ Under the `Advanced Startup` bagian, klik pada `Restart` Sekarang. Ini akan me-r
 Setelah komputer Anda restart, Anda akan disajikan dengan menu. Choose `Memecahkan masalah` > `Opsi Lanjutan` > `Pengaturan Firmware UEFI`, kemudian klik pada `Restart`.
 
 {{< image 
-  src="/images/content/tutorial/windows/ASUS-BIOS.jpg" 
+  src="/images/content/tutorial/windows/advanced-option.webp" 
   alt="Deskripsi gambar" 
   caption="*Tampilan bios UEFI*" 
 >}}
