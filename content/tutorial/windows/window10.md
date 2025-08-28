@@ -96,7 +96,7 @@ Setelah komputer Anda restart, Anda akan disajikan dengan menu. Choose `Memecahk
 {{< image 
   src="/images/content/tutorial/windows/advanced-option.webp" 
   alt="Deskripsi gambar" 
-  caption="*Tampilan bios UEFI*" 
+  caption="*advanced option*" 
 >}}
 
 {{< alert type="tip" title="" >}}

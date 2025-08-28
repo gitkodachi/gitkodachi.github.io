@@ -5,7 +5,7 @@ date: 2025-06-25
 author: "default"
 weight: 2
 avatar: /images/global/avatar.png
-thumbnail: "/images/thumbnail/microsoft_logo.png"
+thumbnail: "/images/thumbnail/bsosd.webp"
 image: "/images/cover/bsosd.webp"
 kategori: ["tutorial-lainnya"]
 topik: ["windows", "office"]
