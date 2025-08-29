@@ -15,3 +15,6 @@ Tidak, semua konten di situs ini sepenuhnya gratis.
 
 ### Bagaimana cara berkontribusi?
 Anda dapat berkontribusi melalui GitHub repository kami. Silakan kunjungi halaman kontak untuk informasi lebih lanjut.
+
+- GitHub: github.com/ocatacat
+- Discord: discord.gg/ocatacat

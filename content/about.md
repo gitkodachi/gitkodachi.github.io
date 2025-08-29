@@ -3,10 +3,10 @@ title: "Tentang Kami - Ocatocat Kode"
 date: 2025-06-27
 layout: "single"
 type: "page"
-meta_description: "Kenali tim Payung Kode - platform edukasi teknologi yang menyediakan tutorial pemrograman, tips coding, dan resources gratis untuk developer"
+meta_description: "Kenali tim Ocatacat Kode - platform edukasi teknologi yang menyediakan tutorial pemrograman, tips coding, dan resources gratis untuk developer"
 ---
 
-## 🚀 Tentang Payung Kode
+## 🚀 Tentang Octacat Kode
 
 Payung Kode adalah platform edukasi teknologi yang didedikasikan untuk membantu developer dari berbagai tingkat keahlian - dari pemula yang baru memulai perjalanan coding hingga profesional yang ingin mengasah skills terbaru.
 
@@ -22,17 +22,6 @@ Menciptakan ekosistem belajar pemrograman yang inklusif, dimana setiap orang dap
 2. **Memecahkan Masalah Praktis** - Fokus pada solusi untuk tantangan coding sehari-hari
 3. **Membangun Komunitas** - Menghubungkan developer untuk saling belajar dan berkolaborasi
 4. **Update Teknologi Terkini** - Selalu mengikuti perkembangan framework dan tools terbaru
-
-## 👨‍💻 Tim Kami
-
-**Budi Santoso** - Lead Developer & Content Creator  
-Full-stack developer dengan 8+ tahun pengalaman dalam JavaScript ecosystem
-
-**Sari Wijaya** - UI/UX Designer  
-Spesialis design system dan user experience untuk aplikasi web modern
-
-**Rizky Pratama** - DevOps Engineer  
-Expert dalam cloud infrastructure dan automation tools
 
 ## 📊 Pencapaian Kami
 
@@ -77,13 +66,13 @@ console.log(welcomeDeveloper("Developer Indonesia"));
 - Sponsorship
 - Open Source Contribution
 
-Hubungi kami di: collab@payungkode.com
+Hubungi kami di: collab@ocatacat.com
 
 ## 📫 Terhubung dengan Kami
-- GitHub: github.com/payungkode
-- Twitter: twitter.com/payungkode
-- YouTube: youtube.com/payungkode
-- Discord: discord.gg/payungkode
+- GitHub: github.com/ocatacat
+- Twitter: twitter.com/ocatacat
+- YouTube: youtube.com/ocatacat
+- Discord: discord.gg/ocatacat
 - RSS Feed: /rss.xml
 
 ## ❓ Pertanyaan Umum
@@ -94,7 +83,7 @@ Bisakah saya berkontribusi?
 Tentu! Kami menyambut kontributor melalui GitHub repository kami.
 
 Bagaimana cara request tutorial?
-Silakan buka issue di GitHub atau mention kami di media sosial dengan hashtag #RequestTutorialPayungKode
+Silakan buka issue di GitHub atau mention kami di media sosial dengan hashtag #RequestTutorialocatacat
 
 Terima kasih telah menjadi bagian dari perjalanan kami membangun komunitas developer Indonesia yang lebih kuat! 💪
 

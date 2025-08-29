@@ -4,7 +4,7 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: 'Rubik', sans-serif;
 }
 
 /* Code blocks */
@@ -16,11 +16,11 @@ pre {
   color: #1e293b; /* slate-800 */
   border-radius: 0.5rem;
   overflow-x: auto;
-  border: 1px solid #e2e8f0; /* slate-200 */
+  border: 0.9px solid #e2e8f0; /* slate-200 */
 }
 
 pre code {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: 'Rubik', sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
   background: transparent !important;
@@ -29,7 +29,7 @@ pre code {
 
 /* Inline code */
 code {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: 'Rubik', sans-serif;
   background-color: #f1f5f9; /* slate-100 */
   color: #1e293b;
   padding: 0.2em 0.4em;
