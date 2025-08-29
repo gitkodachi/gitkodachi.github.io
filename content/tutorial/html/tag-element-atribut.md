@@ -3,6 +3,7 @@
 title: "Belajar HTML #02: Memahami Tag, Element, dan Atribut dalam HTML"
 linkTitle: "Belajar HTML #02: Mengenal Tag, Elemen, dan Atribut dalam HTML"
 author: "default"
+author: "default"
 date: 2025-06-27
 weight: 2
 series: "HTML"

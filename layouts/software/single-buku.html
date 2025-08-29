@@ -6,12 +6,32 @@
       <!-- HEADER: Penulis, Tanggal -->
       <header class="not-prose">
         <div class="mb-4 flex items-center justify-start gap-2 text-xs md:text-base">
-          {{ $author := index .Site.Data.authors .Params.author | default .Site.Params.author }}
-          <img src="{{ $author.avatar | default "/images/global/avatar.png" | absURL }}" class="rounded-full inline h-6 w-6" width="24" height="24" alt="{{ $author.name }}">
-          <a class="text-dark dark:text-slate-100" href="{{ $author.link | default "#" }}">
+          {{ $author := dict "name" "Anonim" "avatar" "/images/global/avatar.png" "link" "#" }}
+          
+          {{ if .Params.author }}
+            {{ with index .Site.Data.authors .Params.author }}
+              {{ $author = . }}
+            {{ else }}
+              {{ with .Site.Params.author }}
+                {{ $author = . }}
+              {{ end }}
+            {{ end }}
+          {{ else }}
+            {{ with .Site.Params.author }}
+              {{ $author = . }}
+            {{ end }}
+          {{ end }}
+
+          <img src="{{ $author.avatar | absURL }}" 
+              class="rounded-full inline h-6 w-6" 
+              width="24" height="24" 
+              alt="{{ $author.name }}">
+          <a class="text-dark dark:text-slate-100" href="{{ $author.link }}">
             {{ $author.name }}
           </a>
-          <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" title="Ditulis pada {{ .Date.Format "2006-01-02 15:04:05 -0700" }}" class="text-gray-500 dark:text-gray-400">
+          <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" 
+                title="Ditulis pada {{ .Date.Format "2006-01-02 15:04:05 -0700" }}" 
+                class="text-gray-500 dark:text-gray-400">
             · {{ .Date.Format "2 Jan 2006" }}
           </time>
         </div>
@@ -62,12 +82,10 @@
           <table class="mb-8">
             <tbody>
               {{ with .Title }}<tr><td class="font-bold pr-4">Judul</td><td>{{ . }}</td></tr>{{ end }}
-              {{ with .Params.penulis }}<tr><td class="font-bold pr-4">Penulis</td><td>{{ . }}</td></tr>{{ end }}
-              {{ with .Params.penerbit }}<tr><td class="font-bold pr-4">Penerbit</td><td>{{ . }}</td></tr>{{ end }}
-              {{ with .Params.halaman }}<tr><td class="font-bold pr-4">Halaman</td><td>{{ . }}</td></tr>{{ end }}
-              {{ with .Params.rilis }}<tr><td class="font-bold pr-4">Rilis</td><td>{{ . }}</td></tr>{{ end }}
-              {{ with .Params.format }}<tr><td class="font-bold pr-4">Format</td><td>{{ . }}</td></tr>{{ end }}
-              {{ with .Params.harga }}<tr><td class="font-bold pr-4">Harga</td><td>{{ . }}</td></tr>{{ end }}
+              {{ with .Params.deskripsi }}<tr><td class="font-bold pr-4">Deskripsi</td><td>{{ . }}</td></tr>{{ end }}
+              {{ with .Params.versi }}<tr><td class="font-bold pr-4">Versi</td><td>{{ . }}</td></tr>{{ end }}
+              {{ with .Params.size }}<tr><td class="font-bold pr-4">Size</td><td>{{ . }}</td></tr>{{ end }}
+              {{ with .Params.platform }}<tr><td class="font-bold pr-4">Platform</td><td>{{ . }}</td></tr>{{ end }}
             </tbody>
           </table>
 

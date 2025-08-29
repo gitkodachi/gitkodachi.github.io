@@ -78,12 +78,6 @@ code {
   border-radius: 3px;
 }
 
-/* Download Button */
-.download-btn {
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-}
 .security-badge {
   display: inline-flex;
   align-items: center;

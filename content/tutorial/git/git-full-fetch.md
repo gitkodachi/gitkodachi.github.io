@@ -1,6 +1,7 @@
 ---
 title: "Tutorial Git #10: Menggunakan Git Pull Git Fetch"
 linkTitle: "Belajar Git #10: Menggunakan Git Pull dan Git Fetch"
+author: "default"
 date: 2025-06-27
 thumbnail: "/images/cover/git-petanikode.png"
 image: "/images/cover/git-petanikode.png"

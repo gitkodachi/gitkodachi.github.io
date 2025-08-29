@@ -1,6 +1,7 @@
 ---
 title: "Belajar HTML #10: Cara Membuat Tabel di HTML"
 linkTitle: "Belajar HTML #10: Membuat Tabel pada HTML"
+author: "default"
 date: 2025-07-10
 weight: 10
 series: "HTML"

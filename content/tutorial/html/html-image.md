@@ -3,6 +3,7 @@
 title: "Belajar HTML #08: Cara Menampilkan Gambar di HTML"
 linkTitle: "Belajar HTML #08: Menampilkan Gambar di HTML"
 author: "default"
+author: "default"
 date: 2025-06-27
 weight: 8
 series: "HTML"

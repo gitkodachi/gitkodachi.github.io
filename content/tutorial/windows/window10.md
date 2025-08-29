@@ -1,8 +1,8 @@
 ---
 title: "Cara masuk ke BIOS (Windows 10 & 11)"
 linkTitle: "Tutorial Windows #01: Cara Masuk Ke bios"
-date: 2025-06-25
 author: "default"
+date: 2025-06-25
 weight: 1
 avatar: /images/global/avatar.png
 thumbnail: "/images/thumbnail/Komponen-BIOS.webp"

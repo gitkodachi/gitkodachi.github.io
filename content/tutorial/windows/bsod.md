@@ -1,8 +1,8 @@
 ---
 title: "Blue Screen Windows (BSOD)"
 linkTitle: "Tutorial Windows #02: Blue Screen Windows (BSOD)"
-date: 2025-06-25
 author: "default"
+date: 2025-06-25
 weight: 2
 avatar: /images/global/avatar.png
 thumbnail: "/images/thumbnail/bsosd.webp"

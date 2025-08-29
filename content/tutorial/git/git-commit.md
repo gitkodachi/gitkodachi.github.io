@@ -1,6 +1,7 @@
 ---
 title: "Tutorial Git #3: Simpan Perubahan Revisi dengan Git Commit"
 linkTitle: "Belajar Git #03: Cara Membuat Repositori Git pada Proyek"
+author: "default"
 date: 2025-06-27
 thumbnail: "/images/cover/git-petanikode.png"
 image: "/images/cover/git-petanikode.png"

@@ -1,6 +1,7 @@
 ---
 title: "Menggunakan Git pada Visual Studio Code (Lebih praktis!)"
 linkTitle: "Belajar Git #12: Cara Menggunakan Git pada Visual Studio Code"
+author: "default"
 date: 2025-06-27
 thumbnail: "/images/cover/git-vscode.png"
 image: "/images/cover/git-petanikode.png"

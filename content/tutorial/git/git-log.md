@@ -1,6 +1,7 @@
 ---
 title: "Tutorial Git #4: Melihat Catatan Log Revisi"
 linkTitle: "Belajar Git #04: Melihat Catatan Log Revisi"
+author: "default"
 date: 2025-06-27
 thumbnail: "/images/cover/git-petanikode.png"
 image: "/images/cover/git-petanikode.png"

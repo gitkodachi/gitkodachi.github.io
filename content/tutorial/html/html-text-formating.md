@@ -1,6 +1,7 @@
 ---
 title: "Belajar HTML #06: Text Formatting di HTML (Bold, Italic, Underline, dll)"
 linkTitle: "Belajar HTML #06: Text Formatting di HTML"
+author: "default"
 date: 2025-07-10
 weight: 6
 series: "HTML"

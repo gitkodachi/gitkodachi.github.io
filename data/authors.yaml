@@ -1,0 +1,5 @@
+default:
+  name: "Tim Octocat Kode"
+  avatar: "/images/authors/octocat.png"
+  bio: "Ditulis oleh tim Octocat Kode — berbagi software bermanfaat."
+  link: "/about/"

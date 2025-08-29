@@ -3,6 +3,7 @@
 title: "Belajar HTML #09: Cara Membuat List di HTML"
 linkTitle: "Belajar HTML #09: Membuat List pada HTML"
 author: "default"
+author: "default"
 date: 2025-06-27
 weight: 9
 series: "HTML"

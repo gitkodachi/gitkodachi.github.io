@@ -9,19 +9,31 @@
       <!-- Header Artikel -->
       <header class="not-prose">
         <div class="mb-4 flex items-center justify-start gap-2 text-xs md:text-base">
-          {{ $authorData := dict "avatar" "/images/global/avatar.png" "name" "Anonim" "link" "#" }}
-          {{ with .Params.author }}
-            {{ with (index $.Site.Data.authors .) }}
-              {{ $authorData = . }}
+          {{ $author := dict "name" "Anonim" "avatar" "/images/global/avatar.png" "link" "#" }}
+          
+          {{ if .Params.author }}
+            {{ with index .Site.Data.authors .Params.author }}
+              {{ $author = . }}
+            {{ else }}
+              {{ with .Site.Params.author }}
+                {{ $author = . }}
+              {{ end }}
+            {{ end }}
+          {{ else }}
+            {{ with .Site.Params.author }}
+              {{ $author = . }}
             {{ end }}
           {{ end }}
 
-          <img src="{{ $authorData.avatar | absURL }}" class="rounded-full inline h-6 w-6" width="24" height="24" alt="{{ $authorData.name }}">
-          <a class="text-dark dark:text-slate-100" href="{{ $authorData.link }}">
-            {{ $authorData.name }}
+          <img src="{{ $author.avatar | absURL }}" 
+              class="rounded-full inline h-6 w-6" 
+              width="24" height="24" 
+              alt="{{ $author.name }}">
+          <a class="text-dark dark:text-slate-100" href="{{ $author.link }}">
+            {{ $author.name }}
           </a>
-          <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"
-                title="Ditulis pada {{ .Date.Format "2006-01-02 15:04:05 -0700" }}"
+          <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" 
+                title="Ditulis pada {{ .Date.Format "2006-01-02 15:04:05 -0700" }}" 
                 class="text-gray-500 dark:text-gray-400">
             · {{ .Date.Format "2 Jan 2006" }}
           </time>

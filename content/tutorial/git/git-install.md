@@ -1,6 +1,7 @@
 ---
 title: "Tutorial Git #1: Cara Install Git dan Konfigurasi Awal yang Harus Dilakukan"
 linkTitle: "Belajar Git #02: Cara Install Git dan Konfigurasi Awal yang Harus Dilakukan"
+author: "default"
 date: 2025-06-27
 thumbnail: "/images/cover/git-petanikode.png"
 image: "/images/cover/git-petanikode.png"
