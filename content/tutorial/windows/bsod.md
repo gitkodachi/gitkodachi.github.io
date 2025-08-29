@@ -6,7 +6,7 @@ date: 2025-06-25
 weight: 2
 avatar: /images/global/avatar.png
 thumbnail: "/images/thumbnail/bsosd.webp"
-image: "/images/cover/bsosd.webp"
+image: "/images/cover/windows.jpg"
 kategori: ["tutorial-lainnya"]
 topik: ["windows", "office"]
 tutorial: ["windows"]

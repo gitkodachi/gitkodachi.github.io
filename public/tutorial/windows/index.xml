@@ -22,5 +22,12 @@
       <guid>http://localhost:1313/tutorial/windows/bsod/</guid>
       <description>&lt;h3 id=&#34;awal-mula-kemunculan-bsod-windows&#34;&gt;Awal Mula Kemunculan BSOD Windows&lt;/h3&gt;&#xA;&lt;p&gt;Sebagai catatan, BSOD pertama kali hadir di awal 1990-an. Di masa Windows 3.1, layar biru dikenal dengan sebutan blue screen of unhappiness, yang muncul saat pengguna menekan control-alt-delete untuk menutup program yang macet. Kemudian, pada 1993, istilah blue screen of death mulai digunakan di Windows NT ketika sistem benar-benar tidak bisa dipulihkan lagi.&lt;/p&gt;&#xA;&lt;p&gt;Sebenarnya, layar hitam bukan hal baru sepenuhnya. Microsoft pernah memperkenalkannya pada Windows 11 di 2021, tapi kali ini desain dan pesan yang muncul telah diperbarui agar lebih ringkas dan relevan.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Cara Diable Update Otomatis (Windows 10 &amp; 11)</title>
+      <link>http://localhost:1313/tutorial/windows/disable-uptade-win-11/</link>
+      <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/windows/disable-uptade-win-11/</guid>
+      <description>&lt;p&gt;Windows 11 dan 10 menawarkan kontrol UI yang lebih sedikit atas perilaku pembaruan sistem operasi dibandingkan versi Windows sebelumnya. Tidak ada opsi untuk menonaktifkan Pembaruan Windows menggunakan Panel Kontrol atau aplikasi Pengaturan di Windows 11 &amp;amp; 10. Pembaruan akan memeriksa pembaruan secara otomatis dan menginstal pembaruan apa pun yang ditemukan, suka atau tidak. Fitur baru ini sebenarnya cukup nyaman bagi sebagian besar pengguna. Jika Anda ingin mengontrol proses pembaruan, Anda dapat menonaktifkan layanan Pembaruan Windows. Ini mengharuskan Anda membuka Manajer Layanan, menemukan layanan, dan mengubah parameter serta status startup-nya. Anda kemudian harus mengaktifkan kembali layanan tersebut setiap kali Anda ingin sistem operasi memeriksa pembaruan (kelihatannya tidak semudah itu).&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

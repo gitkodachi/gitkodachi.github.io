@@ -1,10 +1,10 @@
 /* Global font settings */
 body {
-  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
 }
 
 h1, h2, h3 {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
 }
 
 /* Code blocks */
