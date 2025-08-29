@@ -105,9 +105,14 @@ Rilis Terakhir - v3.4 (3-June-2025)
 | TSforge         | Windows / ESU / Office | Permanent                            | Yes, needed on build 19041 and later |
 | KMS38           | Windows 10-11-Server   | Till the Year 2038                   | No                  |
 | Online KMS      | Windows / Office       | 180 Days. Lifetime With Renewal Task | Yes                 |
+|                 |                        |                                      |                     |
 
-Untuk detail lebih lanjut, gunakan detail aktivasi masing-masing di Dokumen dan [grafik perbandingan](chart.md).  
-Untuk mengaktifkan produk yang tidak didukung seperti **Office di Mac**, centang [disini](unsupported_products_activation.md).
+## Cara Penggunaan
+
+- Ketika anda ingin mengaktivasi, misalnya: Windows 10
+- Silahkan jalankan file “MAS_AIO.cmd”, lalu pilih angka nomor 4 ( itu berfungsi untuk mengaktivasi Windows dan Office )
+tunggu prosesnya dan windows atau Office anda akan teraktivasi
+- salam luar bias
 
 ## Screenshots
 
