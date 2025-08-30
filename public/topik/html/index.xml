@@ -92,5 +92,12 @@
       <guid>http://localhost:1313/tutorial/html/html-semantik/</guid>
       <description>&lt;p&gt;Sejauh ini kita sudah mengenal beberapa tag dasar di HTML, seperti elemen &lt;a href=&#34;../html-paragraf&#34;&gt;paragraf&lt;/a&gt;, &lt;a href=&#34;../html-heading&#34;&gt;heading&lt;/a&gt;, &lt;a href=&#34;../html-list&#34;&gt;list&lt;/a&gt;, &lt;a href=&#34;../html-tabel&#34;&gt;tabel&lt;/a&gt;, &lt;a href=&#34;../html-link&#34;&gt;link&lt;/a&gt;, dan &lt;a href=&#34;../html-form&#34;&gt;form&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Lalu pertanyaannya:&lt;/p&gt;&#xA;&lt;p&gt;Bagaimana cara menata elemen-elemen ini agar terlihat bagus?&lt;/p&gt;&#xA;&lt;p&gt;Jawabannya:&lt;/p&gt;&#xA;&lt;p&gt;Kita butuh sebuah layout.&lt;/p&gt;&#xA;&lt;p&gt;Nah, di HTML terdapat beberapa elemen yang khusus untuk melakukan ini. Yakni elemen semantik seperti &lt;code&gt;&amp;lt;header&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;aside&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;footer&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;article&amp;gt;&lt;/code&gt;, dll.&lt;/p&gt;&#xA;&lt;p&gt;Elemen semantik sebenarnya tidak hanya digunakan untuk membuat layout saja. Ia juga digunakan untuk membuat elemen lain.&lt;/p&gt;&#xA;&lt;p&gt;Untuk lebih jelasnya, mari kita pelajari lebih detail.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Belajar HTML #13: Menampilkan Video pada HTML</title>
+      <link>http://localhost:1313/tutorial/html/html-video/</link>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/html/html-video/</guid>
+      <description>&lt;p&gt;Pada tutorial sebelumnya, kita sudah belajar cara menambahkan gambar di HTML. Namun, ini belumlah cukup.. karena sekarang konten di web tidak hanya dalam bentuk teks dan gambar saja.&lt;/p&gt;&#xA;&lt;p&gt;Konten lainnya yang bisa ditambahkan di HTML adalah audio dan juga video.&lt;/p&gt;&#xA;&lt;p&gt;Nah, pada tutorial ini.. kita akan belajar cara menambahkan video di HTML.&lt;/p&gt;&#xA;&lt;p&gt;Mari kita mulai…&lt;/p&gt;&#xA;&lt;h2 id=&#34;cara-menambahkan-video-di-html&#34;&gt;Cara Menambahkan Video di HTML&lt;/h2&gt;</description>
+    </item>
   </channel>
 </rss>

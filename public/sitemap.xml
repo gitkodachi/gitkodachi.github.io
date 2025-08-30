@@ -101,6 +101,9 @@
     <loc>http://localhost:1313/tutorial/html/html-semantik/</loc>
     <lastmod>2025-07-10T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tutorial/html/html-video/</loc>
+    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/topik/html/</loc>
     <lastmod>2025-07-10T00:00:00+00:00</lastmod>
   </url><url>
@@ -239,18 +242,29 @@
     <loc>http://localhost:1313/software/daemon-tools/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/software/windows/daemon-tools/</loc>
+    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/software/activasi-window-office/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/software/idm/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/software/windows/idm/</loc>
+    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/software/</loc>
+    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/software/windows/winrar/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/software/winrar/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/buku/</loc>
+  </url><url>
+    <loc>http://localhost:1313/software/windows/</loc>
   </url>
 </urlset>

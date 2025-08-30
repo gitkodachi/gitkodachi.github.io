@@ -1,8 +1,4 @@
 ---
-# content/tutorial/_index.md
-title: "Semua Tutorial"
-date: 2025-06-27
-layout: tutorial-list
+title: "Software Windows"
+description: "Daftar Software Rekomendasi Windows"
 ---
-
-Temukan tutorial yang ingin kamu pelajari.
