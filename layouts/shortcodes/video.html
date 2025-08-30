@@ -1,5 +1,12 @@
-<video controls width="100%">
+<video controls width="100%" {{ with .Get "class" }}class="{{ . }}"{{ end }} {{ with .Get "poster" }}poster="{{ . }}"{{ end }}>
+  {{ if .Get "src_webm" }}
   <source src="{{ .Get "src_webm" }}" type="video/webm">
+  {{ end }}
+  {{ if .Get "src_mp4" }}
   <source src="{{ .Get "src_mp4" }}" type="video/mp4">
+  {{ end }}
+  {{ if .Get "src_ogg" }}
+  <source src="{{ .Get "src_ogg" }}" type="video/ogg">
+  {{ end }}
   Browser tidak mendukung video HTML5.
 </video>

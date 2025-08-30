@@ -558,6 +558,851 @@
 <p>Nah, pada tutorial ini.. kita akan belajar cara menambahkan video di HTML.</p>
 <p>Mari kita mulai…</p>
 <h2 id="cara-menambahkan-video-di-html">Cara Menambahkan Video di HTML</h2>
+<p>Kita membutuhkan sebuah media player untuk menampilkan video di HTML</p>
+<p>Dulu&hellip;</p>
+<p>Sebebelum ad HTML5, media player HTML dibuat dengan program external seperti adobe flash.</p>
+<p>Namun, kini sudah tidak di pakai lagi.</p>
+
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/tutorial/html/flash-html.jpg" 
+    alt="Deskripsi gambar" 
+    class="mx-auto cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  const isZoomed = img.classList.toggle('zoomed');
+  
+  if (isZoomed) {
+    
+    const scale = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.9 / img.naturalHeight,
+      1.0 
+    );
+    
+    img.style.setProperty('--zoom-scale', scale);
+    document.body.style.overflow = 'hidden';
+    
+    
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.dataset.escHandler = handleKey;
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', img.dataset.escHandler);
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1000;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+ 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+</style>
+<p>HTML ekarang punya tag baru untuk media player, yakni tag <code>&lt;video</code>&gt;.</p>
+
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/tutorial/html/tag-video.png" 
+    alt="Deskripsi gambar" 
+    class="mx-auto cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  const isZoomed = img.classList.toggle('zoomed');
+  
+  if (isZoomed) {
+    
+    const scale = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.9 / img.naturalHeight,
+      1.0 
+    );
+    
+    img.style.setProperty('--zoom-scale', scale);
+    document.body.style.overflow = 'hidden';
+    
+    
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.dataset.escHandler = handleKey;
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', img.dataset.escHandler);
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1000;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+ 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+</style>
+<p>Jika tag video dibuka pada browser yang tidak didukungnya, maka teks <code>browser tidak mendukung tag video</code> akan di tampilkan.</p>
+<p>Tapi, jika mendukung, Videonya akan ditampilkan.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Contoh Video di HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Contoh Video di HTML<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">video</span> <span class="na">controls</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;cat-herd.webm&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;video/webm&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">  Browsermu tidak mendukung tag ini, upgrade donk!
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="err">&lt;</span>/html
+</span></span></code></pre></div><blockquote>
+<p>File videonya kamu bisa download di <a href="https://www.petanikode.com/img/html-video/cat-herd.webm"> cat-herd.webm</a></p></blockquote>
+<video controls width="100%"  >
+  
+  <source src="/images/content/tutorial/html/contoh-video.webm" type="video/webm">
+  
+  
+  
+  Browser tidak mendukung video HTML5.
+</video>
+<details class="alert-details">
+  <summary>Live Demo</summary>
+  <div class="details-content">
+    <video controls width="100%"  >
+  <source src="/images/content/tutorial/html/cat-herd.webm" type="video/webm">
+<p>Browser tidak mendukung video HTML5.
+</video></p>
+  </div>
+</details>
+<p>Pada contoh diatas, kita menuliskan secara langsung nama video yang akan di tampilkan. Ini karena videonya berada dalam satu folder dengan file HTML.</p>
+
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/tutorial/html/file-video.png" 
+    alt="Deskripsi gambar" 
+    class="mx-auto cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  const isZoomed = img.classList.toggle('zoomed');
+  
+  if (isZoomed) {
+    
+    const scale = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.9 / img.naturalHeight,
+      1.0 
+    );
+    
+    img.style.setProperty('--zoom-scale', scale);
+    document.body.style.overflow = 'hidden';
+    
+    
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.dataset.escHandler = handleKey;
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', img.dataset.escHandler);
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1000;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+ 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+</style>
+<p>Jika video tersebut tersimpan di folder yang berbeda, maka perlu ditulis alamat folder atau path-nya.</p>
+<p>Misalkan, saya meneruh videonya di dalam folder <code>video</code>. Maka, alamat path yang digunakan adalah:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">video</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;video/nama-video.mp4&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>..dan jika videonya berada di website yang berbeda, maka kita harus mengisi atribut <code>src</code> dengan URL lengkap dari video.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">video</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://www.git.com/img/html-video/cat-herd.webm&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h2 id="format-video-yang-didukung">Format Video yang Didukung</h2>
+<p>Tidak semua format video dapat ditampilkan di HTML. Berikut ini beberapa format video yang didukung:<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Format File</th>
+          <th style="text-align: left">Media Type</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">MP4</td>
+          <td style="text-align: left">Video/MP4</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">WebM</td>
+          <td style="text-align: left">video/webm</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Ogg</td>
+          <td style="text-align: left">video/ogg</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+  </tbody>
+</table>
+<p>Jika kamu punya video dengan format yang berbeda dari ketiga format tersebut, maka kamu harus mengubahnya agar bisa ditambah ke HTML.</p>
+<h2 id="atribut-untuk-video">Atribut untuk Video</h2>
+<p>Tag <code>&lt;video&gt;</code> punya beberapa atribute yang diberikan:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><code>Nama Atribut</code></th>
+          <th style="text-align: left"><code>Nilai</code></th>
+          <th style="text-align: left"><code>Fungsi</code></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>autoplay</code></td>
+          <td style="text-align: left"><code>true</code>/<code>false</code></td>
+          <td style="text-align: left">Agar video diputer otomatis</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>controls</code></td>
+          <td style="text-align: left"><code>true</code>/<code>false</code></td>
+          <td style="text-align: left">Untuk mengaktifkan control video player</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>loop</code></td>
+          <td style="text-align: left"><code>true</code>/<code>false</code></td>
+          <td style="text-align: left">Untuk memutar video terus menerus</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>muted</code></td>
+          <td style="text-align: left"><code>true</code>/<code>false</code></td>
+          <td style="text-align: left">Untuk menonaktifkan audio</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>posoter</code></td>
+          <td style="text-align: left"><code>Image Path</code></td>
+          <td style="text-align: left">Untuk menentukan gambar cover dari video</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>width</code> &amp; <code>height</code></td>
+          <td style="text-align: left"><code>Angka</code></td>
+          <td style="text-align: left">Untuk menentukan tinggi dan lebar video</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>playsinline</code></td>
+          <td style="text-align: left"><code>true</code>/<code>false</code></td>
+          <td style="text-align: left">Untuk memutar video secara ‘inline’</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+  </tbody>
+</table>
+<p>Jika atribut bernilai <code>true</code>, maka ia boleh ditulis namanya saja.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">video</span> <span class="na">loop</span><span class="o">=</span><span class="s">&#34;true&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;video.mp4&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Bisa disingkat menjadi:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">video</span> <span class="na">loop</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;video.mp4&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Jika nilai atribut bernilai <code>false</code>, maka atribut tersebut boleh tidak ditulis atau juga boleh ditulis.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">video</span> <span class="na">loop</span><span class="o">=</span><span class="s">&#34;false&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;video.mp4&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- boleh juga seperti ini: --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">video</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;video.mp4&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Nah, untuk atribut lainnya, kamu bisa cek di <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#Attributes">MDN: The Video Embed element</a>.</p>
+<h2 id="video-sebagai-gambar-animasi-gif">Video Sebagai Gambar Animasi Gif</h2>
+<p>Banyak website modern saat ini menggunakan video sebagai ganti dari animasi gif. Bahkan juga Google menyarankan untuk menggunakan video daripada gif.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>Mengapa?</p>
+<p>Karena ukuran file dari video jauh lebih kecil dibandingkan dengan gif dan juga tentunya akan mempengaruhi kecepatan download.</p>
+<p>Nggak percaya?</p>
+<p>Mari kita bandingkan:</p>
+
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/tutorial/html/gif-vs-video.png" 
+    alt="Deskripsi gambar" 
+    class="mx-auto cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  const isZoomed = img.classList.toggle('zoomed');
+  
+  if (isZoomed) {
+    
+    const scale = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.9 / img.naturalHeight,
+      1.0 
+    );
+    
+    img.style.setProperty('--zoom-scale', scale);
+    document.body.style.overflow = 'hidden';
+    
+    
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.dataset.escHandler = handleKey;
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', img.dataset.escHandler);
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1000;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+ 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+</style>
+<p>File <code>cat-herd.gif</code> punya ukuran <code>3,6 MB</code> setelah saya covert formatnya menjadi MP4 dan Webm, ukurannya menjadi sangat kecil.</p>
+<p>Terbukti kan, file video lebih kecil daripada gif.</p>
+<p>Lalu, bagaimana cara membuat video menjadi gambar gif di HTML.</p>
+<p>Caranya sama seperti menambahkan video biasa, tapi kita harus mengaktifkan beberapa atribut seperti <code>autoplay</code>, <code>muted</code>, <code>playsinline</code> dan <code>loop</code>.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Contoh Video di HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Contoh Video sebagai gif<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">video</span> <span class="na">autoplay</span> <span class="na">loop</span> <span class="na">muted</span> <span class="na">playsinline</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;cat-herd.webm&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;video/webm&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;cat-herd.mp4&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;video/mp4&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><video controls width="100%"  >
+  
+  <source src="/images/content/tutorial/html/contoh-video.webm" type="video/webm">
+  
+  
+  
+  Browser tidak mendukung video HTML5.
+</video>
+<details class="alert-details">
+  <summary>Live Demo</summary>
+  <div class="details-content">
+    <video controls width="100%"  >
+  <source src="/images/content/tutorial/html/cat-herd.webm" type="video/webm">
+<p>Browser tidak mendukung video HTML5.
+</video></p>
+  </div>
+</details>
+<h2 id="subtitle-untuk-video">Subtitle untuk Video</h2>
+<p>Subtitle adalah teks yang akan ditampilkan dalam video. Biasanya digunakan untuk terjemahan atau alih bahasa dari video dan juga untuk membantu tuna rungu (orang tuli) untuk menyerap informasi pada video.</p>
+<p>Subtitle pada HTML dapat kita tambahkan dengan tag <code>&lt;track&gt;</code>. Tag ini memiliki atribut src yang akan digunakan untuk menambahkan file subtitle.</p>
+
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/tutorial/html/tag-track.png" 
+    alt="Deskripsi gambar" 
+    class="mx-auto cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  const isZoomed = img.classList.toggle('zoomed');
+  
+  if (isZoomed) {
+    
+    const scale = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.9 / img.naturalHeight,
+      1.0 
+    );
+    
+    img.style.setProperty('--zoom-scale', scale);
+    document.body.style.overflow = 'hidden';
+    
+    
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.dataset.escHandler = handleKey;
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', img.dataset.escHandler);
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1000;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+ 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+</style>
+<p>Format file subtitle untuk video di dalam HTML adalah WebVTT (<code>.vtt</code>) atau Web Video Text Track. File <code>.vtt</code> ini bisa dibuat dengan teks editor.</p>
+<p>Jika kamu punya subtitle dengan format SubRip Text (<code>.srt</code>), kamu bisa mengubahnya menjadi <code>.vtt</code> di <a href="https://atelier.u-sub.net/srt2vtt/">srt2vtt</a>.</p>
+<p>Sekarang mari kita coba contohnya: <code>video-subtitle.html</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Contoh Video di HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Video Subtitle<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">video</span> <span class="na">controls</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;cat-herd.webm&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;video/webm&#34;</span><span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;cat-herd.mp4&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;video/mp4&#34;</span><span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">track</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;cat-herd-id.vtt&#34;</span> <span class="na">kind</span><span class="o">=</span><span class="s">&#34;subtitles&#34;</span> <span class="na">srclang</span><span class="o">=</span><span class="s">&#34;id&#34;</span> <span class="na">label</span><span class="o">=</span><span class="s">&#34;Indonesia&#34;</span><span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Dan berikut ini isi file: <code>cat-herd-id.vtt</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">WEBVTT
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">0
+</span></span><span class="line"><span class="cl">00:00:00.000 --&gt; 00:00:03.000
+</span></span><span class="line"><span class="cl">Para penunggang kuda.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">1
+</span></span><span class="line"><span class="cl">00:00:04.000 --&gt; 00:00:08.000
+</span></span><span class="line"><span class="cl">Kucing berlari.
+</span></span></code></pre></div><p>Hasilnya:</p>
+<video controls width="100%"  >
+  
+  <source src="/images/content/tutorial/html/contoh-video.webm" type="video/webm">
+  
+  
+  
+  Browser tidak mendukung video HTML5.
+</video>
+<blockquote>
+<p>Catatan penting:</p>
+<p>Subtitle tidak akan ditampilkan jika kita membuka file HTML secara langsung dari browser.</p>
+<p>Coba perhatikan di bagian address bar, jika di sana ada tulisan File.. berarti kita membuka file HTML secara langsung.</p></blockquote>
+
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/tutorial/html/file-html-direct.png" 
+    alt="Deskripsi gambar" 
+    class="mx-auto cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  const isZoomed = img.classList.toggle('zoomed');
+  
+  if (isZoomed) {
+    
+    const scale = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.9 / img.naturalHeight,
+      1.0 
+    );
+    
+    img.style.setProperty('--zoom-scale', scale);
+    document.body.style.overflow = 'hidden';
+    
+    
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.dataset.escHandler = handleKey;
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', img.dataset.escHandler);
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1000;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+ 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+</style>
+<p>Namun, jika di address bar ada HTTP atau HTTPS.. itu artinya kita membuka file HTML melalui web server.</p>
+<p>..dan juga jika format file <code>.vtt</code> tidak benar, subtile tidak akan ditampilkan.</p>
+<p>Pastikan formatnya valid, silakan gunakan <a href="https://quuz.org/webvtt/">Live WebVTT</a> Validator untuk pengecekan.</p>
+<h2 id="menmabahkan-video-dari-youtube">Menmabahkan Video dari Youtube</h2>
+<p>Saat tidak ingin repot-repot mengubah format video, kita bisa manfaatkan Youtube.</p>
+<p>Tinggal upload saja videonya ke Youtube. Nanti kita akan dapat id unik dari video. Id unik ini bisa kita dapatkan dari URL video.</p>
+<p>Contoh: <code>N7iY-jNWeFc</code></p>
+<p>Youtube sendiri sudah punya media player, jadi kita tidak perlu membuatnya dengan tag <code>&lt;video&gt;</code>.</p>
+<p>Tag yang kita butuhkan untuk menambahkan video dari Youtube adalah <code>&lt;iframe&gt;</code>. Tag ini sebenarnya berfungsi untuk menambahkan halaman lain dalam sebuah frame.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Contoh Video di HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Video dari Youtube<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;560&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;315&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://www.youtube.com/embed/N7iY-jNWeFc&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Perhatikan URL yang digunakan pada atribut <code>src</code>, di sana kita menggunakan <code>/embed/</code>. Ini adalah halaman yang digunakan khusus untuk embed video dari Youtube.</p>
+<p>Hasilnya:</p>
+
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/tutorial/html/contoh-video-youtube.webp" 
+    alt="Deskripsi gambar" 
+    class="mx-auto cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  const isZoomed = img.classList.toggle('zoomed');
+  
+  if (isZoomed) {
+    
+    const scale = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.9 / img.naturalHeight,
+      1.0 
+    );
+    
+    img.style.setProperty('--zoom-scale', scale);
+    document.body.style.overflow = 'hidden';
+    
+    
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.dataset.escHandler = handleKey;
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', img.dataset.escHandler);
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1000;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+ 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+</style>
+<p>Sebenarnya ada cara gampangnya..</p>
+<p>Pada video Youtube yang ingin kita <code>embed</code>, klik saja tombol <em>share</em>.</p>
+
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/tutorial/html/btn-share.png" 
+    alt="Deskripsi gambar" 
+    class="mx-auto cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  const isZoomed = img.classList.toggle('zoomed');
+  
+  if (isZoomed) {
+    
+    const scale = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.9 / img.naturalHeight,
+      1.0 
+    );
+    
+    img.style.setProperty('--zoom-scale', scale);
+    document.body.style.overflow = 'hidden';
+    
+    
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.dataset.escHandler = handleKey;
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', img.dataset.escHandler);
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1000;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+ 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+</style>
+<p>Maka akan muncul opsi untuk share video, pilih saja <em>embed..</em></p>
+
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/tutorial/html/embed.png" 
+    alt="Deskripsi gambar" 
+    class="mx-auto cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  const isZoomed = img.classList.toggle('zoomed');
+  
+  if (isZoomed) {
+    
+    const scale = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.9 / img.naturalHeight,
+      1.0 
+    );
+    
+    img.style.setProperty('--zoom-scale', scale);
+    document.body.style.overflow = 'hidden';
+    
+    
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.dataset.escHandler = handleKey;
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', img.dataset.escHandler);
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1000;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+ 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+</style>
+<p>..dan kita akan mendapatkan kode HTML untuk <em>embed</em> videonya.</p>
+<p>Kode ini bisa kita <em>copy</em> ke file HTML.</p>
+<p>Apa Selanjutnya?
+Kita sudah belajar cara menampilkan video. Baik itu video dari file lokal dan juga video dari Youtube.</p>
+<p>Nah, berikutnya silakan pelajari tentang:</p>
+<ul>
+<li>Belajar <a href="../html-audio">HTML #14: Menambahkan Audio pada HTML</a></li>
+</ul>
+<blockquote>
+<p>📖 lihat juga tutorial lainnya di <a href="/tutorial/html/">List Tutorial HTML</a></p></blockquote>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.w3schools.com/html/html5_video.asp">HTML Video</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://web.dev/replace-gifs-with-videos/">Replace GIFs with videos</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
 
         
         
@@ -886,6 +1731,29 @@
           
         </li>
       
+        
+          
+        
+        
+        <li class="mb-2 rounded-md line-clamp-2 transition-all duration-200
+             
+              bg-slate-100 hover:bg-teal-600 hover:text-white dark:bg-slate-700 dark:hover:bg-teal-600 hover:shadow-md
+            ">
+          
+          
+            
+            <a href="/tutorial/html/html-audio/" class="p-3 w-full h-full inline-flex items-center gap-3 group">
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-teal-100 group-hover:bg-teal-700 group-hover:bg-opacity-30 dark:bg-teal-900 dark:bg-opacity-50 flex items-center justify-center transition-colors">
+                <span class="text-xs font-medium text-teal-700 group-hover:text-white dark:text-teal-300">14</span>
+              </div>
+              <span class="font-medium">Belajar HTML #14: Menambahkan Audio pada HTML</span>
+              <svg class="h-4 w-4 ml-auto flex-shrink-0 text-slate-400 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          
+        </li>
+      
     </ol>
 
     
@@ -895,11 +1763,11 @@
       
       <div class="mt-6 bg-slate-100 dark:bg-slate-700 rounded-full h-2">
         <div class="bg-teal-600 h-2 rounded-full transition-all duration-500" 
-            style="width: 92%"></div>
+            style="width: 93%"></div>
       </div>
       <div class="flex justify-between items-center mt-2 text-xs text-slate-500 dark:text-slate-400">
-        <span>Progress: 12/13 bagian</span>
-        <span>92% selesai</span>
+        <span>Progress: 13/14 bagian</span>
+        <span>93% selesai</span>
       </div>
     
 
@@ -1161,6 +2029,30 @@
     </div>
   </a>
   
+  <a href="/tutorial/html/html-audio/" title="Belajar HTML #14: Menambahkan Audio pada HTML">
+    <div class="flex justify-between items-center gap-2 p-6 hover:bg-slate-100 dark:hover:bg-slate-700 active:scale-95 active:rounded-xl transition-all">
+      <div class="flex-1 min-w-0">
+        <h3 class="text-lg font-semibold tracking-tight line-clamp-2 leading-tight mb-1">
+          Belajar HTML #14: Menambahkan Audio pada HTML
+        </h3>
+        <p class="text-sm text-slate-700 dark:text-slate-200 line-clamp-1">
+          <time datetime="2025-07-10">10 Jul 2025</time>
+          
+        </p>
+      </div>
+      
+      
+        <img class="w-16 h-16 lazyload rounded-lg object-cover" 
+             src="http://localhost:1313/images/cover/html-audio.png" 
+             data-src="http://localhost:1313/images/cover/html-audio.png" 
+             alt="Belajar HTML #14: Menambahkan Audio pada HTML" 
+             height="64" 
+             width="64"
+             loading="lazy">
+      
+    </div>
+  </a>
+  
   <a href="/tutorial/html/html-dasar/" title="Belajar HTML dari Nol: Pengenalan Dasar HTML untuk Pemula">
     <div class="flex justify-between items-center gap-2 p-6 hover:bg-slate-100 dark:hover:bg-slate-700 active:scale-95 active:rounded-xl transition-all">
       <div class="flex-1 min-w-0">
@@ -1178,30 +2070,6 @@
              src="http://localhost:1313/images/cover/html.png" 
              data-src="http://localhost:1313/images/cover/html.png" 
              alt="Belajar HTML dari Nol: Pengenalan Dasar HTML untuk Pemula" 
-             height="64" 
-             width="64"
-             loading="lazy">
-      
-    </div>
-  </a>
-  
-  <a href="/tutorial/html/tag-element-atribut/" title="Belajar HTML #02: Memahami Tag, Element, dan Atribut dalam HTML">
-    <div class="flex justify-between items-center gap-2 p-6 hover:bg-slate-100 dark:hover:bg-slate-700 active:scale-95 active:rounded-xl transition-all">
-      <div class="flex-1 min-w-0">
-        <h3 class="text-lg font-semibold tracking-tight line-clamp-2 leading-tight mb-1">
-          Belajar HTML #02: Memahami Tag, Element, dan Atribut dalam HTML
-        </h3>
-        <p class="text-sm text-slate-700 dark:text-slate-200 line-clamp-1">
-          <time datetime="2025-06-27">27 Jun 2025</time>
-          
-        </p>
-      </div>
-      
-      
-        <img class="w-16 h-16 lazyload rounded-lg object-cover" 
-             src="http://localhost:1313/images/cover/html.png" 
-             data-src="http://localhost:1313/images/cover/html.png" 
-             alt="Belajar HTML #02: Memahami Tag, Element, dan Atribut dalam HTML" 
              height="64" 
              width="64"
              loading="lazy">

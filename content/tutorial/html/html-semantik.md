@@ -179,7 +179,7 @@ Setelah itu, buka dengan web browser.
 Maka hasilnya:
 
 {{< image 
-  src="images/content/tutorial/html/rycontoh-semantik.webp" 
+  src="/images/content/tutorial/html/rycontoh-semantik.webp" 
   alt="Deskripsi gambar" 
   caption="*Gambar contoh dengan zoom*" 
   >}}
@@ -236,7 +236,7 @@ Kita memberikan warna latar untuk elemen body dan juga beberapa elemen semantik.
 Maka hasilnya:
 
 {{< image 
-  src="images/content/tutorial/html/contoh-style-semantik.webp" 
+  src="/images/content/tutorial/html/contoh-style-semantik.webp" 
   alt="Deskripsi gambar" 
   caption="*Gambar contoh dengan zoom*" 
   >}}
@@ -284,9 +284,9 @@ Contoh:
 </html>
 ```
 
-Hasilnya:
+Hasilnya:details-summary
 
-{{< video src="/images/content/tutorial/html/details-summary.webm" src_mp4="/images/content/tutorial/html/details-summary.webm">}}
+{{< video src_webm="/images/content/tutorial/html/details-summary.webm" >}}
 
 ## Elemen `<time>`
 Tag `<time>` merupakan tag untuk membuat elemen waktu. Elemen waktu biasanya dibutuhkan untuk menampilkan waktu.

@@ -97,7 +97,14 @@
       <link>http://localhost:1313/tutorial/html/html-video/</link>
       <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tutorial/html/html-video/</guid>
-      <description>&lt;p&gt;Pada tutorial sebelumnya, kita sudah belajar cara menambahkan gambar di HTML. Namun, ini belumlah cukup.. karena sekarang konten di web tidak hanya dalam bentuk teks dan gambar saja.&lt;/p&gt;&#xA;&lt;p&gt;Konten lainnya yang bisa ditambahkan di HTML adalah audio dan juga video.&lt;/p&gt;&#xA;&lt;p&gt;Nah, pada tutorial ini.. kita akan belajar cara menambahkan video di HTML.&lt;/p&gt;&#xA;&lt;p&gt;Mari kita mulai…&lt;/p&gt;&#xA;&lt;h2 id=&#34;cara-menambahkan-video-di-html&#34;&gt;Cara Menambahkan Video di HTML&lt;/h2&gt;</description>
+      <description>&lt;p&gt;Pada tutorial sebelumnya, kita sudah belajar cara menambahkan gambar di HTML. Namun, ini belumlah cukup.. karena sekarang konten di web tidak hanya dalam bentuk teks dan gambar saja.&lt;/p&gt;&#xA;&lt;p&gt;Konten lainnya yang bisa ditambahkan di HTML adalah audio dan juga video.&lt;/p&gt;&#xA;&lt;p&gt;Nah, pada tutorial ini.. kita akan belajar cara menambahkan video di HTML.&lt;/p&gt;&#xA;&lt;p&gt;Mari kita mulai…&lt;/p&gt;&#xA;&lt;h2 id=&#34;cara-menambahkan-video-di-html&#34;&gt;Cara Menambahkan Video di HTML&lt;/h2&gt;&#xA;&lt;p&gt;Kita membutuhkan sebuah media player untuk menampilkan video di HTML&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Belajar HTML #14: Menambahkan Audio pada HTML</title>
+      <link>http://localhost:1313/tutorial/html/html-audio/</link>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/html/html-audio/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>
