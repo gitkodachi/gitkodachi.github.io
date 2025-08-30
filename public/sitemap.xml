@@ -110,6 +110,9 @@
     <loc>http://localhost:1313/</loc>
     <lastmod>2025-07-10T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tutorial/</loc>
+    <lastmod>2025-07-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/topik/</loc>
     <lastmod>2025-07-10T00:00:00+00:00</lastmod>
   </url><url>
@@ -141,9 +144,6 @@
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/topik/python/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tutorial/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/about/</loc>
@@ -233,37 +233,32 @@
     <loc>http://localhost:1313/kategori/web-programming/</loc>
     <lastmod>2023-06-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/software/csi-etabs/</loc>
+    <loc>http://localhost:1313/software/windows/csi-etabs/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/software/cs-safe/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/software/daemon-tools/</loc>
+    <loc>http://localhost:1313/software/windows/cs-safe/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/software/windows/daemon-tools/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/software/activasi-window-office/</loc>
+    <loc>http://localhost:1313/software/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/software/idm/</loc>
+    <loc>http://localhost:1313/software/windows/activasi-window-office/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/software/windows/idm/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/software/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/software/windows/winrar/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/software/winrar/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/buku/</loc>
+  </url><url>
+    <loc>http://localhost:1313/software/linux/</loc>
+  </url><url>
+    <loc>http://localhost:1313/software/macos/</loc>
   </url><url>
     <loc>http://localhost:1313/software/windows/</loc>
   </url>
