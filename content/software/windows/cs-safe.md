@@ -28,7 +28,7 @@ CSI SAFE 22 Full ini memiliki berbagai fitur, termasuk analisis dan desain pelat
 ## Design Strips
 
 {{< image 
-  src="/images/content/buku/strip-based-design.AVIF" 
+  src="/images/content/buku/strip-based-design.avif" 
   alt="Deskripsi gambar" 
   caption="*Gambar contoh dengan zoom*" 
   >}}

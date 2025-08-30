@@ -171,7 +171,7 @@
   },
   {
     "title": "Belajar HTML #14: Menambahkan Audio pada HTML",
-    "content": "",
+    "content": "Sekali lagi..\nKonten dalam web, tidak hanya dalam bentuk teks dan gambar saja. Tapi juga bisa dalam bentuk multimedia seperti audio dan video.\nPada tutorial ini, kita akan fokus membahas tentang audio di HTML.\nKonten audio biasanya berbentuk podcast, audiobook, dan musik.\nLalu pertanyaannya:\nBagaimana cara menambahkan audio di HTML?\nMari kita bahas…\nCara Menambahkan Audio di HTML Sebelum adanya HTML 5, audio di HTML ditambahkan dengan program eksternal seperti flash player.\nNamun, kini HTML sudah punya tag sendiri yakni \u0026lt;audio\u0026gt;.\nTag \u0026lt;audio\u0026gt; adalah tag untuk membuat audio player. Lalu kita bisa memberikan file audio yang akan diputar dengan tag \u0026lt;source\u0026gt;.\nGambar contoh dengan zoom\rContoh: 📄 contoh-audio.html\n\u0026lt;!DOCTYPE html\u0026gt; \u0026lt;html lang=\u0026#34;en\u0026#34;\u0026gt; \u0026lt;head\u0026gt; \u0026lt;meta charset=\u0026#34;UTF-8\u0026#34;\u0026gt; \u0026lt;title\u0026gt;Contoh Audio di HTML\u0026lt;/title\u0026gt; \u0026lt;/head\u0026gt; \u0026lt;body\u0026gt; \u0026lt;h1\u0026gt;Contoh Audio di Web\u0026lt;/h1\u0026gt; \u0026lt;audio controls\u0026gt; \u0026lt;source src=\u0026#34;Ngoni.mp3\u0026#34; type=\u0026#34;audio/mpeg\u0026#34;\u0026gt; Browsermu tidak mendukung tag audio, upgrade donk! \u0026lt;/audio\u0026gt; \u0026lt;/body\u0026gt; \u0026lt;/html\u0026gt; ",
     "permalink": "http://localhost:1313/tutorial/html/html-audio/"
   },
   {

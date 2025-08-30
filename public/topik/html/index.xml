@@ -104,7 +104,7 @@
       <link>http://localhost:1313/tutorial/html/html-audio/</link>
       <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tutorial/html/html-audio/</guid>
-      <description></description>
+      <description>&lt;p&gt;Sekali lagi..&lt;/p&gt;&#xA;&lt;p&gt;Konten dalam web, tidak hanya dalam bentuk teks dan gambar saja. Tapi juga bisa dalam bentuk multimedia seperti audio dan video.&lt;/p&gt;&#xA;&lt;p&gt;Pada tutorial ini, kita akan fokus membahas tentang audio di HTML.&lt;/p&gt;&#xA;&lt;p&gt;Konten audio biasanya berbentuk podcast, audiobook, dan musik.&lt;/p&gt;&#xA;&lt;p&gt;Lalu pertanyaannya:&lt;/p&gt;&#xA;&lt;p&gt;Bagaimana cara menambahkan audio di HTML?&lt;/p&gt;&#xA;&lt;p&gt;Mari kita bahas…&lt;/p&gt;&#xA;&lt;h2 id=&#34;cara-menambahkan-audio-di-html&#34;&gt;Cara Menambahkan Audio di HTML&lt;/h2&gt;&#xA;&lt;p&gt;Sebelum adanya HTML 5, audio di HTML ditambahkan dengan program eksternal seperti flash player.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
