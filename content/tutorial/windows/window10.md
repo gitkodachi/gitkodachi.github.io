@@ -6,7 +6,7 @@ date: 2025-06-25
 weight: 1
 avatar: /images/global/avatar.png
 thumbnail: "/images/thumbnail/Komponen-BIOS.webp"
-image: "/images/thumbnail/bsosd.webp"
+image: "/images/cover/ASUS-BIOS.jpg"
 kategori: ["tutorial-lainnya"]
 topik: ["windows", "office"]
 tutorial: ["windows"]

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Belajar HTML #10: Cara Membuat Tabel di HTML - Octocat Code</title>
-<meta name="description" content="Belajar membuat tampilan web modern dengan HTML dan CSS untuk pemula.">
+<meta name="description" content="Belajar membuat tabel dengan HTML dan CSS untuk pemula.">
 
 
 <link rel="icon" type="image/png" href="/icons/app-icons/favicon-96x96.png" sizes="96x96">
@@ -37,14 +37,14 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="http://localhost:1313/tutorial/html/html-tabel/">
 <meta property="og:title" content="Belajar HTML #10: Cara Membuat Tabel di HTML">
-<meta property="og:description" content="Belajar membuat tampilan web modern dengan HTML dan CSS untuk pemula.">
+<meta property="og:description" content="Belajar membuat tabel dengan HTML dan CSS untuk pemula.">
 <meta property="og:image" content="http://localhost:1313/images/cover/html.png">
 
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="http://localhost:1313/tutorial/html/html-tabel/">
 <meta name="twitter:title" content="Belajar HTML #10: Cara Membuat Tabel di HTML">
-<meta name="twitter:description" content="Belajar membuat tampilan web modern dengan HTML dan CSS untuk pemula.">
+<meta name="twitter:description" content="Belajar membuat tabel dengan HTML dan CSS untuk pemula.">
 <meta name="twitter:image" content="http://localhost:1313/images/cover/html.png">
 
 </head>
@@ -532,6 +532,678 @@
     overflow: hidden !important;
   }
   </style>
+<p>Lalu, bagaimana cara membuat tabel di HTML?</p>
+<p>Kita bisa membuatnya dengan beberapa tag yang di sediakan di HTML.</p>
+<h2 id="tag-untuk-membuat-tabel-d-html">Tag untuk Membuat Tabel d HTML</h2>
+<p>Ada beberapa tag yang haru diinget untuk membuat tabel di html:</p>
+<ol>
+<li>Tag <code>&lt;table&gt;</code> untuk membungkus tabelnya</li>
+<li>Tag <code>&lt;thead&gt;</code> untuk membungkus bagian kepala tabel</li>
+<li>Tag <code>&lt;tbody&gt;</code> untuk membungkus bagian body dari tabel</li>
+<li>Tag <code>&lt;tr&gt;</code> (<em>tabel row</em>) untuk membuat baris</li>
+<li>Tag <code>&lt;td&gt;</code> (<em>table data</em>) untuk membuat sel</li>
+</ol>
+<p>Tag yang paling penting untuk diingat adalah tag <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, dan <code>&lt;td&gt;</code>. Sementara tag yang lain adalah tambahan (opsional), boleh digunakan boleh tidak.</p>
+<p>Mari kita lihat contohnya:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Belajar Membuat Tabel HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Baris 1 kolom 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>baris 1 kolom 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Baris 2 kolom 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>baris 2 kolom 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div>
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/tutorial/html/tabel-tanpa-garis.png" 
+    alt="Deskripsi gambar" 
+    class="mx-auto cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  const isZoomed = img.classList.toggle('zoomed');
+  
+  if (isZoomed) {
+    
+    const scale = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.9 / img.naturalHeight,
+      1.0 
+    );
+    
+    img.style.setProperty('--zoom-scale', scale);
+    document.body.style.overflow = 'hidden';
+    
+    
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.dataset.escHandler = handleKey;
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', img.dataset.escHandler);
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1000;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+ 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+</style>
+<p>Kenapa tidak ada garisny?</p>
+<p>Iya, Karena kita tidak menambhkan atribut <code>border</code> pada tabelnya.</p>
+<p>Agar Tabelnya memiliki garis, Silahkan tambahkan atribut <code>border=&quot;1&quot;</code> di dalam tag <code>&lt;table&gt;</code>.</p>
+<p>Sehingga akan menjadi seperti ini:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">boder</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Baris 1 kolom 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>baris 1 kolom 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Baris 2 kolom 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>baris 2 kolom 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Nilai <code>&quot;1&quot;</code> pada atribut <code>border</code> adalah ukuran garisnya. Semakin besar ukurannya, maka akan semakin besar pula ukuran garisnya.</p>
+<p>Nilai <code>&quot;1&quot;</code> adalah ukuran garis yang paling kecil.</p>
+<p>Hasilnya akan seperti ini</p>
+
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/tutorial/html/tabel-garis.png" 
+    alt="Deskripsi gambar" 
+    class="mx-auto cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  const isZoomed = img.classList.toggle('zoomed');
+  
+  if (isZoomed) {
+    
+    const scale = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.9 / img.naturalHeight,
+      1.0 
+    );
+    
+    img.style.setProperty('--zoom-scale', scale);
+    document.body.style.overflow = 'hidden';
+    
+    
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.dataset.escHandler = handleKey;
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', img.dataset.escHandler);
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1000;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+ 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+</style>
+<h2 id="mangatur-jarak-sel-dengan-cellpadding">Mangatur Jarak Sel dengan Cellpadding</h2>
+<p>Atribut <code>cellpadding</code> adalah atribut untuk mengatur jarak teks dengan garis di dalam sel.</p>
+<p>Atribut ini dapat kita berikan kepada tag <code>&lt;table&gt;</code>.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#34;1&#34;</span> <span class="na">cellpadding</span><span class="o">=</span><span class="s">&#34;10&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Baris 1 kolom 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>baris 1 kolom 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Baris 2 kolom 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>baris 2 kolom 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Nilai &ldquo;10&rdquo; pada atribut cellpadding adalah ukuran jarak antara teks sel dengan garis.</p>
+<p>Maka hasilnya:</p>
+
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/tutorial/html/cellpadding.png" 
+    alt="Deskripsi gambar" 
+    class="mx-auto cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  const isZoomed = img.classList.toggle('zoomed');
+  
+  if (isZoomed) {
+    
+    const scale = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.9 / img.naturalHeight,
+      1.0 
+    );
+    
+    img.style.setProperty('--zoom-scale', scale);
+    document.body.style.overflow = 'hidden';
+    
+    
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.dataset.escHandler = handleKey;
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', img.dataset.escHandler);
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1000;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+ 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+</style>
+<h2 id="menambahkan-warna-pada-sel-dan-baris">Menambahkan Warna pada Sel dan Baris</h2>
+<p>Untuk menambahkan warna pada sel dan baris, kita bisa menambahkan atribut <code>bgcolor</code> di dalam tag <code>&lt;td&gt;</code> (untuk sel) atau <code>&lt;tr&gt;</code> (untuk baris).</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#34;1&#34;</span> <span class="na">cellpadding</span><span class="o">=</span><span class="s">&#34;10&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span> <span class="na">bgcolor</span><span class="o">=</span><span class="s">&#34;yellow&#34;</span><span class="p">&gt;</span>Baris 1 kolom 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>baris 1 kolom 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">bgcolor</span><span class="o">=</span><span class="s">&#34;#00ff80&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Baris 2 kolom 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>baris 2 kolom 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</span></span></code></pre></div>
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/tutorial/html/cellpadding.png" 
+    alt="Deskripsi gambar" 
+    class="mx-auto cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  const isZoomed = img.classList.toggle('zoomed');
+  
+  if (isZoomed) {
+    
+    const scale = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.9 / img.naturalHeight,
+      1.0 
+    );
+    
+    img.style.setProperty('--zoom-scale', scale);
+    document.body.style.overflow = 'hidden';
+    
+    
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.dataset.escHandler = handleKey;
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', img.dataset.escHandler);
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1000;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+ 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+</style>
+<p>Nilai atribut <code>bgcolor</code> bisa kita isi dengan kode warna dalam heksadesimal atau nama warna dalam bahasa inggris.</p>
+<p>Maka hasilnya akan seperti ini:</p>
+
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/tutorial/html/warna.png" 
+    alt="Deskripsi gambar" 
+    class="mx-auto cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  const isZoomed = img.classList.toggle('zoomed');
+  
+  if (isZoomed) {
+    
+    const scale = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.9 / img.naturalHeight,
+      1.0 
+    );
+    
+    img.style.setProperty('--zoom-scale', scale);
+    document.body.style.overflow = 'hidden';
+    
+    
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.dataset.escHandler = handleKey;
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', img.dataset.escHandler);
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1000;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+ 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+</style>
+<h2 id="menggabungkan-sel-tabel">Menggabungkan Sel Tabel</h2>
+<p>Atribut yang digunakan untuk menggabungkan sel tabel adalah rowspan dan colspan:</p>
+<p>rowspan untuk menggabungkan baris;
+colspan untuk menggabungkan kolom.
+Atribut ini bisa kita berikan kepada tag <code>&lt;td&gt;</code> atau <code>&lt;th&gt;</code>.</p>
+
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/tutorial/html/rowspan-colspan.png" 
+    alt="Deskripsi gambar" 
+    class="mx-auto cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  const isZoomed = img.classList.toggle('zoomed');
+  
+  if (isZoomed) {
+    
+    const scale = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.9 / img.naturalHeight,
+      1.0 
+    );
+    
+    img.style.setProperty('--zoom-scale', scale);
+    document.body.style.overflow = 'hidden';
+    
+    
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.dataset.escHandler = handleKey;
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', img.dataset.escHandler);
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1000;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+ 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+</style>
+<p>Mari kita lihat contohnya:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Belajar Membuat Tabel HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">th</span> <span class="na">rowspan</span><span class="o">=</span><span class="s">&#34;2&#34;</span> <span class="na">bgcolor</span><span class="o">=</span><span class="s">&#34;yellow&#34;</span><span class="p">&gt;</span>Bulan<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">th</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&#34;2&#34;</span> <span class="na">bgcolor</span><span class="o">=</span><span class="s">&#34;#00ff80&#34;</span><span class="p">&gt;</span>Hasil Panen<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Padi<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Kacang<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Januari<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>500 Kg<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>231 Kg<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Februari<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>342 Kg<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>423 Kg<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Maret<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>432 Kg<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>124 Kg<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>April<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>453 Kg<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>523 Kg<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Hasilnya:</p>
+
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/tutorial/html/tabel-rowspan-colspan.png" 
+    alt="Deskripsi gambar" 
+    class="mx-auto cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  const isZoomed = img.classList.toggle('zoomed');
+  
+  if (isZoomed) {
+    
+    const scale = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.9 / img.naturalHeight,
+      1.0 
+    );
+    
+    img.style.setProperty('--zoom-scale', scale);
+    document.body.style.overflow = 'hidden';
+    
+    
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.dataset.escHandler = handleKey;
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', img.dataset.escHandler);
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1000;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+ 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+</style>
+<h2 id="menyisipkan-elemen-yang-lain-ke-dalam-sel">Menyisipkan Elemen yang Lain ke dalam Sel</h2>
+<p>Di salam sel <td> dan <th>, kita bisa menyisipkan elemen HTML yang lain, seperti gambar, link, video, list, dsb.</p>
+<p>Contoh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Belajar Membuat Tabel HTML<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">th</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&#34;3&#34;</span> <span class="na">bgcolor</span><span class="o">=</span><span class="s">&#34;yellow&#34;</span><span class="p">&gt;</span>Produk Unggulan<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span> <span class="na">rowspan</span><span class="o">=</span><span class="s">&#34;4&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://www.petanikode.com/img/bibit.png&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;200&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Nama<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Benih Kode<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Harga<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Rp 192.000<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Fitur<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Dilengkapi Dokumentasi<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Ukuran: 31MB<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Masa Tanam: 6 Bulan<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Lisensi: MIT<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div>
+<figure class="my-4 text-center">
+  <img 
+    src="http://localhost:1313/images/content/tutorial/html/elemen-dalam-tabel.png" 
+    alt="Deskripsi gambar" 
+    class="mx-auto cursor-zoom-in max-w-full rounded"
+    onclick="zoom(this)"
+  >
+  
+  <figcaption class="text-sm text-gray-500 mt-2">
+    <em>Gambar contoh dengan zoom</em>
+  </figcaption>
+  
+</figure>
+
+<script>
+function zoom(img) {
+  const isZoomed = img.classList.toggle('zoomed');
+  
+  if (isZoomed) {
+    
+    const scale = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.9 / img.naturalHeight,
+      1.0 
+    );
+    
+    img.style.setProperty('--zoom-scale', scale);
+    document.body.style.overflow = 'hidden';
+    
+    
+    const handleKey = (e) => e.key === 'Escape' && zoom(img);
+    document.addEventListener('keydown', handleKey);
+    img.dataset.escHandler = handleKey;
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', img.dataset.escHandler);
+  }
+}
+</script>
+
+<style>
+img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1000;
+  cursor: zoom-out;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+ 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+</style>
+<h2 id="apa-selanjutnya">Apa Selanjutnya?</h2>
+<p>Menurut saya, bagian tersulit saat membuat tabel di HTML adalah saat menggabungkan sel. Karena kita harus teliti, berapa ukuran sel yang akan digabungkan dengan <code>rowspan</code> dan <code>colspan</code>.</p>
+<p>Saran saya:</p>
+<p>Sering-sering latihan dengan contoh kasus tertentu. Coba lihat tabel-tabel yang ada di sekeliling kita, lalu coba buat tabel tersebut dalam HTML.</p>
+<p>Berikutnya, silakan pelajari:</p>
+<ul>
+<li><a href="../html-form">Belajar HTML #11: Membuat Form pada HTML</a></li>
+</ul>
 
         
         
