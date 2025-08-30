@@ -290,6 +290,21 @@
     "permalink": "http://localhost:1313/software/windows/daemon-tools/"
   },
   {
+    "title": "Gimp ",
+    "content": "Deskripsi GIMP adalah editor gambar open source yang setara dengan Photoshop. Cocok untuk photo retouching, image composition, dan image authoring.\nFitur Utama ✅ Full suite of painting tools ✅ Layer management ✅ Professional color management ✅ Hardware acceleration ✅ Plugin system System Requirements OS: Most Linux distributions RAM: 2 GB (recommended 4 GB) GPU: OpenGL capable (optional) Cara Install # Ubuntu/Debian sudo apt install gimp # Fedora sudo dnf install gimp # Arch Linux sudo pacman -S gimp ",
+    "permalink": "http://localhost:1313/software/linux/gimp/"
+  },
+  {
+    "title": "Homebrew ",
+    "content": "Deskripsi Homebrew adalah package manager untuk macOS yang memudahkan instalasi software yang tidak tersedia di App Store.\nFitur Utama ✅ Install thousands of packages ✅ Easy update management ✅ Dependency resolution ✅ Cask untuk GUI applications ✅ Community-driven Cara Install /bin/bash -c \u0026#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\u0026#34; Install package brew install node\nInstall GUI app brew install \u0026ndash;cask google-chrome\nUpdate packages brew update \u0026amp;\u0026amp; brew upgrade\n",
+    "permalink": "http://localhost:1313/software/macos/homebrew/"
+  },
+  {
+    "title": "iTerm2 ",
+    "content": "Deskripsi iTerm2 adalah replacement untuk default Terminal app di macOS dengan fitur-fitur advanced untuk power users.\nFitur Utama ✅ Split panes ✅ Search and highlight ✅ Autocomplete ✅ Paste history ✅ Extensive customization System Requirements OS: macOS 10.14+ RAM: 512 MB Storage: 50 MB Cara Install # Using Homebrew brew install --cask iterm2 Or download manually from website ",
+    "permalink": "http://localhost:1313/software/macos/iterm/"
+  },
+  {
     "title": "Microsoft Activation Scripts ",
     "content": "Microsoft Activation Scripts (MAS) 3.5 Terbaru merupakan salah satu tools sederhana sebagai activator Windows dan Office, yang mendukung KMS Activation seperti Windows 7 Enterprise, Windows 8, Windows 10, dan Windows 11 serta Microsoft Office dari mulai Office 2010 sampai dengan yang terbaru sekarang.\nSoftware activator ini kecil dan dapat anda gunakan untuk mengaktivasi Windows dan Office anda ketika belum mampu membeli key originalnya. untuk cara penggunaanya anda hanya perlu menjalankan software ini dan mengikuti pilihan angka yang disediakan, anda dapat mengaktivasi windows atau office dan juga melakukan check status aktivasi\nFitur HWID (Lisensi Digital) Metode Aktivasi Windows Permanen Ohook Metode Aktivasi Office Permanen TSforge Metode Aktivasi Windows/ESU/Office Permanen KMS38 Metode Aktivasi Windows Hingga Tahun 2038 KMS Online Metode Aktivasi Windows/Office Selama 180 Hari (Seumur Hidup dengan Tugas Perpanjangan) Pemecahan Masalah Aktivasi Lanjutan Folder $OEM$ untuk Pra-aktivasi Ubah Edisi Windows Ubah Edisi Office Periksa Status Aktivasi Windows/Office Tersedia dalam Versi All-in-One dan File Terpisah Sepenuhnya Open Source dan Berbasis Skrip Batch Lebih Sedikit Deteksi Antivirus Activations Summary Activation Type Supported Product Activation Period Is Internet Needed? HWID Windows 10-11 Permanent Yes Ohook Office Permanent No TSforge Windows / ESU / Office Permanent Yes, needed on build 19041 and later KMS38 Windows 10-11-Server Till the Year 2038 No Online KMS Windows / Office 180 Days. Lifetime With Renewal Task Yes Cara Penggunaan Ketika anda ingin mengaktivasi, misalnya: Windows 10 Silahkan jalankan file “MAS_AIO.cmd”, lalu pilih angka nomor 4 ( itu berfungsi untuk mengaktivasi Windows dan Office ) tunggu prosesnya dan windows atau Office anda akan teraktivasi salam luar bias Screenshots Gambar contoh dengan zoom\rGambar contoh dengan zoom\rGambar contoh dengan zoom\rGambar contoh dengan zoom\rGambar contoh dengan zoom\rGambar contoh dengan zoom\rGambar contoh dengan zoom\rGambar contoh dengan zoom\rGambar contoh dengan zoom\rDibuat dengan Cinta ❤️\n",
     "permalink": "http://localhost:1313/software/windows/activasi-window-office/"
@@ -298,6 +313,11 @@
     "title": "Portable IDM 6.4.2 Full",
     "content": "Download IDM Portable Full atau Internet Download Manager 6.42 build 42 Portable Terbaru merupakan salah satu software yang berguna untuk mempercepat unduhan atau download dari internet, jika sebelumnya saya share IDM yang versi full yang harus di install di komputer, kini saya bersikan IDM yang tidak perlu install, cukup di jalankan IDM sudah dapat bekerja, sehingga sangat cocok di simpan di flashdisk anda misalnya.\nSaya kira semua sudah pada tahu fungsi software Internet Download Manager. Jika sebelumnya saya share IDM versi Install full version beserta crack, kali ini saya share IDM versi Portable.\nApa itu versi Portable ? versi IDM Portable ini adalah versi dimana kita tidak perlu install IDM terlebih dahulu, kita dapat langsung menjalankan IDM ini tanpa harus install dan dapat di simpan di dalam flashdisk atau hardisk external ketika kita nanti butuh kita dapat menjalankanya di komputer mana saja.\nSecara fungsi jelas sudah paham semuakan, bahwa aplikasi ini berguna untuk mempercepat download file dari internet. bagi sayang membutuhkan, silahkan bisa download Internet Download Manager 6.42 build 42 Terbaru di bawah ini\nLangkah Menggunakan Download, kemudian extract double click ” register.reg” selanjutnya jalankan IDMPortable.exe enjoy silahkan gunakan salam luar biasa\nPerhatian\r\u0026ldquo;Jika IDM gagal download sebagai extention browser, hapus extention IDM di browsernya\u0026rdquo;\rkarena ini bersifat portable, jadinya hanya sebagai download langsung copy paste dari link =\u0026gt; lihat gambar\nLihat Gambar\rcara copy paste dari linknya, misal di chrome: download file sebagai unduhan browser biasa, kemudian pause download yang berjalan, copy link nya, jalankan IDM, dan paste ke IDM\n",
     "permalink": "http://localhost:1313/software/windows/idm/"
+  },
+  {
+    "title": "Visual Studio Code ",
+    "content": "Deskripsi Visual Studio Code adalah text editor yang ringan namun powerful untuk development. Support debugging, embedded Git control, syntax highlighting, dan thousands of extensions.\nFitur Utama ✅ IntelliSense untuk smart completions ✅ Debugging integrated ✅ Git integration ✅ Extensions marketplace ✅ Terminal integrated System Requirements OS: Ubuntu 16.04+, Debian 9+, RHEL 7+, Fedora 29+ RAM: 1 GB (recommended 2 GB) Storage: 500 MB free space Cara Install # Ubuntu/Debian sudo apt update sudo apt install code # Fedora/RHEL sudo dnf install code ",
+    "permalink": "http://localhost:1313/software/linux/vscode/"
   },
   {
     "title": "WinRAR 7.13 Full Version Terbaru ",

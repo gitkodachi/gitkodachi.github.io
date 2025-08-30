@@ -1,48 +1,46 @@
 {{ define "main" }}
 {{/* 
-  PERMANENT FIX: Manual filtering untuk sections
+  SECTION: Persiapan Data - ambil SEMUA software
 */}}
-{{ $currentSectionPath := .CurrentSection.File.Dir }}
 {{ $allPages := where site.RegularPages "Section" "software" }}
-{{ $filteredPages := where $allPages "File.Dir" $currentSectionPath }}
-{{ $pages := $filteredPages.ByDate.Reverse }}
+{{ $pages := $allPages.ByDate.Reverse }}
 {{ $paginator := .Paginate $pages }}
 
 <div class="container my-16 mx-auto px-4">
-  {{/* Header */}}
+  {{/* Header Section */}}
   <div class="font-bold uppercase text-teal-600 dark:text-teal-400 text-sm mb-2">
-    {{ if .CurrentSection.Parent }}
-      {{ .CurrentSection.Parent.Title }}
-    {{ else }}
-      Semua Software
-    {{ end }}
+    Semua Software
   </div>
 
   <h2 class="text-3xl text-slate-500 dark:text-slate-300 font-bold tracking-tight mb-2">
-    {{ .Title }}
+    Koleksi Software Terlengkap
   </h2>
 
   <p class="text-lg mb-8 text-slate-500 dark:text-slate-300">
-    {{ .Description | default (printf "Koleksi software terbaik untuk platform %s" .Title) }}
+    Temukan software terbaik untuk semua platform: Windows, Linux, dan macOS.
   </p>
 
-  {{/* Tabs Navigation */}}
+  {{/* Platform Navigation Tabs */}}
   <div class="flex flex-wrap gap-2 mb-8">
-    <a href="/software/" class="px-4 py-2 rounded-lg text-sm font-medium {{ if eq .RelPermalink "/software/" }}bg-teal-600 text-white{{ else }}bg-gray-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300{{ end }}">
+    <a href="/software/" 
+       class="px-4 py-2 rounded-lg text-sm font-medium bg-teal-600 text-white">
       Semua Platform
     </a>
-    <a href="/software/windows/" class="px-4 py-2 rounded-lg text-sm font-medium {{ if eq .RelPermalink "/software/windows/" }}bg-teal-600 text-white{{ else }}bg-gray-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300{{ end }}">
+    <a href="/software/windows/" 
+       class="px-4 py-2 rounded-lg text-sm font-medium bg-gray-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-teal-600 hover:text-white">
       Windows
     </a>
-    <a href="/software/linux/" class="px-4 py-2 rounded-lg text-sm font-medium {{ if eq .RelPermalink "/software/linux/" }}bg-teal-600 text-white{{ else }}bg-gray-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300{{ end }}">
+    <a href="/software/linux/" 
+       class="px-4 py-2 rounded-lg text-sm font-medium bg-gray-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-teal-600 hover:text-white">
       Linux
     </a>
-    <a href="/software/macos/" class="px-4 py-2 rounded-lg text-sm font-medium {{ if eq .RelPermalink "/software/macos/" }}bg-teal-600 text-white{{ else }}bg-gray-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300{{ end }}">
+    <a href="/software/macos/" 
+       class="px-4 py-2 rounded-lg text-sm font-medium bg-gray-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-teal-600 hover:text-white">
       macOS
     </a>
   </div>
 
-  {{/* Content */}}
+  {{/* Grid Content - SEMUA software */}}
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {{ range $paginator.Pages }}
       <div class="shadow-md p-4 rounded-lg text-slate-500 dark:text-slate-300 bg-white dark:bg-slate-800 hover:shadow-lg grid grid-cols-4 gap-4 h-full">
@@ -50,9 +48,13 @@
           <a href="{{ .RelPermalink }}">
             <picture class="block">
               {{ if .Params.cover }}
-              <img class="object-cover w-full h-40 dark:brightness-75 rounded-md" src="{{ .Params.cover | absURL }}" alt="Cover {{ .Title }}">
+              <img class="object-cover w-full h-40 dark:brightness-75 rounded-md" 
+                   src="{{ .Params.cover | absURL }}" 
+                   alt="Cover {{ .Title }}">
               {{ else }}
-              <img class="object-cover w-full h-40 bg-gray-200 dark:brightness-75 rounded-md" src="/images/content/buku/placeholder-book.svg" alt="Placeholder Cover">
+              <img class="object-cover w-full h-40 bg-gray-200 dark:brightness-75 rounded-md" 
+                   src="/images/content/buku/placeholder-book.svg" 
+                   alt="Placeholder Cover">
               {{ end }}
             </picture>
           </a>
@@ -64,8 +66,9 @@
               <h2 class="font-bold uppercase text-teal-600 dark:text-teal-400 text-xs">
                 {{ .Params.format | default "Software" }}
               </h2>
+              {{/* Badge Platform - otomatis dari folder */}}
               <span class="bg-gray-200 dark:bg-slate-700 text-xs px-2 py-1 rounded-full">
-                {{ .CurrentSection.Title }}
+                {{ with .CurrentSection }}{{ .Title }}{{ else }}Multi{{ end }}
               </span>
             </div>
             <h3 class="text-lg font-bold mb-1 tracking-tight line-clamp-1">
@@ -84,18 +87,23 @@
       </div>
     {{ end }}
     
-    {{/* Request Card */}}
+    {{/* Kartu Request Software */}}
     <div class="p-4 active:scale-95 text-slate-400 dark:text-slate-600 rounded-lg border-2 border-dashed border-slate-300 hover:bg-teal-400/5 hover:border-teal-400 dark:hover:border-teal-400 dark:border-slate-700 grid grid-cols-4 gap-4 h-full">
       <div class="col-span-1">
         <a href="https://s.id/XpGDC" target="_blank" rel="noopener">
           <picture class="block">
-            <img class="object-cover w-full h-40 dark:brightness-75 rounded-md" src="/images/content/buku/request-book.svg" alt="Request Software">
+            <img class="object-cover w-full h-40 dark:brightness-75 rounded-md" 
+                 src="/images/content/buku/request-book.svg" 
+                 alt="Request Software">
           </picture>
         </a>
       </div>
       <div class="col-span-3 flex flex-col justify-between">
         <h3 class="text-lg font-bold mb-1 tracking-tight line-clamp-1">
-          <a href="https://s.id/XpGDC" target="_blank" rel="noopener" class="hover:text-teal-700 dark:hover:text-teal-300 transition-colors">
+          <a href="https://s.id/XpGDC" 
+             target="_blank" 
+             rel="noopener" 
+             class="hover:text-teal-700 dark:hover:text-teal-300 transition-colors">
             Request Software Baru
           </a>
         </h3>

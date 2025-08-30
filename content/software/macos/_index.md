@@ -1,9 +1,5 @@
 ---
 title: "Software macOS"
-description: "Daftar Software Rekomendasi macOS" 
-layout: "list-buku" # ← Tambahkan ini
+description: "Koleksi software premium dan tools untuk Apple macOS"
+layout: "list-buku"
 ---
-
-# Software macOS
-
-Daftar lengkap software untuk macOS.

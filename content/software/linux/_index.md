@@ -1,9 +1,5 @@
 ---
-title: "Software Linux" 
-description: "Daftar Software Rekomendasi Linux"
-layout: "list-buku" # ← Tambahkan ini
+title: "Software Linux"  
+description: "Koleksi software open source dan tools untuk Linux"
+layout: "list-buku"
 ---
-
-# Software Linux
-
-Daftar lengkap software untuk Linux.

@@ -1,9 +1,5 @@
 ---
 title: "Software Windows"
-description: "Daftar Software Rekomendasi Windows"
-layout: "list-buku" # ← Tambahkan ini
+description: "Koleksi software terbaik untuk sistem operasi Windows"
+layout: "list-buku"
 ---
-
-# Software Windows
-
-Daftar lengkap software untuk Windows.

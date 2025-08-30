@@ -245,6 +245,15 @@
     <loc>http://localhost:1313/software/windows/daemon-tools/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/software/linux/gimp/</loc>
+    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/software/macos/homebrew/</loc>
+    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/software/macos/iterm/</loc>
+    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/software/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
@@ -252,6 +261,9 @@
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/software/windows/idm/</loc>
+    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/software/linux/vscode/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/software/windows/winrar/</loc>
