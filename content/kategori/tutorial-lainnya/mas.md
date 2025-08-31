@@ -1,5 +1,6 @@
 ---
 title: "Bagaimana cara mengaktifkan Windows/Office?"
+linkTitle: "Bagaimana cara mengaktifkan Windows/Office?"
 date: 2025-06-25
 author: "default"
 avatar: /images/global/avatar.png
@@ -114,7 +115,9 @@ Rilis Terakhir - v3.4 (3-June-2025)
 tunggu prosesnya dan windows atau Office anda akan teraktivasi
 - salam luar bias
 
-## Screenshots
+## Ikuti Gambar
+
+{{< details summary="Screenshots" >}}
 
 {{< image 
   src="/images/content/tutorial/MAS_AIO.png" 
@@ -169,5 +172,9 @@ tunggu prosesnya dan windows atau Office anda akan teraktivasi
   alt="Deskripsi gambar" 
   caption="*Gambar contoh dengan zoom*" 
 >}}
+
+{{< /details >}}
+
+
 
 Dibuat dengan Cinta ❤️

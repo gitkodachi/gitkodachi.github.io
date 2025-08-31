@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 25 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/kategori/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Basic Programming</title>
-      <link>http://localhost:1313/kategori/basic-programming/</link>
+      <title>Pemrograman</title>
+      <link>http://localhost:1313/kategori/pemrograman/</link>
       <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/kategori/basic-programming/</guid>
+      <guid>http://localhost:1313/kategori/pemrograman/</guid>
       <description></description>
     </item>
     <item>
@@ -23,9 +23,23 @@
       <description></description>
     </item>
     <item>
+      <title>Web</title>
+      <link>http://localhost:1313/kategori/web/</link>
+      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/web/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Basic Programming</title>
+      <link>http://localhost:1313/kategori/basic-programming/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/basic-programming/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Web Programming</title>
       <link>http://localhost:1313/kategori/web-programming/</link>
-      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/kategori/web-programming/</guid>
       <description></description>
     </item>

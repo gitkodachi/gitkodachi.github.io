@@ -1,13 +1,26 @@
-{{/* layouts/partials/taxonomies.html */}}
+{{/* layouts/partials/components/taxonomies.html */}}
 {{ $p := .page }}
 {{ $taxonomies := slice "kategori" "topik" "tutorial" "software" "buku" }}
 
 {{/* Collect unique tags */}}
 {{ $uniqueTags := dict }}
 {{ range $taxonomyName := $taxonomies }}
-  {{ with (index $p.Params $taxonomyName) }}
-    {{ range . }}
-      {{ $term := . | lower }}
+  {{ $taxonomyValues := index $p.Params $taxonomyName }}
+  
+  {{/* HANDLE BOTH STRING AND SLICE */}}
+  {{ if $taxonomyValues }}
+    {{ if reflect.IsSlice $taxonomyValues }}
+      {{ range $taxonomyValues }}
+        {{ $term := . | lower | string }}
+        {{ if not (index $uniqueTags $term) }}
+          {{ $taxonomyPage := site.GetPage (printf "%s/%s" $taxonomyName (urlize $term)) }}
+          {{ $url := cond $taxonomyPage $taxonomyPage.RelPermalink (printf "/%s/%s/" $taxonomyName (urlize $term)) }}
+          {{ $uniqueTags = merge $uniqueTags (dict $term $url) }}
+        {{ end }}
+      {{ end }}
+    {{ else }}
+      {{/* Handle single string value */}}
+      {{ $term := $taxonomyValues | lower | string }}
       {{ if not (index $uniqueTags $term) }}
         {{ $taxonomyPage := site.GetPage (printf "%s/%s" $taxonomyName (urlize $term)) }}
         {{ $url := cond $taxonomyPage $taxonomyPage.RelPermalink (printf "/%s/%s/" $taxonomyName (urlize $term)) }}

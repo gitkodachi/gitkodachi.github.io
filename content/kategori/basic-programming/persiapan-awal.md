@@ -4,7 +4,7 @@ linkTitle: "Persiapan Basic #01: System Operasi Yang digunakan?"
 date: 2025-06-25
 thumbnail: "/images/content/basic/window-11.png"
 image: "/images/content/basic/window-11.png"
-kategori: ["basic-programming"]
+kategori: "pemrograman"
 series: "development"
 show_tutorial_list: true
 completed: true
