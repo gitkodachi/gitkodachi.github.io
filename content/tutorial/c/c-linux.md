@@ -5,7 +5,7 @@ description: "Pelajari dasar-dasar Bahasa C untuk pemula."
 author: "default"
 date: 2025-06-27
 thumbnail: "/images/cover/c.png"
-image: "/images/cover/c.png"
+image: "/images/thumbnail/c.webp"
 show_tutorial_list: true
 completed: false
 current: true 
