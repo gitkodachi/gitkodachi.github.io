@@ -127,7 +127,7 @@ Bagus, selanjutnya silakan ikuti tutorial git berikut ini.
 
 - [Tutorial Git #01: Cara Install Git dan Konfigurasi Awal]({{< ref "tutorial/git/git-install" >}})
 
-- [Tutorial Git #02: Membuat Repositori Baru dalam Proyek]({{< ref "post/git-init" >}})
+- [Tutorial Git #02: Membuat Repositori Baru dalam Proyek]({{< ref "tutorial/git/git-init" >}})
 
 - [Tutorial Git #03: Cara Membuat Repository Git Pada Proyek]({{< ref "tutorial/git/git-commit" >}})
 

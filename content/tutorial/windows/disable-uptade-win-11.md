@@ -7,8 +7,8 @@ weight: 3
 avatar: /images/global/avatar.png
 thumbnail: "/images/thumbnail/windows_update_blocker_wub.png"
 image: "/images/cover/stop-windows-11.avif"
-kategori: ["tutorial-lainnya"]
-topik: ["windows", "office"]
+kategori: ["windows"]
+topik: ["windows"]
 tutorial: ["windows"]
 series: "troubleshooting"
 show_tutorial_list: true

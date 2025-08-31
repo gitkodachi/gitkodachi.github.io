@@ -1,7 +1,8 @@
 ---
 title: "Tutorial Git #07: Menggunakan Percabangan untuk mencegah Konflik"
-author: "default"
 linkTitle: "Belajar Git #07: Menggunakan Cabang untuk Mencegah Konflik"
+description: "Pelajari dasar-dasar version control dengan Git untuk pemula."
+author: "default"
 date: 2025-06-27
 thumbnail: "/images/cover/git-petanikode.png"
 image: "/images/cover/git-petanikode.png"
@@ -12,7 +13,6 @@ weight: 7
 series: "git"
 tutorial: ["Git"]
 topik: ["Git"]
-description: "Pelajari dasar-dasar version control dengan Git untuk pemula."
 ---
 
 Bayangkan anda sedang bekerja dengan tim pada suatu repositori Git. Repositori ini dikerjakan secara bersama-sama.

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Belajar Pemrograman C untuk Pemula on Octocat Code</title>
+    <link>http://localhost:1313/tutorial/c/</link>
+    <description>Recent content in Belajar Pemrograman C untuk Pemula on Octocat Code</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tutorial/c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Belajar Pemrograman C #01: Pengenalan Bahasa Pemrograman C</title>
+      <link>http://localhost:1313/tutorial/c/c-untuk-pemula/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/c/c-untuk-pemula/</guid>
+      <description>&lt;p&gt;Ada yang bertanya:&lt;/p&gt;&#xA;&lt;p&gt;Belajar bahasa C, masih worth it ga?&lt;/p&gt;&#xA;&lt;p&gt;Jawabannya akan tergantung dari tujuanmu.&lt;/p&gt;&#xA;&lt;p&gt;Biasanya saya akan tanya balik:&lt;/p&gt;&#xA;&lt;p&gt;Worth it dari segi apa dulu?&lt;/p&gt;&#xA;&lt;p&gt;Kalau melihat lowongan kerja yang membutuhkan programmer C, memang agak jarang sekarang.&lt;/p&gt;&#xA;&lt;p&gt;Jadi, jawabannya kurang worth it jika kamu hanya belajar C untuk tujuan mencari kerja saja.&lt;/p&gt;&#xA;&lt;p&gt;Tapi buat kamu yang penasaran tentang bahasa C dan ingin memahami lebih dalam tentang bahasa ini..&lt;/p&gt;&#xA;&lt;p&gt;..gas aja!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Pemrograman C #02: Persiapan Pemrograman C di Linux</title>
+      <link>http://localhost:1313/tutorial/c/c-linux/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tutorial/c/c-linux/</guid>
+      <description>&lt;p&gt;Pada tutorial sebelumnya, kita sudah membahas &lt;a href=&#34;../c-untuk-pemula&#34;&gt;pengenalan bahasa pemrograman C&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Berikutnya kita akan membahas tentang peralatan apa saja yang harus dipersiapkan untuk belajar pemrograman C di Linux.&lt;/p&gt;&#xA;&lt;p&gt;Baiklah mari kita mulai…&lt;/p&gt;&#xA;&lt;h2 id=&#34;apa-saja-yang-harus-dipersiapkan-untuk-belajar-c-di-linux&#34;&gt;Apa saja yang harus dipersiapkan untuk belajar C di Linux?&lt;/h2&gt;&#xA;&lt;p&gt;Pada dasarnya kita hanya membutuhkan dua alat saja, yaitu: teks editor dan &lt;em&gt;compiler&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Teks editor adalah program yang digunakan untuk menulis kode program C…&lt;/p&gt;&#xA;&lt;p&gt;…dan compiler adalah program yang digunakan untuk &lt;em&gt;menerjemahkan&lt;/em&gt; bahasa C ke dalam bahasa mesin sehingga &lt;em&gt;dapat dimengerti&lt;/em&gt; oleh komputer.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

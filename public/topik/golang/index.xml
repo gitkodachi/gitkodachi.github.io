@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on Octocat Code</title>
+    <link>http://localhost:1313/topik/golang/</link>
+    <description>Recent content in Golang on Octocat Code</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/topik/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tutorial Membuat Sistem Notifikasi dengan Redis Pub/Sub di Golang</title>
+      <link>http://localhost:1313/kategori/web-programming/go-redis-pub-sub/</link>
+      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/web-programming/go-redis-pub-sub/</guid>
+      <description>&lt;p&gt;Sistem notifikasi cukup penting untuk menginformasikan berbagai kegiatan atau pengumuman kepada user, seperti rilis produk baru, pesan dari seseorang, dan lain - lain.&lt;/p&gt;&#xA;&lt;p&gt;Namun, dalam pembuatan nya terkadang terasa menyulitkan bagi developer. Karena harus memikirkan bagaimana user menerima notifikasi secara real-time dan sinkron.&lt;/p&gt;&#xA;&lt;p&gt;Tapi, kali ini kita akan membuatnya dengan cukup mudah dengan menggunakan fitur Pub/Sub dari Redis.&lt;/p&gt;&#xA;&lt;p&gt;Mari kita mulai!&lt;/p&gt;&#xA;&lt;h2 id=&#34;step-1---persiapan-dan-setup-project&#34;&gt;Step 1 - Persiapan dan Setup Project&lt;/h2&gt;&#xA;&lt;p&gt;Mari kita siapkan dari 0, project-nya gak bakal banyak dependency tentunya.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

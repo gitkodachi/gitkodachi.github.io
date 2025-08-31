@@ -7,38 +7,74 @@
   <p style="color:red;">❌ Embed error: URL tidak ditemukan</p>
 {{ else }}
   {{ $embedURL := "" }}
+  {{ $platform := "" }}
 
   {{ if or (findRE "youtu\\.be" $low) (findRE "youtube\\.com" $low) }}
-    {{ $id := replaceRE "^.*(youtu\\.be/|v=)([^&#]+).*$" "$2" $u }}
+    {{ $id := replaceRE "^.*(youtu\\.be/|v=|/embed/)([^&#?]+).*$" "$2" $u }}
     {{ $embedURL = printf "https://www.youtube.com/embed/%s" $id }}
+    {{ $platform = "youtube" }}
 
   {{ else if findRE "twitter\\.com" $low }}
-    <blockquote class="twitter-tweet">
-      <a href="{{ $u }}"></a>
-    </blockquote>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    {{ $platform = "twitter" }}
+    {{ $tweetID := replaceRE "^.*/status/([0-9]+).*$" "$1" $u }}
+    
+    {{ if $tweetID }}
+      <div class="my-4">
+        <blockquote class="twitter-tweet">
+          <a href="https://twitter.com/x/status/{{ $tweetID }}"></a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    {{ else }}
+      <p style="color:red;">❌ Twitter: Format URL tidak valid</p>
+    {{ end }}
+
+  {{ else if findRE "x\\.com" $low }}
+    {{ $platform = "twitter" }}
+    {{ $tweetID := replaceRE "^.*/status/([0-9]+).*$" "$1" $u }}
+    
+    {{ if $tweetID }}
+      <div class="my-4">
+        <blockquote class="twitter-tweet">
+          <a href="https://twitter.com/x/status/{{ $tweetID }}"></a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    {{ else }}
+      <p style="color:red;">❌ Twitter (X): Format URL tidak valid</p>
+    {{ end }}
 
   {{ else if findRE "tiktok\\.com" $low }}
     {{ $id := replaceRE "^.*/video/([0-9]+).*$" "$1" $u }}
-    {{ $embedURL = printf "https://www.tiktok.com/embed/%s" $id }}
+    {{ $embedURL = printf "https://www.tiktok.com/embed/v2/%s" $id }}
+    {{ $platform = "tiktok" }}
 
   {{ else if findRE "instagram\\.com" $low }}
-    {{ $embedURL = printf "%s%s" $u "embed" }}
+    {{ $embedURL = printf "%s/embed" (replaceRE "/$" "" $u) }}
+    {{ $platform = "instagram" }}
 
   {{ else if findRE "vimeo\\.com" $low }}
     {{ $id := replaceRE "^.*vimeo\\.com/([0-9]+).*$" "$1" $u }}
     {{ $embedURL = printf "https://player.vimeo.com/video/%s" $id }}
+    {{ $platform = "vimeo" }}
 
   {{ else if findRE "facebook\\.com" $low }}
     {{ $embedURL = printf "https://www.facebook.com/plugins/video.php?href=%s&show_text=false" $u }}
+    {{ $platform = "facebook" }}
 
   {{ else }}
     <p style="color:red;">⚠️ Embed error: Platform tidak dikenali</p>
   {{ end }}
 
-  {{ if $embedURL }}
-    <div class="embed-container mb-4">
-      <iframe src="{{ $embedURL }}" frameborder="0" allowfullscreen loading="lazy"></iframe>
+  {{ if and $embedURL (ne $platform "twitter") }}
+    <div class="embed-container my-4">
+      <iframe 
+        src="{{ $embedURL }}" 
+        frameborder="0" 
+        allowfullscreen 
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      ></iframe>
     </div>
   {{ end }}
 {{ end }}

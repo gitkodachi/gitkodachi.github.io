@@ -597,44 +597,83 @@
 <p>Kalu kita ibraatkan nih&hellip;</p>
 <p>HTML itu seperti batu bata untuk membangun rumah. Batu bata ini dapat disusun hingga menjadi pondasi dasar.</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/html-css-js.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -642,20 +681,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Dalam membuat halaman web, HTML tidak sendirian. Ada bahasa lain lagi yang menjadi pelengkapnya, yakni CSS dan Javascript.</p>
@@ -677,44 +795,83 @@
 <p>Cerita awal kemunculan HTML dimulai dari tahun 1980..</p>
 <p>Saat itu seorang ilmuan bernama Tim Berners-Lee sedang bekerja di CERN.</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/Tim_Berners-Lee_April_2009.jpg" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Tim Berners-Lee (2009)</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -722,63 +879,181 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>CERN sendiri bukanlah perusahaan yang berkaitan tentang teknologi maupun internet. CERN adalah singkatan dari bahasa prancis: Conseil Européen pour la Recherche Nucléaire.</p>
 <p>Yang artinya: Komisi Eropa untuk Penelitian Fisika Nuklir.</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/website-cern.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Website CERN (2020)</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -786,20 +1061,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Para peneliti di CERN membutuhkan sebuah cara atau sistem agar bisa saling berbagi dokumen hasil penelitian.</p>
@@ -807,44 +1161,83 @@
 <p>Lalu di tahun 1989, Tim memperkenalkan ide tentang hypertext berbasis internet. Ini nantinya akan menjadi cikal-bakal HTML.</p>
 <p>Tim kemudian memulai proyek baru dengan rekannya Robert Cailliau yang merupakan system engineer di CERN. Akan tetapi proyek ini tidak resmi diadopsi oleh CERN.</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/tim-robert.jpg" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Tim Berners-Lee (kiri) dan Robert Cailliau (kanan)</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -852,20 +1245,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Pada akhir tahun 1991, Tim Berners-Lee menerbitkan dokumen yang berjudul: <a href="http://info.cern.ch/hypertext/WWW/MarkUp/Tags.html">“HTML Tags”</a>.</p>
@@ -903,44 +1375,83 @@
 <p>Teks editor akan kita gunakan untuk menulis kode-kode HTML. Kamu bebas menggunakan teks editor apapun.</p>
 <p>Notepad boleh, Notepad++ juga boleh..</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/notepadpp.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Notepad ++</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -948,20 +1459,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Apapun teks editornya, yang penting bisa digunakan untuk membuat dan menulis dokumen HTML.</p>
@@ -969,40 +1559,79 @@
 <h4 id="2-web-browser-untuk-membuka-html">2. Web Browser untuk Membuka HTML</h4>
 <p>Web browser akan kita gunakan untuk membuka HTML. Kamu juga bebas menggunakan web browser apapun.</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/web-browser.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1010,20 +1639,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Saran saya sih.. gunakan web browser yang terbaru, karena kita juga akan menggunakan HTML versi yang terbaru.</p>
@@ -1042,40 +1750,79 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>Setelah itu, simpan dengan nama <strong>hello-world.html</strong>.</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/file-html.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1083,60 +1830,178 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p><strong>Tips</strong>: buat kamu yang menggunakan Notepad di Windows, simpanlah nama filenya dengan menggunakan tanda petik &ldquo;<strong>hello-world.html</strong>&rdquo; agar ekstensinya .html, bukan <strong>.txt</strong>.</p>
 <p>Atau kamu bisa aktifkan fitur show extension pada Windows Explorer, agar bisa tahu ekstensi filenya.</p>
 <p>Caranya.. masuk ke menu View, lalu centang <strong>File name extensions</strong>.</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/win-explorer-extension.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1144,59 +2009,177 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Oke.. lanjut!</p>
 <p>Sekarang cobalah buka file <strong>hello-world.html</strong> dengan web browser.. maka hasilnya:</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/hello-world-html.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1204,20 +2187,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Selamat! 🎉</p>
@@ -1230,40 +2292,79 @@
 <p>Contohnya seperti ini:</p>
 <p>Nama filenya adalah <strong>hello-world.txt</strong>.</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/file-txt.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1271,20 +2372,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Sedah jelas, ini bukan file HTML, melainkan sebuah file teks biasa. Maka.. browser akan menampilkan isi file tersebut apa adanya.</p>
@@ -1293,40 +2473,79 @@
 Nama file HTML biasanya akan tercantum pada URL, maka sebaiknya hindari menggunakan spasi pada nama file HTML, agar URL yang dibentuk lebih bagus.</p>
 <p>Spasi pada URL, biasanya akan otomatis diubah menjadi %20.</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/spasi-pada-url.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1334,20 +2553,99 @@ Nama file HTML biasanya akan tercantum pada URL, maka sebaiknya hindari mengguna
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Sebagai ganti spasi, kamu bisa gunakan tanda min (<strong>-</strong>) atau underscore (<strong>_</strong>).</p>
@@ -1362,40 +2660,79 @@ Nama file HTML biasanya akan tercantum pada URL, maka sebaiknya hindari mengguna
 <h3 id="struktur-dasar-html">Struktur Dasar HTML</h3>
 <p>Berikut ini adalah kode HTML yang baru saja kita buat:</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/struktur-html.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1403,20 +2740,99 @@ Nama file HTML biasanya akan tercantum pada URL, maka sebaiknya hindari mengguna
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Penulisan kode HTML selalu dimulai dengan deklarasi DOCTYPE, lalau menuliskan tag <code>&lt;html&gt;</code> dan di dalamnya terdapat tag <code>&lt;head&gt;</code> dan <code>&lt;body&gt;</code>.</p>
@@ -1438,40 +2854,79 @@ Nama file HTML biasanya akan tercantum pada URL, maka sebaiknya hindari mengguna
 <p>Boleh-boleh saja.. dokumen HTML-nya akan tetap bisa dibuka di web browser. Tapi, ini tentunya akan melanggar aturan standar yang dibuat W3C.</p>
 <p>O ya, kita bisa mengecek.. apakah HTML yang ditulis sudah benar atau tidak di <a href="https://validator.w3.org/">https://validator.w3.org/</a>.</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/html-validator.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1479,20 +2934,99 @@ Nama file HTML biasanya akan tercantum pada URL, maka sebaiknya hindari mengguna
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Lanjut…</p>

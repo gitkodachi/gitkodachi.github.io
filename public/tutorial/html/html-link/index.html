@@ -588,44 +588,83 @@
 <p>Link atau Hyperlink adalah elemen HTML yang berfungsi menghubungkan suatu halaman web ke halaman web yang lain.</p>
 <p>Elemen ini bisa diklik.. dan nanti akan membuka halaman lain sesuai alamat URL yang diberikan.</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/pengertian-link.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -633,20 +672,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Tidak hanya untuk menghubungkan halaman, link juga punya fungsi lain seperti scroll top, download file, menjalankan fungsi javascript, dll.</p>
@@ -657,44 +775,83 @@
 <p>Link pada HTML dapa dibuat dengan tag <code>&lt;a&gt;</code>, kemudian tag ini harus memiliki atribut <code>href</code> untuk menentukan alamat URL tujuan dari link.</p>
 <p>Bentuk sederhananya seperti ini:</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/link-tag.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -702,20 +859,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Contoh: <code>link.html</code></p>
@@ -732,44 +968,83 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>Hasilnya:</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/contoh-link.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -777,20 +1052,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Link akan ditampilkan dengan warna biru dan garis bawah. Ini adalah style standar dari setiap browser.</p>
@@ -798,44 +1152,83 @@
 <p>Nanti kita akan bahas caranya ya..</p>
 <p>Nah sekarang coba klik link tersebut!</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/link-404.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -843,64 +1236,182 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Lha! Kok error?</p>
 <p>Link yang kita buat ini akan membuka halaman <code>about.html</code>, tapi file ini belum kita buat atau belum ada. Karena itu, pasti error.</p>
 <p>Untuk mengatasi ini, kita harus membuat file <code>about.html</code> dan disimpan dalam satu folder dengan file <code>link.html</code>.</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/file-about.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -908,20 +1419,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Isi file abo<code>ut.html</code> seperti ini:</p>
@@ -943,44 +1533,83 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>Nah, sekarang mari kita coba lagi:</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/link-about.gif" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -988,20 +1617,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Yap!</p>
@@ -1017,44 +1725,83 @@
 <li><code>Internal Link</code>: adalah link yang menuju ke domain atau halaman web itu sendiri;</li>
 </ol>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/internal-link.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1062,64 +1809,182 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <ol start="2">
 <li><code>External Link</code>: adalah link yang menuju domain lain.</li>
 </ol>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/eksternal-link.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1127,20 +1992,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Internal link biasanya digunakan untuk menghubungkan halaman yang satu dengan yang lainnya dalam satu website atau domain.</p>
@@ -1218,44 +2162,83 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>Pastikan semua file ini disimpan dalam satu folder.</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/file-html-link-internal.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1263,63 +2246,181 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Setelah itu, coba buka <code>index.html</code> dengan browser.</p>
 <p>Maka hasilnya:</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/internal-link.gif" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1327,20 +2428,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <h3 id="2-contoh-external-link">2. Contoh External Link</h3>
@@ -1388,44 +2568,83 @@
 </span></span></code></pre></div><p>Hasilnya:</p>
 <p>Tes buka link Facebook:</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/eksternal-link.gif" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1433,62 +2652,180 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Test buka link whatsapp:</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/eksternal-link-facebook.gif" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1496,20 +2833,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Sudah paham tentang eksternal link?</p>
@@ -1529,44 +2945,83 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#39;https://www.facebook.com/gitkodachi&#39;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#39;_blank&#39;</span><span class="p">&gt;</span>Facebook<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>Hasilnya:</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/target-blank.gif" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1574,20 +3029,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Saat link tersebut diklik, browser akan membuka tab baru. Ini karena kita memberikan atribut target dengan nilai <code>_blank</code>.</p>
@@ -1613,44 +3147,83 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>Hasilnya:</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/link-frame.gif" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1658,20 +3231,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <h4 id="menggunakan-atribut-title">Menggunakan Atribut <code>title</code></h4>
@@ -1690,44 +3342,83 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>Hasilnya:</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/link-title.gif" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1735,20 +3426,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <div class="custom-alert custom-alert-info" role="alert">
@@ -1788,44 +3558,83 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>Hasailnya:</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/link-color.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1833,20 +3642,99 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <h3 id="fungsi-menarik-lainnya-dari-link">Fungsi Menarik Lainnya dari Link</h3>
@@ -1871,44 +3759,83 @@ Link buntu adalah link yang tidak akan membuka apa-pun. Ia biasanya digunakan se
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>Hasilnya:</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/link-buntu.gif" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1916,20 +3843,99 @@ Link buntu adalah link yang tidak akan membuka apa-pun. Ia biasanya digunakan se
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Perhatikan!</p>
@@ -1938,44 +3944,83 @@ Link buntu adalah link yang tidak akan membuka apa-pun. Ia biasanya digunakan se
 <h4 id="membuat-link-anchor">Membuat Link Anchor</h4>
 <p>Link anchor adalah link yang menuju ke suatu elemen tertentu. Cara kerjanya seperti saat kita mengaitkan jangkar, lalu ditarik ke sana. Karena itu, dia dinamakan anchor.</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/anchor-link.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -1983,20 +4028,99 @@ Link buntu adalah link yang tidak akan membuka apa-pun. Ia biasanya digunakan se
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Cara membuat link anchor adalah dengan mengisi alamat URL dengan tanda pagar <code>(#),</code> lalu diisi dengan nama id dari elemen yang akan dituju.</p>
@@ -2045,44 +4169,83 @@ Link buntu adalah link yang tidak akan membuka apa-pun. Ia biasanya digunakan se
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>Hasilnya:</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/link-anchor.gif" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -2090,20 +4253,99 @@ Link buntu adalah link yang tidak akan membuka apa-pun. Ia biasanya digunakan se
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Kalau kita perhatikan, disana kita menggunakan <code>#top</code> sebgail URL</p>
@@ -2112,44 +4354,83 @@ Link buntu adalah link yang tidak akan membuka apa-pun. Ia biasanya digunakan se
 <p>Mengapa link anchor ini bisa menuju ke atas?</p>
 <p>Ini karena browser sudah paham, jika ada link anchor yang menuju ke <code>#top</code> maka ia akan dibawa ke bagian teratas dari dokumen.</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/top-anchor.png" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -2157,20 +4438,99 @@ Link buntu adalah link yang tidak akan membuka apa-pun. Ia biasanya digunakan se
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <h4 id="membuat-link-untuk-memanggil-fungsi-javascript">Membuat Link untuk Memanggil Fungsi Javascript</h4>
@@ -2192,44 +4552,83 @@ Link buntu adalah link yang tidak akan membuka apa-pun. Ia biasanya digunakan se
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>Hasilnya:</p>
 
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/link-js.gif" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -2237,20 +4636,99 @@ Link buntu adalah link yang tidak akan membuka apa-pun. Ia biasanya digunakan se
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Sebenarnya hampir semua elemen bisa menjalankan fungsi Javascript dengan atribut event.</p>
@@ -2291,44 +4769,83 @@ Membuat gambar sebagai link kadang sering dilakukan dalam web. Cara membuatnya s
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></span></code></pre></div>
-  <figure class="my-4 text-center">
+  <figure class="my-6 text-center">
     <img 
       src="http://localhost:1313/images/content/tutorial/html/link-email.gif" 
       alt="Deskripsi gambar" 
-      class="mx-auto cursor-zoom-in max-w-full rounded"
-      onclick="zoom(this)"
+      class="mx-auto cursor-zoom-in max-w-full rounded-lg shadow-md transition-all hover:shadow-lg"
+      onclick="zoomImage(this)"
+      loading="lazy"
+      decoding="async"
     >
     
-    <figcaption class="text-sm text-gray-500 mt-2">
+    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 px-4">
       <em>Gambar contoh dengan zoom</em>
     </figcaption>
     
   </figure>
   
   <script>
-  function zoom(img) {
+  function zoomImage(img) {
     const isZoomed = img.classList.toggle('zoomed');
     
     if (isZoomed) {
       
+      const viewportPadding = 80; 
       const scale = Math.min(
-        window.innerWidth * 0.9 / img.naturalWidth,
-        window.innerHeight * 0.9 / img.naturalHeight,
+        (window.innerWidth - viewportPadding) / img.naturalWidth,
+        (window.innerHeight - viewportPadding) / img.naturalHeight,
         1.0 
       );
       
       img.style.setProperty('--zoom-scale', scale);
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('zoom-active');
       
       
-      const handleKey = (e) => e.key === 'Escape' && zoom(img);
+      const handleKey = (e) => {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          zoomImage(img);
+        }
+      };
+      
+      
+      const handleClick = (e) => {
+        if (e.target === img) return;
+        zoomImage(img);
+      };
+      
       document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleClick);
+      
+      
       img.dataset.escHandler = handleKey;
+      img.dataset.clickHandler = handleClick;
+      
     } else {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', img.dataset.escHandler);
+      document.documentElement.classList.remove('zoom-active');
+      
+      
+      if (img.dataset.escHandler) {
+        document.removeEventListener('keydown', img.dataset.escHandler);
+      }
+      if (img.dataset.clickHandler) {
+        document.removeEventListener('click', img.dataset.clickHandler);
+      }
+      
+      
+      setTimeout(() => {
+        img.style.removeProperty('--zoom-scale');
+      }, 300);
     }
   }
+  
+  
+  document.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomed')) {
+      e.preventDefault();
+      zoomImage(e.target);
+    }
+  }, { passive: false });
   </script>
   
   <style>
@@ -2336,20 +4853,99 @@ Membuat gambar sebagai link kadang sering dilakukan dalam web. Cara membuatnya s
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.9));
-    max-width: 90vw;
-    max-height: 90vh;
-    z-index: 1000;
+    transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+    max-width: min(95vw, 1200px);
+    max-height: min(95vh, 1200px);
+    z-index: 10000;
     cursor: zoom-out;
-    background: white;
+    background: #fff;
     padding: 1rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 100vmax rgba(0, 0, 0, 0.92),
+      0 25px 50px rgba(0, 0, 0, 0.4);
     object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: imageZoomIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes imageZoomIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(var(--zoom-scale, 0.95));
+      filter: blur(0);
+    }
   }
   
    
-  body.overflow-hidden {
+  @media (prefers-color-scheme: dark) {
+    img.zoomed {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 100vmax rgba(0, 0, 0, 0.96),
+        0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+   
+  @media (max-width: 768px) {
+    img.zoomed {
+      --zoom-scale: 0.85 !important;
+      max-width: 98vw;
+      max-height: 98vh;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+  }
+  
+   
+  .zoom-active {
     overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+   
+  body {
+    transition: overflow 0.3s ease;
+  }
+  
+   
+  .img-zoom-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  
+  .img-zoom-close:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   </style>
 <p>Jika kamu membukanya di Google Chrome, maka ia akan membuka Gmail. Tapi jika dibuka di Firefox, ia akan memilih aplikasi email yang tersedia di komputer.</p>

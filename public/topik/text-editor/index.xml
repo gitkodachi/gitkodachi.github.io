@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Text Editor on Octocat Code</title>
+    <link>http://localhost:1313/topik/text-editor/</link>
+    <description>Recent content in Text Editor on Octocat Code</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/topik/text-editor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Review] Text Editor Visual Studio Code di Linux</title>
+      <link>http://localhost:1313/post/text-editor-vscode/</link>
+      <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/text-editor-vscode/</guid>
+      <description>&lt;p&gt;Visual Studio Code atau VS Code adalah teks editor open-source berbasis Electron yang diracik oleh Microsoft.&lt;/p&gt;&#xA;&lt;p&gt;Saya sering melihat foto-foto programmer yang saya ikuti di instagram menggunakan VS Code.&lt;/p&gt;&#xA;&lt;p&gt;Jadi penasaran dan ingin mencobanya…&lt;/p&gt;&#xA;&lt;p&gt;Beberapa minggu ini, saya sudah mencobanya…dan ingin menulis sedikit review tentangnya.&lt;/p&gt;&#xA;&lt;p&gt;Pertama saya akan membahas cara instalasinya, kemudian performa, pengenalan antarmuka, review beberapa fitur, dukungan bahasa, rekomendasi extension, dan ditutup dengan permasalahan yang saya temukan.&lt;/p&gt;&#xA;&lt;h2 id=&#34;cara-instal-vs-code-di-linux&#34;&gt;Cara Instal VS Code di Linux&lt;/h2&gt;</description>
+    </item>
+  </channel>
+</rss>

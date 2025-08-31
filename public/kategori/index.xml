@@ -9,17 +9,31 @@
     <lastBuildDate>Wed, 25 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/kategori/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Pemrograman</title>
-      <link>http://localhost:1313/kategori/pemrograman/</link>
+      <title>Office</title>
+      <link>http://localhost:1313/kategori/office/</link>
       <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/kategori/pemrograman/</guid>
+      <guid>http://localhost:1313/kategori/office/</guid>
       <description></description>
     </item>
     <item>
-      <title>Tutorial Lainya</title>
-      <link>http://localhost:1313/kategori/tutorial-lainnya/</link>
+      <title>Text Editor</title>
+      <link>http://localhost:1313/kategori/text-editor/</link>
       <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/kategori/tutorial-lainnya/</guid>
+      <guid>http://localhost:1313/kategori/text-editor/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vscode</title>
+      <link>http://localhost:1313/kategori/vscode/</link>
+      <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/vscode/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>http://localhost:1313/kategori/windows/</link>
+      <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/windows/</guid>
       <description></description>
     </item>
     <item>

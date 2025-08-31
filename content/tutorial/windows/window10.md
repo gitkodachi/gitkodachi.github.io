@@ -7,8 +7,8 @@ weight: 1
 avatar: /images/global/avatar.png
 thumbnail: "/images/thumbnail/Komponen-BIOS.webp"
 image: "/images/cover/ASUS-BIOS.jpg"
-kategori: ["tutorial-lainnya"]
-topik: ["windows", "office"]
+kategori: ["windows"]
+topik: ["windows"]
 tutorial: ["windows"]
 series: "troubleshooting"
 show_tutorial_list: true

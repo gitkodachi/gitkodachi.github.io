@@ -7,8 +7,8 @@ weight: 2
 avatar: /images/global/avatar.png
 thumbnail: "/images/thumbnail/bsosd.webp"
 image: "/images/cover/windows.jpg"
-kategori: ["tutorial-lainnya"]
-topik: ["windows", "office"]
+kategori: ["windows"]
+topik: ["windows"]
 tutorial: ["windows"]
 series: "troubleshooting"
 show_tutorial_list: true

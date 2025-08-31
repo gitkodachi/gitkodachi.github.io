@@ -10,10 +10,17 @@
     <atom:link href="http://localhost:1313/kategori/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!</title>
-      <link>http://localhost:1313/kategori/web-programming/laravel/</link>
+      <link>http://localhost:1313/kategori/web-programming/laravel-11/</link>
       <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/kategori/web-programming/laravel/</guid>
-      <description>&lt;h2 id=&#34;laravel&#34;&gt;#Laravel&lt;/h2&gt;&#xA;&lt;h2 id=&#34;php&#34;&gt;#PHP&lt;/h2&gt;&#xA;&lt;h2 id=&#34;mysql&#34;&gt;#MySQL&lt;/h2&gt;&#xA;&lt;p&gt;Pemula bisa langsung bikin CRUD!&lt;/p&gt;&#xA;&lt;h1 id=&#34;tutorial-laravel-untuk-pemula&#34;&gt;Tutorial Laravel untuk Pemula&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Sabardi&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;pengenalan-laravel&#34;&gt;Pengenalan Laravel&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Laravel&lt;/strong&gt; adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web&amp;hellip;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/kategori/web-programming/laravel-11/</guid>
+      <description>&lt;h2 id=&#34;pengenalan-laravel&#34;&gt;Pengenalan Laravel&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Laravel&lt;/strong&gt; adalah sebuah framework PHP yang open source dan dirancang untuk memudahkan pengembangan aplikasi web. Framework ini mengikuti pola arsitektur Model-View-Controller (MVC) dan menyediakan berbagai fitur serta alat yang berguna untuk mempercepat proses pengembangan web.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Laravel&lt;/strong&gt; sangat populer di kalangan pengembang web karena dokumentasinya yang lengkap, komunitas yang aktif, dan ekosistem paket yang kaya yang memungkinkan pengembang untuk memperluas fungsi dasar framework sesuai kebutuhan.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Framework&lt;/strong&gt;: adalah kumpulan program berupa file pustaka (libraries) atau class-class yang mendukung dalam pengembangan aplikasi secara terstruktur dan independen terhadap aplikasi. Software Framework adalah sebuah desain yang bisa digunakan berulang-ulang (re-usable design) untuk sebuah sistem atau sub sistem piranti lunak.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tutorial Membuat Sistem Notifikasi dengan Redis Pub/Sub di Golang</title>
+      <link>http://localhost:1313/kategori/web-programming/go-redis-pub-sub/</link>
+      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kategori/web-programming/go-redis-pub-sub/</guid>
+      <description>&lt;p&gt;Sistem notifikasi cukup penting untuk menginformasikan berbagai kegiatan atau pengumuman kepada user, seperti rilis produk baru, pesan dari seseorang, dan lain - lain.&lt;/p&gt;&#xA;&lt;p&gt;Namun, dalam pembuatan nya terkadang terasa menyulitkan bagi developer. Karena harus memikirkan bagaimana user menerima notifikasi secara real-time dan sinkron.&lt;/p&gt;&#xA;&lt;p&gt;Tapi, kali ini kita akan membuatnya dengan cukup mudah dengan menggunakan fitur Pub/Sub dari Redis.&lt;/p&gt;&#xA;&lt;p&gt;Mari kita mulai!&lt;/p&gt;&#xA;&lt;h2 id=&#34;step-1---persiapan-dan-setup-project&#34;&gt;Step 1 - Persiapan dan Setup Project&lt;/h2&gt;&#xA;&lt;p&gt;Mari kita siapkan dari 0, project-nya gak bakal banyak dependency tentunya.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
