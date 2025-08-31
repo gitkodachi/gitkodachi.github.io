@@ -9,10 +9,10 @@ image: "/images/cover/c.png"
 show_tutorial_list: true
 completed: false
 current: true 
-weight: 1
+weight: 2
 series: "c"
-tutorial: ["C", "Linux"]
-topik: ["C", "Linux"]
+tutorial: ["C"]
+topik: ["C"]
 ---
 
 Pada tutorial sebelumnya, kita sudah membahas [pengenalan bahasa pemrograman C](../c-untuk-pemula).

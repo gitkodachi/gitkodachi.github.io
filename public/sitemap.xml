@@ -14,9 +14,6 @@
     <loc>http://localhost:1313/tutorial/c/c-untuk-pemula/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tutorial/c/c-linux/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tutorial/python/python-linux/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
@@ -33,6 +30,9 @@
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tutorial/hugo/03-setup-tema-tailwind/</loc>
+    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tutorial/c/c-linux/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tutorial/windows/bsod/</loc>
@@ -149,12 +149,6 @@
     <loc>http://localhost:1313/contact/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/topik/linux/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tutorial/linux/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/terms/</loc>
     <lastmod>2025-06-27T00:00:00+00:00</lastmod>
   </url><url>
@@ -230,13 +224,10 @@
     <loc>http://localhost:1313/post/checkactivationstatus/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/kategori/text-editor/</loc>
-    <lastmod>2025-06-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/topik/text-editor/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/kategori/vscode/</loc>
+    <loc>http://localhost:1313/topik/vscode/</loc>
     <lastmod>2025-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/kategori/windows/</loc>
