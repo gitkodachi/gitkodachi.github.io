@@ -1,6 +1,6 @@
 baseURL = 'https://gitkodachi.github.io/'
 languageCode = 'en-us'
-title = 'Octocat Code'
+title = 'Absolute Computer'
 
 [related]
   threshold = 80
